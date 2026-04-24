@@ -1,0 +1,12 @@
+data/app.db
+node_modules
+dist
+data/
+backups/
+private_legal/
+*.sqlite3
+*.bak
+*.bak.*
+.env
+.env.*
+!*.env.example
