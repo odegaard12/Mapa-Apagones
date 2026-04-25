@@ -14,6 +14,7 @@ import unicodedata
 from fastapi import FastAPI, HTTPException, Request as FastAPIRequest
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from app.zones import ensure_zone_tables
 
 DB_PATH = os.getenv("DB_PATH", "/data/app.db")
 
@@ -196,6 +197,9 @@ def setup_db():
     ensure_column(conn, "incidents", "province", "TEXT")
     ensure_column(conn, "incidents", "country", "TEXT")
     ensure_column(conn, "incidents", "display_zone", "TEXT")
+    ensure_column(conn, "incidents", "zone_id", "TEXT")
+    ensure_column(conn, "reports", "zone_id", "TEXT")
+    ensure_zone_tables(conn)
 
     conn.commit()
     conn.close()
