@@ -14,7 +14,7 @@ import unicodedata
 from fastapi import FastAPI, HTTPException, Request as FastAPIRequest
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from app.zones import ensure_zone_tables
+from app.zones import ensure_zone_tables, sync_zone_for_incident, refresh_all_zones, get_zone_items
 
 DB_PATH = os.getenv("DB_PATH", "/data/app.db")
 
@@ -507,12 +507,14 @@ def recompute_incident(conn, incident_id: str):
     )
 
     fill_incident_geodata_if_missing(conn, incident_id)
+    sync_zone_for_incident(conn, incident_id)
 
 def refresh_all_incidents(conn):
     cleanup_old(conn)
     rows = conn.execute("SELECT id FROM incidents").fetchall()
     for row in rows:
         recompute_incident(conn, row["id"])
+    refresh_all_zones(conn)
     conn.commit()
 
 def find_recent_incident_in_same_cell(conn, cell_key: str) -> Optional[sqlite3.Row]:
@@ -716,6 +718,18 @@ def incidents(hours: int = 24, include_resolved: int = 0):
     out = [dict(r) for r in rows]
     conn.close()
     return {"items": out}
+
+@app.get("/api/zones")
+def zones(hours: int = 24, include_resolved: int = 0):
+    conn = get_db()
+    refresh_all_incidents(conn)
+    items = get_zone_items(conn, hours=hours, include_resolved=bool(include_resolved))
+    summary = {
+        "active_zones": sum(1 for i in items if int(i.get("confirmations_active", 0)) > 0),
+        "confirmations": sum(int(i.get("confirmations_active", 0)) for i in items),
+    }
+    conn.close()
+    return {"items": items, "summary": summary}
 
 @app.post("/api/report")
 def report(payload: ReportIn, request: FastAPIRequest):
