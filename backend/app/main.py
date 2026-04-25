@@ -14,6 +14,7 @@ import unicodedata
 from fastapi import FastAPI, HTTPException, Request as FastAPIRequest
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from app.zones import ensure_zone_tables, sync_zone_for_incident, refresh_all_zones, get_zone_items
 
 DB_PATH = os.getenv("DB_PATH", "/data/app.db")
 
@@ -196,6 +197,9 @@ def setup_db():
     ensure_column(conn, "incidents", "province", "TEXT")
     ensure_column(conn, "incidents", "country", "TEXT")
     ensure_column(conn, "incidents", "display_zone", "TEXT")
+    ensure_column(conn, "incidents", "zone_id", "TEXT")
+    ensure_column(conn, "reports", "zone_id", "TEXT")
+    ensure_zone_tables(conn)
 
     conn.commit()
     conn.close()
@@ -503,12 +507,14 @@ def recompute_incident(conn, incident_id: str):
     )
 
     fill_incident_geodata_if_missing(conn, incident_id)
+    sync_zone_for_incident(conn, incident_id)
 
 def refresh_all_incidents(conn):
     cleanup_old(conn)
     rows = conn.execute("SELECT id FROM incidents").fetchall()
     for row in rows:
         recompute_incident(conn, row["id"])
+    refresh_all_zones(conn)
     conn.commit()
 
 def find_recent_incident_in_same_cell(conn, cell_key: str) -> Optional[sqlite3.Row]:
@@ -712,6 +718,57 @@ def incidents(hours: int = 24, include_resolved: int = 0):
     out = [dict(r) for r in rows]
     conn.close()
     return {"items": out}
+
+@app.get("/api/zones")
+def zones(hours: int = 24, include_resolved: int = 0):
+    conn = get_db()
+    refresh_all_incidents(conn)
+
+    raw_items = get_zone_items(conn, hours=hours, include_resolved=bool(include_resolved))
+    items = []
+
+    for z in raw_items:
+        latest_incident = conn.execute(
+            """
+            SELECT primary_type, status, last_report_at
+            FROM incidents
+            WHERE zone_id = ?
+            ORDER BY report_count_active DESC, last_report_at DESC
+            LIMIT 1
+            """,
+            (z["id"],),
+        ).fetchone()
+
+        primary_type = latest_incident["primary_type"] if latest_incident else "sin_luz"
+
+        items.append({
+            "id": z["id"],
+            "display_zone": z["display_name"],
+            "municipio": z["municipio"],
+            "province": z["province"],
+            "center_lat": z["center_lat"],
+            "center_lng": z["center_lng"],
+            "lat_min": z["bbox_min_lat"],
+            "lat_max": z["bbox_max_lat"],
+            "lng_min": z["bbox_min_lng"],
+            "lng_max": z["bbox_max_lng"],
+            "status": z["status"],
+            "primary_type": primary_type,
+            "report_count_active": z["confirmations_active"],
+            "unique_reporters_active": z["confirmations_active"],
+            "last_report_at": z["last_report_at"],
+            "resolved_at": z["resolved_at"],
+            "zone_id": z["id"],
+        })
+
+    summary = {
+        "active_zones": sum(1 for i in items if int(i.get("report_count_active", 0)) > 0),
+        "confirmations": sum(int(i.get("report_count_active", 0)) for i in items),
+    }
+
+    conn.close()
+    return {"items": items, "summary": summary}
+
 
 @app.post("/api/report")
 def report(payload: ReportIn, request: FastAPIRequest):

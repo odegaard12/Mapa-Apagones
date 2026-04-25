@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
 
-const APP_VERSION = 'v0.6.0-foundation'
+const APP_VERSION = 'v0.7.0-zones-wip'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -183,7 +183,7 @@ export default function App() {
 
   async function loadIncidents() {
     const includeResolved = statusFilter === 'resuelta' ? 1 : 0
-    const res = await fetch(`/api/incidents?hours=${hours}&include_resolved=${includeResolved}`)
+    const res = await fetch(`/api/zones?hours=${hours}&include_resolved=${includeResolved}`)
     const data = await res.json()
     setIncidents(Array.isArray(data.items) ? data.items : [])
   }
@@ -354,7 +354,7 @@ export default function App() {
           <div className="brand-logo">⚡</div>
           <div>
             <div className="brand-title">Apagones Ciudadanos</div>
-            <div className="brand-subtitle">Mapa ciudadano de incidencias eléctricas</div>
+            <div className="brand-subtitle">Mapa ciudadano de zonas con incidencias eléctricas</div>
           </div>
         </div>
 
@@ -382,7 +382,7 @@ export default function App() {
       <aside className="left-panel glass">
         <div className="left-tabs">
           <button className={leftTab === 'incidents' ? 'tab-btn active' : 'tab-btn'} onClick={() => setLeftTab('incidents')}>
-            Incidencias
+            Zonas
           </button>
           <button className={leftTab === 'filters' ? 'tab-btn active' : 'tab-btn'} onClick={() => setLeftTab('filters')}>
             Filtros
@@ -405,7 +405,7 @@ export default function App() {
             <div className="incident-list">
               {activeVisible.length === 0 ? (
                 <div className="empty-state">
-                  <strong>Sin incidencias visibles</strong>
+                  <strong>Sin zonas activas</strong>
                   <span>Prueba otra ventana temporal o cambia el filtro.</span>
                 </div>
               ) : (
@@ -625,10 +625,10 @@ export default function App() {
             <div className="panel-head">
               <span className="panel-chip blue">{mode === 'explore' ? 'Explorar' : 'Reportar'}</span>
             </div>
-            <h3>{mode === 'explore' ? 'Selecciona una incidencia' : 'Selecciona una zona'}</h3>
+            <h3>{mode === 'explore' ? 'Selecciona una zona' : 'Selecciona una zona'}</h3>
             <div className="panel-subtitle">
               {mode === 'explore'
-                ? 'Usa la lista lateral o pulsa una zona coloreada.'
+                ? 'Usa la lista lateral o pulsa una zona activa.'
                 : 'Pulsa una zona del mapa para reportar.'}
             </div>
             {message ? <div className="inline-msg">{message}</div> : null}
