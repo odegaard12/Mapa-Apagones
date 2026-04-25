@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
+import ZonePolygons from './components/ZonePolygons.jsx'
 
 const APP_VERSION = 'v0.6.0-foundation'
 const GRID_SIZE_M = 1600
@@ -168,6 +169,7 @@ function MapClickSelector({ mode, onPick }) {
 export default function App() {
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
+  const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
@@ -185,6 +187,22 @@ export default function App() {
     const data = await res.json()
     setIncidents(Array.isArray(data.items) ? data.items : [])
   }
+
+  useEffect(() => {
+    let cancelled = false
+    fetch('/data/galicia_municipios.geojson')
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled) setMunicipiosGeoJson(data)
+      })
+      .catch(() => {
+        if (!cancelled) setMunicipiosGeoJson(null)
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   useEffect(() => {
     loadIncidents()
@@ -486,26 +504,14 @@ export default function App() {
             }}
           />
 
-          {filteredIncidents.map((incident) => {
-            const selected = selectedIncidentId === incident.id
-            return (
-              <Rectangle
-                key={incident.id}
-                bounds={incidentBounds(incident)}
-                pathOptions={{
-                  color: statusColor(incident.status),
-                  fillColor: statusColor(incident.status),
-                  fillOpacity: selected ? 0.24 : 0.12,
-                  weight: selected ? 3 : 2,
-                }}
-                eventHandlers={{
-                  click: () => {
-                    if (mode === 'explore') focusIncident(incident)
-                  },
-                }}
-              />
-            )
-          })}
+          <ZonePolygons
+            municipiosGeoJson={municipiosGeoJson}
+            activeVisible={activeVisible}
+            selectedIncidentId={selectedIncidentId}
+            mode={mode}
+            focusIncident={focusIncident}
+            statusColor={statusColor}
+          />
 
           {mode === 'report' && reportBounds && (
             <Rectangle

@@ -1,7 +1,7 @@
 data/app.db
 node_modules
 dist
-data/
+/data/
 backups/
 private_legal/
 *.sqlite3
@@ -10,3 +10,4 @@ private_legal/
 .env
 .env.*
 !*.env.example
+frontend/public/data/galicia_municipios_raw.geojson
