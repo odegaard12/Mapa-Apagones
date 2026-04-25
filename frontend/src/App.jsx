@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 
-const APP_VERSION = 'v0.6.0-foundation'
+const APP_VERSION = 'v0.7.0-zones-wip'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -181,7 +181,7 @@ export default function App() {
 
   async function loadIncidents() {
     const includeResolved = statusFilter === 'resuelta' ? 1 : 0
-    const res = await fetch(`/api/incidents?hours=${hours}&include_resolved=${includeResolved}`)
+    const res = await fetch(`/api/zones?hours=${hours}&include_resolved=${includeResolved}`)
     const data = await res.json()
     setIncidents(Array.isArray(data.items) ? data.items : [])
   }

@@ -723,13 +723,52 @@ def incidents(hours: int = 24, include_resolved: int = 0):
 def zones(hours: int = 24, include_resolved: int = 0):
     conn = get_db()
     refresh_all_incidents(conn)
-    items = get_zone_items(conn, hours=hours, include_resolved=bool(include_resolved))
+
+    raw_items = get_zone_items(conn, hours=hours, include_resolved=bool(include_resolved))
+    items = []
+
+    for z in raw_items:
+        latest_incident = conn.execute(
+            """
+            SELECT primary_type, status, last_report_at
+            FROM incidents
+            WHERE zone_id = ?
+            ORDER BY report_count_active DESC, last_report_at DESC
+            LIMIT 1
+            """,
+            (z["id"],),
+        ).fetchone()
+
+        primary_type = latest_incident["primary_type"] if latest_incident else "sin_luz"
+
+        items.append({
+            "id": z["id"],
+            "display_zone": z["display_name"],
+            "municipio": z["municipio"],
+            "province": z["province"],
+            "center_lat": z["center_lat"],
+            "center_lng": z["center_lng"],
+            "lat_min": z["bbox_min_lat"],
+            "lat_max": z["bbox_max_lat"],
+            "lng_min": z["bbox_min_lng"],
+            "lng_max": z["bbox_max_lng"],
+            "status": z["status"],
+            "primary_type": primary_type,
+            "report_count_active": z["confirmations_active"],
+            "unique_reporters_active": z["confirmations_active"],
+            "last_report_at": z["last_report_at"],
+            "resolved_at": z["resolved_at"],
+            "zone_id": z["id"],
+        })
+
     summary = {
-        "active_zones": sum(1 for i in items if int(i.get("confirmations_active", 0)) > 0),
-        "confirmations": sum(int(i.get("confirmations_active", 0)) for i in items),
+        "active_zones": sum(1 for i in items if int(i.get("report_count_active", 0)) > 0),
+        "confirmations": sum(int(i.get("report_count_active", 0)) for i in items),
     }
+
     conn.close()
     return {"items": items, "summary": summary}
+
 
 @app.post("/api/report")
 def report(payload: ReportIn, request: FastAPIRequest):
