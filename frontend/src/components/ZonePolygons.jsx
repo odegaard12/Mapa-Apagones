@@ -8,6 +8,44 @@ function incidentBounds(incident) {
   ]
 }
 
+function normalizeText(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+}
+
+function featureFallbackKey(props) {
+  return `${normalizeText(props?.municipio)}|${normalizeText(props?.province)}`
+}
+
+function incidentFallbackKey(incident) {
+  return `${normalizeText(incident?.municipio)}|${normalizeText(incident?.province)}`
+}
+
+function shouldReplaceIncident(current, candidate, selectedIncidentId) {
+  if (!current) return true
+
+  const currentSelected = current.id === selectedIncidentId
+  const candidateSelected = candidate.id === selectedIncidentId
+
+  if (candidateSelected && !currentSelected) return true
+  if (currentSelected && !candidateSelected) return false
+
+  const currentReports = Number(current.report_count_active || 0)
+  const candidateReports = Number(candidate.report_count_active || 0)
+
+  if (candidateReports !== currentReports) {
+    return candidateReports > currentReports
+  }
+
+  const currentTs = new Date(current.last_report_at || 0).getTime()
+  const candidateTs = new Date(candidate.last_report_at || 0).getTime()
+
+  return candidateTs > currentTs
+}
+
 export default function ZonePolygons({
   municipiosGeoJson,
   activeVisible,
@@ -16,35 +54,93 @@ export default function ZonePolygons({
   focusIncident,
   statusColor,
 }) {
-  const activeZoneMap = useMemo(() => {
-    const m = new Map()
-    for (const item of activeVisible) {
-      if (item.zone_id) m.set(item.zone_id, item)
+  const { activeMunicipioGeoJson, incidentByFeatureKey, matchedIncidentIds } = useMemo(() => {
+    if (!municipiosGeoJson?.features?.length) {
+      return {
+        activeMunicipioGeoJson: null,
+        incidentByFeatureKey: new Map(),
+        matchedIncidentIds: new Set(),
+      }
     }
-    return m
-  }, [activeVisible])
 
-  const activeMunicipioGeoJson = useMemo(() => {
-    if (!municipiosGeoJson?.features) return null
+    const byZoneId = new Map()
+    const byMunicipioProvince = new Map()
+
+    for (const feature of municipiosGeoJson.features) {
+      const props = feature?.properties || {}
+
+      if (props.zone_id) {
+        byZoneId.set(props.zone_id, feature)
+      }
+
+      const fallbackKey = featureFallbackKey(props)
+      if (fallbackKey !== '|') {
+        byMunicipioProvince.set(fallbackKey, feature)
+      }
+    }
+
+    const resolvedFeatures = []
+    const seenFeatureKeys = new Set()
+    const incidentByFeatureKey = new Map()
+    const matchedIncidentIds = new Set()
+
+    for (const incident of activeVisible) {
+      let feature = null
+
+      if (incident.zone_id && byZoneId.has(incident.zone_id)) {
+        feature = byZoneId.get(incident.zone_id)
+      }
+
+      if (!feature) {
+        const fallbackKey = incidentFallbackKey(incident)
+        if (fallbackKey !== '|' && byMunicipioProvince.has(fallbackKey)) {
+          feature = byMunicipioProvince.get(fallbackKey)
+        }
+      }
+
+      if (!feature) continue
+
+      matchedIncidentIds.add(incident.id)
+
+      const props = feature?.properties || {}
+      const featureKey = props.zone_id || featureFallbackKey(props)
+      if (!featureKey) continue
+
+      if (!seenFeatureKeys.has(featureKey)) {
+        seenFeatureKeys.add(featureKey)
+        resolvedFeatures.push(feature)
+      }
+
+      const current = incidentByFeatureKey.get(featureKey)
+      if (shouldReplaceIncident(current, incident, selectedIncidentId)) {
+        incidentByFeatureKey.set(featureKey, incident)
+      }
+    }
+
     return {
-      ...municipiosGeoJson,
-      features: municipiosGeoJson.features.filter((ft) => activeZoneMap.has(ft?.properties?.zone_id)),
+      activeMunicipioGeoJson: resolvedFeatures.length
+        ? { ...municipiosGeoJson, features: resolvedFeatures }
+        : null,
+      incidentByFeatureKey,
+      matchedIncidentIds,
     }
-  }, [municipiosGeoJson, activeZoneMap])
-
-  const polygonRenderedZoneIds = useMemo(
-    () => new Set((activeMunicipioGeoJson?.features || []).map((ft) => ft?.properties?.zone_id).filter(Boolean)),
-    [activeMunicipioGeoJson]
-  )
+  }, [municipiosGeoJson, activeVisible, selectedIncidentId])
 
   const fallbackRectangles = useMemo(
-    () => activeVisible.filter((item) => !polygonRenderedZoneIds.has(item.zone_id)),
-    [activeVisible, polygonRenderedZoneIds]
+    () => activeVisible.filter((incident) => !matchedIncidentIds.has(incident.id)),
+    [activeVisible, matchedIncidentIds]
   )
 
+  function getIncidentForFeature(feature) {
+    const props = feature?.properties || {}
+    const key = props.zone_id || featureFallbackKey(props)
+    return incidentByFeatureKey.get(key) || null
+  }
+
   function polygonStyle(feature) {
-    const zone = activeZoneMap.get(feature?.properties?.zone_id)
-    if (!zone) {
+    const incident = getIncidentForFeature(feature)
+
+    if (!incident) {
       return {
         color: 'transparent',
         weight: 0,
@@ -52,10 +148,11 @@ export default function ZonePolygons({
       }
     }
 
-    const selected = selectedIncidentId === zone.id
+    const selected = selectedIncidentId === incident.id
+
     return {
-      color: statusColor(zone.status),
-      fillColor: statusColor(zone.status),
+      color: statusColor(incident.status),
+      fillColor: statusColor(incident.status),
       fillOpacity: selected ? 0.24 : 0.14,
       weight: selected ? 3 : 2,
     }
@@ -68,11 +165,12 @@ export default function ZonePolygons({
           data={activeMunicipioGeoJson}
           style={polygonStyle}
           onEachFeature={(feature, layer) => {
-            const zone = activeZoneMap.get(feature?.properties?.zone_id)
-            if (!zone) return
+            const incident = getIncidentForFeature(feature)
+            if (!incident) return
+
             layer.on({
               click: () => {
-                if (mode === 'explore') focusIncident(zone)
+                if (mode === 'explore') focusIncident(incident)
               },
             })
           }}
@@ -81,6 +179,7 @@ export default function ZonePolygons({
 
       {fallbackRectangles.map((incident) => {
         const selected = selectedIncidentId === incident.id
+
         return (
           <Rectangle
             key={incident.id}
