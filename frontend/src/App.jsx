@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
 
-const APP_VERSION = 'v0.7.0-zones-wip'
+const APP_VERSION = 'v0.7.2-geo-state-hardening'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -170,6 +170,7 @@ export default function App() {
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
+  const incidentsLoadSeqRef = useRef(0)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
@@ -182,9 +183,11 @@ export default function App() {
   const [mapInstance, setMapInstance] = useState(null)
 
   async function loadIncidents() {
+    const seq = ++incidentsLoadSeqRef.current
     const includeResolved = statusFilter === 'resuelta' ? 1 : 0
     const res = await fetch(`/api/zones?hours=${hours}&include_resolved=${includeResolved}`)
     const data = await res.json()
+    if (seq !== incidentsLoadSeqRef.current) return
     setIncidents(Array.isArray(data.items) ? data.items : [])
   }
 
@@ -269,6 +272,7 @@ export default function App() {
 
   function focusIncident(incident) {
     setSelectedIncidentId(incident.id)
+    setLeftTab('incidents')
     setMode('explore')
     setReportPoint(null)
     setMessage('')
