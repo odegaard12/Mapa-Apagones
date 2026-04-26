@@ -24,6 +24,11 @@ function incidentFallbackKey(incident) {
   return `${normalizeText(incident?.municipio)}|${normalizeText(incident?.province)}`
 }
 
+function featureStableKey(feature) {
+  const props = feature?.properties || {}
+  return props.zone_id || featureFallbackKey(props)
+}
+
 function shouldReplaceIncident(current, candidate, selectedIncidentId) {
   if (!current) return true
 
@@ -46,6 +51,29 @@ function shouldReplaceIncident(current, candidate, selectedIncidentId) {
   return candidateTs > currentTs
 }
 
+function pathOptionsForIncident(incident, selected, statusColor) {
+  const baseColor = statusColor(incident.status)
+
+  if (selected) {
+    return {
+      color: '#0f172a',
+      fillColor: baseColor,
+      fillOpacity: 0.32,
+      weight: 4,
+      opacity: 1,
+      dashArray: '10 6',
+    }
+  }
+
+  return {
+    color: baseColor,
+    fillColor: baseColor,
+    fillOpacity: 0.14,
+    weight: 2,
+    opacity: 0.92,
+  }
+}
+
 export default function ZonePolygons({
   municipiosGeoJson,
   activeVisible,
@@ -54,12 +82,13 @@ export default function ZonePolygons({
   focusIncident,
   statusColor,
 }) {
-  const { activeMunicipioGeoJson, incidentByFeatureKey, matchedIncidentIds } = useMemo(() => {
+  const { activeMunicipioGeoJson, incidentByFeatureKey, matchedIncidentIds, geoJsonRenderKey } = useMemo(() => {
     if (!municipiosGeoJson?.features?.length) {
       return {
         activeMunicipioGeoJson: null,
         incidentByFeatureKey: new Map(),
         matchedIncidentIds: new Set(),
+        geoJsonRenderKey: `none::${mode || 'explore'}::${selectedIncidentId || 'none'}`,
       }
     }
 
@@ -102,8 +131,7 @@ export default function ZonePolygons({
 
       matchedIncidentIds.add(incident.id)
 
-      const props = feature?.properties || {}
-      const featureKey = props.zone_id || featureFallbackKey(props)
+      const featureKey = featureStableKey(feature)
       if (!featureKey) continue
 
       if (!seenFeatureKeys.has(featureKey)) {
@@ -117,14 +145,17 @@ export default function ZonePolygons({
       }
     }
 
+    const stableKeys = resolvedFeatures.map(featureStableKey).sort().join(',')
+
     return {
       activeMunicipioGeoJson: resolvedFeatures.length
         ? { ...municipiosGeoJson, features: resolvedFeatures }
         : null,
       incidentByFeatureKey,
       matchedIncidentIds,
+      geoJsonRenderKey: `${stableKeys}::${mode || 'explore'}::${selectedIncidentId || 'none'}`,
     }
-  }, [municipiosGeoJson, activeVisible, selectedIncidentId])
+  }, [municipiosGeoJson, activeVisible, selectedIncidentId, mode])
 
   const fallbackRectangles = useMemo(
     () => activeVisible.filter((incident) => !matchedIncidentIds.has(incident.id)),
@@ -132,9 +163,7 @@ export default function ZonePolygons({
   )
 
   function getIncidentForFeature(feature) {
-    const props = feature?.properties || {}
-    const key = props.zone_id || featureFallbackKey(props)
-    return incidentByFeatureKey.get(key) || null
+    return incidentByFeatureKey.get(featureStableKey(feature)) || null
   }
 
   function polygonStyle(feature) {
@@ -148,25 +177,23 @@ export default function ZonePolygons({
       }
     }
 
-    const selected = selectedIncidentId === incident.id
-
-    return {
-      color: statusColor(incident.status),
-      fillColor: statusColor(incident.status),
-      fillOpacity: selected ? 0.24 : 0.14,
-      weight: selected ? 3 : 2,
-    }
+    return pathOptionsForIncident(incident, selectedIncidentId === incident.id, statusColor)
   }
 
   return (
     <>
       {activeMunicipioGeoJson?.features?.length ? (
         <GeoJSON
+          key={geoJsonRenderKey}
           data={activeMunicipioGeoJson}
           style={polygonStyle}
           onEachFeature={(feature, layer) => {
             const incident = getIncidentForFeature(feature)
             if (!incident) return
+
+            if (selectedIncidentId === incident.id && typeof layer.bringToFront === 'function') {
+              layer.bringToFront()
+            }
 
             layer.on({
               click: () => {
@@ -184,12 +211,7 @@ export default function ZonePolygons({
           <Rectangle
             key={incident.id}
             bounds={incidentBounds(incident)}
-            pathOptions={{
-              color: statusColor(incident.status),
-              fillColor: statusColor(incident.status),
-              fillOpacity: selected ? 0.24 : 0.12,
-              weight: selected ? 3 : 2,
-            }}
+            pathOptions={pathOptionsForIncident(incident, selected, statusColor)}
             eventHandlers={{
               click: () => {
                 if (mode === 'explore') focusIncident(incident)
