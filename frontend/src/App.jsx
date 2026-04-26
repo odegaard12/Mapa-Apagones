@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
-import { DEFAULT_GEO_DATASET_ID } from './geo/datasets'
+import { DEFAULT_GEO_DATASET_ID, getGeoDataset } from './geo/datasets'
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 
-const APP_VERSION = 'v0.7.3-geo-loader-spain-ready'
+const APP_VERSION = 'v0.7.4-geo-multidataset-state'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -172,7 +172,8 @@ export default function App() {
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
-  const [geoDatasetId] = useState(DEFAULT_GEO_DATASET_ID)
+  const [geoDatasetId, setGeoDatasetId] = useState(DEFAULT_GEO_DATASET_ID)
+  const currentGeoDataset = useMemo(() => getGeoDataset(geoDatasetId), [geoDatasetId])
   const incidentsLoadSeqRef = useRef(0)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
@@ -197,6 +198,8 @@ export default function App() {
   useEffect(() => {
     let cancelled = false
 
+    setMunicipiosGeoJson(null)
+
     loadMunicipiosGeoJson(geoDatasetId)
       .then(({ data }) => {
         if (!cancelled) setMunicipiosGeoJson(data)
@@ -210,6 +213,25 @@ export default function App() {
       cancelled = true
     }
   }, [geoDatasetId])
+
+  useEffect(() => {
+    setSelectedIncidentId(null)
+    setReportPoint(null)
+    setMessage('')
+    setMode('explore')
+    setLeftTab('incidents')
+
+    if (!mapInstance) return
+
+    if (currentGeoDataset?.maxBounds) {
+      mapInstance.fitBounds(currentGeoDataset.maxBounds, { padding: [24, 24] })
+      return
+    }
+
+    if (currentGeoDataset?.defaultCenter && Number.isFinite(currentGeoDataset?.defaultZoom)) {
+      mapInstance.setView(currentGeoDataset.defaultCenter, currentGeoDataset.defaultZoom)
+    }
+  }, [geoDatasetId, currentGeoDataset, mapInstance])
 
   useEffect(() => {
     loadIncidents()
@@ -491,8 +513,9 @@ export default function App() {
 
       <main className="map-stage">
         <MapContainer
-          center={DEFAULT_CENTER}
-          zoom={DEFAULT_ZOOM}
+          center={currentGeoDataset.defaultCenter || DEFAULT_CENTER}
+          zoom={currentGeoDataset.defaultZoom ?? DEFAULT_ZOOM}
+            maxBounds={currentGeoDataset.maxBounds}
           minZoom={6}
           zoomControl={false}
           className="map"
