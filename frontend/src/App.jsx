@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
+import { DEFAULT_GEO_DATASET_ID } from './geo/datasets'
+import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 
-const APP_VERSION = 'v0.7.2-geo-state-hardening'
+const APP_VERSION = 'v0.7.3-geo-loader-spain-ready'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -170,6 +172,7 @@ export default function App() {
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
+  const [geoDatasetId] = useState(DEFAULT_GEO_DATASET_ID)
   const incidentsLoadSeqRef = useRef(0)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
@@ -193,19 +196,20 @@ export default function App() {
 
   useEffect(() => {
     let cancelled = false
-    fetch('/data/galicia_municipios.geojson')
-      .then((res) => res.json())
-      .then((data) => {
+
+    loadMunicipiosGeoJson(geoDatasetId)
+      .then(({ data }) => {
         if (!cancelled) setMunicipiosGeoJson(data)
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error(`No se pudo cargar el dataset geográfico ${geoDatasetId}`, err)
         if (!cancelled) setMunicipiosGeoJson(null)
       })
 
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [geoDatasetId])
 
   useEffect(() => {
     loadIncidents()
