@@ -26,7 +26,24 @@ function incidentFallbackKey(incident) {
 
 function featureStableKey(feature) {
   const props = feature?.properties || {}
-  return props.zone_id || featureFallbackKey(props)
+  const datasetKey = normalizeText(props.dataset_id) || 'default'
+  const localKey = props.zone_id || featureFallbackKey(props)
+  return `${datasetKey}::${localKey}`
+}
+
+function featureMatchesIncident(feature, incident) {
+  const props = feature?.properties || {}
+
+  const featureMunicipio = normalizeText(props.municipio)
+  const featureProvince = normalizeText(props.province)
+  const incidentMunicipio = normalizeText(incident?.municipio)
+  const incidentProvince = normalizeText(incident?.province)
+
+  if (!featureMunicipio || !featureProvince || !incidentMunicipio || !incidentProvince) {
+    return false
+  }
+
+  return featureMunicipio === incidentMunicipio && featureProvince === incidentProvince
 }
 
 function shouldReplaceIncident(current, candidate, selectedIncidentId) {
@@ -74,6 +91,28 @@ function pathOptionsForIncident(incident, selected, statusColor) {
   }
 }
 
+function selectFeatureForIncident(incident, byZoneId, byMunicipioProvince) {
+  const zoneCandidates = incident?.zone_id
+    ? byZoneId.get(String(incident.zone_id)) || []
+    : []
+
+  const exactZoneMatch = zoneCandidates.find((feature) =>
+    featureMatchesIncident(feature, incident)
+  )
+  if (exactZoneMatch) return exactZoneMatch
+
+  const fallbackKey = incidentFallbackKey(incident)
+  if (fallbackKey !== '|' && byMunicipioProvince.has(fallbackKey)) {
+    return byMunicipioProvince.get(fallbackKey)
+  }
+
+  if (zoneCandidates.length === 1) {
+    return zoneCandidates[0]
+  }
+
+  return null
+}
+
 export default function ZonePolygons({
   municipiosGeoJson,
   activeVisible,
@@ -81,6 +120,7 @@ export default function ZonePolygons({
   mode,
   focusIncident,
   statusColor,
+  geoDatasetId,
 }) {
   const { activeMunicipioGeoJson, incidentByFeatureKey, matchedIncidentIds, geoJsonRenderKey } = useMemo(() => {
     if (!municipiosGeoJson?.features?.length) {
@@ -88,7 +128,7 @@ export default function ZonePolygons({
         activeMunicipioGeoJson: null,
         incidentByFeatureKey: new Map(),
         matchedIncidentIds: new Set(),
-        geoJsonRenderKey: `none::${mode || 'explore'}::${selectedIncidentId || 'none'}`,
+        geoJsonRenderKey: `${geoDatasetId || 'unknown'}::none::${mode || 'explore'}::${selectedIncidentId || 'none'}`,
       }
     }
 
@@ -99,11 +139,14 @@ export default function ZonePolygons({
       const props = feature?.properties || {}
 
       if (props.zone_id) {
-        byZoneId.set(props.zone_id, feature)
+        const zoneKey = String(props.zone_id)
+        const list = byZoneId.get(zoneKey) || []
+        list.push(feature)
+        byZoneId.set(zoneKey, list)
       }
 
       const fallbackKey = featureFallbackKey(props)
-      if (fallbackKey !== '|') {
+      if (fallbackKey !== '|' && !byMunicipioProvince.has(fallbackKey)) {
         byMunicipioProvince.set(fallbackKey, feature)
       }
     }
@@ -114,19 +157,7 @@ export default function ZonePolygons({
     const matchedIncidentIds = new Set()
 
     for (const incident of activeVisible) {
-      let feature = null
-
-      if (incident.zone_id && byZoneId.has(incident.zone_id)) {
-        feature = byZoneId.get(incident.zone_id)
-      }
-
-      if (!feature) {
-        const fallbackKey = incidentFallbackKey(incident)
-        if (fallbackKey !== '|' && byMunicipioProvince.has(fallbackKey)) {
-          feature = byMunicipioProvince.get(fallbackKey)
-        }
-      }
-
+      const feature = selectFeatureForIncident(incident, byZoneId, byMunicipioProvince)
       if (!feature) continue
 
       matchedIncidentIds.add(incident.id)
@@ -153,9 +184,9 @@ export default function ZonePolygons({
         : null,
       incidentByFeatureKey,
       matchedIncidentIds,
-      geoJsonRenderKey: `${stableKeys}::${mode || 'explore'}::${selectedIncidentId || 'none'}`,
+      geoJsonRenderKey: `${geoDatasetId || 'unknown'}::${stableKeys}::${mode || 'explore'}::${selectedIncidentId || 'none'}`,
     }
-  }, [municipiosGeoJson, activeVisible, selectedIncidentId, mode])
+  }, [municipiosGeoJson, activeVisible, selectedIncidentId, mode, geoDatasetId])
 
   const fallbackRectangles = useMemo(
     () => activeVisible.filter((incident) => !matchedIncidentIds.has(incident.id)),

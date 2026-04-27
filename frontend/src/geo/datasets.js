@@ -1,4 +1,11 @@
 export const GEO_DATASETS = {
+  all: {
+    id: 'all',
+    label: 'Toda España',
+    defaultCenter: [40.25, -3.70],
+    defaultZoom: 6,
+    maxBounds: null,
+  },
   galicia: {
     id: 'galicia',
     label: 'Galicia',
