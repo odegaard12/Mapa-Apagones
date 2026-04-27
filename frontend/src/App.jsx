@@ -11,7 +11,7 @@ import {
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 
-const APP_VERSION = 'v0.7.5-geo-asturias-v1'
+const APP_VERSION = 'v0.8.2-feedback-ready-close-fix'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -175,10 +175,205 @@ function MapClickSelector({ mode, onPick }) {
   return null
 }
 
+function FeedbackOverlay({ open, title, subtitle, steps = [], activeStep = 0, done = false }) {
+  if (!open) return null
+
+  return (
+    <>
+      <style>{`
+        @keyframes apagonesOverlayFade {
+          from { opacity: 0; transform: translateY(12px) scale(0.98); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes apagonesSpinner {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes apagonesPulse {
+          0% { transform: scale(0.9); opacity: 0.65; }
+          50% { transform: scale(1.08); opacity: 1; }
+          100% { transform: scale(0.9); opacity: 0.65; }
+        }
+        @keyframes apagonesToastIn {
+          from { opacity: 0; transform: translate(-50%, 14px) scale(0.98); }
+          to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+        }
+      `}</style>
+
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 2500,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'rgba(7, 15, 28, 0.34)',
+          backdropFilter: 'blur(6px)',
+          padding: '20px',
+        }}
+      >
+        <div
+          style={{
+            width: 'min(580px, calc(100vw - 28px))',
+            borderRadius: '24px',
+            padding: '22px',
+            color: '#fff',
+            background: 'linear-gradient(180deg, rgba(25,42,66,0.96), rgba(15,23,42,0.96))',
+            boxShadow: '0 28px 80px rgba(0,0,0,0.34)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            animation: 'apagonesOverlayFade 220ms ease-out',
+          }}
+        >
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <div
+              style={{
+                width: '50px',
+                height: '50px',
+                borderRadius: '999px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: done ? 'none' : '4px solid rgba(255,255,255,0.14)',
+                borderTopColor: done ? 'transparent' : '#60A5FA',
+                background: done ? 'linear-gradient(180deg, #22C55E, #16A34A)' : 'transparent',
+                animation: done ? 'none' : 'apagonesSpinner 1s linear infinite',
+                boxShadow: done ? '0 12px 28px rgba(34,197,94,0.28)' : 'none',
+                color: '#fff',
+                fontSize: '26px',
+                fontWeight: 800,
+                flexShrink: 0,
+              }}
+            >
+              {done ? '✓' : ''}
+            </div>
+            <div>
+              <div style={{ fontSize: '29px', fontWeight: 800, lineHeight: 1.05 }}>{title}</div>
+              <div style={{ marginTop: '7px', fontSize: '14px', lineHeight: 1.45, opacity: 0.88 }}>
+                {subtitle}
+              </div>
+            </div>
+          </div>
+
+          {steps.length ? (
+            <div style={{ marginTop: '18px', display: 'grid', gap: '10px' }}>
+              {steps.map((step, idx) => {
+                const done = idx < activeStep
+                const active = idx === activeStep
+
+                return (
+                  <div
+                    key={step}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '11px 13px',
+                      borderRadius: '15px',
+                      border: active
+                        ? '1px solid rgba(96,165,250,0.38)'
+                        : '1px solid rgba(255,255,255,0.07)',
+                      background: active
+                        ? 'rgba(96,165,250,0.14)'
+                        : 'rgba(255,255,255,0.05)',
+                      transition: 'all 180ms ease',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '26px',
+                        height: '26px',
+                        borderRadius: '999px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontWeight: 800,
+                        fontSize: '13px',
+                        color: done || active ? '#fff' : 'rgba(255,255,255,0.78)',
+                        background: done
+                          ? 'linear-gradient(180deg, #22C55E, #16A34A)'
+                          : active
+                            ? 'linear-gradient(180deg, #60A5FA, #2563EB)'
+                            : 'rgba(255,255,255,0.08)',
+                        animation: active ? 'apagonesPulse 1.2s ease-in-out infinite' : 'none',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {done ? '✓' : idx + 1}
+                    </div>
+                    <div style={{ fontSize: '14px', fontWeight: active ? 800 : 600, opacity: active ? 1 : 0.88 }}>
+                      {step}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          ) : null}
+
+          <div style={{ marginTop: '15px', fontSize: '13px', opacity: 0.76 }}>
+            {done ? 'Listo. Cerrando aviso…' : 'No recargues la página ni cambies de ámbito hasta que desaparezca este aviso.'}
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+function FloatingToast({ message, tone = 'success' }) {
+  if (!message) return null
+
+  const isError = tone === 'error'
+  const icon = isError ? '⚠️' : '✅'
+
+  return (
+    <>
+      <style>{`
+        @keyframes apagonesToastIn {
+          from { opacity: 0; transform: translate(-50%, 16px) scale(0.98); }
+          to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+        }
+      `}</style>
+
+      <div
+        style={{
+          position: 'fixed',
+          left: '50%',
+          bottom: '24px',
+          transform: 'translateX(-50%)',
+          zIndex: 2600,
+          minWidth: 'min(520px, calc(100vw - 28px))',
+          maxWidth: 'min(620px, calc(100vw - 28px))',
+          padding: '14px 18px',
+          borderRadius: '16px',
+          color: '#fff',
+          background: isError
+            ? 'linear-gradient(180deg, rgba(127,29,29,0.96), rgba(69,10,10,0.96))'
+            : 'linear-gradient(180deg, rgba(17,94,89,0.96), rgba(15,23,42,0.96))',
+          border: isError
+            ? '1px solid rgba(248,113,113,0.34)'
+            : '1px solid rgba(74,222,128,0.24)',
+          boxShadow: '0 20px 48px rgba(0,0,0,0.28)',
+          fontSize: '14px',
+          fontWeight: 700,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          animation: 'apagonesToastIn 220ms ease-out',
+          pointerEvents: 'none',
+        }}
+      >
+        <span>{icon}</span>
+        <span>{message}</span>
+      </div>
+    </>
+  )
+}
+
 export default function App() {
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
+  const [geoLoading, setGeoLoading] = useState(false)
   const [geoDatasetId, setGeoDatasetId] = useState(() => getInitialGeoDatasetId())
   const currentGeoDataset = useMemo(() => getGeoDataset(geoDatasetId), [geoDatasetId])
   const incidentsLoadSeqRef = useRef(0)
@@ -189,6 +384,8 @@ export default function App() {
   const [selectedIncidentId, setSelectedIncidentId] = useState(null)
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
+  const [toastMessage, setToastMessage] = useState('')
+  const [feedbackStage, setFeedbackStage] = useState(null)
   const [query, setQuery] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
   const [mapInstance, setMapInstance] = useState(null)
@@ -205,6 +402,7 @@ export default function App() {
   useEffect(() => {
     let cancelled = false
 
+    setGeoLoading(true)
     setMunicipiosGeoJson(null)
 
     loadMunicipiosGeoJson(geoDatasetId)
@@ -215,14 +413,13 @@ export default function App() {
         console.error(`No se pudo cargar el dataset geográfico ${geoDatasetId}`, err)
         if (!cancelled) setMunicipiosGeoJson(null)
       })
+      .finally(() => {
+        if (!cancelled) setGeoLoading(false)
+      })
 
     return () => {
       cancelled = true
     }
-  }, [geoDatasetId])
-
-  useEffect(() => {
-    syncGeoDatasetInUrl(geoDatasetId)
   }, [geoDatasetId])
 
   useEffect(() => {
@@ -249,6 +446,48 @@ export default function App() {
     const id = setInterval(loadIncidents, 30000)
     return () => clearInterval(id)
   }, [hours, statusFilter])
+
+  useEffect(() => {
+    if (loading || geoLoading || feedbackStage) {
+      setToastMessage('')
+      return
+    }
+
+    if (!message) return
+
+    setToastMessage(message)
+    const id = setTimeout(() => setToastMessage(''), 3200)
+    return () => clearTimeout(id)
+  }, [message, loading, geoLoading, feedbackStage])
+
+  useEffect(() => {
+    if (loading) {
+      setFeedbackStage('report-loading')
+      return
+    }
+
+    if (geoLoading) {
+      setFeedbackStage('geo-loading')
+      return
+    }
+
+    setFeedbackStage((current) => {
+      if (current === 'report-loading') return 'report-ready'
+      if (current === 'geo-loading') return 'geo-ready'
+      return current
+    })
+  }, [loading, geoLoading])
+
+  useEffect(() => {
+    if (feedbackStage !== 'report-ready' && feedbackStage !== 'geo-ready') return
+
+    const readyStage = feedbackStage
+    const id = setTimeout(() => {
+      setFeedbackStage((current) => (current === readyStage ? null : current))
+    }, 1000)
+
+    return () => clearTimeout(id)
+  }, [feedbackStage])
 
   const scopedIncidents = useMemo(
     () => incidents.filter((incident) => incidentBelongsToDataset(incident, currentGeoDataset)),
@@ -368,10 +607,37 @@ export default function App() {
 
         setMessage(actionMessage)
         setSelectedIncidentId(data.incident_id)
+        setLeftTab('incidents')
       }
 
       setReportPoint([data.incident.center_lat, data.incident.center_lng])
       setMode('explore')
+      setLeftTab('incidents')
+
+      if (
+        mapInstance &&
+        data.incident &&
+        Number.isFinite(Number(data.incident.lat_min)) &&
+        Number.isFinite(Number(data.incident.lat_max)) &&
+        Number.isFinite(Number(data.incident.lng_min)) &&
+        Number.isFinite(Number(data.incident.lng_max))
+      ) {
+        mapInstance.fitBounds(incidentBounds(data.incident), {
+          padding: [56, 56],
+          maxZoom: 13,
+        })
+      } else if (
+        mapInstance &&
+        data.incident &&
+        Number.isFinite(Number(data.incident.center_lat)) &&
+        Number.isFinite(Number(data.incident.center_lng))
+      ) {
+        mapInstance.setView(
+          [Number(data.incident.center_lat), Number(data.incident.center_lng)],
+          12
+        )
+      }
+
       await loadIncidents()
     } catch (err) {
       setMessage(err.message || 'Error enviando el reporte')
@@ -393,8 +659,67 @@ export default function App() {
 
   const selectedDistributor = selectedIncident ? distributorHint(selectedIncident) : null
 
+  const overlayConfig = useMemo(() => {
+    const label = currentGeoDataset?.label || 'ámbito seleccionado'
+
+    if (feedbackStage === 'report-loading') {
+      return {
+        title: 'Reportando incidencia',
+        subtitle: 'Estamos guardando el reporte, detectando el ayuntamiento y actualizando el mapa.',
+        steps: ['Guardando reporte', 'Detectando ayuntamiento', 'Actualizando mapa'],
+        activeStep: 1,
+        done: false,
+      }
+    }
+
+    if (feedbackStage === 'report-ready') {
+      return {
+        title: 'Listo',
+        subtitle: 'Incidencia enviada y mapa actualizado.',
+        steps: ['Guardando reporte', 'Detectando ayuntamiento', 'Mapa actualizado'],
+        activeStep: 3,
+        done: true,
+      }
+    }
+
+    if (feedbackStage === 'geo-loading') {
+      return {
+        title: 'Apagones Ciudadanos',
+        subtitle: `Preparando mapa y polígonos de ${label}.`,
+        steps: ['Cargando datos geográficos', 'Preparando contornos', 'Pintando mapa'],
+        activeStep: 2,
+        done: false,
+      }
+    }
+
+    if (feedbackStage === 'geo-ready') {
+      return {
+        title: 'Listo',
+        subtitle: `Mapa de ${label} preparado.`,
+        steps: ['Cargando datos geográficos', 'Preparando contornos', 'Mapa listo'],
+        activeStep: 3,
+        done: true,
+      }
+    }
+
+    return null
+  }, [feedbackStage, currentGeoDataset])
+
+  const toastTone = useMemo(() => {
+    return /error|no se pudo|selecciona/i.test(toastMessage) ? 'error' : 'success'
+  }, [toastMessage])
+
   return (
     <div className="app">
+      <FeedbackOverlay
+        open={Boolean(overlayConfig)}
+        title={overlayConfig?.title}
+        subtitle={overlayConfig?.subtitle}
+        steps={overlayConfig?.steps || []}
+        activeStep={overlayConfig?.activeStep || 0}
+        done={Boolean(overlayConfig?.done)}
+      />
+      <FloatingToast message={toastMessage} tone={toastTone} />
       <header className="topbar glass">
         <div className="brand-block">
           <div className="brand-logo">⚡</div>
@@ -530,6 +855,9 @@ export default function App() {
                   </button>
                 ))}
               </div>
+            <div style={{ marginTop: 8, fontSize: 12, opacity: 0.78, lineHeight: 1.4 }}>
+              “Toda España” te deja mover el mapa libremente. Seguimos añadiendo más comunidades y provincias con polígonos reales.
+            </div>
             </div>
           </div>
         )}
@@ -547,7 +875,6 @@ export default function App() {
           key={`map::${geoDatasetId}`}
           center={currentGeoDataset.defaultCenter || DEFAULT_CENTER}
           zoom={currentGeoDataset.defaultZoom ?? DEFAULT_ZOOM}
-          maxBounds={currentGeoDataset.maxBounds}
           minZoom={6}
           zoomControl={false}
           className="map"
@@ -574,6 +901,7 @@ export default function App() {
             mode={mode}
             focusIncident={focusIncident}
             statusColor={statusColor}
+            geoDatasetId={geoDatasetId}
           />
 
           {mode === 'report' && reportBounds && (
@@ -618,7 +946,7 @@ export default function App() {
             <div className="action-row">
               <button className="btn-secondary" onClick={enterExplore}>Cancelar</button>
               <button className="btn-primary" onClick={() => sendReport()} disabled={loading || !reportPoint}>
-                {loading ? 'Enviando...' : 'Confirmar'}
+                {loading ? 'Enviando…' : 'Confirmar'}
               </button>
             </div>
 
