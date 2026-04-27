@@ -19,6 +19,26 @@ from app.zones import ensure_zone_tables, sync_zone_for_incident, refresh_all_zo
 
 DB_PATH = os.getenv("DB_PATH", "/data/app.db")
 
+def env_bool(name: str, default: str = "0") -> bool:
+    return os.getenv(name, default).strip().lower() in {"1", "true", "yes", "on"}
+
+def env_csv(name: str, default: str) -> list[str]:
+    raw = os.getenv(name, default)
+    return [item.strip() for item in raw.split(",") if item.strip()]
+
+DEFAULT_ALLOWED_ORIGINS = ",".join([
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:8098",
+    "http://127.0.0.1:8098",
+    "http://192.168.68.103:8098",
+    "https://mapaapagones.es",
+    "https://www.mapaapagones.es",
+])
+
+ALLOWED_ORIGINS = env_csv("ALLOWED_ORIGINS", DEFAULT_ALLOWED_ORIGINS)
+DEBUG_ENDPOINTS = env_bool("DEBUG_ENDPOINTS", "0")
+
 TURNSTILE_ENABLED = os.getenv("TURNSTILE_ENABLED", "0") == "1"
 TURNSTILE_SECRET_KEY = os.getenv("TURNSTILE_SECRET_KEY", "")
 TURNSTILE_VERIFY_URL = os.getenv("TURNSTILE_VERIFY_URL", "https://challenges.cloudflare.com/turnstile/v0/siteverify")
@@ -48,9 +68,10 @@ app = FastAPI(title="Apagones Ciudadanos")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
+    allow_credentials=False,
 )
 
 class ReportIn(BaseModel):
@@ -688,6 +709,9 @@ def health():
 
 @app.get("/api/debug/incidents")
 def debug_incidents():
+    if not DEBUG_ENDPOINTS:
+        raise HTTPException(status_code=404, detail="Not found")
+
     conn = get_db()
     refresh_all_incidents(conn)
     rows = conn.execute(
