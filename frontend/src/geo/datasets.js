@@ -39,6 +39,17 @@ export const GEO_DATASETS = {
       [43.59369, -3.06963],
     ],
   },
+  castilla_leon: {
+    id: 'castilla_leon',
+    label: 'Castilla y León',
+    municipiosPath: '/data/castilla_leon_municipios.geojson',
+    defaultCenter: [41.66007, -4.42622],
+    defaultZoom: 7,
+    maxBounds: [
+      [39.93193, -7.22707],
+      [43.3882, -1.62537],
+    ],
+  },
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)

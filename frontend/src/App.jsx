@@ -11,7 +11,7 @@ import {
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 
-const APP_VERSION = 'v0.8.2-feedback-ready-close-fix'
+const APP_VERSION = 'v0.9.0-geo-north-cyl'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
