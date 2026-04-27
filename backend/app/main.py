@@ -55,6 +55,9 @@ NEW_ZONE_COOLDOWN_SEC = 180
 NEW_INCIDENT_COOLDOWN_SEC = 180
 ABUSE_LIMIT_PER_HOUR = 16
 INCIDENT_LOOKBACK_HOURS = 8
+MAX_API_HOURS = 48
+DEFAULT_API_LIMIT = 250
+MAX_API_LIMIT = 500
 
 IGN_WFS_URL = os.getenv("IGN_WFS_URL", "https://www.ign.es/wfs-inspire/unidades-administrativas")
 IGN_WFS_TIMEOUT = float(os.getenv("IGN_WFS_TIMEOUT", "12"))
@@ -306,6 +309,57 @@ def assert_not_rate_limited(conn, token_hash: str, ip_hash: str):
     ).fetchone()
     if row["c"] >= ABUSE_LIMIT_PER_HOUR:
         raise HTTPException(status_code=429, detail="Límite temporal alcanzado. Espera un poco y vuelve a intentarlo.")
+
+def clamp_int(value: int, default: int, min_value: int, max_value: int) -> int:
+    try:
+        parsed = int(value)
+    except Exception:
+        parsed = default
+    return max(min_value, min(parsed, max_value))
+
+def parse_bbox_query(value: Optional[str]) -> Optional[Tuple[float, float, float, float]]:
+    if not value:
+        return None
+
+    try:
+        parts = [float(item.strip()) for item in value.split(",")]
+    except Exception:
+        raise HTTPException(status_code=400, detail="bbox inválido. Usa minLng,minLat,maxLng,maxLat.")
+
+    if len(parts) != 4:
+        raise HTTPException(status_code=400, detail="bbox inválido. Usa minLng,minLat,maxLng,maxLat.")
+
+    min_lng, min_lat, max_lng, max_lat = parts
+
+    if not (-180 <= min_lng <= 180 and -180 <= max_lng <= 180 and -90 <= min_lat <= 90 and -90 <= max_lat <= 90):
+        raise HTTPException(status_code=400, detail="bbox fuera de rango.")
+
+    if min_lng >= max_lng or min_lat >= max_lat:
+        raise HTTPException(status_code=400, detail="bbox inválido: min debe ser menor que max.")
+
+    return min_lng, min_lat, max_lng, max_lat
+
+def bbox_overlaps(
+    item_lat_min: Optional[float],
+    item_lat_max: Optional[float],
+    item_lng_min: Optional[float],
+    item_lng_max: Optional[float],
+    bbox: Optional[Tuple[float, float, float, float]],
+) -> bool:
+    if not bbox:
+        return True
+
+    if None in (item_lat_min, item_lat_max, item_lng_min, item_lng_max):
+        return True
+
+    min_lng, min_lat, max_lng, max_lat = bbox
+
+    return not (
+        float(item_lng_max) < min_lng
+        or float(item_lng_min) > max_lng
+        or float(item_lat_max) < min_lat
+        or float(item_lat_min) > max_lat
+    )
 
 def build_display_zone(municipio: Optional[str], province: Optional[str]) -> str:
     if municipio and province:
@@ -755,41 +809,51 @@ def debug_incidents():
     return {"items": out, "summary": summary}
 
 @app.get("/api/incidents")
-def incidents(hours: int = 24, include_resolved: int = 0):
-    hours = max(1, min(hours, 48))
+def incidents(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None, limit: int = DEFAULT_API_LIMIT):
+    hours = clamp_int(hours, 24, 1, MAX_API_HOURS)
+    limit = clamp_int(limit, DEFAULT_API_LIMIT, 1, MAX_API_LIMIT)
+    bbox_filter = parse_bbox_query(bbox)
+
     conn = get_db()
     refresh_all_incidents(conn)
     cutoff = iso(utcnow() - timedelta(hours=hours))
 
+    where = ["last_report_at >= ?"]
+    params: list[object] = [cutoff]
+
     if include_resolved:
-        rows = conn.execute(
-            """
-            SELECT *
-            FROM incidents
-            WHERE last_report_at >= ?
-              AND (report_count_active > 0 OR status = 'resuelta')
-            ORDER BY report_count_active DESC, last_report_at DESC
-            """,
-            (cutoff,),
-        ).fetchall()
+        where.append("(report_count_active > 0 OR status = 'resuelta')")
     else:
-        rows = conn.execute(
-            """
-            SELECT *
-            FROM incidents
-            WHERE last_report_at >= ?
-              AND report_count_active > 0
-            ORDER BY report_count_active DESC, last_report_at DESC
-            """,
-            (cutoff,),
-        ).fetchall()
+        where.append("report_count_active > 0")
+
+    if bbox_filter:
+        min_lng, min_lat, max_lng, max_lat = bbox_filter
+        where.append("lng_max >= ? AND lng_min <= ? AND lat_max >= ? AND lat_min <= ?")
+        params.extend([min_lng, max_lng, min_lat, max_lat])
+
+    params.append(limit)
+
+    rows = conn.execute(
+        f"""
+        SELECT *
+        FROM incidents
+        WHERE {' AND '.join(where)}
+        ORDER BY report_count_active DESC, last_report_at DESC
+        LIMIT ?
+        """,
+        params,
+    ).fetchall()
 
     out = [dict(r) for r in rows]
     conn.close()
-    return {"items": out}
+    return {"items": out, "limit": limit, "hours": hours}
 
 @app.get("/api/zones")
-def zones(hours: int = 24, include_resolved: int = 0):
+def zones(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None, limit: int = DEFAULT_API_LIMIT):
+    hours = clamp_int(hours, 24, 1, MAX_API_HOURS)
+    limit = clamp_int(limit, DEFAULT_API_LIMIT, 1, MAX_API_LIMIT)
+    bbox_filter = parse_bbox_query(bbox)
+
     conn = get_db()
     refresh_all_incidents(conn)
 
@@ -797,6 +861,15 @@ def zones(hours: int = 24, include_resolved: int = 0):
     items = []
 
     for z in raw_items:
+        if not bbox_overlaps(
+            z["bbox_min_lat"],
+            z["bbox_max_lat"],
+            z["bbox_min_lng"],
+            z["bbox_max_lng"],
+            bbox_filter,
+        ):
+            continue
+
         latest_incident = conn.execute(
             """
             SELECT primary_type, status, last_report_at
@@ -830,13 +903,16 @@ def zones(hours: int = 24, include_resolved: int = 0):
             "zone_id": z["id"],
         })
 
+        if len(items) >= limit:
+            break
+
     summary = {
         "active_zones": sum(1 for i in items if int(i.get("report_count_active", 0)) > 0),
         "confirmations": sum(int(i.get("report_count_active", 0)) for i in items),
     }
 
     conn.close()
-    return {"items": items, "summary": summary}
+    return {"items": items, "summary": summary, "limit": limit, "hours": hours}
 
 
 @app.post("/api/report")

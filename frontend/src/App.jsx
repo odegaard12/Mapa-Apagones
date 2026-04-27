@@ -89,6 +89,20 @@ function statusColor(status) {
   }[status] || '#4F8CFF'
 }
 
+function mapBoundsToBboxParam(map) {
+  if (!map || typeof map.getBounds !== 'function') return null
+
+  const bounds = map.getBounds()
+  const west = bounds.getWest()
+  const south = bounds.getSouth()
+  const east = bounds.getEast()
+  const north = bounds.getNorth()
+
+  if (![west, south, east, north].every(Number.isFinite)) return null
+
+  return [west, south, east, north].map((value) => value.toFixed(5)).join(',')
+}
+
 function reportWord(n) {
   return Number(n) === 1 ? 'confirmación' : 'confirmaciones'
 }
@@ -399,7 +413,16 @@ export default function App() {
   async function loadIncidents() {
     const seq = ++incidentsLoadSeqRef.current
     const includeResolved = statusFilter === 'resuelta' ? 1 : 0
-    const res = await fetch(`/api/zones?hours=${hours}&include_resolved=${includeResolved}`)
+    const params = new URLSearchParams({
+      hours: String(hours),
+      include_resolved: String(includeResolved),
+      limit: '500',
+    })
+
+    const bbox = mapBoundsToBboxParam(mapInstance)
+    if (bbox) params.set('bbox', bbox)
+
+    const res = await fetch(`/api/zones?${params.toString()}`)
     const data = await res.json()
     if (seq !== incidentsLoadSeqRef.current) return
     setIncidents(Array.isArray(data.items) ? data.items : [])
@@ -451,7 +474,20 @@ export default function App() {
     loadIncidents()
     const id = setInterval(loadIncidents, 30000)
     return () => clearInterval(id)
-  }, [hours, statusFilter])
+  }, [hours, statusFilter, mapInstance])
+
+  useEffect(() => {
+    if (!mapInstance) return undefined
+
+    const refreshVisibleIncidents = () => loadIncidents()
+    mapInstance.on('moveend', refreshVisibleIncidents)
+    mapInstance.on('zoomend', refreshVisibleIncidents)
+
+    return () => {
+      mapInstance.off('moveend', refreshVisibleIncidents)
+      mapInstance.off('zoomend', refreshVisibleIncidents)
+    }
+  }, [mapInstance, hours, statusFilter])
 
   useEffect(() => {
     if (loading || geoLoading || feedbackStage) {
