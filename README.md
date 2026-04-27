@@ -10,6 +10,18 @@ Estado actual:
 
     Prelanzamiento técnico. Todavía no está desplegado en el dominio público.
 
+## Identidad pública
+
+Antes de seguir con mejoras técnicas, este repositorio deja clara la identidad pública del proyecto:
+
+- Nombre público: Mapa Apagones.
+- Dominio previsto: mapaapagones.es.
+- Estado actual: prelanzamiento técnico, todavía sin despliegue público en el dominio.
+- Principios de privacidad: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin mostrar viviendas exactas.
+- Licencia: MIT.
+- Cómo puede ayudar otra gente: privacidad, seguridad anti-abuso, accesibilidad, UX móvil, documentación, despliegue y nuevas comunidades autónomas.
+- Qué no debe subirse nunca: .env reales, claves, tokens, bases de datos, backups, logs con datos sensibles ni credenciales.
+
 ## Objetivo
 
 Crear un mapa ciudadano, sencillo y respetuoso con la privacidad para visualizar zonas donde varias personas reportan incidencias eléctricas.

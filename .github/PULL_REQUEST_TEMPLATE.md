@@ -13,8 +13,6 @@
 
 ## Privacidad / seguridad
 
-Marca lo que aplique:
-
 - [ ] No añade cuentas.
 - [ ] No pide CUPS.
 - [ ] No añade texto libre.
@@ -25,9 +23,5 @@ Marca lo que aplique:
 - [ ] Mantiene o mejora rate limiting / anti-abuso.
 
 ## Riesgos
-
--
-
-## Capturas, si aplica
 
 -
