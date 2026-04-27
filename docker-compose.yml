@@ -3,6 +3,9 @@ services:
     build: ./backend
     container_name: apagones_backend
     restart: unless-stopped
+    environment:
+      TURNSTILE_ENABLED: "${TURNSTILE_ENABLED:-0}"
+      TURNSTILE_SECRET_KEY: "${TURNSTILE_SECRET_KEY:-}"
     volumes:
       - ./data:/data
 

@@ -1,4 +1,5 @@
 import hashlib
+import json
 import math
 import os
 import sqlite3
@@ -17,6 +18,11 @@ from pydantic import BaseModel, Field
 from app.zones import ensure_zone_tables, sync_zone_for_incident, refresh_all_zones, get_zone_items
 
 DB_PATH = os.getenv("DB_PATH", "/data/app.db")
+
+TURNSTILE_ENABLED = os.getenv("TURNSTILE_ENABLED", "0") == "1"
+TURNSTILE_SECRET_KEY = os.getenv("TURNSTILE_SECRET_KEY", "")
+TURNSTILE_VERIFY_URL = os.getenv("TURNSTILE_VERIFY_URL", "https://challenges.cloudflare.com/turnstile/v0/siteverify")
+TURNSTILE_TIMEOUT = float(os.getenv("TURNSTILE_TIMEOUT", "5"))
 
 GRID_SIZE_M = 1600
 MATCH_INCIDENT_RADIUS_M = 1600
@@ -52,6 +58,7 @@ class ReportIn(BaseModel):
     lng: float = Field(ge=-19.0, le=5.0)
     type: str
     token: str = Field(min_length=16, max_length=128)
+    turnstile_token: Optional[str] = Field(default=None, max_length=4096)
 
 def utcnow() -> datetime:
     return datetime.now(timezone.utc)
@@ -79,6 +86,44 @@ def client_ip(request: FastAPIRequest) -> str:
     if request.client and request.client.host:
         return request.client.host
     return "unknown"
+
+def verify_turnstile_or_403(turnstile_token: Optional[str], request: FastAPIRequest) -> None:
+    if not TURNSTILE_ENABLED:
+        return
+
+    if not TURNSTILE_SECRET_KEY:
+        raise HTTPException(status_code=500, detail="Turnstile no está configurado.")
+
+    if not turnstile_token or not turnstile_token.strip():
+        raise HTTPException(status_code=403, detail="Verificación anti-abuso requerida.")
+
+    form = urlencode(
+        {
+            "secret": TURNSTILE_SECRET_KEY,
+            "response": turnstile_token.strip(),
+            "remoteip": client_ip(request),
+        }
+    ).encode("utf-8")
+
+    req = Request(
+        TURNSTILE_VERIFY_URL,
+        data=form,
+        headers={
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json",
+            "User-Agent": "ApagonesCiudadanos/turnstile",
+        },
+        method="POST",
+    )
+
+    try:
+        with urlopen(req, timeout=TURNSTILE_TIMEOUT) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+    except Exception:
+        raise HTTPException(status_code=403, detail="No se pudo validar la verificación anti-abuso.")
+
+    if not result.get("success"):
+        raise HTTPException(status_code=403, detail="Verificación anti-abuso fallida.")
 
 def haversine_m(lat1, lng1, lat2, lng2):
     p1 = math.radians(lat1)
@@ -774,6 +819,8 @@ def zones(hours: int = 24, include_resolved: int = 0):
 def report(payload: ReportIn, request: FastAPIRequest):
     if payload.type not in ALLOWED_TYPES:
         raise HTTPException(status_code=400, detail="Tipo de reporte inválido")
+
+    verify_turnstile_or_403(payload.turnstile_token, request)
 
     conn = get_db()
     cleanup_old(conn)

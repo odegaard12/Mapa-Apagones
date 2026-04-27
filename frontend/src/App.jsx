@@ -12,6 +12,11 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 
 const APP_VERSION = 'v0.9.0-geo-north-cyl'
+
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
+const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
+const TURNSTILE_SCRIPT_ID = 'cf-turnstile-script'
+const TURNSTILE_WIDGET_ID = 'turnstile-report-widget'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -381,6 +386,7 @@ export default function App() {
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
   const [reportPoint, setReportPoint] = useState(null)
+  const [turnstileToken, setTurnstileToken] = useState('')
   const [selectedIncidentId, setSelectedIncidentId] = useState(null)
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
@@ -565,9 +571,73 @@ export default function App() {
     }
   }
 
+  useEffect(() => {
+    if (!TURNSTILE_ENABLED || mode !== 'report') return
+
+    if (!document.getElementById(TURNSTILE_SCRIPT_ID)) {
+      const script = document.createElement('script')
+      script.id = TURNSTILE_SCRIPT_ID
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+      script.async = true
+      script.defer = true
+      document.head.appendChild(script)
+    }
+  }, [mode])
+
+  useEffect(() => {
+    if (!TURNSTILE_ENABLED || mode !== 'report') {
+      setTurnstileToken('')
+      return
+    }
+
+    let stopped = false
+
+    const renderWidget = () => {
+      if (stopped || !window.turnstile) return
+
+      const element = document.getElementById(TURNSTILE_WIDGET_ID)
+      if (!element || element.dataset.rendered === '1') return
+
+      window.turnstile.render(element, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token) => setTurnstileToken(token || ''),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      })
+
+      element.dataset.rendered = '1'
+    }
+
+    renderWidget()
+    const timer = window.setInterval(renderWidget, 250)
+
+    return () => {
+      stopped = true
+      window.clearInterval(timer)
+      setTurnstileToken('')
+    }
+  }, [mode])
+
+  function resetTurnstileChallenge() {
+    setTurnstileToken('')
+
+    if (!TURNSTILE_ENABLED || !window.turnstile) return
+
+    try {
+      window.turnstile.reset()
+    } catch {
+      // El widget puede no existir si estamos en local o se desmontó el panel.
+    }
+  }
+
   async function sendReport(pointOverride = null, typeOverride = null) {
     const point = pointOverride || reportPoint
     const type = typeOverride || reportType
+
+    if (TURNSTILE_ENABLED && !turnstileToken) {
+      setMessage('Completa la verificación anti-abuso antes de enviar.')
+      return
+    }
 
     if (!point) {
       setMessage('Selecciona una zona del mapa.')
@@ -586,6 +656,7 @@ export default function App() {
           lng: point[1],
           type,
           token: getToken(),
+          turnstile_token: TURNSTILE_ENABLED ? turnstileToken : null,
         }),
       })
 
@@ -642,6 +713,7 @@ export default function App() {
     } catch (err) {
       setMessage(err.message || 'Error enviando el reporte')
     } finally {
+      resetTurnstileChallenge()
       setLoading(false)
     }
   }
@@ -943,9 +1015,18 @@ export default function App() {
               ))}
             </div>
 
+            {TURNSTILE_ENABLED ? (
+              <div className="turnstile-box">
+                <div id={TURNSTILE_WIDGET_ID} />
+                {!turnstileToken ? (
+                  <p className="turnstile-hint">Verificación anti-abuso requerida para enviar.</p>
+                ) : null}
+              </div>
+            ) : null}
+
             <div className="action-row">
               <button className="btn-secondary" onClick={enterExplore}>Cancelar</button>
-              <button className="btn-primary" onClick={() => sendReport()} disabled={loading || !reportPoint}>
+              <button className="btn-primary" onClick={() => sendReport()} disabled={loading || !reportPoint || (TURNSTILE_ENABLED && !turnstileToken)}>
                 {loading ? 'Enviando…' : 'Confirmar'}
               </button>
             </div>
@@ -1003,7 +1084,12 @@ export default function App() {
               </button>
               <button
                 className="btn-green"
-                onClick={() => sendReport([selectedIncident.center_lat, selectedIncident.center_lng], 'vuelve')}
+                onClick={() => {
+                  setMode('report')
+                  setReportType('vuelve')
+                  setReportPoint([selectedIncident.center_lat, selectedIncident.center_lng])
+                  setMessage('')
+                }}
               >
                 Ya volvió
               </button>
