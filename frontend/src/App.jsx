@@ -1,10 +1,17 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
-import { DEFAULT_GEO_DATASET_ID, getGeoDataset } from './geo/datasets'
+import {
+  DEFAULT_GEO_DATASET_ID,
+  GEO_DATASET_LIST,
+  getGeoDataset,
+  getInitialGeoDatasetId,
+  syncGeoDatasetInUrl,
+} from './geo/datasets'
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
+import { incidentBelongsToDataset } from './geo/incidentScope'
 
-const APP_VERSION = 'v0.7.4-geo-multidataset-state'
+const APP_VERSION = 'v0.7.5-geo-asturias-v1'
 const GRID_SIZE_M = 1600
 const EARTH_R = 6378137
 const DEFAULT_CENTER = [42.67, -8.71]
@@ -172,7 +179,7 @@ export default function App() {
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
-  const [geoDatasetId, setGeoDatasetId] = useState(DEFAULT_GEO_DATASET_ID)
+  const [geoDatasetId, setGeoDatasetId] = useState(() => getInitialGeoDatasetId())
   const currentGeoDataset = useMemo(() => getGeoDataset(geoDatasetId), [geoDatasetId])
   const incidentsLoadSeqRef = useRef(0)
   const [mode, setMode] = useState('explore')
@@ -215,6 +222,10 @@ export default function App() {
   }, [geoDatasetId])
 
   useEffect(() => {
+    syncGeoDatasetInUrl(geoDatasetId)
+  }, [geoDatasetId])
+
+  useEffect(() => {
     setSelectedIncidentId(null)
     setReportPoint(null)
     setMessage('')
@@ -239,8 +250,13 @@ export default function App() {
     return () => clearInterval(id)
   }, [hours, statusFilter])
 
+  const scopedIncidents = useMemo(
+    () => incidents.filter((incident) => incidentBelongsToDataset(incident, currentGeoDataset)),
+    [incidents, currentGeoDataset]
+  )
+
   const filteredIncidents = useMemo(() => {
-    let rows = [...incidents]
+    let rows = [...scopedIncidents]
 
     if (statusFilter !== 'all') {
       rows = rows.filter((i) => i.status === statusFilter)
@@ -268,7 +284,7 @@ export default function App() {
     })
 
     return rows
-  }, [incidents, statusFilter, query])
+  }, [scopedIncidents, statusFilter, query])
 
   const activeVisible = useMemo(
     () => filteredIncidents.filter((i) => Number(i.report_count_active || 0) > 0),
@@ -500,6 +516,21 @@ export default function App() {
                 ))}
               </div>
             </div>
+
+            <div className="filter-group">
+              <label>Ámbito geográfico</label>
+              <div className="chip-row">
+                {GEO_DATASET_LIST.map((dataset) => (
+                  <button
+                    key={dataset.id}
+                    className={`chip ${geoDatasetId === dataset.id ? 'active' : ''}`}
+                    onClick={() => setGeoDatasetId(dataset.id)}
+                  >
+                    {dataset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
@@ -513,9 +544,10 @@ export default function App() {
 
       <main className="map-stage">
         <MapContainer
+          key={`map::${geoDatasetId}`}
           center={currentGeoDataset.defaultCenter || DEFAULT_CENTER}
           zoom={currentGeoDataset.defaultZoom ?? DEFAULT_ZOOM}
-            maxBounds={currentGeoDataset.maxBounds}
+          maxBounds={currentGeoDataset.maxBounds}
           minZoom={6}
           zoomControl={false}
           className="map"
