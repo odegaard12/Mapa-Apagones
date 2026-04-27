@@ -1,9 +1,11 @@
 import re
 import sqlite3
+import unicodedata
 
 
 def _slug(value: str) -> str:
-    value = (value or "").strip().lower()
+    value = unicodedata.normalize("NFKD", (value or "").strip().lower())
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = re.sub(r"[^a-z0-9]+", "-", value)
     return value.strip("-") or "unknown"
 
