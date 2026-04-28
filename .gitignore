@@ -11,3 +11,14 @@ private_legal/
 .env.*
 !*.env.example
 frontend/public/data/galicia_municipios_raw.geojson
+data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+!.env.example

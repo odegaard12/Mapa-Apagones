@@ -10,6 +10,12 @@ services:
       DEBUG_ENDPOINTS: ${DEBUG_ENDPOINTS:-0}
     volumes:
       - ./data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import json,sys,urllib.request; r=urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3); data=json.loads(r.read().decode()); sys.exit(0 if r.status == 200 and data.get('ok') is True else 1)\""]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
 
   web:
     build: ./frontend
@@ -19,3 +25,9 @@ services:
       - backend
     ports:
       - "8098:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/api/health | grep -q '\"ok\":true'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
