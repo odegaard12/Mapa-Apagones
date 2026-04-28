@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.9.7.4-turnstile-managed
+
+- Hotfix de Turnstile para widget Managed/Gestionado.
+- Sustituye `size: invisible` por `flexible`/`compact` según pantalla.
+- Mantiene `execution: execute` para lanzar la comprobación al confirmar.
+- Usa `appearance: interaction-only` para que solo aparezca si Cloudflare necesita interacción.
+- Mejora compatibilidad en PC, iPhone/Safari y móviles pequeños.
+- Amplía el margen de espera de Turnstile antes de mostrar error.
+
 ## v0.9.7.3-ios-turnstile-submit
 
 - Hotfix del flujo de reporte en iPhone/Safari.

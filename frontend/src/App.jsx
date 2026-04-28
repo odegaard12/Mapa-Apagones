@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7.3-ios-turnstile-submit'
+const APP_VERSION = 'v0.9.7.4-turnstile-managed'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -650,10 +650,16 @@ const [mode, setMode] = useState('explore')
       const element = document.getElementById(TURNSTILE_WIDGET_ID)
       if (!element || element.dataset.rendered === '1') return
 
+      const turnstileSize =
+        window.matchMedia && window.matchMedia('(max-width: 390px)').matches
+          ? 'compact'
+          : 'flexible'
+
       turnstileWidgetRef.current = window.turnstile.render(element, {
         sitekey: TURNSTILE_SITE_KEY,
         theme: 'light',
-        size: 'invisible',
+        size: turnstileSize,
+        appearance: 'interaction-only',
         execution: 'execute',
         callback: (token) => {
           const cleanToken = token || ''
@@ -714,7 +720,7 @@ const [mode, setMode] = useState('explore')
   function startTurnstileSubmit(point, type) {
     pendingReportRef.current = { point, type }
     setTurnstilePending(true)
-    setMessage('Preparando reporte…')
+    setMessage('Preparando reporte seguro…')
 
     const startedAt = Date.now()
     let executed = false
@@ -733,15 +739,15 @@ const [mode, setMode] = useState('explore')
             setTurnstilePending(false)
             setTurnstileToken('')
             resetTurnstileChallenge()
-            setMessage('No se pudo iniciar el reporte. Inténtalo de nuevo.')
-          }, 12000)
+            setMessage('No se pudo completar la protección del reporte. Inténtalo de nuevo.')
+          }, 30000)
 
           window.turnstile.execute(turnstileWidgetRef.current)
         } catch {
           pendingReportRef.current = null
           setTurnstilePending(false)
           clearTurnstileSubmitTimeout()
-          setMessage('No se pudo iniciar el reporte. Inténtalo de nuevo.')
+          setMessage('No se pudo completar la protección del reporte. Inténtalo de nuevo.')
         }
         return
       }
@@ -753,7 +759,7 @@ const [mode, setMode] = useState('explore')
 
       pendingReportRef.current = null
       setTurnstilePending(false)
-      setMessage('No se pudo preparar el reporte. Recarga la página e inténtalo de nuevo.')
+      setMessage('No se pudo preparar la protección del reporte. Recarga la página e inténtalo de nuevo.')
     }
 
     tryExecute()

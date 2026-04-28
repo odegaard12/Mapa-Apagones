@@ -2581,3 +2581,49 @@ body,
     font-size: 0.74rem !important;
   }
 }
+
+/* v0.9.7.4 - Turnstile managed/flexible without clipping */
+.turnstile-box {
+  width: min(100%, 340px);
+  max-width: 100%;
+  min-height: 22px;
+  margin: 8px auto 4px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.turnstile-box > div {
+  max-width: 100%;
+  overflow: visible;
+}
+
+.turnstile-box iframe {
+  max-width: 100% !important;
+}
+
+.turnstile-hint {
+  margin: 4px 0 0;
+  text-align: center;
+  font-size: .72rem;
+  line-height: 1.25;
+  color: rgba(71, 85, 105, .86);
+}
+
+.turnstile-hint.ok {
+  color: rgba(22, 101, 52, .82);
+}
+
+@media (max-width: 390px) {
+  .turnstile-box {
+    width: min(100%, 180px);
+    margin-top: 6px;
+  }
+
+  .turnstile-hint {
+    font-size: .68rem;
+  }
+}
