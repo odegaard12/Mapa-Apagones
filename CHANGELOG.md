@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.9.7.5-turnstile-soft-fallback
+
+- Hotfix de estabilidad para reportes cuando Turnstile queda bloqueado por navegador, CSP, tracking prevention o estado interno del iframe.
+- Turnstile sigue activo como protección principal.
+- Si Turnstile no devuelve token, el reporte continúa con protección local y rate limiting del backend.
+- Evita que el botón quede colgado en “Enviando…” o “Preparando…”.
+- Mantiene privacidad: no añade cuentas, CUPS, fotos ni texto libre.
+
 ## v0.9.7.4-turnstile-managed
 
 - Hotfix de Turnstile para widget Managed/Gestionado.
