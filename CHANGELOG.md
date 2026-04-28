@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.9.7.1-render-hotfix
+
+Fecha: 2026-04-28
+
+### Hotfix
+
+- Corrige un posible fallo de render tras la versión v0.9.7.
+- Mueve la autolimpieza de mensajes después de inicializar el estado `message`.
+- Mantiene el cierre automático de mensajes de éxito.
+- Mantiene Turnstile invisible activo.
+- No cambia backend, datos ni configuración de Cloudflare.
+
 ## v0.9.7-report-feedback
 
 Fecha: 2026-04-28

@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7-report-feedback'
+const APP_VERSION = 'v0.9.7.1-render-hotfix'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -399,6 +399,15 @@ export default function App() {
   const incidentsLoadSeqRef = useRef(0)
   const turnstileWidgetRef = useRef(null)
   const pendingReportRef = useRef(null)
+const [mode, setMode] = useState('explore')
+  const [leftTab, setLeftTab] = useState('incidents')
+  const [reportType, setReportType] = useState('sin_luz')
+  const [reportPoint, setReportPoint] = useState(null)
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstilePending, setTurnstilePending] = useState(false)
+  const [selectedIncidentId, setSelectedIncidentId] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     if (!message) return undefined
@@ -409,15 +418,7 @@ export default function App() {
 
     return () => window.clearTimeout(timeout)
   }, [message])
-  const [mode, setMode] = useState('explore')
-  const [leftTab, setLeftTab] = useState('incidents')
-  const [reportType, setReportType] = useState('sin_luz')
-  const [reportPoint, setReportPoint] = useState(null)
-  const [turnstileToken, setTurnstileToken] = useState('')
-  const [turnstilePending, setTurnstilePending] = useState(false)
-  const [selectedIncidentId, setSelectedIncidentId] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [message, setMessage] = useState('')
+
   const [toastMessage, setToastMessage] = useState('')
   const [feedbackStage, setFeedbackStage] = useState(null)
   const [query, setQuery] = useState('')
