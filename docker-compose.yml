@@ -6,7 +6,7 @@ services:
     environment:
       TURNSTILE_ENABLED: ${TURNSTILE_ENABLED:-0}
       TURNSTILE_SECRET_KEY: ${TURNSTILE_SECRET_KEY:-}
-      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173,http://localhost:8098,http://127.0.0.1:8098,http://192.168.68.103:8098,https://mapaapagones.es,https://www.mapaapagones.es}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173,http://localhost:8098,http://127.0.0.1:8098,http://192.168.68.103:8098,https://mapa-apagones.es,https://www.mapa-apagones.es}
       DEBUG_ENDPOINTS: ${DEBUG_ENDPOINTS:-0}
     volumes:
       - ./data:/data

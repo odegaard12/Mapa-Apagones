@@ -32,8 +32,8 @@ DEFAULT_ALLOWED_ORIGINS = ",".join([
     "http://localhost:8098",
     "http://127.0.0.1:8098",
     "http://192.168.68.103:8098",
-    "https://mapaapagones.es",
-    "https://www.mapaapagones.es",
+    "https://mapa-apagones.es",
+    "https://www.mapa-apagones.es",
 ])
 
 ALLOWED_ORIGINS = env_csv("ALLOWED_ORIGINS", DEFAULT_ALLOWED_ORIGINS)
