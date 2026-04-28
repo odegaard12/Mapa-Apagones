@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.5-mobile-usability'
+const APP_VERSION = 'v0.9.6-invisible-turnstile'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -397,6 +397,8 @@ export default function App() {
   const [geoDatasetId, setGeoDatasetId] = useState(() => getInitialGeoDatasetId())
   const currentGeoDataset = useMemo(() => getGeoDataset(geoDatasetId), [geoDatasetId])
   const incidentsLoadSeqRef = useRef(0)
+  const turnstileWidgetRef = useRef(null)
+  const pendingReportRef = useRef(null)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
@@ -635,13 +637,27 @@ export default function App() {
       const element = document.getElementById(TURNSTILE_WIDGET_ID)
       if (!element || element.dataset.rendered === '1') return
 
-      window.turnstile.render(element, {
+      turnstileWidgetRef.current = window.turnstile.render(element, {
         sitekey: TURNSTILE_SITE_KEY,
         theme: 'light',
-        size: window.matchMedia('(max-width: 860px)').matches ? 'compact' : 'normal',
-        callback: (token) => setTurnstileToken(token || ''),
+        size: 'invisible',
+        execution: 'execute',
+        callback: (token) => {
+          const cleanToken = token || ''
+          setTurnstileToken(cleanToken)
+
+          const pending = pendingReportRef.current
+          if (pending && cleanToken) {
+            pendingReportRef.current = null
+            sendReport(pending.point, pending.type, cleanToken)
+          }
+        },
         'expired-callback': () => setTurnstileToken(''),
-        'error-callback': () => setTurnstileToken(''),
+        'error-callback': () => {
+          pendingReportRef.current = null
+          setTurnstileToken('')
+          setMessage('No se pudo completar la verificación anti-abuso.')
+        },
       })
 
       element.dataset.rendered = '1'
@@ -663,23 +679,35 @@ export default function App() {
     if (!TURNSTILE_ENABLED || !window.turnstile) return
 
     try {
-      window.turnstile.reset()
+      window.turnstile.reset(turnstileWidgetRef.current)
     } catch {
       // El widget puede no existir si estamos en local o se desmontó el panel.
     }
   }
 
-  async function sendReport(pointOverride = null, typeOverride = null) {
+  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null) {
     const point = pointOverride || reportPoint
     const type = typeOverride || reportType
-
-    if (TURNSTILE_ENABLED && !turnstileToken) {
-      setMessage('Completa la verificación anti-abuso antes de enviar.')
-      return
-    }
+    const effectiveTurnstileToken = turnstileTokenOverride || turnstileToken
 
     if (!point) {
       setMessage('Selecciona una zona del mapa.')
+      return
+    }
+
+    if (TURNSTILE_ENABLED && !effectiveTurnstileToken) {
+      if (window.turnstile && turnstileWidgetRef.current !== null) {
+        pendingReportRef.current = { point, type }
+        setMessage('Verificando anti-abuso…')
+        try {
+          window.turnstile.execute(turnstileWidgetRef.current)
+        } catch {
+          pendingReportRef.current = null
+          setMessage('No se pudo iniciar la verificación anti-abuso.')
+        }
+      } else {
+        setMessage('Cargando verificación anti-abuso. Inténtalo de nuevo en unos segundos.')
+      }
       return
     }
 
@@ -695,7 +723,7 @@ export default function App() {
           lng: point[1],
           type,
           token: getToken(),
-          turnstile_token: TURNSTILE_ENABLED ? turnstileToken : null,
+          turnstile_token: TURNSTILE_ENABLED ? effectiveTurnstileToken : null,
         }),
       })
 
@@ -1058,14 +1086,14 @@ export default function App() {
               <div className="turnstile-box">
                 <div id={TURNSTILE_WIDGET_ID} />
                 {!turnstileToken ? (
-                  <p className="turnstile-hint">Verificación anti-abuso requerida para enviar.</p>
+                  <p className="turnstile-hint">Protección anti-abuso activa.</p>
                 ) : null}
               </div>
             ) : null}
 
             <div className="action-row">
               <button className="btn-secondary" onClick={enterExplore}>Cancelar</button>
-              <button className="btn-primary" onClick={() => sendReport()} disabled={loading || !reportPoint || (TURNSTILE_ENABLED && !turnstileToken)}>
+              <button className="btn-primary" onClick={() => sendReport()} disabled={loading || !reportPoint}>
                 {loading ? 'Enviando…' : 'Confirmar'}
               </button>
             </div>
