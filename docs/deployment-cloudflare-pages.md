@@ -4,8 +4,8 @@ Mapa Apagones está preparado para separar frontend y API.
 
 ## Objetivo
 
-- `mapaapagones.es` y `www.mapaapagones.es`: frontend en Cloudflare Pages.
-- `api.mapaapagones.es`: API FastAPI en Raspberry Pi mediante Cloudflare Tunnel.
+- `mapa-apagones.es` y `www.mapa-apagones.es`: frontend en Cloudflare Pages.
+- `api.mapa-apagones.es`: API FastAPI en Raspberry Pi mediante Cloudflare Tunnel.
 
 ## Configuración de Cloudflare Pages
 
@@ -17,7 +17,7 @@ Configuración recomendada:
 
 Variables de entorno del proyecto Pages:
 
-- `VITE_API_BASE_URL=https://api.mapaapagones.es`
+- `VITE_API_BASE_URL=https://api.mapa-apagones.es`
 - `VITE_TURNSTILE_SITE_KEY=<site-key-publica-de-turnstile>`
 
 ## Configuración de API en producción
@@ -28,7 +28,7 @@ Variables recomendadas del backend:
 
 - `TURNSTILE_ENABLED=1`
 - `TURNSTILE_SECRET_KEY=<secret-key-privada-de-turnstile>`
-- `ALLOWED_ORIGINS=https://mapaapagones.es,https://www.mapaapagones.es`
+- `ALLOWED_ORIGINS=https://mapa-apagones.es,https://www.mapa-apagones.es`
 - `DEBUG_ENDPOINTS=0`
 
 ## Desarrollo local

@@ -4,7 +4,7 @@ Mapa ciudadano de avisos de apagones, cortes eléctricos e incidencias de sumini
 
 Repositorio público del proyecto que se publicará en:
 
-    https://mapaapagones.es
+    https://mapa-apagones.es
 
 Estado actual:
 
@@ -15,7 +15,7 @@ Estado actual:
 Antes de seguir con mejoras técnicas, este repositorio deja clara la identidad pública del proyecto:
 
 - Nombre público: Mapa Apagones.
-- Dominio previsto: mapaapagones.es.
+- Dominio previsto: mapa-apagones.es.
 - Estado actual: prelanzamiento técnico, todavía sin despliegue público en el dominio.
 - Principios de privacidad: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin mostrar viviendas exactas.
 - Licencia: MIT.
@@ -79,8 +79,8 @@ Despliegue actual:
 
 Despliegue objetivo:
 
-    mapaapagones.es y www.mapaapagones.es -> Cloudflare Pages
-    api.mapaapagones.es -> Raspberry Pi vía Cloudflare Tunnel
+    mapa-apagones.es y www.mapa-apagones.es -> Cloudflare Pages
+    api.mapa-apagones.es -> Raspberry Pi vía Cloudflare Tunnel
 
 ## Estado geográfico actual
 
@@ -160,7 +160,7 @@ Backend:
 
 Frontend futuro en Cloudflare Pages:
 
-    VITE_API_BASE_URL=https://api.mapaapagones.es
+    VITE_API_BASE_URL=https://api.mapa-apagones.es
     VITE_TURNSTILE_SITE_KEY=...
 
 ## Estructura
@@ -187,6 +187,13 @@ Se agradecen contribuciones en:
 - Revisión legal/comunicativa del mensaje público.
 
 Antes de contribuir, revisa CONTRIBUTING.md.
+
+## Contacto público
+
+- Contacto general: `contacto@mapa-apagones.es`
+- Privacidad: `privacidad@mapa-apagones.es`
+
+No se publica correo personal, DNI, dirección personal exacta ni teléfono personal en este repositorio.
 
 ## Licencia
 
