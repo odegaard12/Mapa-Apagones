@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.9.7.7-stable-rollback
+
+- Rollback de la pasada `v0.9.7.6-feedback-banners`.
+- Recupera el flujo estable de `v0.9.7.5-turnstile-soft-fallback`.
+- Corrige regresiones de integración en móvil:
+  - selección de zona en modo reportar;
+  - acciones de incidencia en modo explorar;
+  - botón “Ya volvió”;
+  - banners verdes duplicados o fuera del flujo.
+- Mantiene Turnstile con fallback suave y rate limiting local.
+
 ## v0.9.7.5-turnstile-soft-fallback
 
 - Hotfix de estabilidad para reportes cuando Turnstile queda bloqueado por navegador, CSP, tracking prevention o estado interno del iframe.
