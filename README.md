@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-    Publicado en Cloudflare Pages con dominio público activo.
+    Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 
 ## Identidad pública
 
@@ -201,4 +201,4 @@ MIT. Ver LICENSE.
 
 ## Aviso
 
-Este proyecto está en fase de prelanzamiento. Los datos ciudadanos pueden contener errores, retrasos o zonas incompletas. No debe usarse como única fuente para decisiones críticas.
+Este proyecto está publicado en fase temprana. Los datos ciudadanos pueden contener errores, retrasos o zonas incompletas. No debe usarse como única fuente para decisiones críticas.
