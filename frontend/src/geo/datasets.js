@@ -53,7 +53,7 @@ export const GEO_DATASETS = {
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)
-export const DEFAULT_GEO_DATASET_ID = 'galicia'
+export const DEFAULT_GEO_DATASET_ID = 'all'
 
 export function getGeoDataset(datasetId = DEFAULT_GEO_DATASET_ID) {
   return GEO_DATASETS[datasetId] || GEO_DATASETS[DEFAULT_GEO_DATASET_ID]
@@ -83,4 +83,11 @@ export function syncGeoDatasetInUrl(datasetId = DEFAULT_GEO_DATASET_ID) {
     url.hash
 
   window.history.replaceState({}, '', next)
+}
+
+/* Public initial map view: Spain-first */
+if (GEO_DATASETS.all) {
+  GEO_DATASETS.all.defaultCenter = [40.25, -3.7]
+  GEO_DATASETS.all.defaultZoom = 6
+  GEO_DATASETS.all.maxBounds = [[27.4, -19.5], [44.5, 5.0]]
 }

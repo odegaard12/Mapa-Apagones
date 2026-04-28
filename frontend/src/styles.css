@@ -575,3 +575,179 @@ a {
     flex-direction: column;
   }
 }
+
+/* UX pass: public launch density + map-first proportions.
+   Goal: make browser zoom 100% feel closer to the previous 80% view,
+   without using global CSS zoom/transform hacks. */
+:root {
+  --ux-font-base: 14px;
+  --ux-panel-width: clamp(260px, 23vw, 340px);
+  --ux-panel-padding: clamp(10px, 1.1vw, 14px);
+  --ux-card-padding: clamp(9px, 1vw, 12px);
+  --ux-radius-panel: 20px;
+  --ux-radius-control: 14px;
+  --ux-control-height: 34px;
+  --ux-gap: 10px;
+}
+
+html {
+  font-size: var(--ux-font-base);
+}
+
+body {
+  font-size: 0.92rem;
+}
+
+.app-shell,
+.app-layout,
+.shell,
+.main-layout,
+.map-layout {
+  gap: var(--ux-gap);
+}
+
+.glass,
+.left-panel,
+.right-panel,
+.side-panel,
+.sidebar,
+.panel {
+  border-radius: var(--ux-radius-panel);
+}
+
+.left-panel,
+.right-panel,
+.side-panel,
+.sidebar {
+  width: var(--ux-panel-width);
+  max-width: var(--ux-panel-width);
+  padding: var(--ux-panel-padding);
+}
+
+.topbar,
+.header,
+.app-header,
+.toolbar {
+  min-height: auto;
+  padding: 9px 12px;
+}
+
+.brand-title,
+.logo-title,
+h1 {
+  font-size: clamp(1.15rem, 1.65vw, 1.45rem);
+  line-height: 1.05;
+}
+
+.brand-subtitle,
+.logo-subtitle,
+.panel-subtitle {
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+h2,
+.panel h2 {
+  font-size: 1.05rem;
+}
+
+h3,
+.panel h3,
+.right-panel h3,
+.left-panel h3 {
+  font-size: 1rem;
+  line-height: 1.15;
+  margin-block: 0.35rem;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 0.9rem;
+}
+
+.mode-btn,
+.chip,
+.type-btn,
+.btn-primary,
+.btn-secondary,
+.panel-chip,
+.search-input,
+.searchbox input {
+  min-height: var(--ux-control-height);
+  padding: 7px 10px;
+  border-radius: var(--ux-radius-control);
+}
+
+.stats-grid,
+.simple-grid,
+.action-row,
+.info-list {
+  gap: 8px;
+}
+
+.stat-card,
+.incident-card,
+.zone-card,
+.info-row,
+.filter-card {
+  padding: var(--ux-card-padding);
+  border-radius: 16px;
+}
+
+.stat-card strong,
+.counter strong {
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+}
+
+.incident-card {
+  gap: 6px;
+}
+
+.incident-card h3,
+.incident-card strong {
+  font-size: 0.94rem;
+}
+
+.leaflet-control-zoom a {
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+@media (min-width: 900px) {
+  .right-panel,
+  .left-panel,
+  .side-panel,
+  .sidebar {
+    max-height: calc(100vh - 24px);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --ux-font-base: 14px;
+    --ux-panel-width: min(100%, 420px);
+    --ux-panel-padding: 12px;
+  }
+
+  .left-panel,
+  .right-panel,
+  .side-panel,
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .brand-title,
+  .logo-title,
+  h1 {
+    font-size: 1.18rem;
+  }
+}
