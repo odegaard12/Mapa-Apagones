@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.2-mobile-report'
+const APP_VERSION = 'v0.9.3-mobile-shell'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -638,7 +638,7 @@ export default function App() {
       window.turnstile.render(element, {
         sitekey: TURNSTILE_SITE_KEY,
         theme: 'light',
-        size: window.matchMedia('(max-width: 420px)').matches ? 'compact' : 'normal',
+        size: window.matchMedia('(max-width: 860px)').matches ? 'compact' : 'normal',
         callback: (token) => setTurnstileToken(token || ''),
         'expired-callback': () => setTurnstileToken(''),
         'error-callback': () => setTurnstileToken(''),

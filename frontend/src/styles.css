@@ -1191,3 +1191,346 @@ button {
     padding: 7px;
   }
 }
+
+/* === v0.9.3 mobile shell redesign === */
+/* Móvil real: mapa protagonista, paneles inferiores compactos y Turnstile sin corte. */
+
+@media (max-width: 900px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .app {
+    height: 100svh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .map-wrap,
+  .map-shell,
+  .leaflet-container {
+    height: 100svh !important;
+  }
+
+  .topbar {
+    position: fixed;
+    top: max(8px, env(safe-area-inset-top));
+    left: 8px;
+    right: 8px;
+    z-index: 700;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(18px);
+  }
+
+  .brand-block {
+    min-width: 0;
+    gap: 7px;
+  }
+
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+  }
+
+  .brand-title {
+    font-size: 0.92rem;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .search-box,
+  .search-input,
+  .search {
+    height: 35px;
+    min-height: 35px;
+    border-radius: 13px;
+    font-size: 0.82rem;
+  }
+
+  .mode-switch {
+    height: 38px;
+    min-height: 38px;
+    padding: 4px;
+    border-radius: 15px;
+    gap: 4px;
+  }
+
+  .mode-btn {
+    height: 30px;
+    min-height: 30px;
+    padding: 0 0.75rem;
+    border-radius: 12px;
+    font-size: 0.82rem;
+  }
+
+  .left-panel {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    top: auto;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    z-index: 650;
+    width: auto;
+    max-width: none;
+    height: auto;
+    max-height: 30svh;
+    min-height: 0;
+    padding: 10px;
+    border-radius: 20px;
+    overflow: auto;
+  }
+
+  .app-report .left-panel {
+    display: none !important;
+  }
+
+  .right-panel {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    top: auto;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    z-index: 680;
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    max-height: 38svh;
+    padding: 11px;
+    border-radius: 22px;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .app-report .right-panel {
+    bottom: max(8px, env(safe-area-inset-bottom));
+    top: auto;
+    max-height: min(58svh, 470px);
+  }
+
+  .right-panel::before {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 4px;
+    margin: 0 auto 9px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.28);
+  }
+
+  .right-panel h2,
+  .right-panel h3 {
+    margin: 6px 0 4px;
+    font-size: 1rem;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  .panel-subtitle,
+  .right-panel p {
+    font-size: 0.79rem;
+    line-height: 1.25;
+  }
+
+  .panel-chip {
+    min-height: 24px;
+    padding: 0 8px;
+    font-size: 0.68rem;
+    border-radius: 999px;
+  }
+
+  .simple-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    margin-top: 10px;
+  }
+
+  .type-btn,
+  .simple-grid button {
+    min-height: 35px;
+    height: 35px;
+    padding: 0 8px;
+    border-radius: 13px;
+    font-size: 0.81rem;
+  }
+
+  .action-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 9px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-green,
+  .action-row button {
+    height: 38px;
+    min-height: 38px;
+    padding: 0 10px;
+    border-radius: 14px;
+    font-size: 0.82rem;
+  }
+
+  .turnstile-box {
+    width: 100%;
+    max-width: 100%;
+    min-height: 86px;
+    margin: 9px 0;
+    padding: 7px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.18);
+  }
+
+  #turnstile-report-widget,
+  .cf-turnstile,
+  .turnstile-box > div {
+    max-width: 100% !important;
+    width: auto !important;
+  }
+
+  .turnstile-box iframe {
+    max-width: 100% !important;
+    transform-origin: center;
+  }
+
+  .turnstile-hint {
+    margin: 5px 0 0;
+    text-align: center;
+    font-size: 0.68rem;
+    line-height: 1.18;
+    opacity: .75;
+  }
+
+  .left-footer {
+    gap: 0.38rem;
+    flex-wrap: wrap;
+  }
+
+  .left-footer a {
+    font-size: 0.68rem;
+  }
+
+  .leaflet-control-zoom {
+    transform: scale(.82);
+    transform-origin: bottom left;
+  }
+
+  .leaflet-control-attribution {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  .topbar {
+    padding: 7px;
+    gap: 6px;
+    border-radius: 18px;
+  }
+
+  .brand-logo {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 9px;
+  }
+
+  .brand-title {
+    font-size: 0.84rem;
+  }
+
+  .search-box,
+  .search-input,
+  .search {
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .mode-switch {
+    height: 34px;
+    min-height: 34px;
+  }
+
+  .mode-btn {
+    height: 26px;
+    min-height: 26px;
+    font-size: 0.76rem;
+  }
+
+  .left-panel {
+    max-height: 28svh;
+    padding: 9px;
+  }
+
+  .right-panel {
+    padding: 9px;
+    border-radius: 20px;
+    max-height: 36svh;
+  }
+
+  .app-report .right-panel {
+    max-height: min(54svh, 430px);
+  }
+
+  .simple-grid {
+    gap: 6px;
+  }
+
+  .type-btn,
+  .simple-grid button {
+    min-height: 33px;
+    height: 33px;
+    font-size: 0.78rem;
+  }
+
+  .action-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-green,
+  .action-row button {
+    height: 36px;
+    min-height: 36px;
+    font-size: 0.8rem;
+  }
+
+  .turnstile-box {
+    min-height: 80px;
+    padding: 6px;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-report .right-panel {
+    max-height: 50svh;
+  }
+
+  .turnstile-box iframe {
+    transform: scale(.92);
+  }
+}
