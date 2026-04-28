@@ -793,7 +793,7 @@ export default function App() {
 
     if (feedbackStage === 'geo-loading') {
       return {
-        title: 'Apagones Ciudadanos',
+        title: 'Mapa Apagones',
         subtitle: `Preparando mapa y polígonos de ${label}.`,
         steps: ['Cargando datos geográficos', 'Preparando contornos', 'Pintando mapa'],
         activeStep: 2,
@@ -833,7 +833,7 @@ export default function App() {
         <div className="brand-block">
           <div className="brand-logo">⚡</div>
           <div>
-            <div className="brand-title">Apagones Ciudadanos</div>
+            <div className="brand-title">Mapa Apagones</div>
             <div className="brand-subtitle">Mapa ciudadano de zonas con incidencias eléctricas</div>
           </div>
         </div>
@@ -972,9 +972,9 @@ export default function App() {
         )}
 
         <div className="left-footer">
-          <a href="/privacy.html" target="_blank" rel="noreferrer">Privacidad</a>
-          <a href="/legal.html" target="_blank" rel="noreferrer">Aviso legal</a>
-          <a href="/cookies.html" target="_blank" rel="noreferrer">Cookies</a>
+          <a href="/privacidad/" target="_blank" rel="noreferrer">Privacidad</a>
+          <a href="/aviso-legal/" target="_blank" rel="noreferrer">Aviso legal</a>
+          <a href="/cookies/" target="_blank" rel="noreferrer">Cookies</a>
           <a href="/changelog.html" target="_blank" rel="noreferrer">{APP_VERSION}</a>
         </div>
       </aside>
