@@ -17,6 +17,93 @@
     .pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.62);color:var(--muted);text-decoration:none;white-space:nowrap}
     .notice{padding:14px 16px;border:1px solid rgba(37,99,235,.22);border-radius:18px;background:rgba(37,99,235,.08);color:#1e3a8a}
     @media(max-width:600px){main{width:calc(100% - 18px);margin:9px auto;padding:18px;border-radius:20px} .top{align-items:flex-start;flex-direction:column;gap:8px} h1{font-size:1.8rem}}
+  
+    /* === mobile public page responsive v0.9.7.2 === */
+    @media (max-width: 720px) {
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100dvh;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      main {
+        width: min(100% - 20px, 860px) !important;
+        margin: max(10px, env(safe-area-inset-top, 0px)) auto max(10px, env(safe-area-inset-bottom, 0px)) !important;
+        padding: 18px !important;
+        border-radius: 20px !important;
+      }
+
+      .top {
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+        font-size: .82rem !important;
+      }
+
+      .pill {
+        max-width: 100%;
+        white-space: normal !important;
+        line-height: 1.15 !important;
+      }
+
+      h1 {
+        font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.035em !important;
+      }
+
+      h2 {
+        margin-top: 22px !important;
+        font-size: 1.04rem !important;
+        line-height: 1.2 !important;
+      }
+
+      p,
+      li {
+        font-size: .94rem !important;
+        line-height: 1.55 !important;
+      }
+
+      ul {
+        padding-left: 1.05rem !important;
+      }
+
+      .notice {
+        padding: 12px 13px !important;
+        border-radius: 16px !important;
+      }
+
+      footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
+        overflow-wrap: anywhere !important;
+      }
+
+      a {
+        overflow-wrap: anywhere;
+      }
+    }
+
+    @media (max-width: 380px) {
+      main {
+        width: min(100% - 14px, 860px) !important;
+        padding: 14px !important;
+        border-radius: 18px !important;
+      }
+
+      p,
+      li {
+        font-size: .9rem !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -33,6 +120,15 @@
 
 
 
+
+
+    <h2>v0.9.7.2-mobile-responsive</h2>
+    <ul>
+      <li>Ajustes responsive para móviles con safe-area.</li>
+      <li>Paneles inferiores menos propensos a cortar botones.</li>
+      <li>Footer legal y versión más flexible en pantallas pequeñas.</li>
+      <li>Páginas públicas y changelog mejor adaptados a móvil.</li>
+    </ul>
 
     <h2>v0.9.7.1-render-hotfix</h2>
     <ul>

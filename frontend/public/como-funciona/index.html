@@ -80,6 +80,93 @@
       color: var(--muted);
       font-size: .92rem;
     }
+  
+    /* === mobile public page responsive v0.9.7.2 === */
+    @media (max-width: 720px) {
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100dvh;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      main {
+        width: min(100% - 20px, 860px) !important;
+        margin: max(10px, env(safe-area-inset-top, 0px)) auto max(10px, env(safe-area-inset-bottom, 0px)) !important;
+        padding: 18px !important;
+        border-radius: 20px !important;
+      }
+
+      .top {
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+        font-size: .82rem !important;
+      }
+
+      .pill {
+        max-width: 100%;
+        white-space: normal !important;
+        line-height: 1.15 !important;
+      }
+
+      h1 {
+        font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.035em !important;
+      }
+
+      h2 {
+        margin-top: 22px !important;
+        font-size: 1.04rem !important;
+        line-height: 1.2 !important;
+      }
+
+      p,
+      li {
+        font-size: .94rem !important;
+        line-height: 1.55 !important;
+      }
+
+      ul {
+        padding-left: 1.05rem !important;
+      }
+
+      .notice {
+        padding: 12px 13px !important;
+        border-radius: 16px !important;
+      }
+
+      footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
+        overflow-wrap: anywhere !important;
+      }
+
+      a {
+        overflow-wrap: anywhere;
+      }
+    }
+
+    @media (max-width: 380px) {
+      main {
+        width: min(100% - 14px, 860px) !important;
+        padding: 14px !important;
+        border-radius: 18px !important;
+      }
+
+      p,
+      li {
+        font-size: .9rem !important;
+      }
+    }
+
   </style>
 </head>
 <body>

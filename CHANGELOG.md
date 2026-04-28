@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.9.7.2-mobile-responsive
+
+Fecha: 2026-04-28
+
+### Responsive / móvil
+
+- Ajusta la app para móviles con `100dvh` y `safe-area`.
+- Evita cortes en botones inferiores en iPhone y Android.
+- Hace los paneles inferiores scrollables y menos invasivos.
+- Mejora footer de privacidad, aviso legal, cookies y versión en pantallas pequeñas.
+- Mejora las páginas públicas y changelog en móvil.
+- No cambia backend, API ni datos.
+
 ## v0.9.7.1-render-hotfix
 
 Fecha: 2026-04-28
