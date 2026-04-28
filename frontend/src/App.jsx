@@ -637,6 +637,8 @@ export default function App() {
 
       window.turnstile.render(element, {
         sitekey: TURNSTILE_SITE_KEY,
+        theme: 'light',
+        size: 'flexible',
         callback: (token) => setTurnstileToken(token || ''),
         'expired-callback': () => setTurnstileToken(''),
         'error-callback': () => setTurnstileToken(''),
