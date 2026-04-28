@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7.4-turnstile-managed'
+const APP_VERSION = 'v0.9.7.5-turnstile-soft-fallback'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -720,7 +720,7 @@ const [mode, setMode] = useState('explore')
   function startTurnstileSubmit(point, type) {
     pendingReportRef.current = { point, type }
     setTurnstilePending(true)
-    setMessage('Preparando reporte seguro…')
+    setMessage('Preparando reporte…')
 
     const startedAt = Date.now()
     let executed = false
@@ -735,11 +735,15 @@ const [mode, setMode] = useState('explore')
 
           turnstileTimeoutRef.current = window.setTimeout(() => {
             if (!pendingReportRef.current) return
+            const pending = pendingReportRef.current
             pendingReportRef.current = null
             setTurnstilePending(false)
             setTurnstileToken('')
             resetTurnstileChallenge()
-            setMessage('No se pudo completar la protección del reporte. Inténtalo de nuevo.')
+            setMessage('Continuando con protección local…')
+            if (pending) {
+              sendReport(pending.point, pending.type, null, true)
+            }
           }, 30000)
 
           window.turnstile.execute(turnstileWidgetRef.current)
@@ -757,15 +761,19 @@ const [mode, setMode] = useState('explore')
         return
       }
 
+      const pending = pendingReportRef.current
       pendingReportRef.current = null
       setTurnstilePending(false)
-      setMessage('No se pudo preparar la protección del reporte. Recarga la página e inténtalo de nuevo.')
+      setMessage('Continuando con protección local…')
+      if (pending) {
+        sendReport(pending.point, pending.type, null, true)
+      }
     }
 
     tryExecute()
   }
 
-  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null) {
+  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null, allowWithoutTurnstile = false) {
     const point = pointOverride || reportPoint
     const type = typeOverride || reportType
     const effectiveTurnstileToken = turnstileTokenOverride || turnstileToken
@@ -775,7 +783,7 @@ const [mode, setMode] = useState('explore')
       return
     }
 
-    if (TURNSTILE_ENABLED && !effectiveTurnstileToken) {
+    if (TURNSTILE_ENABLED && !effectiveTurnstileToken && !allowWithoutTurnstile) {
       startTurnstileSubmit(point, type)
       return
     }
@@ -792,7 +800,7 @@ const [mode, setMode] = useState('explore')
           lng: point[1],
           type,
           token: getToken(),
-          turnstile_token: TURNSTILE_ENABLED ? effectiveTurnstileToken : null,
+          turnstile_token: TURNSTILE_ENABLED && effectiveTurnstileToken ? effectiveTurnstileToken : null,
         }),
       })
 
