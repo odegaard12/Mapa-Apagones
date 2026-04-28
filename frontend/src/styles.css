@@ -2216,3 +2216,31 @@ button {
     max-height: calc(100svh - 128px) !important;
   }
 }
+
+/* === v0.9.7 report feedback === */
+
+.turnstile-hint {
+  opacity: .8 !important;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  cursor: progress;
+}
+
+.status-message,
+.toast,
+.feedback-message {
+  animation: messageSoftIn .18s ease-out;
+}
+
+@keyframes messageSoftIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

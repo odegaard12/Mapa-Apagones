@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.6-invisible-turnstile'
+const APP_VERSION = 'v0.9.7-report-feedback'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -399,11 +399,22 @@ export default function App() {
   const incidentsLoadSeqRef = useRef(0)
   const turnstileWidgetRef = useRef(null)
   const pendingReportRef = useRef(null)
+
+  useEffect(() => {
+    if (!message) return undefined
+
+    const timeout = window.setTimeout(() => {
+      setMessage('')
+    }, 3800)
+
+    return () => window.clearTimeout(timeout)
+  }, [message])
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
   const [reportPoint, setReportPoint] = useState(null)
   const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstilePending, setTurnstilePending] = useState(false)
   const [selectedIncidentId, setSelectedIncidentId] = useState(null)
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
@@ -645,6 +656,7 @@ export default function App() {
         callback: (token) => {
           const cleanToken = token || ''
           setTurnstileToken(cleanToken)
+          setTurnstilePending(false)
 
           const pending = pendingReportRef.current
           if (pending && cleanToken) {
@@ -652,11 +664,15 @@ export default function App() {
             sendReport(pending.point, pending.type, cleanToken)
           }
         },
-        'expired-callback': () => setTurnstileToken(''),
+        'expired-callback': () => {
+          setTurnstilePending(false)
+          setTurnstileToken('')
+        },
         'error-callback': () => {
           pendingReportRef.current = null
+          setTurnstilePending(false)
           setTurnstileToken('')
-          setMessage('No se pudo completar la verificación anti-abuso.')
+          setMessage('No se pudo completar la verificación. Inténtalo de nuevo.')
         },
       })
 
@@ -698,15 +714,17 @@ export default function App() {
     if (TURNSTILE_ENABLED && !effectiveTurnstileToken) {
       if (window.turnstile && turnstileWidgetRef.current !== null) {
         pendingReportRef.current = { point, type }
-        setMessage('Verificando anti-abuso…')
+        setTurnstilePending(true)
+        setMessage('')
         try {
           window.turnstile.execute(turnstileWidgetRef.current)
         } catch {
           pendingReportRef.current = null
-          setMessage('No se pudo iniciar la verificación anti-abuso.')
+          setTurnstilePending(false)
+          setMessage('No se pudo preparar el envío. Inténtalo de nuevo.')
         }
       } else {
-        setMessage('Cargando verificación anti-abuso. Inténtalo de nuevo en unos segundos.')
+        setMessage('Preparando el envío. Inténtalo de nuevo en unos segundos.')
       }
       return
     }
@@ -1086,14 +1104,14 @@ export default function App() {
               <div className="turnstile-box">
                 <div id={TURNSTILE_WIDGET_ID} />
                 {!turnstileToken ? (
-                  <p className="turnstile-hint">Protección anti-abuso activa.</p>
+                  <p className="turnstile-hint">Protección automática activa.</p>
                 ) : null}
               </div>
             ) : null}
 
             <div className="action-row">
               <button className="btn-secondary" onClick={enterExplore}>Cancelar</button>
-              <button className="btn-primary" onClick={() => sendReport()} disabled={loading || !reportPoint}>
+              <button className="btn-primary" onClick={() => sendReport()} disabled={loading || turnstilePending || !reportPoint}>
                 {loading ? 'Enviando…' : 'Confirmar'}
               </button>
             </div>

@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.9.7-report-feedback
+
+Fecha: 2026-04-28
+
+### UX / reporte
+
+- Mejora el feedback del flujo de reporte.
+- Sustituye textos técnicos de verificación por estados más naturales.
+- El envío muestra estado discreto en el botón.
+- Los mensajes de éxito, como nueva incidencia o zona resuelta, se limpian automáticamente tras unos segundos.
+- Mantiene Turnstile invisible y la protección anti-abuso activa.
+
 ## v0.9.6-invisible-turnstile
 
 Fecha: 2026-04-28
