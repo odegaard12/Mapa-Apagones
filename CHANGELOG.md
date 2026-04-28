@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.9.7.3-ios-turnstile-submit
+
+- Hotfix del flujo de reporte en iPhone/Safari.
+- El botón Confirmar ya no depende de que Turnstile esté listo antes del toque.
+- Se reintenta la preparación del widget invisible durante unos segundos.
+- Si la verificación no responde, se libera el botón y se muestra un mensaje claro.
+- Mantiene Turnstile invisible y API pública.
+
 ## v0.9.7.2-mobile-responsive
 
 Fecha: 2026-04-28

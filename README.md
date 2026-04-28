@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.7.2-mobile-responsive`.
+Versión actual visible: `v0.9.7.3-ios-turnstile-submit`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 

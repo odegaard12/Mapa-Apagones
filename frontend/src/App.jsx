@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7.2-mobile-responsive'
+const APP_VERSION = 'v0.9.7.3-ios-turnstile-submit'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -398,6 +398,7 @@ export default function App() {
   const currentGeoDataset = useMemo(() => getGeoDataset(geoDatasetId), [geoDatasetId])
   const incidentsLoadSeqRef = useRef(0)
   const turnstileWidgetRef = useRef(null)
+  const turnstileTimeoutRef = useRef(null)
   const pendingReportRef = useRef(null)
 const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
@@ -702,6 +703,62 @@ const [mode, setMode] = useState('explore')
     }
   }
 
+
+  function clearTurnstileSubmitTimeout() {
+    if (turnstileTimeoutRef.current) {
+      window.clearTimeout(turnstileTimeoutRef.current)
+      turnstileTimeoutRef.current = null
+    }
+  }
+
+  function startTurnstileSubmit(point, type) {
+    pendingReportRef.current = { point, type }
+    setTurnstilePending(true)
+    setMessage('Preparando reporte…')
+
+    const startedAt = Date.now()
+    let executed = false
+
+    const tryExecute = () => {
+      if (!pendingReportRef.current || executed) return
+
+      if (window.turnstile && turnstileWidgetRef.current !== null) {
+        try {
+          executed = true
+          clearTurnstileSubmitTimeout()
+
+          turnstileTimeoutRef.current = window.setTimeout(() => {
+            if (!pendingReportRef.current) return
+            pendingReportRef.current = null
+            setTurnstilePending(false)
+            setTurnstileToken('')
+            resetTurnstileChallenge()
+            setMessage('No se pudo iniciar el reporte. Inténtalo de nuevo.')
+          }, 12000)
+
+          window.turnstile.execute(turnstileWidgetRef.current)
+        } catch {
+          pendingReportRef.current = null
+          setTurnstilePending(false)
+          clearTurnstileSubmitTimeout()
+          setMessage('No se pudo iniciar el reporte. Inténtalo de nuevo.')
+        }
+        return
+      }
+
+      if (Date.now() - startedAt < 6000) {
+        window.setTimeout(tryExecute, 250)
+        return
+      }
+
+      pendingReportRef.current = null
+      setTurnstilePending(false)
+      setMessage('No se pudo preparar el reporte. Recarga la página e inténtalo de nuevo.')
+    }
+
+    tryExecute()
+  }
+
   async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null) {
     const point = pointOverride || reportPoint
     const type = typeOverride || reportType
@@ -713,20 +770,7 @@ const [mode, setMode] = useState('explore')
     }
 
     if (TURNSTILE_ENABLED && !effectiveTurnstileToken) {
-      if (window.turnstile && turnstileWidgetRef.current !== null) {
-        pendingReportRef.current = { point, type }
-        setTurnstilePending(true)
-        setMessage('')
-        try {
-          window.turnstile.execute(turnstileWidgetRef.current)
-        } catch {
-          pendingReportRef.current = null
-          setTurnstilePending(false)
-          setMessage('No se pudo preparar el envío. Inténtalo de nuevo.')
-        }
-      } else {
-        setMessage('Preparando el envío. Inténtalo de nuevo en unos segundos.')
-      }
+      startTurnstileSubmit(point, type)
       return
     }
 
@@ -1113,7 +1157,7 @@ const [mode, setMode] = useState('explore')
             <div className="action-row">
               <button className="btn-secondary" onClick={enterExplore}>Cancelar</button>
               <button className="btn-primary" onClick={() => sendReport()} disabled={loading || turnstilePending || !reportPoint}>
-                {loading ? 'Enviando…' : 'Confirmar'}
+                {loading ? 'Enviando…' : turnstilePending ? 'Preparando…' : 'Confirmar'}
               </button>
             </div>
 
