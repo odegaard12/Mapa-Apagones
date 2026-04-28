@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.9.4-mobile-compact-sheet
+
+Fecha: 2026-04-28
+
+### UX móvil
+
+- Reduce mucho la altura del panel inferior en modo explorar.
+- Rediseña el panel de reportar como bottom sheet compacto.
+- Evita que reportar ocupe media pantalla o más.
+- Turnstile vuelve a modo horizontal normal y se controla por CSS para no cortarse.
+- Reduce botones, pestañas, chips, textos y espaciados en móvil.
+- Mantiene el mapa visible como protagonista.
+
 ## v0.9.3-mobile-shell
 
 Fecha: 2026-04-28
