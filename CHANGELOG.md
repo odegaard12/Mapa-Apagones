@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.9.6-invisible-turnstile
+
+Fecha: 2026-04-28
+
+### UX / seguridad
+
+- Turnstile pasa a modo invisible.
+- La verificación anti-abuso se ejecuta al pulsar Confirmar.
+- Se elimina el bloque blanco visible que se cortaba en móvil y desktop.
+- El formulario de reporte queda más limpio y compacto.
+- Mantiene protección anti-abuso sin ocupar espacio visual.
+
 ## v0.9.5-mobile-usability
 
 Fecha: 2026-04-28

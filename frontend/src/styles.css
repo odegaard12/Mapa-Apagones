@@ -2161,3 +2161,58 @@ button {
     min-height: 32px !important;
   }
 }
+
+/* === v0.9.6 invisible Turnstile === */
+/* Turnstile deja de ser un bloque visible: se ejecuta al confirmar. */
+
+.turnstile-box {
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+#turnstile-report-widget,
+.cf-turnstile {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+.turnstile-hint {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 22px !important;
+  margin: 8px 0 0 !important;
+  padding: 4px 8px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.08) !important;
+  color: rgba(241,245,249,.76) !important;
+  font-size: .68rem !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 900px) {
+  .turnstile-box {
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .turnstile-hint {
+    margin-top: 7px !important;
+    font-size: .64rem !important;
+  }
+
+  .app-report .right-panel {
+    max-height: calc(100svh - 128px) !important;
+  }
+}
