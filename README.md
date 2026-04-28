@@ -124,6 +124,23 @@ No se solicitan:
 
 Los reportes se agrupan en zonas aproximadas para no mostrar viviendas exactas.
 
+## Páginas públicas y SEO
+
+El frontend incluye una capa pública básica para el dominio previsto:
+
+- `robots.txt`
+- `sitemap.xml`
+- Open Graph en la portada
+- JSON-LD básico
+- `/como-funciona/`
+- `/privacidad/`
+- `/no-somos-distribuidora/`
+- `/estado/`
+- `/aviso-legal/`
+- `/cookies/`
+
+Estas páginas son informativas y no cambian el flujo de reportes.
+
 ## Desarrollo local
 
     docker compose up --build -d
