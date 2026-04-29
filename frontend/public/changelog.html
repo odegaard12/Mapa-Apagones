@@ -115,6 +115,18 @@
 
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
+    <section>
+      <h2>v0.9.8.7-geo-municipio-polygons</h2>
+      <ul>
+        <li>Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.</li>
+        <li>Las incidencias ya guardadas se pintan como municipio completo cuando hay polígono disponible.</li>
+        <li>Al recargar, las zonas activas con municipio ya no aparecen como celda/cuadrado.</li>
+        <li>Limpia <code>reportPoint</code> tras enviar para no arrastrar la selección manual a la vista de incidencias.</li>
+        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
+      </ul>
+    </section>
+
+
         <section>
       <h2>v0.9.8.6-geo-overlay-persistence</h2>
       <ul>

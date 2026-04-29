@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.8.6-geo-overlay-persistence'
+const APP_VERSION = 'v0.9.8.7-geo-municipio-polygons'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -427,6 +427,7 @@ export default function App() {
   const municipioOverlayCacheRef = useRef({})
   const lastSelectedIncidentRef = useRef(null)
   const [selectedMunicipioOverlay, setSelectedMunicipioOverlay] = useState(null)
+  const [municipioOverlaysByIncidentKey, setMunicipioOverlaysByIncidentKey] = useState({})
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
@@ -699,6 +700,25 @@ export default function App() {
     return data?.incident?.zone_id || data?.zone_id || data?.incident_id || null
   }
 
+  function incidentOverlayKey(incident) {
+    return (
+      incident?.zone_id ||
+      incident?.id ||
+      incident?.incident_id ||
+      [incident?.municipio, incident?.province, incident?.center_lat, incident?.center_lng].filter(Boolean).join('::') ||
+      null
+    )
+  }
+
+  function incidentMatchesSelectedId(incident, selectedId) {
+    if (!incident || !selectedId) return false
+    return [incident.id, incident.zone_id, incident.incident_id].filter(Boolean).includes(selectedId)
+  }
+
+  function incidentCanUseMunicipioOverlay(incident) {
+    return Boolean(incident?.municipio && datasetIdForIncidentPolygon(incident))
+  }
+
 
   function reportTargetMetaFromIncident(incident) {
     if (!incident) return null
@@ -904,6 +924,88 @@ export default function App() {
     selectedIncident?.municipio,
     selectedIncident?.province,
   ])
+
+
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function loadMunicipioOverlaysForVisibleIncidents() {
+      const source = (Array.isArray(activeVisible) ? activeVisible : []).filter(incidentCanUseMunicipioOverlay)
+
+      if (!source.length) {
+        setMunicipioOverlaysByIncidentKey({})
+        return
+      }
+
+      try {
+        const datasetIds = [...new Set(source.map(datasetIdForIncidentPolygon).filter(Boolean))]
+        const loadedByDataset = {}
+
+        for (const datasetId of datasetIds) {
+          const dataset = getGeoDataset(datasetId)
+          if (!dataset?.municipiosPath) continue
+
+          const cacheKey = dataset.municipiosPath
+          let data = municipioOverlayCacheRef.current[cacheKey]
+
+          if (!data) {
+            const loaded = await loadMunicipiosGeoJson(dataset)
+            data = loaded?.data || loaded
+            municipioOverlayCacheRef.current[cacheKey] = data
+          }
+
+          loadedByDataset[datasetId] = data
+        }
+
+        const next = {}
+
+        for (const incident of source) {
+          const key = incidentOverlayKey(incident)
+          const datasetId = datasetIdForIncidentPolygon(incident)
+          const data = loadedByDataset[datasetId]
+          const features = Array.isArray(data?.features) ? data.features : []
+
+          if (!key || !features.length) continue
+
+          const targetMunicipio = normalizeText(incident.municipio || '')
+          const targetProvince = normalizeText(incident.province || '')
+
+          const exact = features.find((feature) => {
+            const mun = featureMunicipioName(feature)
+            const prov = featureProvinceName(feature)
+            return mun === targetMunicipio && (!targetProvince || !prov || prov === targetProvince)
+          })
+
+          const fallback = exact || features.find((feature) => featureMunicipioName(feature) === targetMunicipio)
+
+          if (fallback) {
+            next[key] = {
+              incident,
+              data: { type: 'FeatureCollection', features: [fallback] },
+            }
+          }
+        }
+
+        if (!cancelled) setMunicipioOverlaysByIncidentKey(next)
+      } catch (err) {
+        console.error('No se pudieron cargar polígonos municipales visibles', err)
+        if (!cancelled) setMunicipioOverlaysByIncidentKey({})
+      }
+    }
+
+    loadMunicipioOverlaysForVisibleIncidents()
+
+    return () => {
+      cancelled = true
+    }
+  }, [activeVisible])
+
+  const activeVisibleForZonePolygons = useMemo(() => {
+    // Las incidencias guardadas con municipio NO se pintan como celda/cuadrado.
+    // El cuadrado queda reservado para selección manual antes de confirmar.
+    return activeVisible.filter((incident) => !incidentCanUseMunicipioOverlay(incident))
+  }, [activeVisible])
 
 
   function prepareIncidentReport(incident, type) {
@@ -1165,7 +1267,7 @@ setMessage('Selecciona una zona del mapa.')
         setLeftTab('incidents')
       }
 
-      setReportPoint([data.incident.center_lat, data.incident.center_lng])
+      setReportPoint(null)
       setReportTargetMeta(null)
       setMode('explore')
       setLeftTab('incidents')
@@ -1509,14 +1611,38 @@ setMessage('Selecciona una zona del mapa.')
 
           <ZonePolygons
             municipiosGeoJson={municipiosGeoJson}
-            activeVisible={activeVisible}
+            activeVisible={activeVisibleForZonePolygons}
             selectedIncidentId={selectedIncidentId}
             mode={mode}
             focusIncident={focusIncident}
             statusColor={statusColor}
             geoDatasetId={geoDatasetId}
           />
-          {selectedMunicipioOverlay ? (
+          {Object.values(municipioOverlaysByIncidentKey).map((item) => {
+            const incident = item.incident
+            const overlayKey = incidentOverlayKey(incident)
+            const selected = incidentMatchesSelectedId(incident, selectedIncidentId)
+
+            return (
+              <GeoJSON
+                key={`municipio-visible-overlay-${overlayKey}-${selected ? 'selected' : 'idle'}`}
+                data={item.data}
+                style={{
+                  color: selected ? '#111827' : statusColor(incident.status),
+                  weight: selected ? 4 : 2.6,
+                  opacity: selected ? 0.96 : 0.82,
+                  fillColor: statusColor(incident.status),
+                  fillOpacity: selected ? 0.18 : 0.11,
+                  dashArray: selected ? '8 6' : '6 7',
+                }}
+                interactive={true}
+                eventHandlers={{
+                  click: () => focusIncident(incident),
+                }}
+              />
+            )
+          })}
+          {selectedMunicipioOverlay && !(selectedIncident && municipioOverlaysByIncidentKey[incidentOverlayKey(selectedIncident)]) ? (
             <GeoJSON
               key={`selected-municipio-overlay-${selectedIncident?.id || selectedIncident?.zone_id || selectedIncident?.incident_id || 'zone'}`}
               data={selectedMunicipioOverlay}
@@ -1532,7 +1658,7 @@ setMessage('Selecciona una zona del mapa.')
             />
           ) : null}
 
-          {mode === 'report' && reportBounds && !selectedMunicipioOverlay && (
+          {mode === 'report' && reportPoint && reportBounds && !reportTargetMeta && (
             <Rectangle
               bounds={reportBounds}
               pathOptions={{
