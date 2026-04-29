@@ -1,3 +1,11 @@
+## v0.9.8.3-black-screen-fix
+
+- Corrige pantalla negra tras enviar o resolver un aviso.
+- Elimina llamadas a `setToastTone`, que no existía y provocaba un `ReferenceError` fatal en React.
+- Mantiene el cálculo automático del tono del toast sin estado duplicado.
+- Pasa correctamente el texto `footer` al overlay de reporte.
+- No cambia backend, privacidad, Turnstile ni lógica de reportes.
+
 ## v0.9.8.2-report-overlay-stability
 
 - Unifica el overlay de reporte para evitar el efecto de “se cierra uno y se abre otro”.

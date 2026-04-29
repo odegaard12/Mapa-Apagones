@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.8.2-report-overlay-stability'
+const APP_VERSION = 'v0.9.8.3-black-screen-fix'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -540,7 +540,6 @@ export default function App() {
     if (!message) return
 
     const looksLikeError = /no se pudo|no hay|espera|selecciona|verificación|verificacion|inválido|invalido|error/i.test(message)
-    setToastTone(looksLikeError ? 'error' : 'success')
     setToastMessage(message)
     const id = setTimeout(() => setToastMessage(''), 5000)
     return () => clearTimeout(id)
@@ -784,8 +783,7 @@ export default function App() {
     const targetMeta = reportTargetMetaFromIncident(incident)
 
     if (!point || !targetMeta) {
-      setToastTone('error')
-      setMessage('No se pudo localizar la zona seleccionada.')
+setMessage('No se pudo localizar la zona seleccionada.')
       return
     }
 
@@ -978,8 +976,7 @@ export default function App() {
     const targetMeta = targetMetaOverride || reportTargetMeta || (type === 'vuelve' ? reportTargetMetaFromPoint(point) : null) || {}
 
     if (!point) {
-      setToastTone('error')
-      setMessage('Selecciona una zona del mapa.')
+setMessage('Selecciona una zona del mapa.')
       return
     }
 
@@ -1204,6 +1201,7 @@ export default function App() {
         steps={overlayConfig?.steps || []}
         activeStep={overlayConfig?.activeStep || 0}
         done={Boolean(overlayConfig?.done)}
+        footer={overlayConfig?.footer}
       />
       <FloatingToast message={toastMessage} tone={toastTone} onClose={() => setToastMessage('')} />
       <header className="topbar glass">
