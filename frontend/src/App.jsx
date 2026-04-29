@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.8.0-report-overlay-flow'
+const APP_VERSION = 'v0.9.8.1-report-actions-restore'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -539,6 +539,8 @@ export default function App() {
 
     if (!message) return
 
+    const looksLikeError = /no se pudo|no hay|espera|selecciona|verificación|verificacion|inválido|invalido|error/i.test(message)
+    setToastTone(looksLikeError ? 'error' : 'success')
     setToastMessage(message)
     const id = setTimeout(() => setToastMessage(''), 5000)
     return () => clearTimeout(id)
@@ -666,6 +668,28 @@ export default function App() {
     }
   }
 
+  function pointFromIncident(incident) {
+    if (!incident) return null
+
+    const centerLat = Number(incident.center_lat ?? incident.lat)
+    const centerLng = Number(incident.center_lng ?? incident.lng)
+
+    if (Number.isFinite(centerLat) && Number.isFinite(centerLng)) {
+      return [centerLat, centerLng]
+    }
+
+    const latMin = Number(incident.lat_min)
+    const latMax = Number(incident.lat_max)
+    const lngMin = Number(incident.lng_min)
+    const lngMax = Number(incident.lng_max)
+
+    if ([latMin, latMax, lngMin, lngMax].every(Number.isFinite)) {
+      return [(latMin + latMax) / 2, (lngMin + lngMax) / 2]
+    }
+
+    return null
+  }
+
   function metersBetweenPoints(lat1, lng1, lat2, lng2) {
     const toRad = (value) => (value * Math.PI) / 180
     const r = 6378137
@@ -675,6 +699,21 @@ export default function App() {
       Math.sin(dLat / 2) ** 2 +
       Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2
     return 2 * r * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  }
+
+  function incidentDistanceFromPoint(point, incident) {
+    if (!point || !incident) return Number.POSITIVE_INFINITY
+
+    const lat = Number(point[0])
+    const lng = Number(point[1])
+    const centerLat = Number(incident.center_lat ?? incident.lat)
+    const centerLng = Number(incident.center_lng ?? incident.lng)
+
+    if (![lat, lng, centerLat, centerLng].every(Number.isFinite)) {
+      return Number.POSITIVE_INFINITY
+    }
+
+    return metersBetweenPoints(lat, lng, centerLat, centerLng)
   }
 
   function pointMatchesIncidentZone(point, incident) {
@@ -690,20 +729,17 @@ export default function App() {
     const lngMax = Number(incident.lng_max)
 
     if ([latMin, latMax, lngMin, lngMax].every(Number.isFinite)) {
-      const pad = 0.00035
-      return (
+      const pad = 0.018
+      const insideBounds =
         lat >= Math.min(latMin, latMax) - pad &&
         lat <= Math.max(latMin, latMax) + pad &&
         lng >= Math.min(lngMin, lngMax) - pad &&
         lng <= Math.max(lngMin, lngMax) + pad
-      )
+
+      if (insideBounds) return true
     }
 
-    const centerLat = Number(incident.center_lat ?? incident.lat)
-    const centerLng = Number(incident.center_lng ?? incident.lng)
-    if (!Number.isFinite(centerLat) || !Number.isFinite(centerLng)) return false
-
-    return metersBetweenPoints(lat, lng, centerLat, centerLng) <= 1800
+    return incidentDistanceFromPoint(point, incident) <= 7500
   }
 
   function reportTargetMetaFromPoint(point) {
@@ -712,7 +748,12 @@ export default function App() {
     const candidates = filteredIncidents
       .filter((incident) => Number(incident.report_count_active || 0) > 0)
       .filter((incident) => pointMatchesIncidentZone(point, incident))
-      .sort((a, b) => Number(b.report_count_active || 0) - Number(a.report_count_active || 0))
+      .sort((a, b) => {
+        const da = incidentDistanceFromPoint(point, a)
+        const db = incidentDistanceFromPoint(point, b)
+        if (da !== db) return da - db
+        return Number(b.report_count_active || 0) - Number(a.report_count_active || 0)
+      })
 
     if (!candidates.length) return null
     return reportTargetMetaFromIncident(candidates[0])
@@ -740,18 +781,26 @@ export default function App() {
 
   function prepareIncidentReport(incident, type) {
     const point = pointFromIncident(incident)
-    if (!point) {
+    const targetMeta = reportTargetMetaFromIncident(incident)
+
+    if (!point || !targetMeta) {
+      setToastTone('error')
       setMessage('No se pudo localizar la zona seleccionada.')
       return
     }
 
-    setMode('report')
-    setReportType(type)
-    setReportPoint(point)
-    setReportTargetMeta(reportTargetMetaFromIncident(incident))
-    setSelectedIncidentId(null)
+    // Acción directa desde una incidencia visible:
+    // no cambiamos al panel manual “Reportar”, porque eso provoca parpadeo
+    // y confunde al usuario. La acción se valida y se envía sobre la incidencia.
+    setMode('explore')
+    setLeftTab('incidents')
+    setSelectedIncidentId(incident.id || incident.incident_id || null)
+    setReportPoint(null)
+    setReportTargetMeta(null)
     setMessage('')
-    setFeedbackStage(null)
+    setFeedbackStage('report-preparing')
+
+    sendReport(point, type, null, false, targetMeta, false)
   }
 
   function focusIncident(incident) {
@@ -929,6 +978,7 @@ export default function App() {
     const targetMeta = targetMetaOverride || reportTargetMeta || (type === 'vuelve' ? reportTargetMetaFromPoint(point) : null) || {}
 
     if (!point) {
+      setToastTone('error')
       setMessage('Selecciona una zona del mapa.')
       return
     }
