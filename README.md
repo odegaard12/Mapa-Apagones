@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.8.7-geo-municipio-polygons`.
+Versión actual visible: `v0.9.8.8-toda-espana-flow-fix`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 
