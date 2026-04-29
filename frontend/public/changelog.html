@@ -116,61 +116,12 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
-      <h2>v0.9.8.8-toda-espana-flow-fix</h2>
+      <h2>v0.9.8.9-stability-rollback</h2>
       <ul>
-        <li>Corrige el flujo en “Toda España” con incidencias de comunidades nuevas.</li>
-        <li>Las incidencias guardadas se dibujan como municipio, no como cuadrado/celda.</li>
-        <li>El cuadrado queda reservado solo para selección manual antes de confirmar.</li>
-        <li>Al resolver una zona, limpia selección, overlays y municipio marcado.</li>
-        <li>Al pulsar “Reportar” desde una zona activa seleccionada, conserva esa zona como destino.</li>
-        <li>Si Turnstile falla en una acción directa, continúa con protección local en vez de bloquear.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.9.8.7-geo-municipio-polygons</h2>
-      <ul>
-        <li>Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.</li>
-        <li>Las incidencias ya guardadas se pintan como municipio completo cuando hay polígono disponible.</li>
-        <li>Al recargar, las zonas activas con municipio ya no aparecen como celda/cuadrado.</li>
-        <li>Limpia <code>reportPoint</code> tras enviar para no arrastrar la selección manual a la vista de incidencias.</li>
-        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
-      </ul>
-    </section>
-
-
-        <section>
-      <h2>v0.9.8.6-geo-overlay-persistence</h2>
-      <ul>
-        <li>Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.</li>
-        <li>Oculta el cuadrado/celda fallback cuando ya existe polígono municipal.</li>
-        <li>El cuadrado queda solo como fallback para reportes manuales sin municipio cargado.</li>
-        <li>Mantiene “Toda España” sin cambio automático de ámbito.</li>
-        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
-      </ul>
-    </section>
-
-<section>
-      <h2>v0.9.8.5-geo-selection-polish</h2>
-      <ul>
-        <li>Elimina el mensaje temporal de comunidades pendientes.</li>
-        <li>Mantiene “Toda España” sin cambiar automáticamente de ámbito.</li>
-        <li>Añade marcado visual del municipio seleccionado en comunidades nuevas.</li>
-        <li>Tras reportar, prioriza <code>zone_id</code> para conservar mejor la selección visual.</li>
-        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.9.8.4-geo-communities-batch</h2>
-      <ul>
-        <li>Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.</li>
-        <li>Descarga y trocea el dataset municipal nacional en GeoJSON separados por ámbito.</li>
-        <li>Usa carga bajo demanda por ámbito para no meter todo el país en el bundle principal.</li>
-        <li>Ámbitos añadidos: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.</li>
-        <li>Mantiene privacidad por diseño: sin CUPS, sin dirección exacta y sin texto libre.</li>
+        <li>Rollback conservador al último frontend estable: <code>v0.9.8.3-black-screen-fix</code>.</li>
+        <li>Retira las capas experimentales de comunidades nuevas, selección municipal persistente y overlays problemáticos.</li>
+        <li>Recupera una base fiable para reportar, resolver y navegar sin pantalla negra.</li>
+        <li>Mantiene privacidad por diseño: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin coordenadas exactas públicas.</li>
       </ul>
     </section>
 

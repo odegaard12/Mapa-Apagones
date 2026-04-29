@@ -1,0 +1,325 @@
+## v0.9.8.8-toda-espana-flow-fix
+
+- Corrige el flujo en “Toda España” con incidencias de comunidades nuevas.
+- Las incidencias guardadas se dibujan como municipio, no como cuadrado/celda.
+- El cuadrado queda reservado solo para selección manual antes de confirmar.
+- Al resolver una zona, limpia selección, overlays y municipio marcado.
+- Al pulsar “Reportar” desde una zona activa seleccionada, conserva esa zona como destino.
+- Si Turnstile falla en una acción directa, continúa con protección local en vez de bloquear.
+
+## v0.9.8.7-geo-municipio-polygons
+
+- Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.
+- Las incidencias ya guardadas se pintan como municipio completo cuando hay polígono disponible.
+- Al recargar, las zonas activas con municipio ya no aparecen como celda/cuadrado.
+- Limpia `reportPoint` tras enviar para no arrastrar la selección manual a la vista de incidencias.
+- No cambia backend, privacidad, Turnstile ni rate limiting.
+
+## v0.9.8.6-geo-overlay-persistence
+
+- Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.
+- Evita que el cuadrado/celda fallback se vea encima del municipio cuando ya hay polígono real.
+- El cuadrado queda solo como fallback para reportes manuales sin municipio cargado.
+- Mantiene “Toda España” sin cambio automático de ámbito.
+- No cambia backend, privacidad, Turnstile ni rate limiting.
+
+## v0.9.8.5-geo-selection-polish
+
+- Elimina el mensaje temporal de comunidades pendientes.
+- Mantiene “Toda España” sin cambiar automáticamente de ámbito.
+- Añade marcado visual del municipio seleccionado en comunidades nuevas.
+- Tras reportar, prioriza `zone_id` para conservar mejor la selección visual.
+- No cambia backend, privacidad, Turnstile ni rate limiting.
+
+## v0.9.8.4-geo-communities-batch
+
+- Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.
+- Descarga y trocea el dataset municipal nacional en GeoJSON separados por ámbito.
+- Usa carga bajo demanda por ámbito para no meter todo el país en el bundle principal.
+- Ámbitos añadidos: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.
+- Mantiene privacidad por diseño: reportes agrupados por zona, sin CUPS, sin dirección exacta y sin texto libre.
+
+## v0.9.8.3-black-screen-fix
+
+- Corrige pantalla negra tras enviar o resolver un aviso.
+- Elimina llamadas a `setToastTone`, que no existía y provocaba un `ReferenceError` fatal en React.
+- Mantiene el cálculo automático del tono del toast sin estado duplicado.
+- Pasa correctamente el texto `footer` al overlay de reporte.
+- No cambia backend, privacidad, Turnstile ni lógica de reportes.
+
+## v0.9.8.2-report-overlay-stability
+
+- Unifica el overlay de reporte para evitar el efecto de “se cierra uno y se abre otro”.
+- Mantiene un único flujo visual estable durante validación, protección anti-abuso, guardado anónimo y refresco.
+- Añade limpieza/failsafe del overlay para evitar pantalla oscura bloqueada tras confirmar.
+- Fuerza reajuste del mapa tras cerrar el overlay para evitar pantalla negra/tiles sin pintar.
+
+## v0.9.8.1-report-actions-restore
+
+- Corrige el flujo de acciones directas: “Yo también” y “Ya volvió” ya no abren el panel manual de reportar.
+- Mejora “Ya volvió” manual para reconocer incidencias activas cercanas/visibles cuando el punto cae en la zona aproximada.
+- Evita que errores de preflight/verificación se muestren como toast verde.
+- Reduce el parpadeo de overlay/panel durante el envío y mantiene el flujo acorde a la acción real.
+
+## v0.9.8.0-report-overlay-flow
+
+- Mejora el overlay de reporte para describir mejor el flujo real.
+- Sustituye mensajes genéricos como “detectando ayuntamiento” por validación de zona, protección anti-abuso, guardado anónimo y actualización de zona agregada.
+- Añade textos de ayuda menos alarmistas y más claros durante el envío.
+- Mantiene la lógica de privacidad: sin CUPS, sin nombre, sin dirección exacta y sin texto libre.
+
+## v0.9.7.9-manual-restore-target
+
+- Corrige “Ya volvió” desde el modo Reportar manual cuando el punto elegido cae sobre una zona activa.
+- El frontend intenta deducir `incident_id`/`zone_id` desde las incidencias visibles.
+- El backend añade fallback por bounds/celda activa antes de depender solo de proximidad.
+- Evita repetir `preflight` después de Turnstile cuando ya se validó antes.
+- Reordena el changelog público para mostrar las últimas versiones arriba.
+
+## v0.9.7.8-report-flow-stability
+
+- Corrige el flujo de “Yo también” / “Ya volvió” usando `incident_id`/`zone_id` cuando la UI trabaja con zonas agregadas.
+- Añade preflight de reporte para mostrar cooldowns antes del flujo visual de envío.
+- Mantiene Turnstile con fallback suave y evita mensajes de preparación como toast verde separado.
+- Mejora autocierre/cierre manual de mensajes y estabilidad móvil del panel de acciones.
+
+# Changelog
+
+## v0.9.7.7-stable-rollback
+
+- Rollback de la pasada `v0.9.7.6-feedback-banners`.
+- Recupera el flujo estable de `v0.9.7.5-turnstile-soft-fallback`.
+- Corrige regresiones de integración en móvil:
+  - selección de zona en modo reportar;
+  - acciones de incidencia en modo explorar;
+  - botón “Ya volvió”;
+  - banners verdes duplicados o fuera del flujo.
+- Mantiene Turnstile con fallback suave y rate limiting local.
+
+## v0.9.7.5-turnstile-soft-fallback
+
+- Hotfix de estabilidad para reportes cuando Turnstile queda bloqueado por navegador, CSP, tracking prevention o estado interno del iframe.
+- Turnstile sigue activo como protección principal.
+- Si Turnstile no devuelve token, el reporte continúa con protección local y rate limiting del backend.
+- Evita que el botón quede colgado en “Enviando…” o “Preparando…”.
+- Mantiene privacidad: no añade cuentas, CUPS, fotos ni texto libre.
+
+## v0.9.7.4-turnstile-managed
+
+- Hotfix de Turnstile para widget Managed/Gestionado.
+- Sustituye `size: invisible` por `flexible`/`compact` según pantalla.
+- Mantiene `execution: execute` para lanzar la comprobación al confirmar.
+- Usa `appearance: interaction-only` para que solo aparezca si Cloudflare necesita interacción.
+- Mejora compatibilidad en PC, iPhone/Safari y móviles pequeños.
+- Amplía el margen de espera de Turnstile antes de mostrar error.
+
+## v0.9.7.3-ios-turnstile-submit
+
+- Hotfix del flujo de reporte en iPhone/Safari.
+- El botón Confirmar ya no depende de que Turnstile esté listo antes del toque.
+- Se reintenta la preparación del widget invisible durante unos segundos.
+- Si la verificación no responde, se libera el botón y se muestra un mensaje claro.
+- Mantiene Turnstile invisible y API pública.
+
+## v0.9.7.2-mobile-responsive
+
+Fecha: 2026-04-28
+
+### Responsive / móvil
+
+- Ajusta la app para móviles con `100dvh` y `safe-area`.
+- Evita cortes en botones inferiores en iPhone y Android.
+- Hace los paneles inferiores scrollables y menos invasivos.
+- Mejora footer de privacidad, aviso legal, cookies y versión en pantallas pequeñas.
+- Mejora las páginas públicas y changelog en móvil.
+- No cambia backend, API ni datos.
+
+## v0.9.7.1-render-hotfix
+
+Fecha: 2026-04-28
+
+### Hotfix
+
+- Corrige un posible fallo de render tras la versión v0.9.7.
+- Mueve la autolimpieza de mensajes después de inicializar el estado `message`.
+- Mantiene el cierre automático de mensajes de éxito.
+- Mantiene Turnstile invisible activo.
+- No cambia backend, datos ni configuración de Cloudflare.
+
+## v0.9.7-report-feedback
+
+Fecha: 2026-04-28
+
+### UX / reporte
+
+- Mejora el feedback del flujo de reporte.
+- Sustituye textos técnicos de verificación por estados más naturales.
+- El envío muestra estado discreto en el botón.
+- Los mensajes de éxito, como nueva incidencia o zona resuelta, se limpian automáticamente tras unos segundos.
+- Mantiene Turnstile invisible y la protección anti-abuso activa.
+
+## v0.9.6-invisible-turnstile
+
+Fecha: 2026-04-28
+
+### UX / seguridad
+
+- Turnstile pasa a modo invisible.
+- La verificación anti-abuso se ejecuta al pulsar Confirmar.
+- Se elimina el bloque blanco visible que se cortaba en móvil y desktop.
+- El formulario de reporte queda más limpio y compacto.
+- Mantiene protección anti-abuso sin ocupar espacio visual.
+
+## v0.9.5-mobile-usability
+
+Fecha: 2026-04-28
+
+### UX móvil
+
+- Recupera filtros, lista y enlaces legales en móvil dentro de un panel inferior con scroll.
+- Oculta el panel vacío de explorar en móvil.
+- Reportar queda como panel inferior separado.
+- Ajusta Turnstile para que no se corte en PC ni móvil.
+- Usa Turnstile normal en escritorio y compacto en móvil.
+- Reduce textos, botones, chips y espaciados.
+
+## v0.9.4-mobile-compact-sheet
+
+Fecha: 2026-04-28
+
+### UX móvil
+
+- Reduce mucho la altura del panel inferior en modo explorar.
+- Rediseña el panel de reportar como bottom sheet compacto.
+- Evita que reportar ocupe media pantalla o más.
+- Turnstile vuelve a modo horizontal normal y se controla por CSS para no cortarse.
+- Reduce botones, pestañas, chips, textos y espaciados en móvil.
+- Mantiene el mapa visible como protagonista.
+
+## v0.9.3-mobile-shell
+
+Fecha: 2026-04-28
+
+### UX móvil
+
+- Rediseño móvil adicional del modo explorar y reportar.
+- Reportar pasa a comportarse como panel inferior compacto, no como desktop encogido.
+- Turnstile usa tamaño compacto en móvil/tablet para evitar cortes.
+- Ajuste de topbar, botones, filtros, paneles, chips y controles.
+- Mapa sigue siendo protagonista en móvil.
+
+### Producción
+
+- Frontend publicado en Cloudflare Pages.
+- API pública en `https://api.mapa-apagones.es`.
+- Turnstile activo para reportes.
+- Repo público sin secretos ni datos reales.
+
+## v0.9.2-mobile-report
+
+- Rediseño inicial del flujo de reporte en móvil.
+- Panel de reporte menos invasivo.
+- Turnstile compacto en pantallas pequeñas.
+- Changelog público actualizado.
+- README ajustado al estado publicado.
+
+## v0.9.1-public-legal
+
+- Dominio público activo: `https://mapa-apagones.es`.
+- `www.mapa-apagones.es` activo con SSL.
+- API prevista y después activada en `https://api.mapa-apagones.es`.
+- Páginas públicas legales revisadas:
+  - Privacidad.
+  - Aviso legal.
+  - Cookies.
+  - Cómo funciona.
+  - No somos una distribuidora.
+  - Estado del servicio.
+- Correos públicos:
+  - `contacto@mapa-apagones.es`
+  - `privacidad@mapa-apagones.es`
+- Eliminadas referencias de plantilla.
+- Dominio corregido con guion.
+- SEO básico, Open Graph, JSON-LD, robots.txt y sitemap.xml.
+
+## v0.9.0-geo-north-cyl
+
+- Mapa ciudadano funcional.
+- Reportes por zona.
+- Filtros y estados de confianza.
+- Base geográfica inicial:
+  - Galicia.
+  - Asturias.
+  - Cantabria.
+  - Castilla y León.
+- Pipeline CNIG/IGN para datasets municipales.
+- React + Vite + Leaflet.
+- FastAPI + SQLite.
+
+## v0.8.x-public-infra
+
+- Cloudflare Pages preparado.
+- `VITE_API_BASE_URL` para separar frontend y API.
+- CORS restringido para producción.
+- Debug cerrado por defecto.
+- Dockerignore para reducir contexto de build.
+- Backups SQLite.
+- Healthchecks Docker.
+- SQLite WAL, busy timeout y foreign keys.
+
+## v0.7.x-security-abuse
+
+- Integración Cloudflare Turnstile.
+- Verificación anti-abuso en reportes.
+- Rate limiting por hashes técnicos.
+- Control de duplicados y ventanas temporales.
+- Endpoints públicos limitados con `bbox`, `limit` y `hours`.
+
+## v0.6.0-foundation
+
+- Base legal inicial.
+- Scripts iniciales de backup/restore.
+- Limpieza de diseño de incidencias.
+- Primeras mejoras de estados y confirmaciones.
+
+## v0.5.0-alpha
+
+- Mapa ciudadano funcional inicial.
+- Incidencias por zona.
+- Lógica inicial de estados.
+- Primer prototipo de reporte ciudadano anónimo.
+
+## Historial técnico reciente desde Git
+
+- `2026-04-28` `0ed074f` PR #31 from odegaard12/feat/mobile-report-redesign-v2
+- `2026-04-28` `42ee120` PR #30 from odegaard12/feat/ux-turnstile-mobile-density-v1
+- `2026-04-28` `7241812` PR #29 from odegaard12/fix/public-legal-legacy-pages-v1
+- `2026-04-28` `05e23ac` PR #28 from odegaard12/fix/public-changelog-page-v1
+- `2026-04-28` `371347a` PR #27 from odegaard12/docs/legal-production-texts-v1
+- `2026-04-28` `a8106cb` PR #26 from odegaard12/feat/ux-initial-spain-scale-v1
+- `2026-04-28` `618b82e` PR #25 from odegaard12/feat/public-pages-seo-v1
+- `2026-04-28` `f2ce6dc` PR #23 from odegaard12/ops/sqlite-backup-health-v1
+- `2026-04-27` `e25093d` PR #22 from odegaard12/chore/frontend-dockerignore-v1
+- `2026-04-27` `d802ab0` PR #21 from odegaard12/feat/cloudflare-pages-ready-v1
+- `2026-04-27` `b87b044` PR #20 from odegaard12/feat/api-bbox-limit-v1
+- `2026-04-27` `c1ea5e0` PR #19 from odegaard12/fix/prod-cors-debug-v1
+- `2026-04-27` `3df7d17` PR #18 from odegaard12/docs/public-project-identity-v1
+- `2026-04-27` `90b9cb9` PR #17 from odegaard12/docs/public-project-identity-v1
+- `2026-04-27` `358d356` PR #16 from odegaard12/feat/security-turnstile-v1
+- `2026-04-27` `1aae301` PR #15 from odegaard12/feat/geo-castilla-leon-v1
+- `2026-04-27` `f75f323` PR #14 from odegaard12/feat/geo-cantabria-v1
+- `2026-04-27` `91cfab6` PR #13 from odegaard12/fix/geo-normalize-galicia-asturias-pipeline-v1
+- `2026-04-27` `508c84a` PR #12 from odegaard12/fix/zone-id-accent-slug-normalization-v1
+- `2026-04-27` `028c6a0` PR #11 from odegaard12/feat/geo-cnig-pipeline-v1
+- `2026-04-27` `8b5d134` PR #10 from odegaard12/fix/geo-all-dataset-remount-hardening-v1
+- `2026-04-27` `0fa3540` PR #9 from odegaard12/fix/report-feedback-and-scope-freedom
+- `2026-04-27` `1fe8878` PR #8 from odegaard12/feat/geo-spain-source-pipeline
+- `2026-04-26` `d644c83` PR #7 from odegaard12/feat/geo-multidataset-state
+- `2026-04-26` `6606992` PR #6 from odegaard12/feat/geo-loader-spain-ready
+- `2026-04-26` `1e2fe94` PR #5 from odegaard12/chore/geo-version-sync-and-state-hardening
+- `2026-04-26` `a505b80` PR #4 from odegaard12/fix/geo-live-refresh-clarity
+- `2026-04-26` `8d61cb4` PR #3 from odegaard12/fix/polygon-resolution-v1
+- `2026-04-26` `6d4f1ce` PR #2 from odegaard12/feat/municipality-polygons
+- `2026-04-25` `142b0a2` PR #1 from odegaard12/feat/zones-backend-wip
+- `2026-04-24` `d4f6494` docs: improve README and restore license
+- `2026-04-24` `7ee5442` chore: public-safe snapshot without personal or runtime data

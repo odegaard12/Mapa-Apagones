@@ -1,43 +1,10 @@
-## v0.9.8.8-toda-espana-flow-fix
+## v0.9.8.9-stability-rollback
 
-- Corrige el flujo en “Toda España” con incidencias de comunidades nuevas.
-- Las incidencias guardadas se dibujan como municipio, no como cuadrado/celda.
-- El cuadrado queda reservado solo para selección manual antes de confirmar.
-- Al resolver una zona, limpia selección, overlays y municipio marcado.
-- Al pulsar “Reportar” desde una zona activa seleccionada, conserva esa zona como destino.
-- Si Turnstile falla en una acción directa, continúa con protección local en vez de bloquear.
-
-## v0.9.8.7-geo-municipio-polygons
-
-- Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.
-- Las incidencias ya guardadas se pintan como municipio completo cuando hay polígono disponible.
-- Al recargar, las zonas activas con municipio ya no aparecen como celda/cuadrado.
-- Limpia `reportPoint` tras enviar para no arrastrar la selección manual a la vista de incidencias.
-- No cambia backend, privacidad, Turnstile ni rate limiting.
-
-## v0.9.8.6-geo-overlay-persistence
-
-- Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.
-- Evita que el cuadrado/celda fallback se vea encima del municipio cuando ya hay polígono real.
-- El cuadrado queda solo como fallback para reportes manuales sin municipio cargado.
-- Mantiene “Toda España” sin cambio automático de ámbito.
-- No cambia backend, privacidad, Turnstile ni rate limiting.
-
-## v0.9.8.5-geo-selection-polish
-
-- Elimina el mensaje temporal de comunidades pendientes.
-- Mantiene “Toda España” sin cambiar automáticamente de ámbito.
-- Añade marcado visual del municipio seleccionado en comunidades nuevas.
-- Tras reportar, prioriza `zone_id` para conservar mejor la selección visual.
-- No cambia backend, privacidad, Turnstile ni rate limiting.
-
-## v0.9.8.4-geo-communities-batch
-
-- Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.
-- Descarga y trocea el dataset municipal nacional en GeoJSON separados por ámbito.
-- Usa carga bajo demanda por ámbito para no meter todo el país en el bundle principal.
-- Ámbitos añadidos: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.
-- Mantiene privacidad por diseño: reportes agrupados por zona, sin CUPS, sin dirección exacta y sin texto libre.
+- Rollback conservador al último frontend estable: `v0.9.8.3-black-screen-fix`.
+- Retira las capas experimentales de comunidades nuevas, selección municipal persistente y overlays que estaban provocando pantalla negra y estados visuales inconsistentes.
+- Mantiene el flujo estable de reportes, Turnstile, privacidad, rate limiting y API.
+- Limpia el estado público para volver a una base fiable antes de rehacer geografía de forma incremental.
+- No añade cuentas, CUPS, texto libre, fotos ni coordenadas exactas públicas.
 
 ## v0.9.8.3-black-screen-fix
 

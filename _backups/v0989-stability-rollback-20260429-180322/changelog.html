@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Changelog | Mapa Apagones</title>
+  <meta name="description" content="Historial público de cambios de Mapa Apagones.">
+  <link rel="canonical" href="https://mapa-apagones.es/changelog.html">
+  <style>
+    :root{color-scheme:light;--bg:#eef4ff;--card:rgba(255,255,255,.88);--text:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#2563eb}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 0%,rgba(59,130,246,.22),transparent 34rem),radial-gradient(circle at 85% 10%,rgba(14,165,233,.16),transparent 30rem),var(--bg);color:var(--text);line-height:1.58}
+    main{width:min(940px,calc(100% - 32px));margin:34px auto;padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:0 20px 60px rgba(15,23,42,.10);backdrop-filter:blur(18px)}
+    a{color:var(--accent)} h1{margin:0 0 8px;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.04em} h2{margin-top:28px;font-size:1.2rem} p,li{color:var(--muted)} ul{padding-left:1.25rem}
+    code{background:rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.08);border-radius:8px;padding:2px 6px;color:#0f172a}
+    .top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px;color:var(--muted);font-size:.92rem}
+    .pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.62);color:var(--muted);text-decoration:none;white-space:nowrap}
+    .notice{padding:14px 16px;border:1px solid rgba(37,99,235,.22);border-radius:18px;background:rgba(37,99,235,.08);color:#1e3a8a}
+    @media(max-width:600px){main{width:calc(100% - 18px);margin:9px auto;padding:18px;border-radius:20px} .top{align-items:flex-start;flex-direction:column;gap:8px} h1{font-size:1.8rem}}
+  
+    /* === mobile public page responsive v0.9.7.2 === */
+    @media (max-width: 720px) {
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100dvh;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      main {
+        width: min(100% - 20px, 860px) !important;
+        margin: max(10px, env(safe-area-inset-top, 0px)) auto max(10px, env(safe-area-inset-bottom, 0px)) !important;
+        padding: 18px !important;
+        border-radius: 20px !important;
+      }
+
+      .top {
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+        font-size: .82rem !important;
+      }
+
+      .pill {
+        max-width: 100%;
+        white-space: normal !important;
+        line-height: 1.15 !important;
+      }
+
+      h1 {
+        font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.035em !important;
+      }
+
+      h2 {
+        margin-top: 22px !important;
+        font-size: 1.04rem !important;
+        line-height: 1.2 !important;
+      }
+
+      p,
+      li {
+        font-size: .94rem !important;
+        line-height: 1.55 !important;
+      }
+
+      ul {
+        padding-left: 1.05rem !important;
+      }
+
+      .notice {
+        padding: 12px 13px !important;
+        border-radius: 16px !important;
+      }
+
+      footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
+        overflow-wrap: anywhere !important;
+      }
+
+      a {
+        overflow-wrap: anywhere;
+      }
+    }
+
+    @media (max-width: 380px) {
+      main {
+        width: min(100% - 14px, 860px) !important;
+        padding: 14px !important;
+        border-radius: 18px !important;
+      }
+
+      p,
+      li {
+        font-size: .9rem !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <a class="pill" href="/">← Volver al mapa</a>
+      <span>Actualizado: 2026-04-29</span>
+    </div>
+
+    <h1>Changelog</h1>
+    <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
+    <section>
+      <h2>v0.9.8.8-toda-espana-flow-fix</h2>
+      <ul>
+        <li>Corrige el flujo en “Toda España” con incidencias de comunidades nuevas.</li>
+        <li>Las incidencias guardadas se dibujan como municipio, no como cuadrado/celda.</li>
+        <li>El cuadrado queda reservado solo para selección manual antes de confirmar.</li>
+        <li>Al resolver una zona, limpia selección, overlays y municipio marcado.</li>
+        <li>Al pulsar “Reportar” desde una zona activa seleccionada, conserva esa zona como destino.</li>
+        <li>Si Turnstile falla en una acción directa, continúa con protección local en vez de bloquear.</li>
+      </ul>
+    </section>
+
+
+    <section>
+      <h2>v0.9.8.7-geo-municipio-polygons</h2>
+      <ul>
+        <li>Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.</li>
+        <li>Las incidencias ya guardadas se pintan como municipio completo cuando hay polígono disponible.</li>
+        <li>Al recargar, las zonas activas con municipio ya no aparecen como celda/cuadrado.</li>
+        <li>Limpia <code>reportPoint</code> tras enviar para no arrastrar la selección manual a la vista de incidencias.</li>
+        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
+      </ul>
+    </section>
+
+
+        <section>
+      <h2>v0.9.8.6-geo-overlay-persistence</h2>
+      <ul>
+        <li>Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.</li>
+        <li>Oculta el cuadrado/celda fallback cuando ya existe polígono municipal.</li>
+        <li>El cuadrado queda solo como fallback para reportes manuales sin municipio cargado.</li>
+        <li>Mantiene “Toda España” sin cambio automático de ámbito.</li>
+        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
+      </ul>
+    </section>
+
+<section>
+      <h2>v0.9.8.5-geo-selection-polish</h2>
+      <ul>
+        <li>Elimina el mensaje temporal de comunidades pendientes.</li>
+        <li>Mantiene “Toda España” sin cambiar automáticamente de ámbito.</li>
+        <li>Añade marcado visual del municipio seleccionado en comunidades nuevas.</li>
+        <li>Tras reportar, prioriza <code>zone_id</code> para conservar mejor la selección visual.</li>
+        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
+      </ul>
+    </section>
+
+
+    <section>
+      <h2>v0.9.8.4-geo-communities-batch</h2>
+      <ul>
+        <li>Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.</li>
+        <li>Descarga y trocea el dataset municipal nacional en GeoJSON separados por ámbito.</li>
+        <li>Usa carga bajo demanda por ámbito para no meter todo el país en el bundle principal.</li>
+        <li>Ámbitos añadidos: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.</li>
+        <li>Mantiene privacidad por diseño: sin CUPS, sin dirección exacta y sin texto libre.</li>
+      </ul>
+    </section>
+
+
+    <section>
+      <h2>v0.9.8.3-black-screen-fix</h2>
+      <ul>
+        <li>Corrige pantalla negra tras enviar o resolver un aviso.</li>
+        <li>Elimina una referencia JavaScript inexistente que podía romper React después del reporte.</li>
+        <li>Mantiene el overlay de reporte, pero evita que deje la app sin renderizar.</li>
+        <li>No cambia backend, privacidad, Turnstile ni lógica de reportes.</li>
+      </ul>
+    </section>
+
+
+    <section>
+      <h2>v0.9.8.2-report-overlay-stability</h2>
+      <ul>
+        <li>Unifica el overlay de reporte para que no parezca que se abren dos ventanas distintas.</li>
+        <li>Añade limpieza automática del overlay tras finalizar o si queda bloqueado.</li>
+        <li>Reajusta el mapa al cerrar avisos para evitar pantalla negra hasta refrescar.</li>
+        <li>No cambia backend ni la política de privacidad.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>v0.9.8.1-report-actions-restore</h2>
+      <ul>
+        <li>Corrige acciones directas de incidencia: “Yo también” y “Ya volvió” ya no saltan al panel manual.</li>
+        <li>Mejora el reconocimiento de zona activa al marcar “Ya volvió” desde un punto cercano o visible.</li>
+        <li>Los errores de validación/verificación se muestran como aviso de error, no como éxito.</li>
+        <li>Reduce cambios bruscos entre overlay, panel y mapa durante el envío.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>v0.9.8.0-report-overlay-flow</h2>
+      <ul>
+        <li>Mejora el overlay de reporte para explicar el flujo real de envío.</li>
+        <li>Cambia “detectando ayuntamiento” por validación de zona, protección anti-abuso, guardado anónimo y actualización de zona agregada.</li>
+        <li>Añade textos de ayuda más claros y menos alarmistas durante el envío.</li>
+        <li>Mantiene privacidad por diseño: sin CUPS, sin nombre, sin dirección exacta y sin texto libre.</li>
+      </ul>
+    </section>
+
+
+
+
+
+
+
+
+
+    
+    <section>
+      <h2>v0.9.7.9-manual-restore-target</h2>
+      <ul>
+        <li>Corrige “Ya volvió” desde el modo Reportar manual cuando el punto cae sobre una zona activa.</li>
+        <li>El frontend deduce la incidencia visible y envía <code>incident_id</code>/<code>zone_id</code> cuando corresponde.</li>
+        <li>El backend añade fallback por bounds/celda activa antes de usar solo proximidad.</li>
+        <li>Evita repetir <code>preflight</code> después de Turnstile si ya se validó antes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>v0.9.7.8-report-flow-stability</h2>
+      <ul>
+        <li>Estabiliza el flujo de reporte, confirmación y “Ya volvió”.</li>
+        <li>Los cooldowns se comprueban antes del envío visual.</li>
+        <li>Mejora mensajes móviles y acciones visibles sin cambiar la política de privacidad.</li>
+      </ul>
+    </section>
+
+<h2>v0.9.7.7-stable-rollback</h2>
+    <ul>
+      <li>Rollback de la pasada de banners que causaba regresiones móviles.</li>
+      <li>Recupera el flujo estable de reporte y acciones.</li>
+      <li>Mantiene Turnstile con fallback suave.</li>
+      <li>Corrige selección, acciones de incidencia, “Ya volvió” y mensajes duplicados.</li>
+    </ul>
+
+    <h2>v0.9.7.5-turnstile-soft-fallback</h2>
+    <ul>
+      <li>Hotfix de estabilidad para reportes si Turnstile queda bloqueado por el navegador.</li>
+      <li>Turnstile sigue activo, pero ya no deja el envío colgado.</li>
+      <li>Fallback a protección local y rate limiting del backend.</li>
+      <li>Evita estados permanentes como “Enviando…” o “Preparando…”.</li>
+    </ul>
+
+    <h2>v0.9.7.4-turnstile-managed</h2>
+    <ul>
+      <li>Hotfix de Turnstile para widget Managed/Gestionado.</li>
+      <li>Usa tamaño flexible o compacto según pantalla.</li>
+      <li>Mantiene comprobación al confirmar sin caja fija cortada.</li>
+      <li>Mejora compatibilidad en PC, iPhone/Safari y móviles pequeños.</li>
+    </ul>
+
+    <h2>v0.9.7.3-ios-turnstile-submit</h2>
+    <ul>
+      <li>Hotfix del flujo de reporte en iPhone/Safari.</li>
+      <li>El botón Confirmar reintenta preparar Turnstile invisible si todavía no está listo.</li>
+      <li>Si la verificación no responde, el botón se libera y aparece un mensaje claro.</li>
+      <li>Mantiene API pública, Turnstile invisible y flujo de reporte sin caja visual.</li>
+    </ul>
+
+    <h2>v0.9.7.2-mobile-responsive</h2>
+    <ul>
+      <li>Ajustes responsive para móviles con safe-area.</li>
+      <li>Paneles inferiores menos propensos a cortar botones.</li>
+      <li>Footer legal y versión más flexible en pantallas pequeñas.</li>
+      <li>Páginas públicas y changelog mejor adaptados a móvil.</li>
+    </ul>
+
+    <h2>v0.9.7.1-render-hotfix</h2>
+    <ul>
+      <li>Corrige un fallo de render detectado tras v0.9.7.</li>
+      <li>Mantiene los mensajes de éxito con cierre automático.</li>
+      <li>Mantiene Turnstile invisible activo.</li>
+    </ul>
+
+    <h2>v0.9.7-report-feedback</h2>
+    <ul>
+      <li>Mejora del feedback al enviar reportes.</li>
+      <li>Textos más naturales durante la preparación del envío.</li>
+      <li>Mensajes de éxito con cierre automático.</li>
+      <li>Turnstile invisible se mantiene activo sin ocupar espacio visual.</li>
+    </ul>
+
+    <h2>v0.9.6-invisible-turnstile</h2>
+    <ul>
+      <li>Turnstile pasa a modo invisible.</li>
+      <li>La verificación anti-abuso se ejecuta al pulsar Confirmar.</li>
+      <li>Se elimina el bloque blanco visible que se cortaba en móvil y desktop.</li>
+      <li>El formulario de reporte queda más limpio y compacto.</li>
+    </ul>
+
+    <h2>v0.9.5-mobile-usability</h2>
+    <ul>
+      <li>Recupera filtros, lista y enlaces legales en móvil.</li>
+      <li>Oculta el panel vacío de explorar en móvil.</li>
+      <li>Reportar queda como panel inferior separado.</li>
+      <li>Ajusta Turnstile para que no se corte en PC ni móvil.</li>
+      <li>Usa Turnstile normal en escritorio y compacto en móvil.</li>
+    </ul>
+
+    <h2>v0.9.4-mobile-compact-sheet</h2>
+    <ul>
+      <li>Panel inferior mucho más bajo en modo explorar.</li>
+      <li>Reportar pasa a bottom sheet compacto.</li>
+      <li>Turnstile vuelve a modo horizontal normal y se controla por CSS.</li>
+      <li>Reducción de botones, pestañas, chips, textos y espaciados en móvil.</li>
+    </ul>
+
+    <h2>v0.9.3-mobile-shell</h2>
+    <ul>
+      <li>Rediseño móvil adicional del modo explorar y reportar.</li>
+      <li>Panel inferior compacto para reportar.</li>
+      <li>Turnstile compacto en móvil/tablet para evitar cortes.</li>
+      <li>Ajuste de topbar, botones, filtros, paneles, chips y controles.</li>
+    </ul>
+
+    <h2>v0.9.2-mobile-report</h2>
+    <ul>
+      <li>Rediseño inicial del flujo de reporte en móvil.</li>
+      <li>Panel de reporte menos invasivo.</li>
+      <li>Changelog público actualizado.</li>
+    </ul>
+
+    <h2>v0.9.1-public-legal</h2>
+    <ul>
+      <li>Dominio público activo: https://mapa-apagones.es.</li>
+      <li>Páginas públicas legales listas para producción.</li>
+      <li>Correos públicos del proyecto.</li>
+      <li>SEO básico, robots.txt, sitemap.xml, Open Graph y JSON-LD.</li>
+    </ul>
+
+    <h2>v0.9.0-geo-north-cyl</h2>
+    <ul>
+      <li>Mapa ciudadano funcional.</li>
+      <li>Reportes por zona.</li>
+      <li>Base geográfica inicial: Galicia, Asturias, Cantabria y Castilla y León.</li>
+    </ul>
+
+    <h2>v0.8.x-public-infra</h2>
+    <ul>
+      <li>Cloudflare Pages preparado.</li>
+      <li>API separada mediante `VITE_API_BASE_URL`.</li>
+      <li>CORS, Docker, backups, healthchecks y SQLite WAL.</li>
+    </ul>
+
+    <h2>v0.7.x-security-abuse</h2>
+    <ul>
+      <li>Turnstile.</li>
+      <li>Rate limiting.</li>
+      <li>Endpoints con `bbox`, `limit` y límites duros.</li>
+    </ul>
+
+    <h2>v0.6.0-foundation</h2>
+    <ul>
+      <li>Base legal inicial.</li>
+      <li>Backup/restore inicial.</li>
+      <li>Limpieza de diseño de incidencias.</li>
+    </ul>
+
+    <h2>v0.5.0-alpha</h2>
+    <ul>
+      <li>Mapa ciudadano funcional inicial.</li>
+      <li>Incidencias por zona.</li>
+      <li>Lógica inicial de estados.</li>
+    </ul>
+
+    <h2>Historial técnico reciente desde Git</h2>
+    <ul>
+      <li><code>2026-04-28</code> <code>0ed074f</code> PR #31 from odegaard12/feat/mobile-report-redesign-v2</li>
+<li><code>2026-04-28</code> <code>42ee120</code> PR #30 from odegaard12/feat/ux-turnstile-mobile-density-v1</li>
+<li><code>2026-04-28</code> <code>7241812</code> PR #29 from odegaard12/fix/public-legal-legacy-pages-v1</li>
+<li><code>2026-04-28</code> <code>05e23ac</code> PR #28 from odegaard12/fix/public-changelog-page-v1</li>
+<li><code>2026-04-28</code> <code>371347a</code> PR #27 from odegaard12/docs/legal-production-texts-v1</li>
+<li><code>2026-04-28</code> <code>a8106cb</code> PR #26 from odegaard12/feat/ux-initial-spain-scale-v1</li>
+<li><code>2026-04-28</code> <code>618b82e</code> PR #25 from odegaard12/feat/public-pages-seo-v1</li>
+<li><code>2026-04-28</code> <code>f2ce6dc</code> PR #23 from odegaard12/ops/sqlite-backup-health-v1</li>
+<li><code>2026-04-27</code> <code>e25093d</code> PR #22 from odegaard12/chore/frontend-dockerignore-v1</li>
+<li><code>2026-04-27</code> <code>d802ab0</code> PR #21 from odegaard12/feat/cloudflare-pages-ready-v1</li>
+<li><code>2026-04-27</code> <code>b87b044</code> PR #20 from odegaard12/feat/api-bbox-limit-v1</li>
+<li><code>2026-04-27</code> <code>c1ea5e0</code> PR #19 from odegaard12/fix/prod-cors-debug-v1</li>
+<li><code>2026-04-27</code> <code>3df7d17</code> PR #18 from odegaard12/docs/public-project-identity-v1</li>
+<li><code>2026-04-27</code> <code>90b9cb9</code> PR #17 from odegaard12/docs/public-project-identity-v1</li>
+<li><code>2026-04-27</code> <code>358d356</code> PR #16 from odegaard12/feat/security-turnstile-v1</li>
+<li><code>2026-04-27</code> <code>1aae301</code> PR #15 from odegaard12/feat/geo-castilla-leon-v1</li>
+<li><code>2026-04-27</code> <code>f75f323</code> PR #14 from odegaard12/feat/geo-cantabria-v1</li>
+<li><code>2026-04-27</code> <code>91cfab6</code> PR #13 from odegaard12/fix/geo-normalize-galicia-asturias-pipeline-v1</li>
+<li><code>2026-04-27</code> <code>508c84a</code> PR #12 from odegaard12/fix/zone-id-accent-slug-normalization-v1</li>
+<li><code>2026-04-27</code> <code>028c6a0</code> PR #11 from odegaard12/feat/geo-cnig-pipeline-v1</li>
+<li><code>2026-04-27</code> <code>8b5d134</code> PR #10 from odegaard12/fix/geo-all-dataset-remount-hardening-v1</li>
+<li><code>2026-04-27</code> <code>0fa3540</code> PR #9 from odegaard12/fix/report-feedback-and-scope-freedom</li>
+<li><code>2026-04-27</code> <code>1fe8878</code> PR #8 from odegaard12/feat/geo-spain-source-pipeline</li>
+<li><code>2026-04-26</code> <code>d644c83</code> PR #7 from odegaard12/feat/geo-multidataset-state</li>
+<li><code>2026-04-26</code> <code>6606992</code> PR #6 from odegaard12/feat/geo-loader-spain-ready</li>
+<li><code>2026-04-26</code> <code>1e2fe94</code> PR #5 from odegaard12/chore/geo-version-sync-and-state-hardening</li>
+<li><code>2026-04-26</code> <code>a505b80</code> PR #4 from odegaard12/fix/geo-live-refresh-clarity</li>
+<li><code>2026-04-26</code> <code>8d61cb4</code> PR #3 from odegaard12/fix/polygon-resolution-v1</li>
+<li><code>2026-04-26</code> <code>6d4f1ce</code> PR #2 from odegaard12/feat/municipality-polygons</li>
+<li><code>2026-04-25</code> <code>142b0a2</code> PR #1 from odegaard12/feat/zones-backend-wip</li>
+<li><code>2026-04-24</code> <code>d4f6494</code> docs: improve README and restore license</li>
+<li><code>2026-04-24</code> <code>7ee5442</code> chore: public-safe snapshot without personal or runtime data</li>
+    </ul>
+  
+
+
+</main>
+</body>
+</html>

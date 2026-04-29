@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.8.8-toda-espana-flow-fix`.
+Versión actual visible: `v0.9.8.9-stability-rollback`.9.8.3-black-screen-fix`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 
@@ -87,9 +87,6 @@ Despliegue objetivo:
 ## Estado geográfico actual
 
 Ámbitos disponibles:
-
-Más comunidades añadidas en v0.9.8.4: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.
-
 
 - Toda España, combinando datasets disponibles.
 - Galicia.
