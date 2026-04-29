@@ -1,3 +1,11 @@
+## v0.9.8.7-geo-municipio-polygons
+
+- Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.
+- Las incidencias ya guardadas se pintan como municipio completo cuando hay polígono disponible.
+- Al recargar, las zonas activas con municipio ya no aparecen como celda/cuadrado.
+- Limpia `reportPoint` tras enviar para no arrastrar la selección manual a la vista de incidencias.
+- No cambia backend, privacidad, Turnstile ni rate limiting.
+
 ## v0.9.8.6-geo-overlay-persistence
 
 - Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.
