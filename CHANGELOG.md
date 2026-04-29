@@ -1,3 +1,10 @@
+## v0.9.7.8-report-flow-stability
+
+- Corrige el flujo de “Yo también” / “Ya volvió” usando `incident_id`/`zone_id` cuando la UI trabaja con zonas agregadas.
+- Añade preflight de reporte para mostrar cooldowns antes del flujo visual de envío.
+- Mantiene Turnstile con fallback suave y evita mensajes de preparación como toast verde separado.
+- Mejora autocierre/cierre manual de mensajes y estabilidad móvil del panel de acciones.
+
 # Changelog
 
 ## v0.9.7.7-stable-rollback
