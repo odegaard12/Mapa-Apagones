@@ -1,3 +1,11 @@
+## v0.9.8.5-geo-selection-polish
+
+- Elimina el mensaje temporal de comunidades pendientes.
+- Mantiene “Toda España” sin cambiar automáticamente de ámbito.
+- Añade marcado visual del municipio seleccionado en comunidades nuevas.
+- Tras reportar, prioriza `zone_id` para conservar mejor la selección visual.
+- No cambia backend, privacidad, Turnstile ni rate limiting.
+
 ## v0.9.8.4-geo-communities-batch
 
 - Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.
