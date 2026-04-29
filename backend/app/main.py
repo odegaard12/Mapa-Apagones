@@ -84,6 +84,8 @@ class ReportIn(BaseModel):
     type: str
     token: str = Field(min_length=16, max_length=128)
     turnstile_token: Optional[str] = Field(default=None, max_length=4096)
+    incident_id: Optional[str] = Field(default=None, max_length=80)
+    zone_id: Optional[str] = Field(default=None, max_length=80)
 
 def utcnow() -> datetime:
     return datetime.now(timezone.utc)
@@ -124,10 +126,14 @@ def verify_turnstile_or_403(turnstile_token: Optional[str], request: FastAPIRequ
         return
 
     if not TURNSTILE_SECRET_KEY:
-        raise HTTPException(status_code=500, detail="Turnstile no está configurado.")
+        if TURNSTILE_REQUIRED:
+            raise HTTPException(status_code=500, detail="Turnstile no está configurado.")
+        return
 
     if not turnstile_token or not turnstile_token.strip():
-        raise HTTPException(status_code=403, detail="Verificación anti-abuso requerida.")
+        if TURNSTILE_REQUIRED:
+            raise HTTPException(status_code=403, detail="Verificación anti-abuso requerida.")
+        return
 
     form = urlencode(
         {
@@ -682,6 +688,125 @@ def find_nearest_recent_incident(conn, lat: float, lng: float) -> Optional[sqlit
             best_d = d
     return best
 
+def find_active_incident_by_id(conn, incident_id: Optional[str]) -> Optional[sqlite3.Row]:
+    if not incident_id:
+        return None
+    return conn.execute(
+        """
+        SELECT *
+        FROM incidents
+        WHERE id = ?
+          AND report_count_active > 0
+        ORDER BY last_report_at DESC
+        LIMIT 1
+        """,
+        (incident_id,),
+    ).fetchone()
+
+def find_active_incident_by_zone_id(conn, zone_id: Optional[str]) -> Optional[sqlite3.Row]:
+    if not zone_id:
+        return None
+    return conn.execute(
+        """
+        SELECT *
+        FROM incidents
+        WHERE zone_id = ?
+          AND report_count_active > 0
+        ORDER BY report_count_active DESC, last_report_at DESC
+        LIMIT 1
+        """,
+        (zone_id,),
+    ).fetchone()
+
+def find_restore_target_incident(
+    conn,
+    lat: float,
+    lng: float,
+    incident_id: Optional[str] = None,
+    zone_id: Optional[str] = None,
+) -> Optional[sqlite3.Row]:
+    return (
+        find_active_incident_by_id(conn, incident_id)
+        or find_active_incident_by_zone_id(conn, zone_id)
+        or find_nearest_recent_incident(conn, lat, lng)
+    )
+
+def assert_existing_report_cooldown(conn, incident_id: str, token_hash: str, report_type: str, now: datetime) -> None:
+    existing = conn.execute(
+        """
+        SELECT *
+        FROM reports
+        WHERE incident_id = ?
+          AND reporter_token_hash = ?
+          AND status = 'active'
+        ORDER BY updated_at DESC
+        LIMIT 1
+        """,
+        (incident_id, token_hash),
+    ).fetchone()
+
+    if not existing:
+        return
+
+    last_update = parse_dt(existing["updated_at"]) or now
+    cooldown = SAME_TYPE_COOLDOWN_SEC if existing["report_type"] == report_type else TYPE_CHANGE_COOLDOWN_SEC
+    elapsed = (now - last_update).total_seconds()
+
+    if elapsed < cooldown:
+        wait_sec = int(cooldown - elapsed)
+        raise HTTPException(status_code=429, detail=f"Espera {wait_sec}s antes de volver a actualizar esta zona.")
+
+def validate_report_preflight(conn, payload: ReportIn, token_hash: str, ip_hash: str) -> dict:
+    assert_not_rate_limited(conn, token_hash, ip_hash)
+
+    now = utcnow()
+
+    if payload.type == "vuelve":
+        incident = find_restore_target_incident(conn, payload.lat, payload.lng, payload.incident_id, payload.zone_id)
+        if not incident:
+            raise HTTPException(status_code=400, detail="No hay una incidencia activa cercana para marcar como resuelta.")
+
+        assert_existing_report_cooldown(conn, incident["id"], token_hash, payload.type, now)
+        return {"ok": True, "incident_id": incident["id"], "zone_id": incident["zone_id"]}
+
+    nearby_user_report = find_user_nearby_active_report(conn, token_hash, payload.lat, payload.lng)
+
+    current_active_negative = conn.execute(
+        """
+        SELECT *
+        FROM reports
+        WHERE reporter_token_hash = ?
+          AND status = 'active'
+          AND report_type != 'vuelve'
+        ORDER BY updated_at DESC
+        LIMIT 1
+        """,
+        (token_hash,),
+    ).fetchone()
+
+    if nearby_user_report:
+        assert_existing_report_cooldown(conn, nearby_user_report["incident_id"], token_hash, payload.type, now)
+        return {"ok": True, "incident_id": nearby_user_report["incident_id"]}
+
+    if current_active_negative:
+        last_dt = parse_dt(current_active_negative["updated_at"]) or now
+        elapsed = (now - last_dt).total_seconds()
+        if elapsed < NEW_ZONE_COOLDOWN_SEC:
+            wait_sec = int(NEW_ZONE_COOLDOWN_SEC - elapsed)
+            raise HTTPException(
+                status_code=429,
+                detail=f"Ya tienes una incidencia activa. Márcala como resuelta o espera {wait_sec}s antes de abrir otra zona.",
+            )
+
+    grid = grid_for_point(payload.lat, payload.lng)
+    candidate = find_recent_incident_in_same_cell(conn, grid["cell_key"]) or find_nearest_recent_incident(conn, payload.lat, payload.lng)
+
+    if candidate:
+        assert_existing_report_cooldown(conn, candidate["id"], token_hash, payload.type, now)
+        return {"ok": True, "incident_id": candidate["id"], "zone_id": candidate["zone_id"]}
+
+    return {"ok": True, "incident_id": None, "zone_id": None}
+
 def find_user_nearby_active_report(conn, token_hash: str, lat: float, lng: float) -> Optional[sqlite3.Row]:
     rows = conn.execute(
         """
@@ -747,9 +872,16 @@ def create_incident(conn, lat: float, lng: float, base_type: str) -> str:
     )
     return incident_id
 
-def get_or_create_incident_id(conn, lat: float, lng: float, report_type: str) -> str:
+def get_or_create_incident_id(
+    conn,
+    lat: float,
+    lng: float,
+    report_type: str,
+    incident_id: Optional[str] = None,
+    zone_id: Optional[str] = None,
+) -> str:
     if report_type == "vuelve":
-        nearby = find_nearest_recent_incident(conn, lat, lng)
+        nearby = find_restore_target_incident(conn, lat, lng, incident_id, zone_id)
         if not nearby:
             raise HTTPException(status_code=400, detail="No hay una incidencia activa cercana para marcar como resuelta.")
         return nearby["id"]
@@ -880,7 +1012,7 @@ def zones(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None
 
         latest_incident = conn.execute(
             """
-            SELECT primary_type, status, last_report_at
+            SELECT id, primary_type, status, last_report_at
             FROM incidents
             WHERE zone_id = ?
             ORDER BY report_count_active DESC, last_report_at DESC
@@ -893,6 +1025,7 @@ def zones(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None
 
         items.append({
             "id": z["id"],
+            "incident_id": latest_incident["id"] if latest_incident else None,
             "display_zone": z["display_name"],
             "municipio": z["municipio"],
             "province": z["province"],
@@ -922,6 +1055,28 @@ def zones(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None
     conn.close()
     return {"items": items, "summary": summary, "limit": limit, "hours": hours}
 
+
+@app.post("/api/report/preflight")
+def report_preflight(payload: ReportIn, request: FastAPIRequest):
+    if payload.type not in ALLOWED_TYPES:
+        raise HTTPException(status_code=400, detail="Tipo de reporte inválido")
+
+    conn = get_db()
+    cleanup_old(conn)
+
+    token_hash = sha256(payload.token.strip())
+    ip_hash = sha256(client_ip(request))
+
+    try:
+        result = validate_report_preflight(conn, payload, token_hash, ip_hash)
+        conn.close()
+        return result
+    except HTTPException:
+        conn.close()
+        raise
+    except Exception:
+        conn.close()
+        raise
 
 @app.post("/api/report")
 def report(payload: ReportIn, request: FastAPIRequest):
@@ -957,7 +1112,7 @@ def report(payload: ReportIn, request: FastAPIRequest):
     ).fetchone()
 
     if payload.type == "vuelve":
-        incident_id = get_or_create_incident_id(conn, payload.lat, payload.lng, payload.type)
+        incident_id = get_or_create_incident_id(conn, payload.lat, payload.lng, payload.type, payload.incident_id, payload.zone_id)
     elif nearby_user_report:
         incident_id = nearby_user_report["incident_id"]
     else:

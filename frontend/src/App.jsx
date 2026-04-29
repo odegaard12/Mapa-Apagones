@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7.7-stable-rollback'
+const APP_VERSION = 'v0.9.7.8-report-flow-stability'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -339,7 +339,7 @@ function FeedbackOverlay({ open, title, subtitle, steps = [], activeStep = 0, do
   )
 }
 
-function FloatingToast({ message, tone = 'success' }) {
+function FloatingToast({ message, tone = 'success', onClose = null }) {
   if (!message) return null
 
   const isError = tone === 'error'
@@ -379,11 +379,31 @@ function FloatingToast({ message, tone = 'success' }) {
           alignItems: 'center',
           gap: '10px',
           animation: 'apagonesToastIn 220ms ease-out',
-          pointerEvents: 'none',
+          pointerEvents: 'auto',
         }}
       >
         <span>{icon}</span>
-        <span>{message}</span>
+        <span style={{ flex: 1 }}>{message}</span>
+        {onClose ? (
+          <button
+            type="button"
+            aria-label="Cerrar mensaje"
+            onClick={onClose}
+            style={{
+              width: '28px',
+              height: '28px',
+              border: 0,
+              borderRadius: '999px',
+              color: '#fff',
+              background: 'rgba(255,255,255,0.16)',
+              cursor: 'pointer',
+              fontWeight: 900,
+              lineHeight: 1,
+            }}
+          >
+            ×
+          </button>
+        ) : null}
       </div>
     </>
   )
@@ -400,10 +420,13 @@ export default function App() {
   const turnstileWidgetRef = useRef(null)
   const turnstileTimeoutRef = useRef(null)
   const pendingReportRef = useRef(null)
-const [mode, setMode] = useState('explore')
+  const reportLoadingTimerRef = useRef(null)
+  const reportOkRef = useRef(false)
+  const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
   const [reportPoint, setReportPoint] = useState(null)
+  const [reportTargetMeta, setReportTargetMeta] = useState(null)
   const [turnstileToken, setTurnstileToken] = useState('')
   const [turnstilePending, setTurnstilePending] = useState(false)
   const [selectedIncidentId, setSelectedIncidentId] = useState(null)
@@ -415,7 +438,7 @@ const [mode, setMode] = useState('explore')
 
     const timeout = window.setTimeout(() => {
       setMessage('')
-    }, 3800)
+    }, 5000)
 
     return () => window.clearTimeout(timeout)
   }, [message])
@@ -470,6 +493,7 @@ const [mode, setMode] = useState('explore')
   useEffect(() => {
     setSelectedIncidentId(null)
     setReportPoint(null)
+    setReportTargetMeta(null)
     setMessage('')
     setMode('explore')
     setLeftTab('incidents')
@@ -506,7 +530,7 @@ const [mode, setMode] = useState('explore')
   }, [mapInstance, hours, statusFilter])
 
   useEffect(() => {
-    if (loading || geoLoading || feedbackStage) {
+    if (loading || geoLoading || feedbackStage || turnstilePending) {
       setToastMessage('')
       return
     }
@@ -514,27 +538,43 @@ const [mode, setMode] = useState('explore')
     if (!message) return
 
     setToastMessage(message)
-    const id = setTimeout(() => setToastMessage(''), 3200)
+    const id = setTimeout(() => setToastMessage(''), 5000)
     return () => clearTimeout(id)
-  }, [message, loading, geoLoading, feedbackStage])
+  }, [message, loading, geoLoading, feedbackStage, turnstilePending])
 
   useEffect(() => {
+    if (reportLoadingTimerRef.current) {
+      window.clearTimeout(reportLoadingTimerRef.current)
+      reportLoadingTimerRef.current = null
+    }
+
     if (loading) {
-      setFeedbackStage('report-loading')
-      return
+      reportLoadingTimerRef.current = window.setTimeout(() => {
+        setFeedbackStage('report-loading')
+      }, 450)
+
+      return () => {
+        if (reportLoadingTimerRef.current) {
+          window.clearTimeout(reportLoadingTimerRef.current)
+          reportLoadingTimerRef.current = null
+        }
+      }
     }
 
     if (geoLoading) {
       setFeedbackStage('geo-loading')
-      return
+      return undefined
     }
 
     setFeedbackStage((current) => {
-      if (current === 'report-loading') return 'report-ready'
+      if (current === 'report-loading') return reportOkRef.current ? 'report-ready' : null
       if (current === 'geo-loading') return 'geo-ready'
+      if (current === 'report-preparing') return turnstilePending ? 'report-preparing' : null
       return current
     })
-  }, [loading, geoLoading])
+
+    return undefined
+  }, [loading, geoLoading, turnstilePending])
 
   useEffect(() => {
     if (feedbackStage !== 'report-ready' && feedbackStage !== 'geo-ready') return
@@ -609,11 +649,68 @@ const [mode, setMode] = useState('explore')
     )
   }, [activeVisible])
 
+
+  function reportTargetMetaFromIncident(incident) {
+    if (!incident) return {}
+    return {
+      incident_id: incident.incident_id || null,
+      zone_id: incident.zone_id || incident.id || null,
+    }
+  }
+
+  function pointFromIncident(incident) {
+    if (
+      incident &&
+      Number.isFinite(Number(incident.center_lat)) &&
+      Number.isFinite(Number(incident.center_lng))
+    ) {
+      return [Number(incident.center_lat), Number(incident.center_lng)]
+    }
+    return null
+  }
+
+  async function preflightReport(point, type, targetMeta = {}) {
+    const res = await apiFetch('/api/report/preflight', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        lat: point[0],
+        lng: point[1],
+        type,
+        token: getToken(),
+        turnstile_token: null,
+        incident_id: targetMeta.incident_id || null,
+        zone_id: targetMeta.zone_id || null,
+      }),
+    })
+
+    const data = await res.json().catch(() => ({}))
+    if (!res.ok) throw new Error(data.detail || 'No se pudo preparar el reporte')
+    return data
+  }
+
+  function prepareIncidentReport(incident, type) {
+    const point = pointFromIncident(incident)
+    if (!point) {
+      setMessage('No se pudo localizar la zona seleccionada.')
+      return
+    }
+
+    setMode('report')
+    setReportType(type)
+    setReportPoint(point)
+    setReportTargetMeta(reportTargetMetaFromIncident(incident))
+    setSelectedIncidentId(null)
+    setMessage('')
+    setFeedbackStage(null)
+  }
+
   function focusIncident(incident) {
     setSelectedIncidentId(incident.id)
     setLeftTab('incidents')
     setMode('explore')
     setReportPoint(null)
+    setReportTargetMeta(null)
     setMessage('')
     if (mapInstance) {
       mapInstance.fitBounds(incidentBounds(incident), {
@@ -669,7 +766,7 @@ const [mode, setMode] = useState('explore')
           const pending = pendingReportRef.current
           if (pending && cleanToken) {
             pendingReportRef.current = null
-            sendReport(pending.point, pending.type, cleanToken)
+            sendReport(pending.point, pending.type, cleanToken, false, pending.targetMeta)
           }
         },
         'expired-callback': () => {
@@ -680,6 +777,7 @@ const [mode, setMode] = useState('explore')
           pendingReportRef.current = null
           setTurnstilePending(false)
           setTurnstileToken('')
+          setFeedbackStage(null)
           setMessage('No se pudo completar la verificación. Inténtalo de nuevo.')
         },
       })
@@ -717,10 +815,11 @@ const [mode, setMode] = useState('explore')
     }
   }
 
-  function startTurnstileSubmit(point, type) {
-    pendingReportRef.current = { point, type }
+  function startTurnstileSubmit(point, type, targetMeta = {}) {
+    pendingReportRef.current = { point, type, targetMeta }
     setTurnstilePending(true)
-    setMessage('Preparando reporte…')
+    setFeedbackStage('report-preparing')
+    setMessage('')
 
     const startedAt = Date.now()
     let executed = false
@@ -742,7 +841,7 @@ const [mode, setMode] = useState('explore')
             resetTurnstileChallenge()
             setMessage('Continuando con protección local…')
             if (pending) {
-              sendReport(pending.point, pending.type, null, true)
+              sendReport(pending.point, pending.type, null, true, pending.targetMeta)
             }
           }, 30000)
 
@@ -751,6 +850,7 @@ const [mode, setMode] = useState('explore')
           pendingReportRef.current = null
           setTurnstilePending(false)
           clearTurnstileSubmitTimeout()
+          setFeedbackStage(null)
           setMessage('No se pudo completar la protección del reporte. Inténtalo de nuevo.')
         }
         return
@@ -764,30 +864,40 @@ const [mode, setMode] = useState('explore')
       const pending = pendingReportRef.current
       pendingReportRef.current = null
       setTurnstilePending(false)
-      setMessage('Continuando con protección local…')
+      setFeedbackStage('report-preparing')
       if (pending) {
-        sendReport(pending.point, pending.type, null, true)
+        sendReport(pending.point, pending.type, null, true, pending.targetMeta)
       }
     }
 
     tryExecute()
   }
 
-  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null, allowWithoutTurnstile = false) {
+  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null, allowWithoutTurnstile = false, targetMetaOverride = null) {
     const point = pointOverride || reportPoint
     const type = typeOverride || reportType
     const effectiveTurnstileToken = turnstileTokenOverride || turnstileToken
+    const targetMeta = targetMetaOverride || reportTargetMeta || {}
 
     if (!point) {
       setMessage('Selecciona una zona del mapa.')
       return
     }
 
-    if (TURNSTILE_ENABLED && !effectiveTurnstileToken && !allowWithoutTurnstile) {
-      startTurnstileSubmit(point, type)
+    try {
+      await preflightReport(point, type, targetMeta)
+    } catch (err) {
+      setFeedbackStage(null)
+      setMessage(err.message || 'No se pudo preparar el reporte')
       return
     }
 
+    if (TURNSTILE_ENABLED && !effectiveTurnstileToken && !allowWithoutTurnstile) {
+      startTurnstileSubmit(point, type, targetMeta)
+      return
+    }
+
+    reportOkRef.current = false
     setLoading(true)
     setMessage('')
 
@@ -800,12 +910,16 @@ const [mode, setMode] = useState('explore')
           lng: point[1],
           type,
           token: getToken(),
+          incident_id: targetMeta.incident_id || null,
+          zone_id: targetMeta.zone_id || null,
           turnstile_token: TURNSTILE_ENABLED && effectiveTurnstileToken ? effectiveTurnstileToken : null,
         }),
       })
 
       const data = await res.json()
       if (!res.ok) throw new Error(data.detail || 'No se pudo enviar el reporte')
+
+      reportOkRef.current = true
 
       if (type === 'vuelve' && Number(data.incident.report_count_active || 0) === 0) {
         setMessage('Zona marcada como resuelta.')
@@ -826,6 +940,7 @@ const [mode, setMode] = useState('explore')
       }
 
       setReportPoint([data.incident.center_lat, data.incident.center_lng])
+      setReportTargetMeta(null)
       setMode('explore')
       setLeftTab('incidents')
 
@@ -855,6 +970,8 @@ const [mode, setMode] = useState('explore')
 
       await loadIncidents()
     } catch (err) {
+      reportOkRef.current = false
+      setFeedbackStage(null)
       setMessage(err.message || 'Error enviando el reporte')
     } finally {
       resetTurnstileChallenge()
@@ -865,11 +982,13 @@ const [mode, setMode] = useState('explore')
   function enterExplore() {
     setMode('explore')
     setReportPoint(null)
+    setReportTargetMeta(null)
   }
 
   function enterReport() {
     setMode('report')
     setSelectedIncidentId(null)
+    setReportTargetMeta(null)
     setMessage('')
   }
 
@@ -877,6 +996,16 @@ const [mode, setMode] = useState('explore')
 
   const overlayConfig = useMemo(() => {
     const label = currentGeoDataset?.label || 'ámbito seleccionado'
+
+    if (feedbackStage === 'report-preparing') {
+      return {
+        title: 'Preparando reporte',
+        subtitle: 'Comprobando la zona y preparando la protección anti-abuso.',
+        steps: ['Comprobando zona', 'Preparando protección', 'Listo para enviar'],
+        activeStep: 2,
+        done: false,
+      }
+    }
 
     if (feedbackStage === 'report-loading') {
       return {
@@ -935,7 +1064,7 @@ const [mode, setMode] = useState('explore')
         activeStep={overlayConfig?.activeStep || 0}
         done={Boolean(overlayConfig?.done)}
       />
-      <FloatingToast message={toastMessage} tone={toastTone} />
+      <FloatingToast message={toastMessage} tone={toastTone} onClose={() => setToastMessage('')} />
       <header className="topbar glass">
         <div className="brand-block">
           <div className="brand-logo">⚡</div>
@@ -1217,23 +1346,13 @@ const [mode, setMode] = useState('explore')
             <div className="action-row">
               <button
                 className="btn-primary"
-                onClick={() => {
-                  setMode('report')
-                  setReportType('sin_luz')
-                  setReportPoint([selectedIncident.center_lat, selectedIncident.center_lng])
-                  setSelectedIncidentId(null)
-                }}
+                onClick={() => prepareIncidentReport(selectedIncident, 'sin_luz')}
               >
                 Yo también
               </button>
               <button
                 className="btn-green"
-                onClick={() => {
-                  setMode('report')
-                  setReportType('vuelve')
-                  setReportPoint([selectedIncident.center_lat, selectedIncident.center_lng])
-                  setMessage('')
-                }}
+                onClick={() => prepareIncidentReport(selectedIncident, 'vuelve')}
               >
                 Ya volvió
               </button>
