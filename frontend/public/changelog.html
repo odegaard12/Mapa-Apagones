@@ -110,7 +110,7 @@
   <main>
     <div class="top">
       <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-04-28</span>
+      <span>Actualizado: 2026-04-29</span>
     </div>
 
     <h1>Changelog</h1>
@@ -122,7 +122,27 @@
 
 
 
-    <h2>v0.9.7.7-stable-rollback</h2>
+    
+    <section>
+      <h2>v0.9.7.9-manual-restore-target</h2>
+      <ul>
+        <li>Corrige “Ya volvió” desde el modo Reportar manual cuando el punto cae sobre una zona activa.</li>
+        <li>El frontend deduce la incidencia visible y envía <code>incident_id</code>/<code>zone_id</code> cuando corresponde.</li>
+        <li>El backend añade fallback por bounds/celda activa antes de usar solo proximidad.</li>
+        <li>Evita repetir <code>preflight</code> después de Turnstile si ya se validó antes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>v0.9.7.8-report-flow-stability</h2>
+      <ul>
+        <li>Estabiliza el flujo de reporte, confirmación y “Ya volvió”.</li>
+        <li>Los cooldowns se comprueban antes del envío visual.</li>
+        <li>Mejora mensajes móviles y acciones visibles sin cambiar la política de privacidad.</li>
+      </ul>
+    </section>
+
+<h2>v0.9.7.7-stable-rollback</h2>
     <ul>
       <li>Rollback de la pasada de banners que causaba regresiones móviles.</li>
       <li>Recupera el flujo estable de reporte y acciones.</li>
@@ -295,14 +315,8 @@
 <li><code>2026-04-24</code> <code>d4f6494</code> docs: improve README and restore license</li>
 <li><code>2026-04-24</code> <code>7ee5442</code> chore: public-safe snapshot without personal or runtime data</li>
     </ul>
-  <section class="changelog-entry">
-  <h2>v0.9.7.8-report-flow-stability</h2>
-  <ul>
-    <li>Estabiliza el flujo de reporte, confirmación y “Ya volvió”.</li>
-    <li>Los cooldowns se comprueban antes del envío visual.</li>
-    <li>Mejora mensajes móviles y acciones visibles sin cambiar la política de privacidad.</li>
-  </ul>
-</section>
+  
+
 
 </main>
 </body>
