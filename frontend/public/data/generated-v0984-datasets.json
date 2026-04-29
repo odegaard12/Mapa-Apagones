@@ -1,0 +1,332 @@
+[
+  {
+    "id": "andalucia",
+    "label": "Andalucía",
+    "municipiosPath": "/data/andalucia_municipios.geojson",
+    "defaultCenter": [
+      37.33336667859101,
+      -4.5765854
+    ],
+    "defaultZoom": 7,
+    "maxBounds": [
+      [
+        35.937645977103095,
+        -7.523047057
+      ],
+      [
+        38.72908738007893,
+        -1.630123743
+      ]
+    ],
+    "features": 786,
+    "size": 12104778
+  },
+  {
+    "id": "aragon",
+    "label": "Aragón",
+    "municipiosPath": "/data/aragon_municipios.geojson",
+    "defaultCenter": [
+      41.385582238065425,
+      -0.7011822975
+    ],
+    "defaultZoom": 7,
+    "maxBounds": [
+      [
+        39.84677815507171,
+        -2.173671268
+      ],
+      [
+        42.92438632105913,
+        0.771306673
+      ]
+    ],
+    "features": 734,
+    "size": 5816200
+  },
+  {
+    "id": "castilla_la_mancha",
+    "label": "Castilla-La Mancha",
+    "municipiosPath": "/data/castilla_la_mancha_municipios.geojson",
+    "defaultCenter": [
+      39.67473495107427,
+      -3.1609884705
+    ],
+    "defaultZoom": 7,
+    "maxBounds": [
+      [
+        38.02183768808423,
+        -5.406183688
+      ],
+      [
+        41.327632214064316,
+        -0.915793253
+      ]
+    ],
+    "features": 921,
+    "size": 8313884
+  },
+  {
+    "id": "cataluna",
+    "label": "Cataluña",
+    "municipiosPath": "/data/cataluna_municipios.geojson",
+    "defaultCenter": [
+      41.69224841706366,
+      1.7458058365
+    ],
+    "defaultZoom": 7,
+    "maxBounds": [
+      [
+        40.52304652006803,
+        0.159070266
+      ],
+      [
+        42.86145031405929,
+        3.332541407
+      ]
+    ],
+    "features": 948,
+    "size": 8893678
+  },
+  {
+    "id": "comunitat_valenciana",
+    "label": "Comunitat Valenciana",
+    "municipiosPath": "/data/comunitat_valenciana_municipios.geojson",
+    "defaultCenter": [
+      39.31622955007619,
+      -0.419244251
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        37.843827900085664,
+        -1.528799448
+      ],
+      [
+        40.78863120006672,
+        0.690310946
+      ]
+    ],
+    "features": 544,
+    "size": 3951773
+  },
+  {
+    "id": "extremadura",
+    "label": "Extremadura",
+    "municipiosPath": "/data/extremadura_municipios.geojson",
+    "defaultCenter": [
+      39.21383870957655,
+      -6.094454576
+    ],
+    "defaultZoom": 7,
+    "maxBounds": [
+      [
+        37.94102603108489,
+        -7.541331761
+      ],
+      [
+        40.48665138806821,
+        -4.647577391
+      ]
+    ],
+    "features": 388,
+    "size": 5181749
+  },
+  {
+    "id": "illes_balears",
+    "label": "Illes Balears",
+    "municipiosPath": "/data/illes_balears_municipios.geojson",
+    "defaultCenter": [
+      39.367454523574935,
+      2.7431966869999997
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        38.64038757907958,
+        1.158654712
+      ],
+      [
+        40.09452146807029,
+        4.327738662
+      ]
+    ],
+    "features": 68,
+    "size": 1467735
+  },
+  {
+    "id": "la_rioja",
+    "label": "La Rioja",
+    "municipiosPath": "/data/la_rioja_municipios.geojson",
+    "defaultCenter": [
+      42.28164932656094,
+      -2.4064864425
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        41.91903395306205,
+        -3.13427139
+      ],
+      [
+        42.64426470005983,
+        -1.678701495
+      ]
+    ],
+    "features": 175,
+    "size": 932131
+  },
+  {
+    "id": "madrid",
+    "label": "Comunidad de Madrid",
+    "municipiosPath": "/data/madrid_municipios.geojson",
+    "defaultCenter": [
+      40.52528204356824,
+      -3.8160297444999998
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        39.88471933307149,
+        -4.579076175
+      ],
+      [
+        41.165844754065,
+        -3.052983314
+      ]
+    ],
+    "features": 181,
+    "size": 1670349
+  },
+  {
+    "id": "murcia",
+    "label": "Región de Murcia",
+    "municipiosPath": "/data/murcia_municipios.geojson",
+    "defaultCenter": [
+      38.06441844358417,
+      -1.4960836195
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        37.37375254008958,
+        -2.344184266
+      ],
+      [
+        38.75508434707875,
+        -0.647982973
+      ]
+    ],
+    "features": 45,
+    "size": 821868
+  },
+  {
+    "id": "navarra",
+    "label": "Navarra",
+    "municipiosPath": "/data/navarra_municipios.geojson",
+    "defaultCenter": [
+      42.612342859560194,
+      -1.6120761965000001
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        41.909893719062076,
+        -2.5000827
+      ],
+      [
+        43.31479200005831,
+        -0.724069693
+      ]
+    ],
+    "features": 288,
+    "size": 1845656
+  },
+  {
+    "id": "pais_vasco",
+    "label": "País Vasco / Euskadi",
+    "municipiosPath": "/data/pais_vasco_municipios.geojson",
+    "defaultCenter": [
+      42.964657914559176,
+      -2.589836283
+    ],
+    "defaultZoom": 8,
+    "maxBounds": [
+      [
+        42.4723608430603,
+        -3.450329097
+      ],
+      [
+        43.45695498605805,
+        -1.729343469
+      ]
+    ],
+    "features": 255,
+    "size": 1956748
+  },
+  {
+    "id": "canarias",
+    "label": "Canarias",
+    "municipiosPath": "/data/canarias_municipios.geojson",
+    "defaultCenter": [
+      28.5270927755,
+      -15.74788359
+    ],
+    "defaultZoom": 7,
+    "maxBounds": [
+      [
+        27.63773394,
+        -18.16080882
+      ],
+      [
+        29.416451611,
+        -13.33495836
+      ]
+    ],
+    "features": 88,
+    "size": 1897310
+  },
+  {
+    "id": "ceuta",
+    "label": "Ceuta",
+    "municipiosPath": "/data/ceuta_municipios.geojson",
+    "defaultCenter": [
+      35.89434255060355,
+      -5.330179736
+    ],
+    "defaultZoom": 11,
+    "maxBounds": [
+      [
+        35.87073845110379,
+        -5.382060666
+      ],
+      [
+        35.9179466501033,
+        -5.278298806
+      ]
+    ],
+    "features": 1,
+    "size": 22604
+  },
+  {
+    "id": "melilla",
+    "label": "Melilla",
+    "municipiosPath": "/data/melilla_municipios.geojson",
+    "defaultCenter": [
+      35.292894373609904,
+      -2.9467313495000003
+    ],
+    "defaultZoom": 11,
+    "maxBounds": [
+      [
+        35.26548852911021,
+        -2.970295508
+      ],
+      [
+        35.3203002181096,
+        -2.923167191
+      ]
+    ],
+    "features": 1,
+    "size": 7756
+  }
+]

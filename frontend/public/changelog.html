@@ -116,6 +116,18 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.8.4-geo-communities-batch</h2>
+      <ul>
+        <li>Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.</li>
+        <li>Descarga y trocea el dataset municipal nacional en GeoJSON separados por ámbito.</li>
+        <li>Usa carga bajo demanda por ámbito para no meter todo el país en el bundle principal.</li>
+        <li>Ámbitos añadidos: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.</li>
+        <li>Mantiene privacidad por diseño: sin CUPS, sin dirección exacta y sin texto libre.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.9.8.3-black-screen-fix</h2>
       <ul>
         <li>Corrige pantalla negra tras enviar o resolver un aviso.</li>

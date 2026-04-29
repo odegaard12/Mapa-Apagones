@@ -1,3 +1,11 @@
+## v0.9.8.4-geo-communities-batch
+
+- Añade un lote amplio de nuevas comunidades autónomas y ciudades autónomas al selector geográfico.
+- Descarga y trocea el dataset municipal nacional en GeoJSON separados por ámbito.
+- Usa carga bajo demanda por ámbito para no meter todo el país en el bundle principal.
+- Ámbitos añadidos: Andalucía, Aragón, Castilla-La Mancha, Cataluña, Comunitat Valenciana, Extremadura, Illes Balears, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, País Vasco / Euskadi, Canarias, Ceuta, Melilla.
+- Mantiene privacidad por diseño: reportes agrupados por zona, sin CUPS, sin dirección exacta y sin texto libre.
+
 ## v0.9.8.3-black-screen-fix
 
 - Corrige pantalla negra tras enviar o resolver un aviso.
