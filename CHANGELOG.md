@@ -1,3 +1,11 @@
+## v0.9.7.9-manual-restore-target
+
+- Corrige “Ya volvió” desde el modo Reportar manual cuando el punto elegido cae sobre una zona activa.
+- El frontend intenta deducir `incident_id`/`zone_id` desde las incidencias visibles.
+- El backend añade fallback por bounds/celda activa antes de depender solo de proximidad.
+- Evita repetir `preflight` después de Turnstile cuando ya se validó antes.
+- Reordena el changelog público para mostrar las últimas versiones arriba.
+
 ## v0.9.7.8-report-flow-stability
 
 - Corrige el flujo de “Yo también” / “Ya volvió” usando `incident_id`/`zone_id` cuando la UI trabaja con zonas agregadas.

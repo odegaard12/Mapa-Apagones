@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7.8-report-flow-stability'
+const APP_VERSION = 'v0.9.7.9-manual-restore-target'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -651,22 +651,69 @@ export default function App() {
 
 
   function reportTargetMetaFromIncident(incident) {
-    if (!incident) return {}
+    if (!incident) return null
+
+    const zoneId = incident.zone_id || incident.id || null
+    const incidentId =
+      incident.incident_id ||
+      (incident.zone_id && incident.id && incident.id !== incident.zone_id ? incident.id : null)
+
     return {
-      incident_id: incident.incident_id || null,
-      zone_id: incident.zone_id || incident.id || null,
+      incident_id: incidentId || null,
+      zone_id: zoneId || null,
     }
   }
 
-  function pointFromIncident(incident) {
-    if (
-      incident &&
-      Number.isFinite(Number(incident.center_lat)) &&
-      Number.isFinite(Number(incident.center_lng))
-    ) {
-      return [Number(incident.center_lat), Number(incident.center_lng)]
+  function metersBetweenPoints(lat1, lng1, lat2, lng2) {
+    const toRad = (value) => (value * Math.PI) / 180
+    const r = 6378137
+    const dLat = toRad(lat2 - lat1)
+    const dLng = toRad(lng2 - lng1)
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2
+    return 2 * r * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  }
+
+  function pointMatchesIncidentZone(point, incident) {
+    if (!point || !incident) return false
+
+    const lat = Number(point[0])
+    const lng = Number(point[1])
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return false
+
+    const latMin = Number(incident.lat_min)
+    const latMax = Number(incident.lat_max)
+    const lngMin = Number(incident.lng_min)
+    const lngMax = Number(incident.lng_max)
+
+    if ([latMin, latMax, lngMin, lngMax].every(Number.isFinite)) {
+      const pad = 0.00035
+      return (
+        lat >= Math.min(latMin, latMax) - pad &&
+        lat <= Math.max(latMin, latMax) + pad &&
+        lng >= Math.min(lngMin, lngMax) - pad &&
+        lng <= Math.max(lngMin, lngMax) + pad
+      )
     }
-    return null
+
+    const centerLat = Number(incident.center_lat ?? incident.lat)
+    const centerLng = Number(incident.center_lng ?? incident.lng)
+    if (!Number.isFinite(centerLat) || !Number.isFinite(centerLng)) return false
+
+    return metersBetweenPoints(lat, lng, centerLat, centerLng) <= 1800
+  }
+
+  function reportTargetMetaFromPoint(point) {
+    if (!point || !Array.isArray(filteredIncidents)) return null
+
+    const candidates = filteredIncidents
+      .filter((incident) => Number(incident.report_count_active || 0) > 0)
+      .filter((incident) => pointMatchesIncidentZone(point, incident))
+      .sort((a, b) => Number(b.report_count_active || 0) - Number(a.report_count_active || 0))
+
+    if (!candidates.length) return null
+    return reportTargetMetaFromIncident(candidates[0])
   }
 
   async function preflightReport(point, type, targetMeta = {}) {
@@ -766,7 +813,7 @@ export default function App() {
           const pending = pendingReportRef.current
           if (pending && cleanToken) {
             pendingReportRef.current = null
-            sendReport(pending.point, pending.type, cleanToken, false, pending.targetMeta)
+            sendReport(pending.point, pending.type, cleanToken, false, pending.targetMeta, true)
           }
         },
         'expired-callback': () => {
@@ -841,7 +888,7 @@ export default function App() {
             resetTurnstileChallenge()
             setMessage('Continuando con protección local…')
             if (pending) {
-              sendReport(pending.point, pending.type, null, true, pending.targetMeta)
+              sendReport(pending.point, pending.type, null, true, pending.targetMeta, true)
             }
           }, 30000)
 
@@ -866,30 +913,32 @@ export default function App() {
       setTurnstilePending(false)
       setFeedbackStage('report-preparing')
       if (pending) {
-        sendReport(pending.point, pending.type, null, true, pending.targetMeta)
+        sendReport(pending.point, pending.type, null, true, pending.targetMeta, true)
       }
     }
 
     tryExecute()
   }
 
-  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null, allowWithoutTurnstile = false, targetMetaOverride = null) {
+  async function sendReport(pointOverride = null, typeOverride = null, turnstileTokenOverride = null, allowWithoutTurnstile = false, targetMetaOverride = null, skipPreflight = false) {
     const point = pointOverride || reportPoint
     const type = typeOverride || reportType
     const effectiveTurnstileToken = turnstileTokenOverride || turnstileToken
-    const targetMeta = targetMetaOverride || reportTargetMeta || {}
+    const targetMeta = targetMetaOverride || reportTargetMeta || (type === 'vuelve' ? reportTargetMetaFromPoint(point) : null) || {}
 
     if (!point) {
       setMessage('Selecciona una zona del mapa.')
       return
     }
 
-    try {
-      await preflightReport(point, type, targetMeta)
-    } catch (err) {
-      setFeedbackStage(null)
-      setMessage(err.message || 'No se pudo preparar el reporte')
-      return
+    if (!skipPreflight) {
+      try {
+        await preflightReport(point, type, targetMeta)
+      } catch (err) {
+        setFeedbackStage(null)
+        setMessage(err.message || 'No se pudo preparar el reporte')
+        return
+      }
     }
 
     if (TURNSTILE_ENABLED && !effectiveTurnstileToken && !allowWithoutTurnstile) {

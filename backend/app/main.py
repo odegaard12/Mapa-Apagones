@@ -718,6 +718,33 @@ def find_active_incident_by_zone_id(conn, zone_id: Optional[str]) -> Optional[sq
         (zone_id,),
     ).fetchone()
 
+
+def find_active_incident_covering_point(conn, lat: float, lng: float) -> Optional[sqlite3.Row]:
+    """
+    Busca una incidencia activa cuya celda/bounds cubra el punto pulsado.
+
+    Importante: la tabla incidents no guarda columnas lat/lng exactas del usuario.
+    Guarda una zona aproximada con lat_min/lat_max/lng_min/lng_max.
+    """
+    return conn.execute(
+        """
+        SELECT *
+        FROM incidents
+        WHERE report_count_active > 0
+          AND lat_min IS NOT NULL
+          AND lat_max IS NOT NULL
+          AND lng_min IS NOT NULL
+          AND lng_max IS NOT NULL
+          AND lat_min <= ?
+          AND lat_max >= ?
+          AND lng_min <= ?
+          AND lng_max >= ?
+        ORDER BY report_count_active DESC, last_report_at DESC
+        LIMIT 1
+        """,
+        (lat, lat, lng, lng),
+    ).fetchone()
+
 def find_restore_target_incident(
     conn,
     lat: float,
@@ -728,6 +755,7 @@ def find_restore_target_incident(
     return (
         find_active_incident_by_id(conn, incident_id)
         or find_active_incident_by_zone_id(conn, zone_id)
+        or find_active_incident_covering_point(conn, lat, lng)
         or find_nearest_recent_incident(conn, lat, lng)
     )
 
