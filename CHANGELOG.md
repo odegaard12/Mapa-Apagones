@@ -1,3 +1,12 @@
+## v0.9.8.8-toda-espana-flow-fix
+
+- Corrige el flujo en “Toda España” con incidencias de comunidades nuevas.
+- Las incidencias guardadas se dibujan como municipio, no como cuadrado/celda.
+- El cuadrado queda reservado solo para selección manual antes de confirmar.
+- Al resolver una zona, limpia selección, overlays y municipio marcado.
+- Al pulsar “Reportar” desde una zona activa seleccionada, conserva esa zona como destino.
+- Si Turnstile falla en una acción directa, continúa con protección local en vez de bloquear.
+
 ## v0.9.8.7-geo-municipio-polygons
 
 - Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.

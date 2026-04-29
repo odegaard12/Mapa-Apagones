@@ -116,6 +116,19 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.8.8-toda-espana-flow-fix</h2>
+      <ul>
+        <li>Corrige el flujo en “Toda España” con incidencias de comunidades nuevas.</li>
+        <li>Las incidencias guardadas se dibujan como municipio, no como cuadrado/celda.</li>
+        <li>El cuadrado queda reservado solo para selección manual antes de confirmar.</li>
+        <li>Al resolver una zona, limpia selección, overlays y municipio marcado.</li>
+        <li>Al pulsar “Reportar” desde una zona activa seleccionada, conserva esa zona como destino.</li>
+        <li>Si Turnstile falla en una acción directa, continúa con protección local en vez de bloquear.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.9.8.7-geo-municipio-polygons</h2>
       <ul>
         <li>Corrige la lógica visual: el cuadrado queda solo para marcar un punto antes de confirmar.</li>
