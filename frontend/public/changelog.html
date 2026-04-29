@@ -116,6 +116,18 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.9.0-repo-hygiene-guardrails</h2>
+      <ul>
+        <li>Limpia el repositorio tras el rollback de estabilidad.</li>
+        <li>Elimina backups locales del control de versiones si se habían colado.</li>
+        <li>Refuerza <code>.gitignore</code> para backups, diagnósticos, logs, bases de datos, <code>.env</code> y GeoJSON brutos.</li>
+        <li>Añade guardas automáticas y CI básico para fallar antes del merge, no en producción.</li>
+        <li>Documenta un plan de estabilidad para rehacer geografía de forma incremental.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.9.8.9-stability-rollback</h2>
       <ul>
         <li>Rollback conservador al último frontend estable: <code>v0.9.8.3-black-screen-fix</code>.</li>

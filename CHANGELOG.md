@@ -1,3 +1,12 @@
+## v0.9.9.0-repo-hygiene-guardrails
+
+- Limpia el repositorio tras el rollback de estabilidad.
+- Elimina `_backups/` del control de versiones si se había colado.
+- Refuerza `.gitignore` para backups, diagnósticos, logs, bases de datos, `.env` y GeoJSON brutos.
+- Añade `scripts/repo_guard.sh` para bloquear errores repetidos antes de mergear.
+- Añade CI básico de GitHub Actions con guardas, sintaxis backend y build frontend.
+- Documenta un plan de estabilidad para no mezclar geografía, UX, Turnstile y backend en el mismo PR.
+
 ## v0.9.8.9-stability-rollback
 
 - Rollback conservador al último frontend estable: `v0.9.8.3-black-screen-fix`.

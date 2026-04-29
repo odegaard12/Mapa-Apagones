@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-guard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Guard repo hygiene
+        run: bash scripts/repo_guard.sh --no-build
+
+      - name: Install frontend dependencies
+        run: |
+          if [ -f frontend/package-lock.json ]; then
+            npm --prefix frontend ci
+          else
+            npm --prefix frontend install
+          fi
+
+      - name: Build frontend
+        run: npm --prefix frontend run build
