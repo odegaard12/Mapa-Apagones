@@ -745,6 +745,42 @@ def find_active_incident_covering_point(conn, lat: float, lng: float) -> Optiona
         (lat, lat, lng, lng),
     ).fetchone()
 
+
+def find_active_incident_near_point_by_center(conn, lat: float, lng: float) -> Optional[sqlite3.Row]:
+    """
+    Fallback para “Ya volvió” manual: si el usuario pulsa dentro o cerca de una
+    zona activa visible, no dependemos solo de una celda exacta mínima.
+    No usa coordenadas exactas de usuarios: solo centros agregados de incidencias.
+    """
+    max_deg = 0.07
+    return conn.execute(
+        """
+        SELECT *
+        FROM incidents
+        WHERE report_count_active > 0
+          AND center_lat IS NOT NULL
+          AND center_lng IS NOT NULL
+          AND center_lat BETWEEN ? AND ?
+          AND center_lng BETWEEN ? AND ?
+        ORDER BY
+          ((center_lat - ?) * (center_lat - ?)) +
+          ((center_lng - ?) * (center_lng - ?)) ASC,
+          report_count_active DESC,
+          last_report_at DESC
+        LIMIT 1
+        """,
+        (
+            lat - max_deg,
+            lat + max_deg,
+            lng - max_deg,
+            lng + max_deg,
+            lat,
+            lat,
+            lng,
+            lng,
+        ),
+    ).fetchone()
+
 def find_restore_target_incident(
     conn,
     lat: float,
@@ -756,6 +792,7 @@ def find_restore_target_incident(
         find_active_incident_by_id(conn, incident_id)
         or find_active_incident_by_zone_id(conn, zone_id)
         or find_active_incident_covering_point(conn, lat, lng)
+        or find_active_incident_near_point_by_center(conn, lat, lng)
         or find_nearest_recent_incident(conn, lat, lng)
     )
 

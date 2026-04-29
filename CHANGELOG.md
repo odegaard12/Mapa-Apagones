@@ -1,3 +1,10 @@
+## v0.9.8.1-report-actions-restore
+
+- Corrige el flujo de acciones directas: “Yo también” y “Ya volvió” ya no abren el panel manual de reportar.
+- Mejora “Ya volvió” manual para reconocer incidencias activas cercanas/visibles cuando el punto cae en la zona aproximada.
+- Evita que errores de preflight/verificación se muestren como toast verde.
+- Reduce el parpadeo de overlay/panel durante el envío y mantiene el flujo acorde a la acción real.
+
 ## v0.9.8.0-report-overlay-flow
 
 - Mejora el overlay de reporte para describir mejor el flujo real.

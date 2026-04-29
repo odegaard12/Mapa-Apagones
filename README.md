@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.8.0-report-overlay-flow`.
+Versión actual visible: `v0.9.8.1-report-actions-restore`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 
