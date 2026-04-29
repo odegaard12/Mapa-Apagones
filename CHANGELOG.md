@@ -1,3 +1,11 @@
+## v0.9.8.6-geo-overlay-persistence
+
+- Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.
+- Evita que el cuadrado/celda fallback se vea encima del municipio cuando ya hay polígono real.
+- El cuadrado queda solo como fallback para reportes manuales sin municipio cargado.
+- Mantiene “Toda España” sin cambio automático de ámbito.
+- No cambia backend, privacidad, Turnstile ni rate limiting.
+
 ## v0.9.8.5-geo-selection-polish
 
 - Elimina el mensaje temporal de comunidades pendientes.

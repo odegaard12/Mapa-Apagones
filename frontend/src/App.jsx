@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.8.5-geo-selection-polish'
+const APP_VERSION = 'v0.9.8.6-geo-overlay-persistence'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -425,6 +425,7 @@ export default function App() {
   const reportLoadingTimerRef = useRef(null)
   const reportOkRef = useRef(false)
   const municipioOverlayCacheRef = useRef({})
+  const lastSelectedIncidentRef = useRef(null)
   const [selectedMunicipioOverlay, setSelectedMunicipioOverlay] = useState(null)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
@@ -826,15 +827,31 @@ export default function App() {
 
 
   useEffect(() => {
+    if (selectedIncident?.municipio) {
+      lastSelectedIncidentRef.current = selectedIncident
+    }
+  }, [
+    selectedIncident?.id,
+    selectedIncident?.incident_id,
+    selectedIncident?.zone_id,
+    selectedIncident?.municipio,
+    selectedIncident?.province,
+  ])
+
+  useEffect(() => {
     let cancelled = false
 
     async function loadSelectedMunicipioOverlay() {
-      if (!selectedIncident || !selectedIncident.municipio) {
+      const overlayIncident =
+        (selectedIncident && selectedIncident.municipio ? selectedIncident : null) ||
+        lastSelectedIncidentRef.current
+
+      if (!overlayIncident || !overlayIncident.municipio) {
         setSelectedMunicipioOverlay(null)
         return
       }
 
-      const datasetId = datasetIdForIncidentPolygon(selectedIncident)
+      const datasetId = datasetIdForIncidentPolygon(overlayIncident)
       const dataset = datasetId ? getGeoDataset(datasetId) : null
 
       if (!dataset?.municipiosPath) {
@@ -852,8 +869,8 @@ export default function App() {
           municipioOverlayCacheRef.current[cacheKey] = data
         }
 
-        const targetMunicipio = normalizeText(selectedIncident.municipio || '')
-        const targetProvince = normalizeText(selectedIncident.province || '')
+        const targetMunicipio = normalizeText(overlayIncident.municipio || '')
+        const targetProvince = normalizeText(overlayIncident.province || '')
         const features = Array.isArray(data?.features) ? data.features : []
 
         const exact = features.find((feature) => {
@@ -1196,7 +1213,6 @@ setMessage('Selecciona una zona del mapa.')
 
   function enterReport() {
     setMode('report')
-    setSelectedIncidentId(null)
     setReportTargetMeta(null)
     setMessage('')
   }
@@ -1484,6 +1500,8 @@ setMessage('Selecciona una zona del mapa.')
             mode={mode}
             onPick={(point) => {
               setSelectedIncidentId(null)
+              lastSelectedIncidentRef.current = null
+              setSelectedMunicipioOverlay(null)
               setReportPoint(point)
               setMessage('')
             }}
@@ -1514,7 +1532,7 @@ setMessage('Selecciona una zona del mapa.')
             />
           ) : null}
 
-          {mode === 'report' && reportBounds && (
+          {mode === 'report' && reportBounds && !selectedMunicipioOverlay && (
             <Rectangle
               bounds={reportBounds}
               pathOptions={{

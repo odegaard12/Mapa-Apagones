@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.8.5-geo-selection-polish`.
+Versión actual visible: `v0.9.8.6-geo-overlay-persistence`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 
