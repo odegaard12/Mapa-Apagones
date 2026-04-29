@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
+import { GeoJSON, MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
 import {
   DEFAULT_GEO_DATASET_ID,
@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.8.4-geo-communities-batch'
+const APP_VERSION = 'v0.9.8.5-geo-selection-polish'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -424,6 +424,8 @@ export default function App() {
   const pendingReportRef = useRef(null)
   const reportLoadingTimerRef = useRef(null)
   const reportOkRef = useRef(false)
+  const municipioOverlayCacheRef = useRef({})
+  const [selectedMunicipioOverlay, setSelectedMunicipioOverlay] = useState(null)
   const [mode, setMode] = useState('explore')
   const [leftTab, setLeftTab] = useState('incidents')
   const [reportType, setReportType] = useState('sin_luz')
@@ -653,6 +655,50 @@ export default function App() {
   }, [activeVisible])
 
 
+
+  function datasetIdForIncidentPolygon(incident) {
+    const province = normalizeText(incident?.province || '')
+    const zoneId = normalizeText(incident?.zone_id || incident?.id || '')
+    const display = normalizeText(incident?.display_zone || incident?.municipio || '')
+    const haystack = `${province} ${zoneId} ${display}`
+
+    if (['a coruna', 'coruna', 'lugo', 'ourense', 'orense', 'pontevedra'].some((x) => haystack.includes(x))) return 'galicia'
+    if (haystack.includes('asturias')) return 'asturias'
+    if (haystack.includes('cantabria')) return 'cantabria'
+    if (['avila', 'burgos', 'leon', 'palencia', 'salamanca', 'segovia', 'soria', 'valladolid', 'zamora'].some((x) => haystack.includes(x))) return 'castilla_leon'
+    if (['albacete', 'ciudad real', 'cuenca', 'guadalajara', 'toledo'].some((x) => haystack.includes(x))) return 'castilla_la_mancha'
+    if (['almeria', 'cadiz', 'cordoba', 'granada', 'huelva', 'jaen', 'malaga', 'sevilla'].some((x) => haystack.includes(x))) return 'andalucia'
+    if (['huesca', 'teruel', 'zaragoza'].some((x) => haystack.includes(x))) return 'aragon'
+    if (['barcelona', 'girona', 'gerona', 'lleida', 'lerida', 'tarragona'].some((x) => haystack.includes(x))) return 'cataluna'
+    if (['alicante', 'alacant', 'castellon', 'castello', 'valencia'].some((x) => haystack.includes(x))) return 'comunitat_valenciana'
+    if (['badajoz', 'caceres'].some((x) => haystack.includes(x))) return 'extremadura'
+    if (['illes balears', 'islas baleares', 'baleares'].some((x) => haystack.includes(x))) return 'illes_balears'
+    if (haystack.includes('rioja')) return 'la_rioja'
+    if (haystack.includes('madrid')) return 'madrid'
+    if (haystack.includes('murcia')) return 'murcia'
+    if (['navarra', 'nafarroa'].some((x) => haystack.includes(x))) return 'navarra'
+    if (['alava', 'araba', 'bizkaia', 'vizcaya', 'gipuzkoa', 'guipuzcoa'].some((x) => haystack.includes(x))) return 'pais_vasco'
+    if (['las palmas', 'santa cruz de tenerife', 'canarias'].some((x) => haystack.includes(x))) return 'canarias'
+    if (haystack.includes('ceuta')) return 'ceuta'
+    if (haystack.includes('melilla')) return 'melilla'
+    return null
+  }
+
+  function featureMunicipioName(feature) {
+    const p = feature?.properties || {}
+    return normalizeText(p.mun_name || p.municipio || p.MUNICIPIO || p.name || p.NAME || p.nameunit || p.NAMEUNIT || p.nombre || p.NOMBRE || '')
+  }
+
+  function featureProvinceName(feature) {
+    const p = feature?.properties || {}
+    return normalizeText(p.prov_name || p.province || p.PROVINCE || p.provincia || p.PROVINCIA || p.nprov || p.NPROV || '')
+  }
+
+  function selectedIdFromReportResponse(data) {
+    return data?.incident?.zone_id || data?.zone_id || data?.incident_id || null
+  }
+
+
   function reportTargetMetaFromIncident(incident) {
     if (!incident) return null
 
@@ -778,6 +824,71 @@ export default function App() {
     return data
   }
 
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function loadSelectedMunicipioOverlay() {
+      if (!selectedIncident || !selectedIncident.municipio) {
+        setSelectedMunicipioOverlay(null)
+        return
+      }
+
+      const datasetId = datasetIdForIncidentPolygon(selectedIncident)
+      const dataset = datasetId ? getGeoDataset(datasetId) : null
+
+      if (!dataset?.municipiosPath) {
+        setSelectedMunicipioOverlay(null)
+        return
+      }
+
+      try {
+        const cacheKey = dataset.municipiosPath
+        let data = municipioOverlayCacheRef.current[cacheKey]
+
+        if (!data) {
+          const loaded = await loadMunicipiosGeoJson(dataset)
+          data = loaded?.data || loaded
+          municipioOverlayCacheRef.current[cacheKey] = data
+        }
+
+        const targetMunicipio = normalizeText(selectedIncident.municipio || '')
+        const targetProvince = normalizeText(selectedIncident.province || '')
+        const features = Array.isArray(data?.features) ? data.features : []
+
+        const exact = features.find((feature) => {
+          const mun = featureMunicipioName(feature)
+          const prov = featureProvinceName(feature)
+          return mun === targetMunicipio && (!targetProvince || !prov || prov === targetProvince)
+        })
+
+        const fallback = exact || features.find((feature) => featureMunicipioName(feature) === targetMunicipio)
+
+        if (!cancelled) {
+          setSelectedMunicipioOverlay(
+            fallback ? { type: 'FeatureCollection', features: [fallback] } : null
+          )
+        }
+      } catch (err) {
+        console.error('No se pudo cargar el polígono municipal seleccionado', err)
+        if (!cancelled) setSelectedMunicipioOverlay(null)
+      }
+    }
+
+    loadSelectedMunicipioOverlay()
+
+    return () => {
+      cancelled = true
+    }
+  }, [
+    selectedIncident?.id,
+    selectedIncident?.incident_id,
+    selectedIncident?.zone_id,
+    selectedIncident?.municipio,
+    selectedIncident?.province,
+  ])
+
+
   function prepareIncidentReport(incident, type) {
     const point = pointFromIncident(incident)
     const targetMeta = reportTargetMetaFromIncident(incident)
@@ -792,7 +903,7 @@ setMessage('No se pudo localizar la zona seleccionada.')
     // y confunde al usuario. La acción se valida y se envía sobre la incidencia.
     setMode('explore')
     setLeftTab('incidents')
-    setSelectedIncidentId(incident.id || incident.incident_id || null)
+    setSelectedIncidentId(incident.id || incident.zone_id || incident.incident_id || null)
     setReportPoint(null)
     setReportTargetMeta(null)
     setMessage('')
@@ -1033,7 +1144,7 @@ setMessage('Selecciona una zona del mapa.')
         }[data.action] || 'Reporte enviado.'
 
         setMessage(actionMessage)
-        setSelectedIncidentId(data.incident_id)
+        setSelectedIncidentId(selectedIdFromReportResponse(data))
         setLeftTab('incidents')
       }
 
@@ -1340,7 +1451,7 @@ setMessage('Selecciona una zona del mapa.')
                 ))}
               </div>
             <div style={{ marginTop: 8, fontSize: 12, opacity: 0.78, lineHeight: 1.4 }}>
-              “Toda España” te deja mover el mapa libremente. Seguimos añadiendo más comunidades y provincias con polígonos reales.
+              En “Toda España” puedes consultar y reportar sin cambiar de ámbito. Al seleccionar una zona se marca su municipio si el polígono está disponible.
             </div>
             </div>
           </div>
@@ -1387,6 +1498,21 @@ setMessage('Selecciona una zona del mapa.')
             statusColor={statusColor}
             geoDatasetId={geoDatasetId}
           />
+          {selectedMunicipioOverlay ? (
+            <GeoJSON
+              key={`selected-municipio-overlay-${selectedIncident?.id || selectedIncident?.zone_id || selectedIncident?.incident_id || 'zone'}`}
+              data={selectedMunicipioOverlay}
+              style={{
+                color: '#111827',
+                weight: 4,
+                opacity: 0.95,
+                fillColor: '#f59e0b',
+                fillOpacity: 0.16,
+                dashArray: '8 6',
+              }}
+              interactive={false}
+            />
+          ) : null}
 
           {mode === 'report' && reportBounds && (
             <Rectangle
