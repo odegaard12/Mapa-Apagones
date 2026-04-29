@@ -1,3 +1,10 @@
+## v0.9.8.2-report-overlay-stability
+
+- Unifica el overlay de reporte para evitar el efecto de “se cierra uno y se abre otro”.
+- Mantiene un único flujo visual estable durante validación, protección anti-abuso, guardado anónimo y refresco.
+- Añade limpieza/failsafe del overlay para evitar pantalla oscura bloqueada tras confirmar.
+- Fuerza reajuste del mapa tras cerrar el overlay para evitar pantalla negra/tiles sin pintar.
+
 ## v0.9.8.1-report-actions-restore
 
 - Corrige el flujo de acciones directas: “Yo también” y “Ya volvió” ya no abren el panel manual de reportar.

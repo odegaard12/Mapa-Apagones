@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.8.1-report-actions-restore'
+const APP_VERSION = 'v0.9.8.2-report-overlay-stability'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -1093,38 +1093,75 @@ export default function App() {
     setMessage('')
   }
 
+
+  // overlayStability v0.9.8.2
+  // Evita que el overlay de reporte quede bloqueando la app en negro
+  // si una transición visual no se limpia al terminar.
+  useEffect(() => {
+    if (!feedbackStage || !String(feedbackStage).startsWith('report-')) return
+
+    const timeoutMs = feedbackStage === 'report-ready' ? 1500 : 18000
+
+    const id = window.setTimeout(() => {
+      setFeedbackStage((current) => {
+        if (!current || !String(current).startsWith('report-')) return current
+        return null
+      })
+
+      if (feedbackStage !== 'report-ready') {
+        setTurnstilePending(false)
+      }
+
+      window.setTimeout(() => {
+        if (mapInstance && typeof mapInstance.invalidateSize === 'function') {
+          mapInstance.invalidateSize()
+        }
+      }, 120)
+    }, timeoutMs)
+
+    return () => window.clearTimeout(id)
+  }, [feedbackStage, mapInstance])
+
+  // overlayStability v0.9.8.2
+  // Leaflet a veces queda con tiles negros si se cierra un overlay/panel
+  // justo después de cambiar datos o tamaño. Recalcula el layout del mapa.
+  useEffect(() => {
+    if (!mapInstance || typeof mapInstance.invalidateSize !== 'function') return
+
+    const id1 = window.setTimeout(() => mapInstance.invalidateSize(), 80)
+    const id2 = window.setTimeout(() => mapInstance.invalidateSize(), 420)
+
+    return () => {
+      window.clearTimeout(id1)
+      window.clearTimeout(id2)
+    }
+  }, [feedbackStage, mode, leftTab, selectedIncidentId, mapInstance])
+
   const selectedDistributor = selectedIncident ? distributorHint(selectedIncident) : null
 
   const overlayConfig = useMemo(() => {
     const label = currentGeoDataset?.label || 'ámbito seleccionado'
 
-    if (feedbackStage === 'report-preparing') {
-      return {
-        title: 'Comprobando reporte',
-        subtitle: 'Validando la zona seleccionada, cooldowns y protección anti-abuso antes de guardar.',
-        steps: ['Zona y límites revisados', 'Protección anti-abuso', 'Listo para guardar'],
-        activeStep: 1,
-        done: false,
-        footer: 'Esto ayuda a evitar duplicados y abuso sin pedir nombre, CUPS ni dirección exacta.',
-      }
-    }
+    if (feedbackStage === 'report-preparing' || feedbackStage === 'report-loading') {
+      const saving = feedbackStage === 'report-loading'
 
-    if (feedbackStage === 'report-loading') {
       return {
-        title: 'Guardando aviso',
-        subtitle: 'Guardando tu reporte anónimo, recalculando la zona agregada y preparando el refresco del mapa.',
-        steps: ['Enviando aviso anónimo', 'Actualizando zona agregada', 'Refrescando mapa'],
-        activeStep: 0,
+        title: 'Procesando aviso',
+        subtitle: saving
+          ? 'Guardando el aviso anónimo y actualizando la zona agregada del mapa.'
+          : 'Validando zona, cooldowns y protección anti-abuso antes de guardar.',
+        steps: ['Validación segura', 'Guardado anónimo', 'Mapa actualizado'],
+        activeStep: saving ? 1 : 0,
         done: false,
-        footer: 'Mantén esta pestaña abierta unos segundos. El aviso se agrupa por zona aproximada.',
+        footer: 'Mantén esta pestaña abierta unos segundos. No se pide nombre, CUPS, dirección exacta ni texto libre.',
       }
     }
 
     if (feedbackStage === 'report-ready') {
       return {
         title: 'Aviso registrado',
-        subtitle: 'Gracias. El mapa se ha actualizado con la nueva señal ciudadana.',
-        steps: ['Aviso guardado', 'Zona agregada actualizada', 'Mapa refrescado'],
+        subtitle: 'Gracias. La señal ciudadana se ha guardado y el mapa se está refrescando.',
+        steps: ['Validación segura', 'Guardado anónimo', 'Mapa actualizado'],
         activeStep: 3,
         done: true,
         footer: 'Listo. Cerrando aviso…',
