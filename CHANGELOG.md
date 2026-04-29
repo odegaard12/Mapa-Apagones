@@ -1,3 +1,10 @@
+## v0.9.8.0-report-overlay-flow
+
+- Mejora el overlay de reporte para describir mejor el flujo real.
+- Sustituye mensajes genéricos como “detectando ayuntamiento” por validación de zona, protección anti-abuso, guardado anónimo y actualización de zona agregada.
+- Añade textos de ayuda menos alarmistas y más claros durante el envío.
+- Mantiene la lógica de privacidad: sin CUPS, sin nombre, sin dirección exacta y sin texto libre.
+
 ## v0.9.7.9-manual-restore-target
 
 - Corrige “Ya volvió” desde el modo Reportar manual cuando el punto elegido cae sobre una zona activa.

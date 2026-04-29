@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.7.9-manual-restore-target'
+const APP_VERSION = 'v0.9.8.0-report-overlay-flow'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -195,7 +195,7 @@ function MapClickSelector({ mode, onPick }) {
   return null
 }
 
-function FeedbackOverlay({ open, title, subtitle, steps = [], activeStep = 0, done = false }) {
+function FeedbackOverlay({ open, title, subtitle, steps = [], activeStep = 0, done = false, footer = null }) {
   if (!open) return null
 
   return (
@@ -331,7 +331,9 @@ function FeedbackOverlay({ open, title, subtitle, steps = [], activeStep = 0, do
           ) : null}
 
           <div style={{ marginTop: '15px', fontSize: '13px', opacity: 0.76 }}>
-            {done ? 'Listo. Cerrando aviso…' : 'No recargues la página ni cambies de ámbito hasta que desaparezca este aviso.'}
+            {footer || (done
+              ? 'Listo. Cerrando aviso…'
+              : 'Mantén esta pestaña abierta unos segundos para terminar la actualización.')}
           </div>
         </div>
       </div>
@@ -1048,31 +1050,34 @@ export default function App() {
 
     if (feedbackStage === 'report-preparing') {
       return {
-        title: 'Preparando reporte',
-        subtitle: 'Comprobando la zona y preparando la protección anti-abuso.',
-        steps: ['Comprobando zona', 'Preparando protección', 'Listo para enviar'],
-        activeStep: 2,
+        title: 'Comprobando reporte',
+        subtitle: 'Validando la zona seleccionada, cooldowns y protección anti-abuso antes de guardar.',
+        steps: ['Zona y límites revisados', 'Protección anti-abuso', 'Listo para guardar'],
+        activeStep: 1,
         done: false,
+        footer: 'Esto ayuda a evitar duplicados y abuso sin pedir nombre, CUPS ni dirección exacta.',
       }
     }
 
     if (feedbackStage === 'report-loading') {
       return {
-        title: 'Reportando incidencia',
-        subtitle: 'Estamos guardando el reporte, detectando el ayuntamiento y actualizando el mapa.',
-        steps: ['Guardando reporte', 'Detectando ayuntamiento', 'Actualizando mapa'],
-        activeStep: 1,
+        title: 'Guardando aviso',
+        subtitle: 'Guardando tu reporte anónimo, recalculando la zona agregada y preparando el refresco del mapa.',
+        steps: ['Enviando aviso anónimo', 'Actualizando zona agregada', 'Refrescando mapa'],
+        activeStep: 0,
         done: false,
+        footer: 'Mantén esta pestaña abierta unos segundos. El aviso se agrupa por zona aproximada.',
       }
     }
 
     if (feedbackStage === 'report-ready') {
       return {
-        title: 'Listo',
-        subtitle: 'Incidencia enviada y mapa actualizado.',
-        steps: ['Guardando reporte', 'Detectando ayuntamiento', 'Mapa actualizado'],
+        title: 'Aviso registrado',
+        subtitle: 'Gracias. El mapa se ha actualizado con la nueva señal ciudadana.',
+        steps: ['Aviso guardado', 'Zona agregada actualizada', 'Mapa refrescado'],
         activeStep: 3,
         done: true,
+        footer: 'Listo. Cerrando aviso…',
       }
     }
 
