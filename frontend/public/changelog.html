@@ -115,7 +115,18 @@
 
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
-    <section>
+        <section>
+      <h2>v0.9.8.6-geo-overlay-persistence</h2>
+      <ul>
+        <li>Mantiene el polígono municipal seleccionado al pasar entre Explorar y Reportar.</li>
+        <li>Oculta el cuadrado/celda fallback cuando ya existe polígono municipal.</li>
+        <li>El cuadrado queda solo como fallback para reportes manuales sin municipio cargado.</li>
+        <li>Mantiene “Toda España” sin cambio automático de ámbito.</li>
+        <li>No cambia backend, privacidad, Turnstile ni rate limiting.</li>
+      </ul>
+    </section>
+
+<section>
       <h2>v0.9.8.5-geo-selection-polish</h2>
       <ul>
         <li>Elimina el mensaje temporal de comunidades pendientes.</li>
