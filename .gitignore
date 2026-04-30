@@ -48,3 +48,16 @@ __pycache__/
 # Env files: real envs forbidden, public template allowed
 
 # Heavy/generated raw geo artifacts
+
+# Local/editor/generated backups
+*.bak
+*.bak.*
+*.backup
+*.backup.*
+*_backup*
+_backups/
+**/_backups/
+backups/
+**/backups/
+diagnostics/
+**/diagnostics/
