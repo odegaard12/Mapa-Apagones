@@ -31,7 +31,7 @@ DEFAULT_ALLOWED_ORIGINS = ",".join([
     "http://127.0.0.1:5173",
     "http://localhost:8098",
     "http://127.0.0.1:8098",
-        "https://mapa-apagones.es",
+    "https://mapa-apagones.es",
     "https://www.mapa-apagones.es",
 ])
 
