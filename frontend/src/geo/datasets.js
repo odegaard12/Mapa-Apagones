@@ -2,6 +2,7 @@ export const GEO_DATASETS = {
   all: {
     id: 'all',
     label: 'Toda España',
+    municipiosPath: '/data/toda_espana_municipios.geojson',
     defaultCenter: [40.25, -3.70],
     defaultZoom: 6,
     maxBounds: null,
