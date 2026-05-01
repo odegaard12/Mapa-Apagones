@@ -1,3 +1,12 @@
+## v0.9.9.3-geo-aragon
+
+- Añade Aragón al selector geográfico.
+- Publica `frontend/public/data/aragon_municipios.geojson` como dataset municipal curado.
+- Normaliza propiedades municipales para matching visual: `municipio`, `province`, `dataset_id` y `zone_id`.
+- Limpia el listado geográfico del README para evitar comunidades pegadas en una sola línea.
+- No cambia backend, Turnstile, reportes, overlays ni dependencias.
+- No sube el GeoJSON nacional bruto.
+
 ## v0.9.9.2-geo-madrid-polygon-match
 
 - Normaliza el GeoJSON de Comunidad de Madrid para enlazar incidencias con polígonos municipales reales.

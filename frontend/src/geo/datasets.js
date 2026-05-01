@@ -50,6 +50,17 @@ export const GEO_DATASETS = {
       [43.3882, -1.62537],
     ],
   },
+  aragon: {
+    id: 'aragon',
+    label: 'Aragón',
+    municipiosPath: '/data/aragon_municipios.geojson',
+    defaultCenter: [41.62, -0.88],
+    defaultZoom: 8,
+    maxBounds: [
+      [39.70, -2.25],
+      [42.95, 0.90],
+    ],
+  },
   madrid: {
     id: 'madrid',
     label: 'Comunidad de Madrid',
