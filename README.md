@@ -10,7 +10,7 @@ Estado actual:
 
 Versión actual visible: `v0.9.9.1-geo-madrid`.
 
-    Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
+    Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
 ## Identidad pública
 
@@ -18,7 +18,7 @@ Antes de seguir con mejoras técnicas, este repositorio deja clara la identidad 
 
 - Nombre público: Mapa Apagones.
 - Dominio público: mapa-apagones.es.
-- Estado actual: publicado en Cloudflare Pages con API pública mediante Cloudflare Tunnel.
+- Estado actual: publicado en Cloudflare Pages con API pública mediante túnel/reverse proxy seguro.
 - Principios de privacidad: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin mostrar viviendas exactas.
 - Licencia: MIT.
 - Cómo puede ayudar otra gente: privacidad, seguridad anti-abuso, accesibilidad, UX móvil, documentación, despliegue y nuevas comunidades autónomas.
@@ -76,13 +76,13 @@ Backend:
 
 Despliegue actual:
 
-    Docker Compose en Raspberry Pi
+    Docker Compose en servidor propio
     Puerto local: 8098
 
 Despliegue objetivo:
 
     mapa-apagones.es y www.mapa-apagones.es -> Cloudflare Pages
-    api.mapa-apagones.es -> Raspberry Pi vía Cloudflare Tunnel
+    api.mapa-apagones.es -> servidor propio vía túnel/reverse proxy seguro
 
 ## Estado geográfico actual
 
@@ -205,3 +205,8 @@ MIT. Ver LICENSE.
 ## Aviso
 
 Este proyecto está publicado en fase temprana. Los datos ciudadanos pueden contener errores, retrasos o zonas incompletas. No debe usarse como única fuente para decisiones críticas.
+
+
+## Nota de seguridad operativa
+
+Este repositorio público documenta un modelo de despliegue genérico. Los detalles reales de red, túneles, puertos internos, rutas locales, credenciales, bases de datos, backups y borradores privados deben mantenerse fuera del repositorio y configurarse únicamente en entornos privados.
