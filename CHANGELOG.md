@@ -1,3 +1,11 @@
+## v0.9.9.4-report-selection-state
+
+- Corrige selección de zonas activas usando una clave canónica compatible con `zone_id`, `id` e `incident_id`.
+- Corrige clicks sobre polígonos/celdas activas para que seleccionen siempre la incidencia, también en modo reportar.
+- Evita que el botón “Reportar” borre una zona activa ya seleccionada.
+- Limpia selección, punto manual y destino cuando una zona queda resuelta o desaparece de la lista activa.
+- No cambia backend, Turnstile, rate limiting, privacidad, dependencias ni datasets geográficos.
+
 ## v0.9.9.3-geo-aragon
 
 - Añade Aragón al selector geográfico.
