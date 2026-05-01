@@ -810,6 +810,11 @@ def assert_existing_report_cooldown(conn, incident_id: str, token_hash: str, rep
     ).fetchone()
 
     if not existing:
+
+        return
+
+    if report_type == "vuelve":
+
         return
 
     last_update = parse_dt(existing["updated_at"]) or now
@@ -1286,6 +1291,22 @@ def report(payload: ReportIn, request: FastAPIRequest):
             action = "confirmed_existing_zone"
         else:
             action = "created_new_zone"
+
+    if payload.type == "vuelve":
+        # v0.9.9.6 restore resolves active zone:
+        # Una señal "Ya volvió" sobre una zona activa debe cerrar los reportes negativos
+        # de ese incidente, aunque venga de otro navegador/token.
+        conn.execute(
+            """
+            UPDATE reports
+            SET status = 'inactive', expires_at = ?
+            WHERE incident_id = ?
+              AND status = 'active'
+              AND report_type != 'vuelve'
+            """,
+            (iso(now), incident_id),
+        )
+        action = "resolved_zone"
 
     record_action(conn, token_hash, ip_hash, action)
 
