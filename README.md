@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.9.1-geo-madrid`.9.9.0-repo-hygiene-guardrails`.
+Versión actual visible: `v0.9.9.1-geo-madrid`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por Cloudflare Tunnel y Turnstile activo para reportes.
 
