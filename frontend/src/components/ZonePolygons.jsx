@@ -24,6 +24,15 @@ function incidentFallbackKey(incident) {
   return `${normalizeText(incident?.municipio)}|${normalizeText(incident?.province)}`
 }
 
+function incidentSelectionKeys(incident) {
+  return [incident?.zone_id, incident?.id, incident?.incident_id].filter(Boolean).map(String)
+}
+
+function incidentMatchesSelected(incident, selectedKey) {
+  if (!incident || !selectedKey) return false
+  return incidentSelectionKeys(incident).includes(String(selectedKey))
+}
+
 function featureStableKey(feature) {
   const props = feature?.properties || {}
   const datasetKey = normalizeText(props.dataset_id) || 'default'
@@ -49,8 +58,8 @@ function featureMatchesIncident(feature, incident) {
 function shouldReplaceIncident(current, candidate, selectedIncidentId) {
   if (!current) return true
 
-  const currentSelected = current.id === selectedIncidentId
-  const candidateSelected = candidate.id === selectedIncidentId
+  const currentSelected = incidentMatchesSelected(current, selectedIncidentId)
+  const candidateSelected = incidentMatchesSelected(candidate, selectedIncidentId)
 
   if (candidateSelected && !currentSelected) return true
   if (currentSelected && !candidateSelected) return false
@@ -160,7 +169,7 @@ export default function ZonePolygons({
       const feature = selectFeatureForIncident(incident, byZoneId, byMunicipioProvince)
       if (!feature) continue
 
-      matchedIncidentIds.add(incident.id)
+      incidentSelectionKeys(incident).forEach((key) => matchedIncidentIds.add(key))
 
       const featureKey = featureStableKey(feature)
       if (!featureKey) continue
@@ -189,7 +198,7 @@ export default function ZonePolygons({
   }, [municipiosGeoJson, activeVisible, selectedIncidentId, mode, geoDatasetId])
 
   const fallbackRectangles = useMemo(
-    () => activeVisible.filter((incident) => !matchedIncidentIds.has(incident.id)),
+    () => activeVisible.filter((incident) => !incidentSelectionKeys(incident).some((key) => matchedIncidentIds.has(key))),
     [activeVisible, matchedIncidentIds]
   )
 
@@ -208,7 +217,7 @@ export default function ZonePolygons({
       }
     }
 
-    return pathOptionsForIncident(incident, selectedIncidentId === incident.id, statusColor)
+    return pathOptionsForIncident(incident, incidentMatchesSelected(incident, selectedIncidentId), statusColor)
   }
 
   return (
@@ -222,21 +231,19 @@ export default function ZonePolygons({
             const incident = getIncidentForFeature(feature)
             if (!incident) return
 
-            if (selectedIncidentId === incident.id && typeof layer.bringToFront === 'function') {
+            if (incidentMatchesSelected(incident, selectedIncidentId) && typeof layer.bringToFront === 'function') {
               layer.bringToFront()
             }
 
             layer.on({
-              click: () => {
-                if (mode === 'explore') focusIncident(incident)
-              },
+              click: (event) => { if (event?.originalEvent?.stopPropagation) event.originalEvent.stopPropagation(); focusIncident(incident) },
             })
           }}
         />
       ) : null}
 
       {fallbackRectangles.map((incident) => {
-        const selected = selectedIncidentId === incident.id
+        const selected = incidentMatchesSelected(incident, selectedIncidentId)
 
         return (
           <Rectangle
@@ -244,9 +251,7 @@ export default function ZonePolygons({
             bounds={incidentBounds(incident)}
             pathOptions={pathOptionsForIncident(incident, selected, statusColor)}
             eventHandlers={{
-              click: () => {
-                if (mode === 'explore') focusIncident(incident)
-              },
+              click: (event) => { if (event?.originalEvent?.stopPropagation) event.originalEvent.stopPropagation(); focusIncident(incident) },
             }}
           />
         )

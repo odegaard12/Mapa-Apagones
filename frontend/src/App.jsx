@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.9.3-geo-aragon'
+const APP_VERSION = 'v0.9.9.4-report-selection-state'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -165,6 +165,19 @@ function incidentBounds(incident) {
 
 function zoneTitle(incident) {
   return incident.display_zone || incident.municipio || 'Zona comunitaria agrupada'
+}
+
+function incidentSelectionKey(incident) {
+  return incident?.zone_id || incident?.id || incident?.incident_id || null
+}
+
+function incidentSelectionKeys(incident) {
+  return [incident?.zone_id, incident?.id, incident?.incident_id].filter(Boolean).map(String)
+}
+
+function incidentMatchesSelected(incident, selectedKey) {
+  if (!incident || !selectedKey) return false
+  return incidentSelectionKeys(incident).includes(String(selectedKey))
 }
 
 function distributorHint(incident) {
@@ -631,11 +644,19 @@ export default function App() {
     [filteredIncidents]
   )
 
+
+  useEffect(() => {
+    if (!selectedIncidentId) return
+    const stillVisible = activeVisible.some((incident) => incidentMatchesSelected(incident, selectedIncidentId))
+    if (!stillVisible) {
+      setSelectedIncidentId(null)
+      setReportPoint(null)
+      setReportTargetMeta(null)
+    }
+  }, [activeVisible, selectedIncidentId])
+
   const selectedIncident = useMemo(
-    () =>
-      filteredIncidents.find((incident) =>
-        [incident.id, incident.zone_id, incident.incident_id].filter(Boolean).includes(selectedIncidentId)
-      ) || null,
+    () => filteredIncidents.find((incident) => incidentMatchesSelected(incident, selectedIncidentId)) || null,
     [filteredIncidents, selectedIncidentId]
   )
 
@@ -795,7 +816,7 @@ setMessage('No se pudo localizar la zona seleccionada.')
     // y confunde al usuario. La acción se valida y se envía sobre la incidencia.
     setMode('explore')
     setLeftTab('incidents')
-    setSelectedIncidentId(incident.id || incident.zone_id || incident.incident_id || null)
+    setSelectedIncidentId(incidentSelectionKey(incident))
     setReportPoint(null)
     setReportTargetMeta(null)
     setMessage('')
@@ -805,7 +826,7 @@ setMessage('No se pudo localizar la zona seleccionada.')
   }
 
   function focusIncident(incident) {
-    setSelectedIncidentId(incident.id || incident.zone_id || incident.incident_id || null)
+    setSelectedIncidentId(incidentSelectionKey(incident))
     setLeftTab('incidents')
     setMode('explore')
     setReportPoint(null)
@@ -1022,9 +1043,13 @@ setMessage('Selecciona una zona del mapa.')
 
       reportOkRef.current = true
 
-      if (type === 'vuelve' && Number(data.incident.report_count_active || 0) === 0) {
+      const resolvedAfterReport = type === 'vuelve' && Number(data.incident.report_count_active || 0) === 0
+
+      if (resolvedAfterReport) {
         setMessage('Zona marcada como resuelta.')
         setSelectedIncidentId(null)
+        setReportPoint(null)
+        setReportTargetMeta(null)
       } else {
         const actionMessage = {
           created_new_zone: 'Nueva incidencia enviada.',
@@ -1036,16 +1061,22 @@ setMessage('Selecciona una zona del mapa.')
         }[data.action] || 'Reporte enviado.'
 
         setMessage(actionMessage)
-        setSelectedIncidentId(data?.incident?.zone_id || data?.zone_id || data?.incident_id || data?.incident?.id || null)
+        setSelectedIncidentId(incidentSelectionKey(data?.incident) || data?.zone_id || data?.incident_id || null)
         setLeftTab('incidents')
       }
 
-      setReportPoint([data.incident.center_lat, data.incident.center_lng])
-      setReportTargetMeta(null)
+      if (resolvedAfterReport) {
+        setReportPoint(null)
+        setReportTargetMeta(null)
+      } else {
+        setReportPoint([data.incident.center_lat, data.incident.center_lng])
+        setReportTargetMeta(null)
+      }
       setMode('explore')
       setLeftTab('incidents')
 
       if (
+        !resolvedAfterReport &&
         mapInstance &&
         data.incident &&
         Number.isFinite(Number(data.incident.lat_min)) &&
@@ -1058,6 +1089,7 @@ setMessage('Selecciona una zona del mapa.')
           maxZoom: 13,
         })
       } else if (
+        !resolvedAfterReport &&
         mapInstance &&
         data.incident &&
         Number.isFinite(Number(data.incident.center_lat)) &&
@@ -1070,6 +1102,12 @@ setMessage('Selecciona una zona del mapa.')
       }
 
       await loadIncidents()
+
+      if (resolvedAfterReport) {
+        setSelectedIncidentId(null)
+        setReportPoint(null)
+        setReportTargetMeta(null)
+      }
     } catch (err) {
       reportOkRef.current = false
       setFeedbackStage(null)
@@ -1088,11 +1126,19 @@ setMessage('Selecciona una zona del mapa.')
 
   function enterReport() {
     setMode('report')
-    setSelectedIncidentId(null)
-    setReportTargetMeta(null)
+
+    if (selectedIncident) {
+      setSelectedIncidentId(incidentSelectionKey(selectedIncident))
+      setReportPoint(pointFromIncident(selectedIncident))
+      setReportTargetMeta(reportTargetMetaFromIncident(selectedIncident))
+    } else {
+      setSelectedIncidentId(null)
+      setReportPoint(null)
+      setReportTargetMeta(null)
+    }
+
     setMessage('')
   }
-
 
   // overlayStability v0.9.8.2
   // Evita que el overlay de reporte quede bloqueando la app en negro
