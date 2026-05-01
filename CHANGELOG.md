@@ -3,7 +3,7 @@
 - Corrige el ámbito “Toda España” para que use polígonos municipales combinados de las comunidades disponibles.
 - Evita que zonas como Zuera o Madrid caigan a cuadrado/celda cuando ya existe GeoJSON municipal.
 - Mantiene el cuadrado solo como fallback o selección manual temporal cuando no hay polígono disponible.
-- Genera `toda_espana_municipios.geojson` desde datasets ya publicados, sin subir GeoJSON nacional bruto.
+- Genera `toda_espana_municipios.geojson` desde datasets ya publicados, en formato ligero para no superar el límite de Cloudflare Pages.
 - No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
 
 ## v0.9.9.4-report-selection-state

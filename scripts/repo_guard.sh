@@ -55,6 +55,17 @@ else
 fi
 
 echo
+
+echo
+echo "== repo_guard: tamaño máximo de assets Cloudflare Pages =="
+BIG_ASSETS="$(find frontend/public -type f -size +24M -print 2>/dev/null || true)"
+if [ -n "$BIG_ASSETS" ]; then
+  echo "$BIG_ASSETS"
+  echo "ERROR: hay assets mayores de 24 MiB. Cloudflare Pages rechaza archivos individuales de más de 25 MiB."
+  exit 1
+fi
+echo "OK"
+
 echo "== repo_guard: versión consistente =="
 VERSION_FILE="$(tr -d '\r\n' < VERSION)"
 if grep -q "const APP_VERSION = '$VERSION_FILE'" frontend/src/App.jsx; then
