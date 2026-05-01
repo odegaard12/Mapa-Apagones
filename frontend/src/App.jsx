@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.9.5-all-scope-polygons'
+const APP_VERSION = 'v0.9.9.6-restore-clears-active-zone'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -1043,7 +1043,7 @@ setMessage('Selecciona una zona del mapa.')
 
       reportOkRef.current = true
 
-      const resolvedAfterReport = type === 'vuelve' && Number(data.incident.report_count_active || 0) === 0
+      const resolvedAfterReport = type === 'vuelve' || Number(data?.incident?.report_count_active || 0) === 0 || data?.incident?.status === 'resuelta'
 
       if (resolvedAfterReport) {
         setMessage('Zona marcada como resuelta.')
@@ -1053,6 +1053,7 @@ setMessage('Selecciona una zona del mapa.')
       } else {
         const actionMessage = {
           created_new_zone: 'Nueva incidencia enviada.',
+          resolved_zone: 'Zona marcada como resuelta.',
           confirmed_existing_zone: 'Confirmación añadida.',
           updated_own_report: 'Reporte actualizado.',
           moved_to_new_zone: 'Tu reporte se movió a la nueva zona.',

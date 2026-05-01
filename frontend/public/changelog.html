@@ -116,6 +116,18 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.9.6-restore-clears-active-zone</h2>
+      <ul>
+        <li>Corrige el flujo “Ya volvió” para que resuelva la zona activa objetivo.</li>
+        <li>Si otro navegador/dispositivo marca que volvió la luz, se cierran los reportes negativos activos de esa zona.</li>
+        <li>Evita que una zona siga marcada/activa después de resolverla correctamente.</li>
+        <li>Limpia selección, punto manual y destino tras una resolución correcta.</li>
+        <li>Añade validación con base de datos temporal para probar el caso: usuario A reporta, usuario B marca “Ya volvió”.</li>
+        <li>No toca datasets geográficos, Turnstile, rate limiting, privacidad ni dependencias.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.9.9.5-all-scope-polygons</h2>
       <ul>
         <li>Corrige el ámbito “Toda España” para usar polígonos municipales combinados de las comunidades disponibles.</li>

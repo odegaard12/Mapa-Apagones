@@ -1,3 +1,12 @@
+## v0.9.9.6-restore-clears-active-zone
+
+- Corrige el flujo “Ya volvió” para que resuelva la zona activa objetivo.
+- Si otro navegador/dispositivo marca que volvió la luz, se cierran los reportes negativos activos de esa zona.
+- Evita que una zona siga marcada/activa después de resolverla correctamente.
+- Limpia selección, punto manual y destino tras una resolución correcta.
+- Añade validación con base de datos temporal para probar el caso: usuario A reporta, usuario B marca “Ya volvió”.
+- No toca datasets geográficos, Turnstile, rate limiting, privacidad ni dependencias.
+
 ## v0.9.9.5-all-scope-polygons
 
 - Corrige el ámbito “Toda España” para que use polígonos municipales combinados de las comunidades disponibles.
