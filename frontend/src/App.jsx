@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.9.1-geo-madrid'
+const APP_VERSION = 'v0.9.9.2-geo-madrid-polygon-match'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -632,7 +632,10 @@ export default function App() {
   )
 
   const selectedIncident = useMemo(
-    () => filteredIncidents.find((i) => i.id === selectedIncidentId) || null,
+    () =>
+      filteredIncidents.find((incident) =>
+        [incident.id, incident.zone_id, incident.incident_id].filter(Boolean).includes(selectedIncidentId)
+      ) || null,
     [filteredIncidents, selectedIncidentId]
   )
 
@@ -792,7 +795,7 @@ setMessage('No se pudo localizar la zona seleccionada.')
     // y confunde al usuario. La acción se valida y se envía sobre la incidencia.
     setMode('explore')
     setLeftTab('incidents')
-    setSelectedIncidentId(incident.id || incident.incident_id || null)
+    setSelectedIncidentId(incident.id || incident.zone_id || incident.incident_id || null)
     setReportPoint(null)
     setReportTargetMeta(null)
     setMessage('')
@@ -802,7 +805,7 @@ setMessage('No se pudo localizar la zona seleccionada.')
   }
 
   function focusIncident(incident) {
-    setSelectedIncidentId(incident.id)
+    setSelectedIncidentId(incident.id || incident.zone_id || incident.incident_id || null)
     setLeftTab('incidents')
     setMode('explore')
     setReportPoint(null)
@@ -1033,7 +1036,7 @@ setMessage('Selecciona una zona del mapa.')
         }[data.action] || 'Reporte enviado.'
 
         setMessage(actionMessage)
-        setSelectedIncidentId(data.incident_id)
+        setSelectedIncidentId(data?.incident?.zone_id || data?.zone_id || data?.incident_id || data?.incident?.id || null)
         setLeftTab('incidents')
       }
 

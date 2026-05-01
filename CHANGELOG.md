@@ -1,3 +1,11 @@
+## v0.9.9.2-geo-madrid-polygon-match
+
+- Normaliza el GeoJSON de Comunidad de Madrid para enlazar incidencias con polígonos municipales reales.
+- Añade `municipio`, `province`, `zone_id` y `dataset_id` a cada feature de Madrid.
+- Corrige la selección frontend para aceptar `id`, `zone_id` o `incident_id`.
+- No cambia backend, Turnstile, paquetes, privacidad ni flujo de reportes.
+- Mantiene “Toda España” sin cambio automático de ámbito.
+
 ## v0.9.9.1-geo-madrid
 
 - Añade Comunidad de Madrid al selector geográfico.
