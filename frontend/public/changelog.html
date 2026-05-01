@@ -116,6 +116,17 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.9.5-all-scope-polygons</h2>
+      <ul>
+        <li>Corrige el ámbito “Toda España” para usar polígonos municipales combinados de las comunidades disponibles.</li>
+        <li>Evita que zonas como Zuera o Madrid caigan a cuadrado/celda cuando ya existe GeoJSON municipal.</li>
+        <li>Mantiene el cuadrado solo como fallback o selección manual temporal cuando no hay polígono disponible.</li>
+        <li>Genera <code>toda_espana_municipios.geojson</code> desde datasets ya publicados, sin subir GeoJSON nacional bruto.</li>
+        <li>No cambia backend, privacidad, Turnstile, rate limiting ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.9.9.4-report-selection-state</h2>
       <ul>
         <li>Corrige selección de zonas activas usando una clave compatible con <code>zone_id</code>, <code>id</code> e <code>incident_id</code>.</li>
