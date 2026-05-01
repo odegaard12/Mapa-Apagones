@@ -1,3 +1,11 @@
+## v0.9.9.1-geo-madrid
+
+- Añade Comunidad de Madrid al selector geográfico.
+- Genera y publica solo el GeoJSON municipal curado de Madrid.
+- No añade overlays nuevos ni cambia el flujo de reportes.
+- No toca backend, Turnstile, privacidad ni rate limiting.
+- Mantiene el GeoJSON nacional bruto fuera del repositorio.
+
 ## v0.9.9.0-repo-hygiene-guardrails
 
 - Limpia el repositorio tras el rollback de estabilidad.

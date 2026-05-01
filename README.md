@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.9.0-repo-hygiene-guardrails`.
+Versión actual visible: `v0.9.9.1-geo-madrid`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -93,6 +93,7 @@ Despliegue objetivo:
 - Asturias.
 - Cantabria.
 - Castilla y León.
+Comunidad de Madrid.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
 
