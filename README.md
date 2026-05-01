@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.9.2-geo-madrid-polygon-match`.
+Versión actual visible: `v0.9.9.3-geo-aragon`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -93,7 +93,8 @@ Despliegue objetivo:
 - Asturias.
 - Cantabria.
 - Castilla y León.
-Comunidad de Madrid.
+- Comunidad de Madrid.
+- Aragón.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
 
