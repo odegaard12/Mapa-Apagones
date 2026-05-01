@@ -50,6 +50,17 @@ export const GEO_DATASETS = {
       [43.3882, -1.62537],
     ],
   },
+  madrid: {
+    id: 'madrid',
+    label: 'Comunidad de Madrid',
+    municipiosPath: '/data/madrid_municipios.geojson',
+    defaultCenter: [40.4168, -3.7038],
+    defaultZoom: 9,
+    maxBounds: [
+      [39.88, -4.62],
+      [41.20, -3.03],
+    ],
+  },
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)
