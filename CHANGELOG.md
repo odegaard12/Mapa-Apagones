@@ -1,3 +1,12 @@
+## v0.9.9.7-restore-consensus-mobile
+
+- Cambia “Ya volvió” a lógica de consenso: no borra toda la zona si quedan más avisos activos.
+- Una señal de vuelta neutraliza una confirmación activa: 1 corte + 1 vuelve resuelve, 5 cortes + 1 vuelve deja 4 activas.
+- Hace que la señal “Ya volvió” dure lo mismo que el aviso activo para no reactivar zonas a los pocos minutos.
+- En móvil, al pulsar una zona activa se prioriza abrir la incidencia real y sus acciones.
+- Mejora mensajes cuando una zona sigue activa tras registrar una señal de vuelta.
+- No añade comunidades, no cambia Turnstile, privacidad, rate limiting ni dependencias.
+
 ## v0.9.9.6-restore-clears-active-zone
 
 - Corrige el flujo “Ya volvió” para que resuelva la zona activa objetivo.

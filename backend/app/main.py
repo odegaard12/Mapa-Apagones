@@ -48,7 +48,7 @@ GRID_SIZE_M = 1600
 MATCH_INCIDENT_RADIUS_M = 1600
 USER_NEARBY_LOCK_M = 2200
 REPORT_TTL_HOURS = 3
-RESTORE_TTL_MINUTES = 20
+RESTORE_TTL_MINUTES = REPORT_TTL_HOURS * 60
 SAME_TYPE_COOLDOWN_SEC = 10 * 60
 TYPE_CHANGE_COOLDOWN_SEC = 20
 NEW_ZONE_COOLDOWN_SEC = 180
@@ -599,8 +599,13 @@ def recompute_incident(conn, incident_id: str):
     negative_rows = [r for r in active_rows if r["report_type"] != "vuelve"]
     restore_rows = [r for r in active_rows if r["report_type"] == "vuelve"]
 
-    active_negative_unique = len({r["reporter_token_hash"] for r in negative_rows})
-    active_restore_unique = len({r["reporter_token_hash"] for r in restore_rows})
+    active_negative_reporters = {r["reporter_token_hash"] for r in negative_rows}
+    active_restore_reporters = {r["reporter_token_hash"] for r in restore_rows}
+    active_negative_unique_raw = len(active_negative_reporters)
+    active_restore_unique = len(active_restore_reporters)
+    # v0.9.9.7 consensus: cada "Ya volvió" neutraliza una señal activa.
+    # 1 corte + 1 vuelve => resuelta; 5 cortes + 1 vuelve => 4 activas.
+    active_negative_unique = max(0, active_negative_unique_raw - active_restore_unique)
     last_negative_at = max((parse_dt(r["updated_at"]) for r in negative_rows), default=None)
     last_any_at = max((parse_dt(r["updated_at"]) for r in rows), default=None)
 
@@ -631,7 +636,7 @@ def recompute_incident(conn, incident_id: str):
         (
             status,
             primary_type,
-            len(negative_rows),
+            active_negative_unique,
             active_negative_unique,
             iso(last_report_at),
             resolved_at,
@@ -1293,20 +1298,9 @@ def report(payload: ReportIn, request: FastAPIRequest):
             action = "created_new_zone"
 
     if payload.type == "vuelve":
-        # v0.9.9.6 restore resolves active zone:
-        # Una señal "Ya volvió" sobre una zona activa debe cerrar los reportes negativos
-        # de ese incidente, aunque venga de otro navegador/token.
-        conn.execute(
-            """
-            UPDATE reports
-            SET status = 'inactive', expires_at = ?
-            WHERE incident_id = ?
-              AND status = 'active'
-              AND report_type != 'vuelve'
-            """,
-            (iso(now), incident_id),
-        )
-        action = "resolved_zone"
+        # v0.9.9.7: "Ya volvió" no borra toda la zona;
+        # recompute_incident aplica consenso neto.
+        action = "restore_signal_registered"
 
     record_action(conn, token_hash, ip_hash, action)
 
@@ -1317,8 +1311,9 @@ def report(payload: ReportIn, request: FastAPIRequest):
     conn.commit()
 
     incident = conn.execute("SELECT * FROM incidents WHERE id = ?", (incident_id,)).fetchone()
+    if payload.type == "vuelve":
+        action = "resolved_zone" if int(incident["report_count_active"] or 0) <= 0 else "restore_signal_zone_still_active"
     conn.close()
-
     return {
         "ok": True,
         "action": action,
