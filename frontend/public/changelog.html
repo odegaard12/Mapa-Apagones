@@ -116,6 +116,19 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.9.8-navarra-report-button</h2>
+      <ul>
+        <li>Corrige el botón “Reportar” en móvil y escritorio: ahora siempre entra en modo reportar.</li>
+        <li>Si hay una zona activa seleccionada, “Reportar” abre el reporte preasociado a esa zona sin crear un punto manual nuevo.</li>
+        <li>Añade Navarra al selector geográfico.</li>
+        <li>Publica <code>frontend/public/data/navarra_municipios.geojson</code>.</li>
+        <li>Regenera <code>toda_espana_municipios.geojson</code> incluyendo Navarra.</li>
+        <li>Añade compatibilidad explícita para <code>Valle de Elorz/Elortzibar</code>.</li>
+        <li>No cambia backend, Turnstile, rate limiting, privacidad ni consenso de “Ya volvió”.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.9.9.7-restore-consensus-mobile</h2>
       <ul>
         <li>Cambia “Ya volvió” a lógica de consenso: no borra toda la zona si quedan más avisos activos.</li>

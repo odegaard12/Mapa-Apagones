@@ -73,6 +73,17 @@ export const GEO_DATASETS = {
       [41.20, -3.03],
     ],
   },
+  navarra: {
+    id: 'navarra',
+    label: 'Navarra',
+    municipiosPath: '/data/navarra_municipios.geojson',
+    defaultCenter: [42.69539, -1.67607],
+    defaultZoom: 9,
+    maxBounds: [
+      [41.85, -2.55],
+      [43.35, -0.65],
+    ],
+  },
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)
