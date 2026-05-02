@@ -84,6 +84,52 @@ export const GEO_DATASETS = {
       [43.35, -0.65],
     ],
   },
+
+  la_rioja: {
+    id: 'la_rioja',
+    label: 'La Rioja',
+    municipiosPath: '/data/la_rioja_municipios.geojson',
+    defaultCenter: [42.29, -2.54],
+    defaultZoom: 10,
+    maxBounds: [
+      [41.85, -3.20],
+      [42.75, -1.65],
+    ],
+  },
+  murcia: {
+    id: 'murcia',
+    label: 'Región de Murcia',
+    municipiosPath: '/data/murcia_municipios.geojson',
+    defaultCenter: [37.99, -1.13],
+    defaultZoom: 9,
+    maxBounds: [
+      [37.30, -2.40],
+      [38.45, -0.60],
+    ],
+  },
+  ceuta: {
+    id: 'ceuta',
+    label: 'Ceuta',
+    municipiosPath: '/data/ceuta_municipios.geojson',
+    defaultCenter: [35.89, -5.32],
+    defaultZoom: 12,
+    maxBounds: [
+      [35.84, -5.40],
+      [35.93, -5.25],
+    ],
+  },
+  melilla: {
+    id: 'melilla',
+    label: 'Melilla',
+    municipiosPath: '/data/melilla_municipios.geojson',
+    defaultCenter: [35.29, -2.94],
+    defaultZoom: 12,
+    maxBounds: [
+      [35.25, -3.02],
+      [35.33, -2.88],
+    ],
+  },
+
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)
