@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.9.8-navarra-report-button'
+const APP_VERSION = 'v0.9.9.9-mobile-active-zone-actions'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -826,15 +826,39 @@ setMessage('No se pudo localizar la zona seleccionada.')
   }
 
   
-function focusIncident(incident) {
-    if (!incident) return
+function isMobileActionViewport() {
+    if (typeof window === 'undefined') return false
+    return window.matchMedia('(max-width: 760px), (pointer: coarse)').matches
+  }
 
-    setSelectedIncidentId(incidentSelectionKey(incident))
+  function focusIncident(incident) {
+    const nextSelectedId = incidentSelectionKey(incident)
+
+    setSelectedIncidentId(nextSelectedId)
     setLeftTab('incidents')
-    setMode('explore')
-    setReportPoint(null)
-    setReportTargetMeta(null)
     setMessage('')
+
+    const shouldOpenReportActions =
+      isMobileActionViewport() || mode === 'report'
+
+    if (shouldOpenReportActions) {
+      const point = pointFromIncident(incident)
+      const targetMeta = reportTargetMetaFromIncident(incident)
+
+      setMode('report')
+
+      if (point && targetMeta) {
+        setReportPoint(point)
+        setReportTargetMeta(targetMeta)
+      } else {
+        setReportPoint(null)
+        setReportTargetMeta(null)
+      }
+    } else {
+      setMode('explore')
+      setReportPoint(null)
+      setReportTargetMeta(null)
+    }
 
     if (mapInstance) {
       mapInstance.fitBounds(incidentBounds(incident), {
