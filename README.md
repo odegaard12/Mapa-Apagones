@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.0.0-geo-small-communities`.
+Versión actual visible: `v0.10.0.1-geo-valencia-balears`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -99,6 +99,8 @@ Despliegue objetivo:
 - Región de Murcia.
 - Ceuta.
 - Melilla.
+- Illes Balears.
+- Comunitat Valenciana.
 Navarra.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
