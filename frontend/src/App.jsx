@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.9.6-restore-clears-active-zone'
+const APP_VERSION = 'v0.9.9.7-restore-consensus-mobile'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -825,13 +825,17 @@ setMessage('No se pudo localizar la zona seleccionada.')
     sendReport(point, type, null, false, targetMeta, false)
   }
 
-  function focusIncident(incident) {
+  
+function focusIncident(incident) {
+    if (!incident) return
+
     setSelectedIncidentId(incidentSelectionKey(incident))
     setLeftTab('incidents')
     setMode('explore')
     setReportPoint(null)
     setReportTargetMeta(null)
     setMessage('')
+
     if (mapInstance) {
       mapInstance.fitBounds(incidentBounds(incident), {
         padding: [56, 56],
@@ -1044,6 +1048,7 @@ setMessage('Selecciona una zona del mapa.')
       reportOkRef.current = true
 
       const resolvedAfterReport = type === 'vuelve' || Number(data?.incident?.report_count_active || 0) === 0 || data?.incident?.status === 'resuelta'
+      const restoreStillActive = type === 'vuelve' && !resolvedAfterReport
 
       if (resolvedAfterReport) {
         setMessage('Zona marcada como resuelta.')
@@ -1051,15 +1056,16 @@ setMessage('Selecciona una zona del mapa.')
         setReportPoint(null)
         setReportTargetMeta(null)
       } else {
-        const actionMessage = {
-          created_new_zone: 'Nueva incidencia enviada.',
-          resolved_zone: 'Zona marcada como resuelta.',
-          confirmed_existing_zone: 'Confirmación añadida.',
-          updated_own_report: 'Reporte actualizado.',
-          moved_to_new_zone: 'Tu reporte se movió a la nueva zona.',
-          created: 'Reporte enviado.',
-          updated: 'Reporte actualizado.',
-        }[data.action] || 'Reporte enviado.'
+        const actionMessage = restoreStillActive
+          ? 'Confirmación registrada. La zona sigue activa porque hay más avisos recientes.'
+          : ({
+              created_new_zone: 'Nueva incidencia enviada.',
+              confirmed_existing_zone: 'Confirmación añadida a una zona existente.',
+              updated_own_report: 'Tu aviso se ha actualizado.',
+              moved_to_new_zone: 'Tu aviso se ha movido a una nueva zona.',
+              resolved_zone: 'Zona marcada como resuelta.',
+              restore_signal_zone_still_active: 'Confirmación registrada. La zona sigue activa porque hay más avisos recientes.',
+            }[data.action] || 'Reporte enviado.')
 
         setMessage(actionMessage)
         setSelectedIncidentId(incidentSelectionKey(data?.incident) || data?.zone_id || data?.incident_id || null)
@@ -1125,19 +1131,18 @@ setMessage('Selecciona una zona del mapa.')
     setReportTargetMeta(null)
   }
 
-  function enterReport() {
-    setMode('report')
-
+  
+function enterReport() {
     if (selectedIncident) {
-      setSelectedIncidentId(incidentSelectionKey(selectedIncident))
-      setReportPoint(pointFromIncident(selectedIncident))
-      setReportTargetMeta(reportTargetMetaFromIncident(selectedIncident))
-    } else {
-      setSelectedIncidentId(null)
-      setReportPoint(null)
-      setReportTargetMeta(null)
+      focusIncident(selectedIncident)
+      return
     }
 
+    setMode('report')
+    setLeftTab('incidents')
+    setSelectedIncidentId(null)
+    setReportPoint(null)
+    setReportTargetMeta(null)
     setMessage('')
   }
 
@@ -1315,7 +1320,7 @@ setMessage('Selecciona una zona del mapa.')
                 </div>
               ) : (
                 activeVisible.map((incident) => {
-                  const selected = selectedIncidentId === incident.id
+                  const selected = incidentMatchesSelected(incident, selectedIncidentId)
                   return (
                     <button
                       key={incident.id}
@@ -1422,8 +1427,10 @@ setMessage('Selecciona una zona del mapa.')
           <MapClickSelector
             mode={mode}
             onPick={(point) => {
-              setSelectedIncidentId(null)
+              const targetMeta = reportTargetMetaFromPoint(point)
               setReportPoint(point)
+              setReportTargetMeta(targetMeta)
+              setSelectedIncidentId(targetMeta?.zone_id || targetMeta?.incident_id || null)
               setMessage('')
             }}
           />

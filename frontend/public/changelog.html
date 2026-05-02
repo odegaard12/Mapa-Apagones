@@ -116,6 +116,17 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.9.7-restore-consensus-mobile</h2>
+      <ul>
+        <li>Cambia “Ya volvió” a lógica de consenso: no borra toda la zona si quedan más avisos activos.</li>
+        <li>Una señal de vuelta neutraliza una confirmación activa: 1 corte + 1 vuelve resuelve, 5 cortes + 1 vuelve deja 4 activas.</li>
+        <li>Hace que la señal “Ya volvió” dure lo mismo que el aviso activo para no reactivar zonas a los pocos minutos.</li>
+        <li>En móvil, al pulsar una zona activa se prioriza abrir la incidencia real y sus acciones.</li>
+        <li>No añade comunidades, no cambia Turnstile, privacidad, rate limiting ni dependencias.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.9.9.6-restore-clears-active-zone</h2>
       <ul>
         <li>Corrige el flujo “Ya volvió” para que resuelva la zona activa objetivo.</li>
