@@ -1,3 +1,10 @@
+## v0.9.9.9-mobile-active-zone-actions
+
+- En móvil, al pulsar una zona activa del mapa se abre directamente el modo Reportar con esa zona preseleccionada.
+- Mantiene en escritorio el flujo de explorar/detalle para evitar cambios bruscos de UX.
+- Conserva la selección canónica por `zone_id`, `id` o `incident_id`.
+- No cambia backend, Turnstile, rate limiting, privacidad ni datasets geográficos.
+
 ## v0.9.9.8-navarra-report-button
 
 - Corrige el botón “Reportar” en móvil y escritorio: ahora siempre entra en modo reportar.

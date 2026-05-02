@@ -116,6 +116,16 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.9.9.9-mobile-active-zone-actions</h2>
+      <ul>
+        <li>En móvil, al pulsar una zona activa del mapa se abre directamente el modo Reportar con esa zona preseleccionada.</li>
+        <li>Mantiene en escritorio el flujo de explorar/detalle para evitar cambios bruscos de UX.</li>
+        <li>Conserva la selección canónica por <code>zone_id</code>, <code>id</code> o <code>incident_id</code>.</li>
+        <li>No cambia backend, Turnstile, rate limiting, privacidad ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.9.9.8-navarra-report-button</h2>
       <ul>
         <li>Corrige el botón “Reportar” en móvil y escritorio: ahora siempre entra en modo reportar.</li>
