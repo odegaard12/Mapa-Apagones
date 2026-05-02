@@ -130,6 +130,28 @@ export const GEO_DATASETS = {
     ],
   },
 
+  comunitat_valenciana: {
+    id: 'comunitat_valenciana',
+    label: 'Comunitat Valenciana',
+    municipiosPath: '/data/comunitat_valenciana_municipios.geojson',
+    defaultCenter: [39.50, -0.75],
+    defaultZoom: 8,
+    maxBounds: [
+      [37.75, -1.70],
+      [40.95, 0.75],
+    ],
+  },
+  illes_balears: {
+    id: 'illes_balears',
+    label: 'Illes Balears',
+    municipiosPath: '/data/illes_balears_municipios.geojson',
+    defaultCenter: [39.61, 2.98],
+    defaultZoom: 8,
+    maxBounds: [
+      [38.55, 1.10],
+      [40.10, 4.60],
+    ],
+  },
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)

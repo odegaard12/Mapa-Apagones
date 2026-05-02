@@ -1,3 +1,12 @@
+## v0.10.0.1-geo-valencia-balears
+
+- Añade Comunitat Valenciana al selector geográfico.
+- Añade Illes Balears al selector geográfico.
+- Publica datasets municipales normalizados para ambas comunidades.
+- Regenera `toda_espana_municipios.geojson` incluyendo las nuevas zonas en versión slim compatible con Cloudflare Pages.
+- Mantiene el GeoJSON nacional bruto fuera del repositorio.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.0.0-geo-small-communities
 
 - Añade La Rioja al selector geográfico.
