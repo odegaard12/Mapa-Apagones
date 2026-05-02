@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.9.7-restore-consensus-mobile`.
+Versión actual visible: `v0.9.9.8-navarra-report-button`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -95,6 +95,7 @@ Despliegue objetivo:
 - Castilla y León.
 - Comunidad de Madrid.
 - Aragón.
+Navarra.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
 

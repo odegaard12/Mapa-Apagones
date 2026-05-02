@@ -12,7 +12,7 @@ import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 
-const APP_VERSION = 'v0.9.9.7-restore-consensus-mobile'
+const APP_VERSION = 'v0.9.9.8-navarra-report-button'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -1133,17 +1133,26 @@ setMessage('Selecciona una zona del mapa.')
 
   
 function enterReport() {
-    if (selectedIncident) {
-      focusIncident(selectedIncident)
-      return
-    }
-
     setMode('report')
     setLeftTab('incidents')
+    setMessage('')
+
+    if (selectedIncident) {
+      const point = pointFromIncident(selectedIncident)
+      const targetMeta = reportTargetMetaFromIncident(selectedIncident)
+
+      setSelectedIncidentId(incidentSelectionKey(selectedIncident))
+
+      if (point && targetMeta) {
+        setReportPoint(point)
+        setReportTargetMeta(targetMeta)
+        return
+      }
+    }
+
     setSelectedIncidentId(null)
     setReportPoint(null)
     setReportTargetMeta(null)
-    setMessage('')
   }
 
   // overlayStability v0.9.8.2

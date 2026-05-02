@@ -1,3 +1,13 @@
+## v0.9.9.8-navarra-report-button
+
+- Corrige el botón “Reportar” en móvil y escritorio: ahora siempre entra en modo reportar.
+- Si hay una zona activa seleccionada, “Reportar” abre el reporte preasociado a esa zona sin crear un punto manual nuevo.
+- Añade Navarra al selector geográfico.
+- Publica `frontend/public/data/navarra_municipios.geojson`.
+- Regenera `toda_espana_municipios.geojson` incluyendo Navarra para evitar cuadrados cuando hay polígono disponible.
+- Añade compatibilidad explícita para `Valle de Elorz/Elortzibar`.
+- No cambia backend, Turnstile, rate limiting, privacidad ni consenso de “Ya volvió”.
+
 ## v0.9.9.7-restore-consensus-mobile
 
 - Cambia “Ya volvió” a lógica de consenso: no borra toda la zona si quedan más avisos activos.
