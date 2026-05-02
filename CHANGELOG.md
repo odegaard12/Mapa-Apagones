@@ -1,3 +1,12 @@
+## v0.10.0.0-geo-small-communities
+
+- Añade La Rioja al selector geográfico.
+- Añade Región de Murcia al selector geográfico.
+- Añade Ceuta y Melilla al selector geográfico.
+- Publica datasets municipales normalizados para las cuatro zonas.
+- Regenera `toda_espana_municipios.geojson` incluyendo las nuevas zonas con versión slim compatible con Cloudflare Pages.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.9.9.9-mobile-active-zone-actions
 
 - En móvil, al pulsar una zona activa del mapa se abre directamente el modo Reportar con esa zona preseleccionada.

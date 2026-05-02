@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.9.9.9-mobile-active-zone-actions`.
+Versión actual visible: `v0.10.0.0-geo-small-communities`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -95,6 +95,10 @@ Despliegue objetivo:
 - Castilla y León.
 - Comunidad de Madrid.
 - Aragón.
+- La Rioja.
+- Región de Murcia.
+- Ceuta.
+- Melilla.
 Navarra.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
