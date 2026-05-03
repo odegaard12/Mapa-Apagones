@@ -1,3 +1,12 @@
+## v0.10.0.5-geo-spatial-polygon-match
+
+- Corrige el matching visual de incidencias activas contra polígonos municipales.
+- Añade fallback espacial: si `zone_id` o nombre/provincia no encajan, usa el punto de la incidencia para buscar el polígono que lo contiene.
+- Evita cuadrados/celdas en municipios con variantes oficiales, bilingües o diferencias de normalización.
+- Mantiene el cuadrado solo cuando no hay polígono disponible o el punto no cae dentro de ningún municipio cargado.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni infraestructura eléctrica.
+
 ## v0.10.0.4-geo-normalize-municipality-datasets
 
 - Normaliza todos los datasets municipales publicados para que compartan el mismo esquema.
