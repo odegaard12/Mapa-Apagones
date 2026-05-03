@@ -1,3 +1,12 @@
+## v0.10.0.3-geo-lazy-all-scope
+
+- Cambia “Toda España” para cargar los polígonos desde los datasets municipales individuales ya publicados.
+- Elimina el GeoJSON combinado `toda_espana_municipios.geojson` para evitar límites de tamaño de Cloudflare Pages.
+- Mantiene el comportamiento visual: si existe polígono municipal, se pinta municipio; si no existe, queda fallback.
+- Prepara la app para añadir comunidades grandes sin regenerar un archivo único gigante.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni datos eléctricos nuevos.
+
 ## v0.10.0.2-geo-canarias
 
 - Añade Canarias al selector geográfico.

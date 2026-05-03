@@ -1,79 +1,72 @@
-import { GEO_DATASET_LIST, getGeoDataset } from './datasets'
+const geoJsonCache = new Map()
 
-const datasetPromiseCache = new Map()
+async function fetchGeoJson(path) {
+  if (!path) return null
 
-async function fetchGeoJson(path, datasetId) {
-  const res = await fetch(path)
-  if (!res.ok) {
-    throw new Error(`No se pudo cargar ${datasetId}: HTTP ${res.status}`)
-  }
-
-  const data = await res.json()
-
-  if (!data || !Array.isArray(data.features)) {
-    throw new Error(`GeoJSON inválido para ${datasetId}`)
-  }
-
-  return data
-}
-
-function withDatasetId(dataset, data) {
-  return {
-    ...data,
-    features: (data.features || []).map((feature) => ({
-      ...feature,
-      properties: {
-        ...(feature?.properties || {}),
-        dataset_id: feature?.properties?.dataset_id || dataset.id,
-      },
-    })),
-  }
-}
-
-async function loadSingleDatasetData(dataset) {
-  if (!dataset?.municipiosPath) {
-    return { dataset, data: null }
-  }
-
-  if (!datasetPromiseCache.has(dataset.id)) {
-    datasetPromiseCache.set(
-      dataset.id,
-      fetchGeoJson(dataset.municipiosPath, dataset.id).then((data) =>
-        withDatasetId(dataset, data)
-      )
+  if (!geoJsonCache.has(path)) {
+    geoJsonCache.set(
+      path,
+      fetch(path).then((res) => {
+        if (!res.ok) {
+          throw new Error(`No se pudo cargar ${path}: HTTP ${res.status}`)
+        }
+        return res.json()
+      })
     )
   }
 
-  const data = await datasetPromiseCache.get(dataset.id)
-  return { dataset, data }
+  return geoJsonCache.get(path)
 }
 
-function mergeCollections(collections) {
-  return {
+function pathsForDataset(dataset) {
+  if (!dataset) return []
+
+  if (Array.isArray(dataset.municipiosPaths) && dataset.municipiosPaths.length) {
+    return dataset.municipiosPaths.filter(Boolean)
+  }
+
+  if (dataset.municipiosPath) {
+    return [dataset.municipiosPath]
+  }
+
+  return []
+}
+
+export async function loadMunicipiosGeoJson(dataset) {
+  const paths = pathsForDataset(dataset)
+
+  if (!paths.length) return null
+
+  if (paths.length === 1) {
+    const data = await fetchGeoJson(paths[0])
+    return { data, sources: paths }
+  }
+
+  const merged = {
     type: 'FeatureCollection',
-    features: collections.flatMap((item) => item?.features || []),
-  }
-}
-
-export async function loadMunicipiosGeoJson(datasetId) {
-  const dataset = getGeoDataset(datasetId)
-
-  if (dataset.id !== 'all') {
-    return loadSingleDatasetData(dataset)
+    features: [],
   }
 
-  const polygonDatasets = GEO_DATASET_LIST.filter(
-    (item) => item.id !== 'all' && item.municipiosPath
-  )
+  const loadedSources = []
 
-  const loaded = []
-  for (const item of polygonDatasets) {
-    const { data } = await loadSingleDatasetData(item)
-    if (data) loaded.push(data)
+  for (const path of paths) {
+    try {
+      const data = await fetchGeoJson(path)
+      const features = Array.isArray(data?.features) ? data.features : []
+
+      if (features.length) {
+        merged.features.push(...features)
+        loadedSources.push(path)
+      }
+    } catch (err) {
+      console.error('No se pudo cargar dataset municipal', path, err)
+    }
   }
+
+  if (!merged.features.length) return null
 
   return {
-    dataset,
-    data: mergeCollections(loaded),
+    data: merged,
+    sources: loadedSources,
   }
 }
