@@ -1,3 +1,13 @@
+## v0.10.0.4-geo-normalize-municipality-datasets
+
+- Normaliza todos los datasets municipales publicados para que compartan el mismo esquema.
+- Asegura `municipio`, `mun_name`, `name`, `province`, `prov_name`, `dataset_id` y `zone_id` en cada feature.
+- Corrige casos donde una incidencia activa caía a cuadrado/celda aunque existía polígono municipal.
+- Añade `scripts/audit_geo_datasets.py` para detectar datasets incompletos antes de seguir añadiendo comunidades.
+- Mantiene la carga lazy de “Toda España” por datasets individuales.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni infraestructura eléctrica.
+
 ## v0.10.0.3-geo-lazy-all-scope
 
 - Cambia “Toda España” para cargar los polígonos desde los datasets municipales individuales ya publicados.
