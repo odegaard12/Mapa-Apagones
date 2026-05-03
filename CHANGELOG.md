@@ -1,3 +1,11 @@
+## v0.10.0.2-geo-canarias
+
+- Añade Canarias al selector geográfico.
+- Publica `frontend/public/data/canarias_municipios.geojson` como dataset municipal normalizado.
+- Regenera `toda_espana_municipios.geojson` incluyendo Canarias en versión slim compatible con Cloudflare Pages.
+- Mantiene el GeoJSON nacional bruto fuera del repositorio.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.0.1-geo-valencia-balears
 
 - Añade Comunitat Valenciana al selector geográfico.

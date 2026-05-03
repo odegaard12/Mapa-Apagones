@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.0.1-geo-valencia-balears`.
+Versión actual visible: `v0.10.0.2-geo-canarias`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -100,6 +100,7 @@ Despliegue objetivo:
 - Ceuta.
 - Melilla.
 - Illes Balears.
+- Canarias.
 - Comunitat Valenciana.
 Navarra.
 

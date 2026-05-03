@@ -116,6 +116,17 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.10.0.2-geo-canarias</h2>
+      <ul>
+        <li>Añade Canarias al selector geográfico.</li>
+        <li>Publica <code>frontend/public/data/canarias_municipios.geojson</code> como dataset municipal normalizado.</li>
+        <li>Regenera <code>toda_espana_municipios.geojson</code> incluyendo Canarias en versión slim compatible con Cloudflare Pages.</li>
+        <li>Mantiene el GeoJSON nacional bruto fuera del repositorio.</li>
+        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.10.0.1-geo-valencia-balears</h2>
       <ul>
         <li>Añade Comunitat Valenciana al selector geográfico.</li>

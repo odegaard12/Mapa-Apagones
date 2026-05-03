@@ -152,6 +152,17 @@ export const GEO_DATASETS = {
       [40.10, 4.60],
     ],
   },
+  canarias: {
+    id: 'canarias',
+    label: 'Canarias',
+    municipiosPath: '/data/canarias_municipios.geojson',
+    defaultCenter: [28.35, -15.75],
+    defaultZoom: 7,
+    maxBounds: [
+      [27.45, -18.35],
+      [29.60, -13.15],
+    ],
+  },
 }
 
 export const GEO_DATASET_LIST = Object.values(GEO_DATASETS)
