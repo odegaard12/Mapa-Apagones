@@ -116,6 +116,20 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.10.0.4-geo-normalize-municipality-datasets</h2>
+      <ul>
+        <li>Normaliza todos los datasets municipales publicados para que compartan el mismo esquema.</li>
+        <li>Asegura <code>municipio</code>, <code>mun_name</code>, <code>name</code>, <code>province</code>, <code>prov_name</code>, <code>dataset_id</code> y <code>zone_id</code> en cada feature.</li>
+        <li>Corrige casos donde una incidencia activa caía a cuadrado/celda aunque existía polígono municipal.</li>
+        <li>Añade <code>scripts/audit_geo_datasets.py</code> para detectar datasets incompletos antes de seguir añadiendo comunidades.</li>
+        <li>Mantiene la carga lazy de “Toda España” por datasets individuales.</li>
+        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.0.3-geo-lazy-all-scope</h2>
       <ul>
         <li>Cambia “Toda España” para cargar polígonos desde datasets municipales individuales.</li>
