@@ -1,3 +1,12 @@
+## v0.10.0.3-grid-distributor-foundation
+
+- Añade la base frontend para mostrar distribuidora probable por municipio.
+- Añade el primer dato curado para Catoira con Eléctrica de Catoira como distribuidora probable.
+- Muestra teléfono de averías cuando el dato está disponible.
+- Mantiene fallback “Consultar distribuidora de la zona” para municipios sin dato curado.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade subestaciones, tendidos ni infraestructura sensible.
+
 ## v0.10.0.2-geo-canarias
 
 - Añade Canarias al selector geográfico.

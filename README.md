@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.0.2-geo-canarias`.
+Versión actual visible: `v0.10.0.3-grid-distributor-foundation`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -55,6 +55,8 @@ Permite reportar, de forma rápida:
 - Ya volvió.
 
 La aplicación agrupa los reportes por zona aproximada y muestra estados de confianza como señal débil, probable, activa o resuelta.
+
+También puede mostrar una distribuidora probable por municipio cuando exista una fuente pública curada. Esta información es orientativa y no sustituye a los canales oficiales.
 
 ## Qué no es
 

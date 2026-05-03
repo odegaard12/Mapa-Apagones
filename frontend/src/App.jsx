@@ -11,8 +11,9 @@ import {
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
+import { getDistributorCandidates } from './grid/distributorLookup.js'
 
-const APP_VERSION = 'v0.10.0.2-geo-canarias'
+const APP_VERSION = 'v0.10.0.3-grid-distributor-foundation'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -659,6 +660,16 @@ export default function App() {
     () => filteredIncidents.find((incident) => incidentMatchesSelected(incident, selectedIncidentId)) || null,
     [filteredIncidents, selectedIncidentId]
   )
+
+  const selectedDistributorCandidates = useMemo(
+
+    () => getDistributorCandidates(selectedIncident),
+
+    [selectedIncident],
+
+  )
+
+
 
   const reportBounds = useMemo(() => {
     if (!reportPoint) return null
@@ -1557,7 +1568,19 @@ function enterReport() {
               </div>
               <div className="info-row">
                 <span>Distribuidora probable</span>
-                <strong>{selectedDistributor?.name || 'Sin determinar'}</strong>
+                <strong className="distributor-probable-value">
+                  {selectedDistributorCandidates.length ? (
+                    selectedDistributorCandidates.map((distributor) => (
+                      <span key={distributor.id}>
+                        {distributor.name}
+                        {distributor.incidentsPhone ? ` · Averías ${distributor.incidentsPhone}` : ''}
+                        {distributor.confidence ? ` · confianza ${distributor.confidence}` : ''}
+                      </span>
+                    ))
+                  ) : (
+                    'Consultar distribuidora de la zona'
+                  )}
+                </strong>
               </div>
             </div>
 
