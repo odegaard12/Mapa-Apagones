@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.0.4-geo-normalize-municipality-datasets`.
+Versión actual visible: `v0.10.0.5-geo-spatial-polygon-match`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 

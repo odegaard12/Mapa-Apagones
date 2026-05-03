@@ -116,6 +116,19 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.10.0.5-geo-spatial-polygon-match</h2>
+      <ul>
+        <li>Corrige el matching visual de incidencias activas contra polígonos municipales.</li>
+        <li>Añade fallback espacial: si <code>zone_id</code> o nombre/provincia no encajan, usa el punto de la incidencia para buscar el polígono que lo contiene.</li>
+        <li>Evita cuadrados/celdas en municipios con variantes oficiales, bilingües o diferencias de normalización.</li>
+        <li>Mantiene el cuadrado solo cuando no hay polígono disponible o el punto no cae dentro de ningún municipio cargado.</li>
+        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.0.4-geo-normalize-municipality-datasets</h2>
       <ul>
         <li>Normaliza todos los datasets municipales publicados para que compartan el mismo esquema.</li>
