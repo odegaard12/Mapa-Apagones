@@ -167,6 +167,28 @@ export const GEO_DATASETS = {
       [40.10, 4.60],
     ],
   },
+  euskadi: {
+    id: 'euskadi',
+    label: 'Euskadi',
+    municipiosPath: '/data/euskadi_municipios.geojson',
+    center: [43.05, -2.6],
+    zoom: 8,
+  },
+  extremadura: {
+    id: 'extremadura',
+    label: 'Extremadura',
+    municipiosPath: '/data/extremadura_municipios.geojson',
+    center: [39.1, -6.2],
+    zoom: 7,
+  },
+  castilla_la_mancha: {
+    id: 'castilla_la_mancha',
+    label: 'Castilla-La Mancha',
+    municipiosPath: '/data/castilla_la_mancha_municipios.geojson',
+    center: [39.5, -3.0],
+    zoom: 7,
+  },
+
   canarias: {
     id: 'canarias',
     label: 'Canarias',
