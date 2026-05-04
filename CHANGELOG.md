@@ -1,3 +1,12 @@
+## v0.10.1.4-data-distributor-hints-galicia-moscoso
+
+- Añade las primeras pistas reales y conservadoras de distribuidora eléctrica.
+- Incorpora Eléctrica de Moscoso, S.L. para municipios de Pontevedra con fuente pública verificable.
+- Marca las entradas como `verified_partial` para evitar afirmar exclusividad o cobertura total.
+- Mantiene el fallback genérico en cualquier zona no verificada.
+- No añade CUPS, direcciones, coordenadas privadas ni inventario de infraestructura crítica.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.1.3-grid-distributor-hints-foundation
 
 - Añade la base técnica para futuras pistas de distribuidora por municipio o zona.
