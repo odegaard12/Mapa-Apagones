@@ -6,5 +6,96 @@
     "infrastructure": "No substations, no power lines, no cable routes, no critical infrastructure inventory.",
     "fallback": "If a distributor is not verified for a zone, the app must show a generic consultation message."
   },
-  "items": []
+  "items": [
+    {
+      "zone_id": "municipality:pontevedra::a_lama",
+      "municipio": "A Lama",
+      "province": "Pontevedra",
+      "dataset_id": "galicia",
+      "last_reviewed": "2026-05-04",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Eléctrica de Moscoso, S.L.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC C/1436/24 Grupo EHR/Moscoso",
+          "source_url": "https://www.cnmc.es/sites/default/files/5198696.pdf",
+          "last_reviewed": "2026-05-04",
+          "coverage_note": "Pista pública conservadora: distribuidora verificada en el municipio o zona, sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:pontevedra::cerdedo_cotobade",
+      "municipio": "Cerdedo-Cotobade",
+      "province": "Pontevedra",
+      "dataset_id": "galicia",
+      "last_reviewed": "2026-05-04",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Eléctrica de Moscoso, S.L.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC C/1436/24 Grupo EHR/Moscoso",
+          "source_url": "https://www.cnmc.es/sites/default/files/5198696.pdf",
+          "last_reviewed": "2026-05-04",
+          "coverage_note": "Pista pública conservadora: distribuidora verificada en el municipio o zona, sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:pontevedra::fornelos_de_montes",
+      "municipio": "Fornelos de Montes",
+      "province": "Pontevedra",
+      "dataset_id": "galicia",
+      "last_reviewed": "2026-05-04",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Eléctrica de Moscoso, S.L.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC C/1436/24 Grupo EHR/Moscoso",
+          "source_url": "https://www.cnmc.es/sites/default/files/5198696.pdf",
+          "last_reviewed": "2026-05-04",
+          "coverage_note": "Pista pública conservadora: distribuidora verificada en el municipio o zona, sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:pontevedra::mondariz",
+      "municipio": "Mondariz",
+      "province": "Pontevedra",
+      "dataset_id": "galicia",
+      "last_reviewed": "2026-05-04",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Eléctrica de Moscoso, S.L.",
+          "confidence": "verified_partial",
+          "source_name": "Eléctrica de Moscoso — información pública corporativa",
+          "source_url": "https://www.emoscoso.com/",
+          "last_reviewed": "2026-05-04",
+          "coverage_note": "Pista pública conservadora: distribuidora verificada en el municipio o zona, sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:pontevedra::pazos_de_borben",
+      "municipio": "Pazos de Borbén",
+      "province": "Pontevedra",
+      "dataset_id": "galicia",
+      "last_reviewed": "2026-05-04",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Eléctrica de Moscoso, S.L.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC C/1436/24 Grupo EHR/Moscoso",
+          "source_url": "https://www.cnmc.es/sites/default/files/5198696.pdf",
+          "last_reviewed": "2026-05-04",
+          "coverage_note": "Pista pública conservadora: distribuidora verificada en el municipio o zona, sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    }
+  ]
 }
