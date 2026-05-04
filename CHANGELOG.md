@@ -1,3 +1,14 @@
+## v0.10.0.9-geo-andalucia-catalunya
+
+- Añade Andalucía al selector geográfico.
+- Añade Catalunya al selector geográfico.
+- Publica los datasets municipales normalizados de Andalucía y Catalunya.
+- Añade ambos datasets a la carga lazy de “Toda España”.
+- Mantiene la guardia automática para impedir datasets individuales fuera de `municipiosPaths`.
+- No regenera ningún GeoJSON gigante.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni infraestructura eléctrica.
+
 ## v0.10.0.8-geo-all-scope-new-datasets
 
 - Corrige la carga de “Toda España” para incluir todos los datasets municipales individuales declarados.
