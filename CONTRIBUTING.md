@@ -39,3 +39,21 @@ No subas .env reales, claves, tokens, secretos, bases de datos, backups, logs co
     python3 -m py_compile backend/app/main.py
     docker compose up -d --build
     curl -s http://127.0.0.1:8098/api/health
+
+## Guardias geográficas y de seguridad
+
+Para cambios relacionados con geografía municipal, datasets, selector de ámbitos o carga de “Toda España”, ejecuta siempre:
+
+```bash
+node --check frontend/src/geo/datasets.js
+python3 scripts/check_all_scope_datasets.py
+python3 scripts/audit_geo_datasets.py
+python3 scripts/check_spain_geo_coverage.py
+bash scripts/repo_guard.sh --no-build
+npm --prefix frontend run build
+```
+
+Si se añade un `municipiosPath` individual, también debe quedar incluido en `municipiosPaths` de “Toda España”. Esto evita que una zona con polígono disponible caiga al fallback de cuadrado/celda.
+
+No subas `.env`, bases de datos, backups, logs, SARIF locales, GeoJSON raw de trabajo, auditorías locales ni secretos. Usa `.env.example`, documentación genérica y configuración privada fuera del repositorio.
+

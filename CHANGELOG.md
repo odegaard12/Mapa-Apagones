@@ -1,3 +1,13 @@
+## v0.10.1.2-docs-public-polish
+
+- Pule la documentación pública tras completar la fase geográfica.
+- Actualiza el README con la lista real de ámbitos geográficos disponibles.
+- Añade una sección de validaciones del repositorio.
+- Documenta las guardias geográficas y de seguridad en CONTRIBUTING.md.
+- Mantiene claro que los datasets individuales deben incluirse también en “Toda España”.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No toca datasets municipales, mapa, polígonos ni matching geográfico.
+
 ## v0.10.1.1-repo-purify
 
 - Limpia artefactos locales/operativos redundantes si estaban trackeados.
