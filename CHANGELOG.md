@@ -1,3 +1,11 @@
+## v0.10.1.1-repo-purify
+
+- Limpia artefactos locales/operativos redundantes si estaban trackeados.
+- Refuerza `.gitignore` para evitar subir backups, auditorías, SARIF, bases de datos locales y GeoJSON raw.
+- Añade configuración `.gitleaks.toml` para permitir el placeholder vacío documentado `TURNSTILE_SECRET_KEY=` sin ocultar secretos reales.
+- Elimina GeoJSON raw redundantes si no están referenciados por la aplicación.
+- Mantiene intactos backend, reportes, Turnstile, rate limiting, datasets municipales publicados y lógica de polígonos.
+
 ## v0.10.1.0-geo-complete-spain-audit
 
 - Añade una auditoría de cobertura geográfica completa de España.

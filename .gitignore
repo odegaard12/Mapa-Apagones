@@ -62,3 +62,35 @@ backups/
 diagnostics/
 **/diagnostics/
 **/private_legal/
+# Local AI / operational artifacts
+_backups/
+diagnostics/
+apagones-local-artifacts/
+cleanup-audit-*/
+boal-debug-*/
+geo-square-debug-*/
+post-merge-cleanup-*/
+repo-purify-*/
+
+# Local generated reports
+gitleaks-redacted.json
+gitleaks-results.sarif
+*.sarif
+
+# Raw source downloads / generated temporary GIS files
+municipios_espana_raw.geojson
+*_raw.geojson
+frontend/public/data/*_raw.geojson
+
+# Local databases and backups
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
+
+# Frontend generated artifacts
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+frontend/node_modules/
