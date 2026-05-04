@@ -116,6 +116,16 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.10.0.6-geo-loader-dataset-id</h2>
+      <ul>
+        <li>Corrige el loader geográfico para aceptar tanto un ID de dataset como un objeto dataset.</li>
+        <li>Restaura la carga real de polígonos municipales tras la carga lazy de “Toda España”.</li>
+        <li>Evita que zonas con polígono válido caigan al rectángulo/celda fallback.</li>
+        <li>No cambia backend, reportes, Turnstile, rate limiting ni datos personales.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>v0.10.0.5-geo-spatial-polygon-match</h2>
       <ul>
         <li>Corrige el matching visual de incidencias activas contra polígonos municipales.</li>

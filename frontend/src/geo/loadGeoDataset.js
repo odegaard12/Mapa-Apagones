@@ -1,3 +1,5 @@
+import { getGeoDataset } from './datasets.js'
+
 const geoJsonCache = new Map()
 
 async function fetchGeoJson(path) {
@@ -18,7 +20,15 @@ async function fetchGeoJson(path) {
   return geoJsonCache.get(path)
 }
 
-function pathsForDataset(dataset) {
+function resolveDataset(datasetOrId) {
+  if (!datasetOrId) return null
+  if (typeof datasetOrId === 'string') return getGeoDataset(datasetOrId)
+  return datasetOrId
+}
+
+function pathsForDataset(datasetOrId) {
+  const dataset = resolveDataset(datasetOrId)
+
   if (!dataset) return []
 
   if (Array.isArray(dataset.municipiosPaths) && dataset.municipiosPaths.length) {
