@@ -1,3 +1,10 @@
+## v0.10.0.6-geo-loader-dataset-id
+
+- Corrige el loader geográfico para aceptar tanto un ID de dataset como un objeto dataset.
+- Restaura la carga real de polígonos municipales tras la carga lazy de “Toda España”.
+- Evita que zonas con polígono válido caigan al rectángulo/celda fallback.
+- No cambia backend, reportes, Turnstile, rate limiting ni datos personales.
+
 ## v0.10.0.5-geo-spatial-polygon-match
 
 - Corrige el matching visual de incidencias activas contra polígonos municipales.
