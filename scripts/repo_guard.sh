@@ -99,3 +99,7 @@ python3 scripts/check_all_scope_datasets.py
 echo
 echo "== repo_guard: cobertura geográfica completa España =="
 python3 scripts/check_spain_geo_coverage.py
+echo
+echo "== repo_guard: distributor hints seguros =="
+python3 scripts/check_distributor_hints.py
+

@@ -115,6 +115,21 @@
 
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
+    <section>
+      <h2>v0.10.1.3-grid-distributor-hints-foundation</h2>
+      <ul>
+        <li>Añade la base técnica para futuras pistas de distribuidora por municipio o zona.</li>
+        <li>Crea el dataset inicial conservador <code>frontend/src/data/distributor_hints.json</code>.</li>
+        <li>Añade helper frontend para resolver el texto público de distribuidora sin cambiar backend.</li>
+        <li>Añade <code>scripts/check_distributor_hints.py</code> y lo integra en <code>scripts/repo_guard.sh</code>.</li>
+        <li>Prepara soporte para distribuidoras pequeñas, múltiples distribuidoras y niveles de confianza.</li>
+        <li>No añade datos reales de distribuidoras todavía.</li>
+        <li>No pide CUPS ni publica infraestructura eléctrica sensible.</li>
+        <li>No cambia mapa, polígonos, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+
 
         <section>
       <h2>v0.10.1.2-docs-public-polish</h2>

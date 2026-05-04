@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.1.2-docs-public-polish`.
+Versión actual visible: `v0.10.1.3-grid-distributor-hints-foundation`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -114,6 +114,21 @@ Los polígonos municipales publicados están normalizados con propiedades comune
 La cobertura geográfica se protege con guardias automáticas para evitar regresiones, especialmente el caso en el que un dataset existe pero no está incluido en la carga de “Toda España” y el mapa cae al fallback de cuadrado/celda.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
+
+## Distribuidoras eléctricas
+
+El proyecto prepara un modelo de pistas de distribuidora por municipio o zona, pensado para incorporar tanto grandes distribuidoras como distribuidoras locales pequeñas.
+
+Reglas de este modelo:
+
+- Solo se debe mostrar una distribuidora si hay fuente pública verificable.
+- Si hay varias posibles distribuidoras en un municipio, debe indicarse como cobertura parcial o múltiple.
+- Si no hay dato suficientemente fiable, la interfaz mantiene el mensaje genérico: `Consultar distribuidora de la zona`.
+- No se pide CUPS.
+- No se publican subestaciones, tendidos, cables, centros de transformación ni inventarios de infraestructura crítica.
+- No se usan direcciones exactas ni datos personales.
+
+La base inicial está en `frontend/src/data/distributor_hints.json` y se valida con `scripts/check_distributor_hints.py`.
 
 ## Seguridad y anti-abuso
 

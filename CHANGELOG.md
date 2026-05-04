@@ -1,3 +1,14 @@
+## v0.10.1.3-grid-distributor-hints-foundation
+
+- Añade la base técnica para futuras pistas de distribuidora por municipio o zona.
+- Crea `frontend/src/data/distributor_hints.json` como dataset inicial vacío y conservador.
+- Añade `frontend/src/grid/distributorHints.js` para resolver el texto público de distribuidora sin cambiar backend.
+- Añade `scripts/check_distributor_hints.py` y lo integra en `scripts/repo_guard.sh`.
+- Prepara soporte para distribuidoras pequeñas, múltiples distribuidoras y niveles de confianza.
+- No añade datos reales de distribuidoras todavía.
+- No pide CUPS ni publica infraestructura eléctrica sensible.
+- No cambia mapa, polígonos, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.1.2-docs-public-polish
 
 - Pule la documentación pública tras completar la fase geográfica.
