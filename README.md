@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.1.1-repo-purify`.
+Versión actual visible: `v0.10.1.2-docs-public-polish`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -86,9 +86,9 @@ Despliegue objetivo:
 
 ## Estado geográfico actual
 
-Ámbitos disponibles:
+Ámbitos disponibles en el selector:
 
-- Toda España, combinando datasets disponibles mediante carga por comunidad.
+- Toda España, combinando datasets municipales individuales mediante carga lazy por comunidad.
 - Galicia.
 - Asturias.
 - Cantabria.
@@ -102,7 +102,16 @@ Despliegue objetivo:
 - Illes Balears.
 - Canarias.
 - Comunitat Valenciana.
-Navarra.
+- Navarra.
+- Euskadi.
+- Extremadura.
+- Castilla-La Mancha.
+- Andalucía.
+- Catalunya.
+
+Los polígonos municipales publicados están normalizados con propiedades comunes como `municipio`, `mun_name`, `name`, `province`, `prov_name`, `dataset_id` y `zone_id`.
+
+La cobertura geográfica se protege con guardias automáticas para evitar regresiones, especialmente el caso en el que un dataset existe pero no está incluido en la carga de “Toda España” y el mapa cae al fallback de cuadrado/celda.
 
 Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas mediante scripts del repositorio.
 
@@ -153,6 +162,25 @@ El frontend incluye una capa pública básica para el dominio previsto:
 
 Estas páginas son informativas y no cambian el flujo de reportes.
 
+## Validaciones del repositorio
+
+Antes de abrir o mergear cambios, especialmente si afectan a geografía, frontend o seguridad, deben pasar estas comprobaciones:
+
+```bash
+node --check frontend/src/geo/datasets.js
+python3 scripts/check_all_scope_datasets.py
+python3 scripts/audit_geo_datasets.py
+python3 scripts/check_spain_geo_coverage.py
+bash scripts/repo_guard.sh --no-build
+npm --prefix frontend run build
+```
+
+Para revisar secretos o falsos positivos de seguridad:
+
+```bash
+docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:latest detect --source=/repo --config=/repo/.gitleaks.toml --redact --verbose
+```
+
 ## Desarrollo local
 
     docker compose up --build -d
@@ -195,7 +223,7 @@ Se agradecen contribuciones en:
 - Documentación.
 - Despliegue Cloudflare Pages / Tunnel.
 - Guía de Cloudflare Pages: `docs/deployment-cloudflare-pages.md`.
-- Añadir nuevas comunidades autónomas desde la pipeline CNIG.
+- Mantener y auditar la cobertura geográfica municipal, especialmente al actualizar fuentes o añadir datasets.
 - Revisión legal/comunicativa del mensaje público.
 
 Antes de contribuir, revisa CONTRIBUTING.md.
