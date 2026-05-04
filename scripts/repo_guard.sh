@@ -96,3 +96,6 @@ exit "$fail"
 
 echo "== repo_guard: Toda España incluye todos los datasets municipales =="
 python3 scripts/check_all_scope_datasets.py
+echo
+echo "== repo_guard: cobertura geográfica completa España =="
+python3 scripts/check_spain_geo_coverage.py
