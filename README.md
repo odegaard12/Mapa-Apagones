@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: `v0.10.0.9-geo-andalucia-catalunya`.
+Versión actual visible: `v0.10.1.0-geo-complete-spain-audit`.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 

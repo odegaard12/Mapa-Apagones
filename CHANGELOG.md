@@ -1,3 +1,15 @@
+## v0.10.1.0-geo-complete-spain-audit
+
+- Añade una auditoría de cobertura geográfica completa de España.
+- Verifica que las 17 comunidades autónomas y Ceuta/Melilla están declaradas como datasets individuales.
+- Verifica que todos los `municipiosPath` individuales están incluidos en `municipiosPaths` de “Toda España”.
+- Verifica que los GeoJSON municipales publicados existen, tienen features, no superan el límite de tamaño y mantienen propiedades normalizadas.
+- Añade comprobaciones de municipios críticos para detectar regresiones de cuadrado/celda.
+- Integra la nueva auditoría en `scripts/repo_guard.sh`.
+- No añade nuevas zonas geográficas.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni infraestructura eléctrica.
+
 ## v0.10.0.9-geo-andalucia-catalunya
 
 - Añade Andalucía al selector geográfico.

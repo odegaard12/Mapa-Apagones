@@ -116,6 +116,22 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
     <section>
+      <h2>v0.10.1.0-geo-complete-spain-audit</h2>
+      <ul>
+        <li>Añade una auditoría de cobertura geográfica completa de España.</li>
+        <li>Verifica que las 17 comunidades autónomas y Ceuta/Melilla están declaradas como datasets individuales.</li>
+        <li>Verifica que todos los <code>municipiosPath</code> individuales están incluidos en <code>municipiosPaths</code> de “Toda España”.</li>
+        <li>Verifica que los GeoJSON municipales publicados existen, tienen features, no superan el límite de tamaño y mantienen propiedades normalizadas.</li>
+        <li>Añade comprobaciones de municipios críticos para detectar regresiones de cuadrado/celda.</li>
+        <li>Integra la nueva auditoría en <code>scripts/repo_guard.sh</code>.</li>
+        <li>No añade nuevas zonas geográficas.</li>
+        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.0.9-geo-andalucia-catalunya</h2>
       <ul>
         <li>Añade Andalucía al selector geográfico.</li>
