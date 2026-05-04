@@ -1,3 +1,11 @@
+## v0.10.0.8-geo-all-scope-new-datasets
+
+- Corrige la carga de “Toda España” para incluir todos los datasets municipales individuales declarados.
+- Evita que datasets nuevos como Euskadi, Extremadura y Castilla-La Mancha caigan al cuadrado/celda fallback en el ámbito general.
+- Añade una guardia automática para detectar datasets individuales no incluidos en “Toda España”.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni infraestructura eléctrica.
+
 ## v0.10.0.7-geo-euskadi-extremadura-clm
 
 - Añade Euskadi al selector geográfico.

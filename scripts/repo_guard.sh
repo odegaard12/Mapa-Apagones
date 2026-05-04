@@ -93,3 +93,6 @@ if [ "$NO_BUILD" -eq 0 ]; then
 fi
 
 exit "$fail"
+
+echo "== repo_guard: Toda España incluye todos los datasets municipales =="
+python3 scripts/check_all_scope_datasets.py
