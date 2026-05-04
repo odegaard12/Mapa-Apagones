@@ -57,3 +57,19 @@ Si se añade un `municipiosPath` individual, también debe quedar incluido en `m
 
 No subas `.env`, bases de datos, backups, logs, SARIF locales, GeoJSON raw de trabajo, auditorías locales ni secretos. Usa `.env.example`, documentación genérica y configuración privada fuera del repositorio.
 
+## Guardias para distribuidoras eléctricas
+
+Las pistas de distribuidora deben añadirse de forma conservadora y verificable.
+
+Reglas obligatorias:
+
+- No añadir datos sin fuente pública.
+- No asumir una distribuidora por comunidad autónoma si existen distribuidoras pequeñas.
+- No pedir ni almacenar CUPS.
+- No añadir texto libre de usuarios.
+- No publicar subestaciones, tendidos, cables, centros de transformación ni infraestructura crítica.
+- Usar `confidence` para diferenciar datos verificados municipales, coberturas parciales y aproximaciones regionales.
+- Ejecutar `python3 scripts/check_distributor_hints.py` antes de abrir PR.
+
+Si no se puede verificar la distribuidora de una zona, debe mantenerse el fallback público: `Consultar distribuidora de la zona`.
+

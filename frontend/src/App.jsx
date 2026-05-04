@@ -11,8 +11,9 @@ import {
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
+import { findDistributorHint } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.1.2-docs-public-polish'
+const APP_VERSION = 'v0.10.1.3-grid-distributor-hints-foundation'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -181,22 +182,7 @@ function incidentMatchesSelected(incident, selectedKey) {
 }
 
 function distributorHint(incident) {
-  const province = normalizeText(incident.province)
-  const municipio = normalizeText(incident.municipio)
-
-  if (province.includes('a coruna') || province.includes('coruna') || province.includes('pontevedra')) {
-    return { name: 'UFD (probable)' }
-  }
-  if (province.includes('lugo')) {
-    return { name: 'Begasa / i-DE' }
-  }
-  if (province.includes('ourense') || province.includes('orense')) {
-    return { name: 'UFD / i-DE' }
-  }
-  if (municipio) {
-    return { name: 'Consultar distribuidora de la zona' }
-  }
-  return { name: 'Sin determinar' }
+  return { name: findDistributorHint(incident) }
 }
 
 function MapClickSelector({ mode, onPick }) {

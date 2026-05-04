@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "policy": {
+    "purpose": "Public distributor hints by municipality or zone, only from verified public sources.",
+    "privacy": "No CUPS, no personal data, no exact user addresses, no private coordinates.",
+    "infrastructure": "No substations, no power lines, no cable routes, no critical infrastructure inventory.",
+    "fallback": "If a distributor is not verified for a zone, the app must show a generic consultation message."
+  },
+  "items": []
+}
