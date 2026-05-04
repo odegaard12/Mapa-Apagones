@@ -1,0 +1,15 @@
+title = "Mapa Apagones gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allow documented empty environment placeholders, not real secrets"
+regexTarget = "line"
+regexes = [
+  '''^\s*TURNSTILE_SECRET_KEY=\s*$''',
+]
+paths = [
+  '''(^|/)README\.md$''',
+  '''(^|/)_backups/.*/README\.md$''',
+]

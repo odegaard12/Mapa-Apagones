@@ -115,6 +115,18 @@
 
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
+
+    <section>
+      <h2>v0.10.1.1-repo-purify</h2>
+      <ul>
+        <li>Limpia artefactos locales/operativos redundantes si estaban trackeados.</li>
+        <li>Refuerza <code>.gitignore</code> para evitar subir backups, auditorías, SARIF, bases de datos locales y GeoJSON raw.</li>
+        <li>Añade configuración <code>.gitleaks.toml</code> para permitir el placeholder vacío documentado <code>TURNSTILE_SECRET_KEY=</code> sin ocultar secretos reales.</li>
+        <li>Elimina GeoJSON raw redundantes si no están referenciados por la aplicación.</li>
+        <li>Mantiene intactos backend, reportes, Turnstile, rate limiting, datasets municipales publicados y lógica de polígonos.</li>
+      </ul>
+    </section>
+
     <section>
       <h2>v0.10.1.0-geo-complete-spain-audit</h2>
       <ul>
