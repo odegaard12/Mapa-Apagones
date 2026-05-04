@@ -1,3 +1,13 @@
+## v0.10.0.7-geo-euskadi-extremadura-clm
+
+- Añade Euskadi al selector geográfico.
+- Añade Extremadura al selector geográfico.
+- Añade Castilla-La Mancha al selector geográfico.
+- Publica datasets municipales normalizados para las tres comunidades.
+- Añade estos datasets a la carga lazy de “Toda España”.
+- No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+- No añade distribuidoras ni infraestructura eléctrica.
+
 ## v0.10.0.6-geo-loader-dataset-id
 
 - Corrige el loader geográfico para aceptar tanto un ID de dataset como un objeto dataset.
