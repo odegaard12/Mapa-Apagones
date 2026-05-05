@@ -1,3 +1,12 @@
+## v0.10.1.7-distributor-hints-public-json
+
+- Mueve la carga de pistas de distribuidora a JSON público servido en runtime.
+- Copia `frontend/src/data/distributor_hints.json` a `frontend/public/data/distributor_hints.json`.
+- Evita incluir el dataset completo de distribuidoras en el bundle JavaScript principal.
+- Mantiene fallback seguro si el JSON público todavía no ha cargado o falla.
+- Prepara la app para importar más comunidades sin aumentar de forma lineal el JS inicial.
+- No cambia el contenido del dataset, backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.1.6-data-galicia-distributor-hints
 
 - Importa a producción la auditoría completa de distribuidoras para Galicia.

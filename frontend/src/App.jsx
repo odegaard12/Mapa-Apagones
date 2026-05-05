@@ -11,9 +11,9 @@ import {
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
-import { getDistributorHintDisplay } from './grid/distributorHints.js'
+import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.1.6-data-galicia-distributor-hints'
+const APP_VERSION = 'v0.10.1.7-distributor-hints-public-json'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -411,6 +411,24 @@ function FloatingToast({ message, tone = 'success', onClose = null }) {
 }
 
 export default function App() {
+  const [, setDistributorHintsReady] = useState(false)
+
+  useEffect(() => {
+    let active = true
+
+    loadDistributorHints()
+      .catch((error) => {
+        console.warn('No se pudieron cargar las pistas de distribuidora', error)
+      })
+      .finally(() => {
+        if (active) setDistributorHintsReady(true)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)

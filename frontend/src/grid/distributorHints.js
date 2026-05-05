@@ -1,5 +1,3 @@
-import rawDistributorHints from '../data/distributor_hints.json'
-
 export const UNKNOWN_DISTRIBUTOR_LABEL = 'Consultar distribuidora de la zona'
 
 export const DISTRIBUTOR_CONFIDENCE_LABELS = {
@@ -16,9 +14,54 @@ export const DISTRIBUTOR_DISPLAY_LABELS = {
   unknown: 'Distribuidora',
 }
 
-export const DISTRIBUTOR_HINTS = Array.isArray(rawDistributorHints?.items)
-  ? rawDistributorHints.items
-  : []
+export const DISTRIBUTOR_HINTS_PUBLIC_PATH = '/data/distributor_hints.json'
+
+export const DISTRIBUTOR_HINTS = []
+
+let distributorHintsLoadPromise = null
+let distributorHintsLoaded = false
+
+function setDistributorHints(items) {
+  DISTRIBUTOR_HINTS.splice(0, DISTRIBUTOR_HINTS.length, ...items)
+  distributorHintsLoaded = true
+}
+
+export function areDistributorHintsLoaded() {
+  return distributorHintsLoaded
+}
+
+export async function loadDistributorHints({ force = false } = {}) {
+  if (distributorHintsLoaded && !force) {
+    return DISTRIBUTOR_HINTS
+  }
+
+  if (distributorHintsLoadPromise && !force) {
+    return distributorHintsLoadPromise
+  }
+
+  distributorHintsLoadPromise = fetch(DISTRIBUTOR_HINTS_PUBLIC_PATH, {
+    headers: { Accept: 'application/json' },
+    cache: 'no-cache',
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${DISTRIBUTOR_HINTS_PUBLIC_PATH}: HTTP ${response.status}`)
+      }
+
+      return response.json()
+    })
+    .then((payload) => {
+      const items = Array.isArray(payload?.items) ? payload.items : []
+      setDistributorHints(items)
+      return DISTRIBUTOR_HINTS
+    })
+    .catch((error) => {
+      distributorHintsLoadPromise = null
+      throw error
+    })
+
+  return distributorHintsLoadPromise
+}
 
 function normalizeText(value = '') {
   return String(value || '')
