@@ -1,3 +1,12 @@
+## v0.10.1.6-data-galicia-distributor-hints
+
+- Importa a producción la auditoría completa de distribuidoras para Galicia.
+- Añade pistas para los 313 concellos gallegos.
+- Conserva niveles de confianza diferenciados: `verified_partial` para fuentes concretas y `regional_default` para orientación regional/provincial.
+- Mantiene el wording seguro añadido en v0.10.1.5 para no presentar orientación regional como verificación municipal.
+- No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.
+- No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.1.5-grid-distributor-confidence-wording
 
 - Diferencia el texto público según el nivel de confianza de la pista de distribuidora.
