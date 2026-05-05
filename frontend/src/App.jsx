@@ -13,7 +13,7 @@ import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.1.7-distributor-hints-public-json'
+const APP_VERSION = 'v0.10.1.8-geo-selector-cleanup'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -1421,7 +1421,7 @@ function enterReport() {
             <div className="filter-group">
               <label>Ámbito geográfico</label>
               <div className="chip-row">
-                {GEO_DATASET_LIST.map((dataset) => (
+                {GEO_DATASET_LIST.filter((dataset) => String(dataset.label || '').trim()).map((dataset) => (
                   <button
                     key={dataset.id}
                     className={`chip ${geoDatasetId === dataset.id ? 'active' : ''}`}
@@ -1432,7 +1432,6 @@ function enterReport() {
                 ))}
               </div>
             <div style={{ marginTop: 8, fontSize: 12, opacity: 0.78, lineHeight: 1.4 }}>
-              “Toda España” te deja mover el mapa libremente. Seguimos añadiendo más comunidades y provincias con polígonos reales.
             </div>
             </div>
           </div>

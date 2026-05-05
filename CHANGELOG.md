@@ -1,3 +1,10 @@
+## v0.10.1.8-geo-selector-cleanup
+
+- Limpia el selector de ámbitos geográficos.
+- Elimina el texto informativo obsoleto bajo el selector de comunidades.
+- Evita renderizar chips vacíos si algún dataset no tiene etiqueta visible.
+- No cambia datasets, polígonos, backend, privacidad ni flujo de reportes.
+
 ## v0.10.1.7-distributor-hints-public-json
 
 - Mueve la carga de pistas de distribuidora a JSON público servido en runtime.
