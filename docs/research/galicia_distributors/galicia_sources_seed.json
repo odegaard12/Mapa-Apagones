@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "purpose": "Seed sources for Galicia distributor audit. Not production data.",
+  "policy": {
+    "no_cups": true,
+    "no_personal_data": true,
+    "no_private_coordinates": true,
+    "no_critical_infrastructure_inventory": true
+  },
+  "sources": [
+    {
+      "name": "APYDE",
+      "url": "https://www.apyde.com/",
+      "type": "sector_association_public",
+      "use": "Small Galicia distributor zones, cross-check when possible."
+    },
+    {
+      "name": "CNMC censo de distribuidoras",
+      "url": "https://sede.cnmc.gob.es/listado/censo/1",
+      "type": "regulator_registry",
+      "use": "Confirm distributor legal existence and R1 code, not municipal coverage alone."
+    },
+    {
+      "name": "DOG Xunta de Galicia",
+      "url": "https://www.xunta.gal/diario-oficial-galicia",
+      "type": "official_public_notice",
+      "use": "Confirm applicant/distributor and municipality for public electrical distribution files."
+    }
+  ]
+}
