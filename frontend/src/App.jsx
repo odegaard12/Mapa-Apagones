@@ -11,9 +11,9 @@ import {
 import { loadMunicipiosGeoJson } from './geo/loadGeoDataset'
 import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
-import { findDistributorHint } from './grid/distributorHints.js'
+import { getDistributorHintDisplay } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.1.4-data-distributor-hints-galicia-moscoso'
+const APP_VERSION = 'v0.10.1.5-grid-distributor-confidence-wording'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -182,7 +182,7 @@ function incidentMatchesSelected(incident, selectedKey) {
 }
 
 function distributorHint(incident) {
-  return { name: findDistributorHint(incident) }
+  return getDistributorHintDisplay(incident)
 }
 
 function MapClickSelector({ mode, onPick }) {
@@ -1542,7 +1542,7 @@ function enterReport() {
                 <strong>{selectedIncident.province || 'sin resolver todavía'}</strong>
               </div>
               <div className="info-row">
-                <span>Distribuidora probable</span>
+                <span>{selectedDistributor?.label || 'Distribuidora'}</span>
                 <strong>{selectedDistributor?.name || 'Sin determinar'}</strong>
               </div>
             </div>

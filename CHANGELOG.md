@@ -1,3 +1,12 @@
+## v0.10.1.5-grid-distributor-confidence-wording
+
+- Diferencia el texto público según el nivel de confianza de la pista de distribuidora.
+- Mantiene `verified_partial` como distribuidora probable con aviso de varias distribuidoras posibles.
+- Muestra `regional_default` como distribuidora orientativa con recomendación de confirmar.
+- Mantiene el fallback seguro cuando no hay dato verificable.
+- No añade nuevas distribuidoras ni cambia el dataset productivo.
+- No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.1.4-data-distributor-hints-galicia-moscoso
 
 - Añade las primeras pistas reales y conservadoras de distribuidora eléctrica.
