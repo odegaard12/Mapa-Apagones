@@ -117,6 +117,19 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.1.7-distributor-hints-public-json</h2>
+      <ul>
+        <li>Mueve la carga de pistas de distribuidora a JSON público servido en runtime.</li>
+        <li>Copia <code>frontend/src/data/distributor_hints.json</code> a <code>frontend/public/data/distributor_hints.json</code>.</li>
+        <li>Evita incluir el dataset completo de distribuidoras en el bundle JavaScript principal.</li>
+        <li>Mantiene fallback seguro si el JSON público todavía no ha cargado o falla.</li>
+        <li>Prepara la app para importar más comunidades sin aumentar de forma lineal el JS inicial.</li>
+        <li>No cambia el contenido del dataset, backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.1.6-data-galicia-distributor-hints</h2>
       <ul>
         <li>Importa a producción la auditoría completa de distribuidoras para Galicia.</li>
