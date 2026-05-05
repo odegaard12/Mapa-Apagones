@@ -8,6 +8,3280 @@
   },
   "items": [
     {
+      "zone_id": "municipality:asturias::allande",
+      "municipio": "Allande",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::aller",
+      "municipio": "Aller",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::amieva",
+      "municipio": "Amieva",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::aviles",
+      "municipio": "Avilés",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::belmonte_de_miranda",
+      "municipio": "Belmonte de Miranda",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::bimenes",
+      "municipio": "Bimenes",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Electra de Carbayín, S.A.U.",
+          "confidence": "verified_partial",
+          "source_name": "Electra de Carbayín — área de distribución",
+          "source_url": "https://www.electradecarbayin.es/",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública conservadora: la distribuidora declara área de distribución en Bimenes, sin afirmar exclusividad total."
+        },
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::boal",
+      "municipio": "Boal",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::cabrales",
+      "municipio": "Cabrales",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::cabranes",
+      "municipio": "Cabranes",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::candamo",
+      "municipio": "Candamo",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::cangas_de_onis",
+      "municipio": "Cangas de Onís",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::cangas_del_narcea",
+      "municipio": "Cangas del Narcea",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::caravia",
+      "municipio": "Caravia",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::carreno",
+      "municipio": "Carreño",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::caso",
+      "municipio": "Caso",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::castrillon",
+      "municipio": "Castrillón",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::castropol",
+      "municipio": "Castropol",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::coana",
+      "municipio": "Coaña",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::colunga",
+      "municipio": "Colunga",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::corvera_de_asturias",
+      "municipio": "Corvera de Asturias",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::cudillero",
+      "municipio": "Cudillero",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::degana",
+      "municipio": "Degaña",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::el_franco",
+      "municipio": "El Franco",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::gijon",
+      "municipio": "Gijón",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::gozon",
+      "municipio": "Gozón",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::grado",
+      "municipio": "Grado",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::grandas_de_salime",
+      "municipio": "Grandas de Salime",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::ibias",
+      "municipio": "Ibias",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::illano",
+      "municipio": "Illano",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::illas",
+      "municipio": "Illas",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::langreo",
+      "municipio": "Langreo",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::las_regueras",
+      "municipio": "Las Regueras",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::laviana",
+      "municipio": "Laviana",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::lena",
+      "municipio": "Lena",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::llanera",
+      "municipio": "Llanera",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::llanes",
+      "municipio": "Llanes",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::mieres",
+      "municipio": "Mieres",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::morcin",
+      "municipio": "Morcín",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::muros_de_nalon",
+      "municipio": "Muros de Nalón",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::nava",
+      "municipio": "Nava",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::navia",
+      "municipio": "Navia",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::norena",
+      "municipio": "Noreña",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::onis",
+      "municipio": "Onís",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::oviedo",
+      "municipio": "Oviedo",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::parres",
+      "municipio": "Parres",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::pesoz",
+      "municipio": "Pesoz",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::penamellera_alta",
+      "municipio": "Peñamellera Alta",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::penamellera_baja",
+      "municipio": "Peñamellera Baja",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::pilona",
+      "municipio": "Piloña",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::ponga",
+      "municipio": "Ponga",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::pravia",
+      "municipio": "Pravia",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::proaza",
+      "municipio": "Proaza",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::quiros",
+      "municipio": "Quirós",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::ribadedeva",
+      "municipio": "Ribadedeva",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::ribadesella",
+      "municipio": "Ribadesella",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::ribera_de_arriba",
+      "municipio": "Ribera de Arriba",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::riosa",
+      "municipio": "Riosa",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::salas",
+      "municipio": "Salas",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::san_martin_de_oscos",
+      "municipio": "San Martín de Oscos",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::san_martin_del_rey_aurelio",
+      "municipio": "San Martín del Rey Aurelio",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::san_tirso_de_abres",
+      "municipio": "San Tirso de Abres",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::santa_eulalia_de_oscos",
+      "municipio": "Santa Eulalia de Oscos",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::santo_adriano",
+      "municipio": "Santo Adriano",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::sariego",
+      "municipio": "Sariego",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::siero",
+      "municipio": "Siero",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Electra de Carbayín, S.A.U.",
+          "confidence": "verified_partial",
+          "source_name": "Electra de Carbayín — área de distribución",
+          "source_url": "https://www.electradecarbayin.es/",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública conservadora: la distribuidora declara área de distribución en el sureste de Siero, sin afirmar cobertura municipal total."
+        },
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::sobrescobio",
+      "municipio": "Sobrescobio",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::somiedo",
+      "municipio": "Somiedo",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::soto_del_barco",
+      "municipio": "Soto del Barco",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::tapia_de_casariego",
+      "municipio": "Tapia de Casariego",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::taramundi",
+      "municipio": "Taramundi",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::teverga",
+      "municipio": "Teverga",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::tineo",
+      "municipio": "Tineo",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::valdes",
+      "municipio": "Valdés",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::vegadeo",
+      "municipio": "Vegadeo",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::villanueva_de_oscos",
+      "municipio": "Villanueva de Oscos",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::villaviciosa",
+      "municipio": "Villaviciosa",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::villayon",
+      "municipio": "Villayón",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:asturias::yernes_y_tameza",
+      "municipio": "Yernes y Tameza",
+      "province": "Asturias",
+      "dataset_id": "asturias",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "E-REDES Distribución",
+          "confidence": "regional_default",
+          "source_name": "E-REDES — información pública distribuidora",
+          "source_url": "https://www.eredesdistribucion.es/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::alfoz_de_lloredo",
+      "municipio": "Alfoz de Lloredo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ampuero",
+      "municipio": "Ampuero",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::anievas",
+      "municipio": "Anievas",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::arenas_de_iguna",
+      "municipio": "Arenas de Iguña",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::argonos",
+      "municipio": "Argoños",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::arnuero",
+      "municipio": "Arnuero",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::arredondo",
+      "municipio": "Arredondo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::bareyo",
+      "municipio": "Bareyo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::barcena_de_cicero",
+      "municipio": "Bárcena de Cicero",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::barcena_de_pie_de_concha",
+      "municipio": "Bárcena de Pie de Concha",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::cabezon_de_liebana",
+      "municipio": "Cabezón de Liébana",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::cabezon_de_la_sal",
+      "municipio": "Cabezón de la Sal",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::cabuerniga",
+      "municipio": "Cabuérniga",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::camaleno",
+      "municipio": "Camaleño",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::camargo",
+      "municipio": "Camargo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::campoo_de_enmedio",
+      "municipio": "Campoo de Enmedio",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::campoo_de_yuso",
+      "municipio": "Campoo de Yuso",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::cartes",
+      "municipio": "Cartes",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::castaneda",
+      "municipio": "Castañeda",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::castro_urdiales",
+      "municipio": "Castro-Urdiales",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::cieza",
+      "municipio": "Cieza",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::cillorigo_de_liebana",
+      "municipio": "Cillorigo de Liébana",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::colindres",
+      "municipio": "Colindres",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::comillas",
+      "municipio": "Comillas",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::comunidad_de_campoo_y_cabuerniga",
+      "municipio": "Comunidad de Campoo y Cabuérniga",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::corvera_de_toranzo",
+      "municipio": "Corvera de Toranzo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::el_astillero",
+      "municipio": "El Astillero",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::entrambasaguas",
+      "municipio": "Entrambasaguas",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::escalante",
+      "municipio": "Escalante",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::guriezo",
+      "municipio": "Guriezo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::hazas_de_cesto",
+      "municipio": "Hazas de Cesto",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::hermandad_de_campoo_de_suso",
+      "municipio": "Hermandad de Campoo de Suso",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::herrerias",
+      "municipio": "Herrerías",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::lamason",
+      "municipio": "Lamasón",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::laredo",
+      "municipio": "Laredo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::las_rozas_de_valdearroyo",
+      "municipio": "Las Rozas de Valdearroyo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::liendo",
+      "municipio": "Liendo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::limpias",
+      "municipio": "Limpias",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::lierganes",
+      "municipio": "Liérganes",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::los_corrales_de_buelna",
+      "municipio": "Los Corrales de Buelna",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::los_tojos",
+      "municipio": "Los Tojos",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::luena",
+      "municipio": "Luena",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::marina_de_cudeyo",
+      "municipio": "Marina de Cudeyo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::mazcuerras",
+      "municipio": "Mazcuerras",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::medio_cudeyo",
+      "municipio": "Medio Cudeyo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::meruelo",
+      "municipio": "Meruelo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::miengo",
+      "municipio": "Miengo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::miera",
+      "municipio": "Miera",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::molledo",
+      "municipio": "Molledo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::noja",
+      "municipio": "Noja",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::penagos",
+      "municipio": "Penagos",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::pesaguero",
+      "municipio": "Pesaguero",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::pesquera",
+      "municipio": "Pesquera",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::penarrubia",
+      "municipio": "Peñarrubia",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::pielagos",
+      "municipio": "Piélagos",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::polaciones",
+      "municipio": "Polaciones",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::polanco",
+      "municipio": "Polanco",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::potes",
+      "municipio": "Potes",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::puente_viesgo",
+      "municipio": "Puente Viesgo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ramales_de_la_victoria",
+      "municipio": "Ramales de la Victoria",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::rasines",
+      "municipio": "Rasines",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::reinosa",
+      "municipio": "Reinosa",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::reocin",
+      "municipio": "Reocín",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ribamontan_al_mar",
+      "municipio": "Ribamontán al Mar",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ribamontan_al_monte",
+      "municipio": "Ribamontán al Monte",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::rionansa",
+      "municipio": "Rionansa",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::riotuerto",
+      "municipio": "Riotuerto",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ruente",
+      "municipio": "Ruente",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ruesga",
+      "municipio": "Ruesga",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::ruiloba",
+      "municipio": "Ruiloba",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::san_felices_de_buelna",
+      "municipio": "San Felices de Buelna",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::san_miguel_de_aguayo",
+      "municipio": "San Miguel de Aguayo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::san_pedro_del_romeral",
+      "municipio": "San Pedro del Romeral",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::san_roque_de_riomiera",
+      "municipio": "San Roque de Riomiera",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::san_vicente_de_la_barquera",
+      "municipio": "San Vicente de la Barquera",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santa_cruz_de_bezana",
+      "municipio": "Santa Cruz de Bezana",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santa_maria_de_cayon",
+      "municipio": "Santa María de Cayón",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santander",
+      "municipio": "Santander",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santillana_del_mar",
+      "municipio": "Santillana del Mar",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santiurde_de_reinosa",
+      "municipio": "Santiurde de Reinosa",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santiurde_de_toranzo",
+      "municipio": "Santiurde de Toranzo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::santona",
+      "municipio": "Santoña",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::saro",
+      "municipio": "Saro",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::selaya",
+      "municipio": "Selaya",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::soba",
+      "municipio": "Soba",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::solorzano",
+      "municipio": "Solórzano",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::suances",
+      "municipio": "Suances",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::torrelavega",
+      "municipio": "Torrelavega",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::tresviso",
+      "municipio": "Tresviso",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::tudanca",
+      "municipio": "Tudanca",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::udias",
+      "municipio": "Udías",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::val_de_san_vicente",
+      "municipio": "Val de San Vicente",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::valdeolea",
+      "municipio": "Valdeolea",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::valdeprado_del_rio",
+      "municipio": "Valdeprado del Río",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::valderredible",
+      "municipio": "Valderredible",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::valdaliga",
+      "municipio": "Valdáliga",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::valle_de_villaverde",
+      "municipio": "Valle de Villaverde",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::vega_de_liebana",
+      "municipio": "Vega de Liébana",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::vega_de_pas",
+      "municipio": "Vega de Pas",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::villacarriedo",
+      "municipio": "Villacarriedo",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::villaescusa",
+      "municipio": "Villaescusa",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::villafufre",
+      "municipio": "Villafufre",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cantabria::voto",
+      "municipio": "Voto",
+      "province": "Cantabria",
+      "dataset_id": "cantabria",
+      "last_reviewed": "2026-05-05",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Viesgo Distribución",
+          "confidence": "regional_default",
+          "source_name": "Viesgo Distribución — información pública distribuidora",
+          "source_url": "https://www.viesgodistribucion.com/home",
+          "last_reviewed": "2026-05-05",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
       "zone_id": "municipality:a_coruna::a_bana",
       "municipio": "A Baña",
       "province": "A Coruña",
