@@ -117,6 +117,19 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.1.5-grid-distributor-confidence-wording</h2>
+      <ul>
+        <li>Diferencia el texto público según el nivel de confianza de la pista de distribuidora.</li>
+        <li>Mantiene <code>verified_partial</code> como distribuidora probable con aviso de varias distribuidoras posibles.</li>
+        <li>Muestra <code>regional_default</code> como distribuidora orientativa con recomendación de confirmar.</li>
+        <li>Mantiene el fallback seguro cuando no hay dato verificable.</li>
+        <li>No añade nuevas distribuidoras ni cambia el dataset productivo.</li>
+        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.1.4-data-distributor-hints-galicia-moscoso</h2>
       <ul>
         <li>Añade las primeras pistas reales y conservadoras de distribuidora eléctrica.</li>
