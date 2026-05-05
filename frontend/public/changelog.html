@@ -117,6 +117,19 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.1.6-data-galicia-distributor-hints</h2>
+      <ul>
+        <li>Importa a producción la auditoría completa de distribuidoras para Galicia.</li>
+        <li>Añade pistas para los 313 concellos gallegos.</li>
+        <li>Conserva niveles de confianza diferenciados: <code>verified_partial</code> para fuentes concretas y <code>regional_default</code> para orientación regional/provincial.</li>
+        <li>Mantiene el wording seguro añadido en v0.10.1.5 para no presentar orientación regional como verificación municipal.</li>
+        <li>No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.</li>
+        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.1.5-grid-distributor-confidence-wording</h2>
       <ul>
         <li>Diferencia el texto público según el nivel de confianza de la pista de distribuidora.</li>
