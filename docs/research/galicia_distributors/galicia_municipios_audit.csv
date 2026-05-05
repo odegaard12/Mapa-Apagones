@@ -159,7 +159,7 @@ Vilalba,Lugo,galicia,,,,,,pending_review,
 Viveiro,Lugo,galicia,,,,,,pending_review,
 Xermade,Lugo,galicia,,,,,,pending_review,
 Xove,Lugo,galicia,,,,,,pending_review,
-A Arnoia,Ourense,galicia,,,,,,pending_review,
+A Arnoia,Ourense,galicia,"Electra Alto Miño Distribuidora de Energía, S.L.",verified_partial,DOG 223/2022 Electra Alto Miño,https://www.xunta.gal/dog/Publicados/2022/20221123/AnuncioV0653-281022-0007_es.html,official_public_notice,matched_official_manual,DOG identifica actuación de Electra Alto Miño en A Arnoia. No afirma exclusividad total.
 A Bola,Ourense,galicia,,,,,,pending_review,
 A Gudiña,Ourense,galicia,,,,,,pending_review,
 A Merca,Ourense,galicia,,,,,,pending_review,
@@ -203,7 +203,7 @@ Lobios,Ourense,galicia,,,,,,pending_review,
 Maceda,Ourense,galicia,,,,,,pending_review,
 Manzaneda,Ourense,galicia,,,,,,pending_review,
 Maside,Ourense,galicia,,,,,,pending_review,
-Melón,Ourense,galicia,,,,,,pending_review,
+Melón,Ourense,galicia,"Distribuidora Eléctrica de Melón, S.L.",verified_partial,DOG 244/2022 Distribuidora Eléctrica de Melón,https://www.xunta.gal/dog/Publicados/2022/20221226/AnuncioV0653-301122-0008_es.html,official_public_notice,matched_official_manual,DOG identifica actuación de Distribuidora Eléctrica de Melón en el ayuntamiento de Melón. No afirma exclusividad total.
 Montederramo,Ourense,galicia,,,,,,pending_review,
 Monterrei,Ourense,galicia,,,,,,pending_review,
 Muíños,Ourense,galicia,,,,,,pending_review,
@@ -255,7 +255,7 @@ A Cañiza,Pontevedra,galicia,,,,,,pending_review,
 A Estrada,Pontevedra,galicia,,,,,,pending_review,
 A Guarda,Pontevedra,galicia,,,,,,pending_review,
 A Illa de Arousa,Pontevedra,galicia,Compañía de Electrificación S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/electrificacion-sl/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
-A Lama,Pontevedra,galicia,,,,,,pending_review,
+A Lama,Pontevedra,galicia,"Eléctrica de Moscoso, S.L.",verified_partial,CNMC C/1436/24 Grupo EHR/Moscoso,https://www.cnmc.es/sites/default/files/5198696.pdf,regulator_document,matched_official_manual,CNMC cita A Lama como municipio relacionado con Moscoso. No afirma exclusividad total.
 Agolada,Pontevedra,galicia,Hidroeléctrica del Arnego S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-arnego/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
 Arbo,Pontevedra,galicia,,,,,,pending_review,
 As Neves,Pontevedra,galicia,,,,,,pending_review,
@@ -266,21 +266,21 @@ Caldas de Reis,Pontevedra,galicia,,,,,,pending_review,
 Cambados,Pontevedra,galicia,,,,,,pending_review,
 Campo Lameiro,Pontevedra,galicia,,,,,,pending_review,
 Cangas,Pontevedra,galicia,,,,,,pending_review,
-Catoira,Pontevedra,galicia,,,,,,pending_review,
-Cerdedo-Cotobade,Pontevedra,galicia,,,,,,pending_review,
+Catoira,Pontevedra,galicia,"Eléctrica de Catoira, S.L.",verified_partial,DOG 1/2012 + CNMC TPE/DE/010/17,https://www.xunta.gal/dog/Publicados/2012/20120102/AnuncioCA04-241111-9094_es.html | https://www.cnmc.es/sites/default/files/1573768.pdf,official_public_notice_and_regulator,matched_official_manual,DOG verifica Distribuidora Eléctrica de Catoira en Catoira; CNMC documenta segregación de actividad de distribución hacia Eléctrica de Catoira. No afirma exclusividad total.
+Cerdedo-Cotobade,Pontevedra,galicia,"Eléctrica de Moscoso, S.L.",verified_partial,CNMC C/1436/24 Grupo EHR/Moscoso,https://www.cnmc.es/sites/default/files/5198696.pdf,regulator_document,matched_official_manual,CNMC cita Cerdedo-Cotobade como municipio relacionado con Moscoso. No afirma exclusividad total.
 Covelo,Pontevedra,galicia,,,,,,pending_review,
 Crecente,Pontevedra,galicia,,,,,,pending_review,
 Cuntis,Pontevedra,galicia,,,,,,pending_review,
 Dozón,Pontevedra,galicia,,,,,,pending_review,
 Forcarei,Pontevedra,galicia,,,,,,pending_review,
-Fornelos de Montes,Pontevedra,galicia,,,,,,pending_review,
+Fornelos de Montes,Pontevedra,galicia,"Eléctrica de Moscoso, S.L.",verified_partial,CNMC C/1436/24 Grupo EHR/Moscoso,https://www.cnmc.es/sites/default/files/5198696.pdf,regulator_document,matched_official_manual,CNMC cita Fornelos de Montes como municipio relacionado con Moscoso. No afirma exclusividad total.
 Gondomar,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
 Lalín,Pontevedra,galicia,Hidroeléctrica del Arnego S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-arnego/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
 Marín,Pontevedra,galicia,,,,,,pending_review,
 Meaño,Pontevedra,galicia,,,,,,pending_review,
 Meis,Pontevedra,galicia,,,,,,pending_review,
 Moaña,Pontevedra,galicia,,,,,,pending_review,
-Mondariz,Pontevedra,galicia,,,,,,pending_review,
+Mondariz,Pontevedra,galicia,"Eléctrica de Moscoso, S.L.",verified_partial,Eléctrica de Moscoso — información pública corporativa,https://www.emoscoso.com/,distributor_public_website,matched_official_manual,Web pública de Moscoso declara suministro en Mondariz. No afirma exclusividad total.
 Mondariz-Balneario,Pontevedra,galicia,,,,,,pending_review,
 Moraña,Pontevedra,galicia,,,,,,pending_review,
 Mos,Pontevedra,galicia,,,,,,pending_review,
@@ -290,7 +290,7 @@ O Grove,Pontevedra,galicia,,,,,,pending_review,
 O Porriño,Pontevedra,galicia,,,,,,pending_review,
 O Rosal,Pontevedra,galicia,,,,,,pending_review,
 Oia,Pontevedra,galicia,,,,,,pending_review,
-Pazos de Borbén,Pontevedra,galicia,,,,,,pending_review,
+Pazos de Borbén,Pontevedra,galicia,"Eléctrica de Moscoso, S.L.",verified_partial,CNMC C/1436/24 Grupo EHR/Moscoso,https://www.cnmc.es/sites/default/files/5198696.pdf,regulator_document,matched_official_manual,CNMC cita Pazos de Borbén como municipio relacionado con Moscoso. No afirma exclusividad total.
 Poio,Pontevedra,galicia,,,,,,pending_review,
 Ponte Caldelas,Pontevedra,galicia,Eléctrica Los Molinos S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/elemol/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
 Ponteareas,Pontevedra,galicia,"Eléctrica de Cantoña, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-cantona/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
@@ -300,7 +300,7 @@ Redondela,Pontevedra,galicia,,,,,,pending_review,
 Ribadumia,Pontevedra,galicia,,,,,,pending_review,
 Rodeiro,Pontevedra,galicia,,,,,,pending_review,
 Salceda de Caselas,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
-Salvaterra de Miño,Pontevedra,galicia,,,,,,pending_review,
+Salvaterra de Miño,Pontevedra,galicia,"Electra Alto Miño Distribuidora de Energía, S.L.",verified_partial,DOG 51/2018 Electra Alto Miño,https://www.xunta.gal/dog/Publicados/2018/20180313/AnuncioG0424-141217-0002_es.html,official_public_notice,matched_official_manual,DOG identifica actuación de Electra Alto Miño en Salvaterra de Miño. No afirma exclusividad total.
 Sanxenxo,Pontevedra,galicia,,,,,,pending_review,
 Silleda,Pontevedra,galicia,Eléctrica de Gres S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-gres/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
 Soutomaior,Pontevedra,galicia,,,,,,pending_review,
