@@ -1,20 +1,25 @@
 Galicia APYDE coverage summary
 ================================
 Total concellos Galicia: 313
-APYDE match rows: 72
-Concellos únicos con match APYDE: 64
-Concellos con varias candidatas APYDE: 8
-Concellos pendientes tras APYDE: 249
+APYDE match rows: 84
+Concellos únicos con match APYDE: 73
+Concellos con varias candidatas APYDE: 10
+Concellos pendientes tras APYDE: 240
 Unmatched tokens: 0
 
 Matches por distribuidora:
+- Central Eléctrica Industrial, S.L.U.: 3
 - Compañía de Electrificación S.L.: 2
+- Distribuidora Eléctrica Niebla, S.L.: 3
+- Distribuidora Eléctrica de Melón, S.L.: 2
+- Electra Cuntiense, S.L.: 2
 - Electra de Cabalar, S.L.: 6
 - Electra de Zas S.L.: 1
 - Electra del Gayoso, S.L.: 2
 - Electra del Narahío S.A.: 6
 - Electra do Foxo, S.L.: 3
 - Eléctrica Los Molinos S.L.: 2
+- Eléctrica de Alberguería: 2
 - Eléctrica de Cabañas S.L.: 1
 - Eléctrica de Cantoña, S.L.: 4
 - Eléctrica de Castro Caldelas S.L.: 2

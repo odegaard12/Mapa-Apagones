@@ -1,12 +1,13 @@
 Galicia total distributor audit summary
 =======================================
 Total concellos Galicia: 313
-Concellos con al menos una candidata: 73
-Concellos pendientes: 240
-Concellos con varias candidatas: 8
+Concellos con al menos una candidata: 313
+Concellos pendientes: 0
+Concellos con varias candidatas: 12
+
+Por confidence:
+- regional_default: 172
+- verified_partial: 141
 
 Pendientes por provincia:
-- A Coruña: 55
-- Lugo: 66
-- Ourense: 79
-- Pontevedra: 40
+- ninguno

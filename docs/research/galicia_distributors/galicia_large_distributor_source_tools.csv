@@ -1,0 +1,5 @@
+source,url,use,risk
+UFD — Dónde estamos,https://www.ufd.es/quienes-somos/donde-estamos/,Consulta oficial por CUPS o mapa. No usar como tabla municipal directa.,El mapa es orientativo en zonas limítrofes.
+i-DE — Mapa de distribuidoras,https://www.i-de.es/conexion-red-electrica/mapa-de-distribuidoras,Consulta oficial por municipio/dirección para saber si i-DE opera en la zona.,No descargar ni publicar infraestructura; solo usar respuesta de cobertura municipal/zonal.
+BEGASA — Mapa interactivo de red,https://www.begasa.es/mapa-interactivo-de-la-red,"Consulta oficial para zonas BEGASA, especialmente Lugo.",No publicar infraestructura ni mapas de red.
+CNMC — Censo de distribuidoras,https://sede.cnmc.gob.es/listado/censo/1,Confirmar existencia legal/R1 de distribuidora.,No basta por sí solo para asignar municipio.
