@@ -1,0 +1,314 @@
+municipio,province,dataset_id,candidate_distributor,confidence,source_name,source_url,source_type,review_status,notes
+A Baña,A Coruña,galicia,"Industrial Barcalesa, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/industrial-barcalesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Capela,A Coruña,galicia,"Electra de Cabalar, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electracabalar/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Laracha,A Coruña,galicia,Hidroeléctrica de Laracha S.L. | Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-laracha/ | https://www.apyde.com/udesa/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Pobra do Caramiñal,A Coruña,galicia,,,,,,pending_review,
+Abegondo,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Ames,A Coruña,galicia,,,,,,pending_review,
+Aranga,A Coruña,galicia,,,,,,pending_review,
+Ares,A Coruña,galicia,,,,,,pending_review,
+Arteixo,A Coruña,galicia,Hidroeléctrica de Laracha S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-laracha/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Arzúa,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+As Pontes de García Rodríguez,A Coruña,galicia,"Electra de Cabalar, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electracabalar/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+As Somozas,A Coruña,galicia,,,,,,pending_review,
+Bergondo,A Coruña,galicia,,,,,,pending_review,
+Betanzos,A Coruña,galicia,,,,,,pending_review,
+Boimorto,A Coruña,galicia,,,,,,pending_review,
+Boiro,A Coruña,galicia,,,,,,pending_review,
+Boqueixón,A Coruña,galicia,Eléctrica de Gres S.L. | Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-gres/ | https://www.apyde.com/udesa/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Brión,A Coruña,galicia,,,,,,pending_review,
+Cabana de Bergantiños,A Coruña,galicia,,,,,,pending_review,
+Cabanas,A Coruña,galicia,"Electra de Cabalar, S.L. | Eléctrica de Cabañas S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electracabalar/ | https://www.apyde.com/electrica-cabanas/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Camariñas,A Coruña,galicia,"Electra del Gayoso, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electra-gayoso/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Cambre,A Coruña,galicia,,,,,,pending_review,
+Carballo,A Coruña,galicia,Hidroeléctrica de Laracha S.L. | Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-laracha/ | https://www.apyde.com/udesa/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Cariño,A Coruña,galicia,,,,,,pending_review,
+Carnota,A Coruña,galicia,,,,,,pending_review,
+Carral,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Cedeira,A Coruña,galicia,,,,,,pending_review,
+Cee,A Coruña,galicia,,,,,,pending_review,
+Cerceda,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Cerdido,A Coruña,galicia,Electra del Narahío S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/electra-narahio/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Coirós,A Coruña,galicia,,,,,,pending_review,
+Corcubión,A Coruña,galicia,,,,,,pending_review,
+Coristanco,A Coruña,galicia,,,,,,pending_review,
+Culleredo,A Coruña,galicia,,,,,,pending_review,
+Curtis,A Coruña,galicia,,,,,,pending_review,
+Dodro,A Coruña,galicia,,,,,,pending_review,
+Dumbría,A Coruña,galicia,,,,,,pending_review,
+Fene,A Coruña,galicia,"Electra de Cabalar, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electracabalar/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Ferrol,A Coruña,galicia,,,,,,pending_review,
+Fisterra,A Coruña,galicia,,,,,,pending_review,
+Frades,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Irixoa,A Coruña,galicia,,,,,,pending_review,
+Laxe,A Coruña,galicia,"Electra do Foxo, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electra-foxo/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Lousame,A Coruña,galicia,,,,,,pending_review,
+Malpica de Bergantiños,A Coruña,galicia,,,,,,pending_review,
+Mañón,A Coruña,galicia,,,,,,pending_review,
+Mazaricos,A Coruña,galicia,"Industrial Barcalesa, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/industrial-barcalesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Melide,A Coruña,galicia,Fuciños Rivas S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/rivas-sl/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Mesía,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Miño,A Coruña,galicia,,,,,,pending_review,
+Moeche,A Coruña,galicia,Electra del Narahío S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/electra-narahio/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Monfero,A Coruña,galicia,,,,,,pending_review,
+Mugardos,A Coruña,galicia,,,,,,pending_review,
+municipality:a_coruna::a_coruna,A Coruña,galicia,,,,,,pending_review,
+Muros,A Coruña,galicia,,,,,,pending_review,
+Muxía,A Coruña,galicia,,,,,,pending_review,
+Narón,A Coruña,galicia,Electra del Narahío S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/electra-narahio/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Neda,A Coruña,galicia,"Electra de Cabalar, S.L. | Electra del Narahío S.A.",verified_partial,APYDE ficha pública,https://www.apyde.com/electra-narahio/ | https://www.apyde.com/electracabalar/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Negreira,A Coruña,galicia,"Industrial Barcalesa, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/industrial-barcalesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Noia,A Coruña,galicia,,,,,,pending_review,
+O Pino,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Oleiros,A Coruña,galicia,,,,,,pending_review,
+Ordes,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Oroso,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Ortigueira,A Coruña,galicia,,,,,,pending_review,
+Outes,A Coruña,galicia,,,,,,pending_review,
+Oza-Cesuras,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Paderne,A Coruña,galicia,,,,,,pending_review,
+Padrón,A Coruña,galicia,,,,,,pending_review,
+Ponteceso,A Coruña,galicia,,,,,,pending_review,
+Pontedeume,A Coruña,galicia,,,,,,pending_review,
+Porto do Son,A Coruña,galicia,,,,,,pending_review,
+Rianxo,A Coruña,galicia,,,,,,pending_review,
+Ribeira,A Coruña,galicia,,,,,,pending_review,
+Rois,A Coruña,galicia,,,,,,pending_review,
+Sada,A Coruña,galicia,,,,,,pending_review,
+San Sadurniño,A Coruña,galicia,"Electra de Cabalar, S.L. | Electra del Narahío S.A.",verified_partial,APYDE ficha pública,https://www.apyde.com/electra-narahio/ | https://www.apyde.com/electracabalar/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Santa Comba,A Coruña,galicia,"Industrial Barcalesa, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/industrial-barcalesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Santiago de Compostela,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Santiso,A Coruña,galicia,Fuciños Rivas S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/rivas-sl/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Sobrado,A Coruña,galicia,,,,,,pending_review,
+Teo,A Coruña,galicia,,,,,,pending_review,
+Toques,A Coruña,galicia,,,,,,pending_review,
+Tordoia,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Touro,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Trazo,A Coruña,galicia,,,,,,pending_review,
+Val do Dubra,A Coruña,galicia,,,,,,pending_review,
+Valdoviño,A Coruña,galicia,Electra del Narahío S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/electra-narahio/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Vedra,A Coruña,galicia,Unión Distribuidores Electricidad S.A. (Udesa),verified_partial,APYDE ficha pública,https://www.apyde.com/udesa/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Vilarmaior,A Coruña,galicia,,,,,,pending_review,
+Vilasantar,A Coruña,galicia,,,,,,pending_review,
+Vimianzo,A Coruña,galicia,"Electra del Gayoso, S.L. | Electra do Foxo, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electra-foxo/ | https://www.apyde.com/electra-gayoso/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Zas,A Coruña,galicia,"Electra de Zas S.L. | Electra do Foxo, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electra-foxo/ | https://www.apyde.com/electra-zas/,sector_association_public,matched_apyde_multi,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Fonsagrada,Lugo,galicia,,,,,,pending_review,
+A Pastoriza,Lugo,galicia,,,,,,pending_review,
+A Pobra do Brollón,Lugo,galicia,,,,,,pending_review,
+A Pontenova,Lugo,galicia,,,,,,pending_review,
+Abadín,Lugo,galicia,,,,,,pending_review,
+Alfoz,Lugo,galicia,,,,,,pending_review,
+Antas de Ulla,Lugo,galicia,,,,,,pending_review,
+As Nogais,Lugo,galicia,,,,,,pending_review,
+Baleira,Lugo,galicia,,,,,,pending_review,
+Baralla,Lugo,galicia,,,,,,pending_review,
+Barreiros,Lugo,galicia,,,,,,pending_review,
+Becerreá,Lugo,galicia,,,,,,pending_review,
+Begonte,Lugo,galicia,,,,,,pending_review,
+Bóveda,Lugo,galicia,,,,,,pending_review,
+Burela,Lugo,galicia,,,,,,pending_review,
+Carballedo,Lugo,galicia,Hidroeléctrica José Matanza García S. L.,verified_partial,APYDE ficha pública,https://www.apyde.com/matanza-garcia/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Castro de Rei,Lugo,galicia,,,,,,pending_review,
+Castroverde,Lugo,galicia,,,,,,pending_review,
+Cervantes,Lugo,galicia,,,,,,pending_review,
+Cervo,Lugo,galicia,,,,,,pending_review,
+Chantada,Lugo,galicia,,,,,,pending_review,
+Cospeito,Lugo,galicia,,,,,,pending_review,
+Folgoso do Courel,Lugo,galicia,,,,,,pending_review,
+Foz,Lugo,galicia,,,,,,pending_review,
+Friol,Lugo,galicia,,,,,,pending_review,
+Guitiriz,Lugo,galicia,,,,,,pending_review,
+Guntín,Lugo,galicia,,,,,,pending_review,
+Láncara,Lugo,galicia,,,,,,pending_review,
+Lourenzá,Lugo,galicia,,,,,,pending_review,
+Meira,Lugo,galicia,,,,,,pending_review,
+Mondoñedo,Lugo,galicia,,,,,,pending_review,
+Monforte de Lemos,Lugo,galicia,,,,,,pending_review,
+Monterroso,Lugo,galicia,,,,,,pending_review,
+municipality:lugo::lugo,Lugo,galicia,,,,,,pending_review,
+Muras,Lugo,galicia,,,,,,pending_review,
+Navia de Suarna,Lugo,galicia,,,,,,pending_review,
+Negueira de Muñiz,Lugo,galicia,,,,,,pending_review,
+O Corgo,Lugo,galicia,,,,,,pending_review,
+O Incio,Lugo,galicia,,,,,,pending_review,
+O Páramo,Lugo,galicia,,,,,,pending_review,
+O Saviñao,Lugo,galicia,,,,,,pending_review,
+O Valadouro,Lugo,galicia,,,,,,pending_review,
+O Vicedo,Lugo,galicia,,,,,,pending_review,
+Ourol,Lugo,galicia,,,,,,pending_review,
+Outeiro de Rei,Lugo,galicia,,,,,,pending_review,
+Palas de Rei,Lugo,galicia,,,,,,pending_review,
+Pantón,Lugo,galicia,,,,,,pending_review,
+Paradela,Lugo,galicia,,,,,,pending_review,
+Pedrafita do Cebreiro,Lugo,galicia,,,,,,pending_review,
+Pol,Lugo,galicia,,,,,,pending_review,
+Portomarín,Lugo,galicia,,,,,,pending_review,
+Quiroga,Lugo,galicia,,,,,,pending_review,
+Rábade,Lugo,galicia,,,,,,pending_review,
+Ribadeo,Lugo,galicia,,,,,,pending_review,
+Ribas de Sil,Lugo,galicia,,,,,,pending_review,
+Ribeira de Piquín,Lugo,galicia,,,,,,pending_review,
+Riotorto,Lugo,galicia,,,,,,pending_review,
+Samos,Lugo,galicia,,,,,,pending_review,
+Sarria,Lugo,galicia,,,,,,pending_review,
+Sober,Lugo,galicia,,,,,,pending_review,
+Taboada,Lugo,galicia,,,,,,pending_review,
+Trabada,Lugo,galicia,,,,,,pending_review,
+Triacastela,Lugo,galicia,,,,,,pending_review,
+Vilalba,Lugo,galicia,,,,,,pending_review,
+Viveiro,Lugo,galicia,,,,,,pending_review,
+Xermade,Lugo,galicia,,,,,,pending_review,
+Xove,Lugo,galicia,,,,,,pending_review,
+A Arnoia,Ourense,galicia,,,,,,pending_review,
+A Bola,Ourense,galicia,,,,,,pending_review,
+A Gudiña,Ourense,galicia,,,,,,pending_review,
+A Merca,Ourense,galicia,,,,,,pending_review,
+A Mezquita,Ourense,galicia,,,,,,pending_review,
+A Peroxa,Ourense,galicia,Hidroeléctrica José Matanza García S. L.,verified_partial,APYDE ficha pública,https://www.apyde.com/matanza-garcia/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Pobra de Trives,Ourense,galicia,,,,,,pending_review,
+A Rúa,Ourense,galicia,,,,,,pending_review,
+A Teixeira,Ourense,galicia,Eléctrica de Castro Caldelas S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/castro-caldelas/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Veiga,Ourense,galicia,,,,,,pending_review,
+Allariz,Ourense,galicia,,,,,,pending_review,
+Amoeiro,Ourense,galicia,,,,,,pending_review,
+Avión,Ourense,galicia,,,,,,pending_review,
+Baltar,Ourense,galicia,,,,,,pending_review,
+Bande,Ourense,galicia,,,,,,pending_review,
+Baños de Molgas,Ourense,galicia,"Eléctrica de Cantoña, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-cantona/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Barbadás,Ourense,galicia,,,,,,pending_review,
+Beade,Ourense,galicia,,,,,,pending_review,
+Beariz,Ourense,galicia,,,,,,pending_review,
+Boborás,Ourense,galicia,,,,,,pending_review,
+Calvos de Randín,Ourense,galicia,,,,,,pending_review,
+Carballeda de Avia,Ourense,galicia,,,,,,pending_review,
+Carballeda de Valdeorras,Ourense,galicia,,,,,,pending_review,
+Cartelle,Ourense,galicia,,,,,,pending_review,
+Castrelo de Miño,Ourense,galicia,,,,,,pending_review,
+Castrelo do Val,Ourense,galicia,,,,,,pending_review,
+Castro Caldelas,Ourense,galicia,Eléctrica de Castro Caldelas S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/castro-caldelas/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Celanova,Ourense,galicia,,,,,,pending_review,
+Cenlle,Ourense,galicia,,,,,,pending_review,
+Chandrexa de Queixa,Ourense,galicia,,,,,,pending_review,
+Coles,Ourense,galicia,,,,,,pending_review,
+Cortegada,Ourense,galicia,,,,,,pending_review,
+Cualedro,Ourense,galicia,,,,,,pending_review,
+Entrimo,Ourense,galicia,,,,,,pending_review,
+Esgos,Ourense,galicia,,,,,,pending_review,
+Gomesende,Ourense,galicia,,,,,,pending_review,
+Larouco,Ourense,galicia,,,,,,pending_review,
+Laza,Ourense,galicia,,,,,,pending_review,
+Leiro,Ourense,galicia,,,,,,pending_review,
+Lobeira,Ourense,galicia,,,,,,pending_review,
+Lobios,Ourense,galicia,,,,,,pending_review,
+Maceda,Ourense,galicia,,,,,,pending_review,
+Manzaneda,Ourense,galicia,,,,,,pending_review,
+Maside,Ourense,galicia,,,,,,pending_review,
+Melón,Ourense,galicia,,,,,,pending_review,
+Montederramo,Ourense,galicia,,,,,,pending_review,
+Monterrei,Ourense,galicia,,,,,,pending_review,
+Muíños,Ourense,galicia,,,,,,pending_review,
+municipality:ourense::ourense,Ourense,galicia,,,,,,pending_review,
+Nogueira de Ramuín,Ourense,galicia,,,,,,pending_review,
+O Barco de Valdeorras,Ourense,galicia,,,,,,pending_review,
+O Bolo,Ourense,galicia,,,,,,pending_review,
+O Carballiño,Ourense,galicia,,,,,,pending_review,
+O Irixo,Ourense,galicia,,,,,,pending_review,
+O Pereiro de Aguiar,Ourense,galicia,,,,,,pending_review,
+Oímbra,Ourense,galicia,,,,,,pending_review,
+Os Blancos,Ourense,galicia,,,,,,pending_review,
+Paderne de Allariz,Ourense,galicia,"Eléctrica de Cantoña, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-cantona/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Padrenda,Ourense,galicia,"San Miguel 2000, Distribuición S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/san-miguel/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Parada de Sil,Ourense,galicia,,,,,,pending_review,
+Petín,Ourense,galicia,,,,,,pending_review,
+Piñor,Ourense,galicia,,,,,,pending_review,
+Pontedeva,Ourense,galicia,"San Miguel 2000, Distribuición S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/san-miguel/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Porqueira,Ourense,galicia,,,,,,pending_review,
+Punxín,Ourense,galicia,,,,,,pending_review,
+Quintela de Leirado,Ourense,galicia,"San Miguel 2000, Distribuición S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/san-miguel/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Rairiz de Veiga,Ourense,galicia,,,,,,pending_review,
+Ramirás,Ourense,galicia,,,,,,pending_review,
+Ribadavia,Ourense,galicia,,,,,,pending_review,
+Riós,Ourense,galicia,,,,,,pending_review,
+Rubiá,Ourense,galicia,,,,,,pending_review,
+San Amaro,Ourense,galicia,,,,,,pending_review,
+San Cibrao das Viñas,Ourense,galicia,,,,,,pending_review,
+San Cristovo de Cea,Ourense,galicia,,,,,,pending_review,
+San Xoán de Río,Ourense,galicia,,,,,,pending_review,
+Sandiás,Ourense,galicia,,,,,,pending_review,
+Sarreaus,Ourense,galicia,,,,,,pending_review,
+Taboadela,Ourense,galicia,,,,,,pending_review,
+Toén,Ourense,galicia,,,,,,pending_review,
+Trasmiras,Ourense,galicia,,,,,,pending_review,
+Verea,Ourense,galicia,"San Miguel 2000, Distribuición S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/san-miguel/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Verín,Ourense,galicia,,,,,,pending_review,
+Viana do Bolo,Ourense,galicia,,,,,,pending_review,
+Vilamarín,Ourense,galicia,Hidroeléctrica José Matanza García S. L.,verified_partial,APYDE ficha pública,https://www.apyde.com/matanza-garcia/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Vilamartín de Valdeorras,Ourense,galicia,,,,,,pending_review,
+Vilar de Barrio,Ourense,galicia,,,,,,pending_review,
+Vilar de Santos,Ourense,galicia,,,,,,pending_review,
+Vilardevós,Ourense,galicia,,,,,,pending_review,
+Vilariño de Conso,Ourense,galicia,,,,,,pending_review,
+Xinzo de Limia,Ourense,galicia,,,,,,pending_review,
+Xunqueira de Ambía,Ourense,galicia,"Eléctrica de Cantoña, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-cantona/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Xunqueira de Espadanedo,Ourense,galicia,,,,,,pending_review,
+A Cañiza,Pontevedra,galicia,,,,,,pending_review,
+A Estrada,Pontevedra,galicia,,,,,,pending_review,
+A Guarda,Pontevedra,galicia,,,,,,pending_review,
+A Illa de Arousa,Pontevedra,galicia,Compañía de Electrificación S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/electrificacion-sl/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+A Lama,Pontevedra,galicia,,,,,,pending_review,
+Agolada,Pontevedra,galicia,Hidroeléctrica del Arnego S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-arnego/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Arbo,Pontevedra,galicia,,,,,,pending_review,
+As Neves,Pontevedra,galicia,,,,,,pending_review,
+Baiona,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Barro,Pontevedra,galicia,,,,,,pending_review,
+Bueu,Pontevedra,galicia,,,,,,pending_review,
+Caldas de Reis,Pontevedra,galicia,,,,,,pending_review,
+Cambados,Pontevedra,galicia,,,,,,pending_review,
+Campo Lameiro,Pontevedra,galicia,,,,,,pending_review,
+Cangas,Pontevedra,galicia,,,,,,pending_review,
+Catoira,Pontevedra,galicia,,,,,,pending_review,
+Cerdedo-Cotobade,Pontevedra,galicia,,,,,,pending_review,
+Covelo,Pontevedra,galicia,,,,,,pending_review,
+Crecente,Pontevedra,galicia,,,,,,pending_review,
+Cuntis,Pontevedra,galicia,,,,,,pending_review,
+Dozón,Pontevedra,galicia,,,,,,pending_review,
+Forcarei,Pontevedra,galicia,,,,,,pending_review,
+Fornelos de Montes,Pontevedra,galicia,,,,,,pending_review,
+Gondomar,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Lalín,Pontevedra,galicia,Hidroeléctrica del Arnego S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/hidroelectrica-arnego/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Marín,Pontevedra,galicia,,,,,,pending_review,
+Meaño,Pontevedra,galicia,,,,,,pending_review,
+Meis,Pontevedra,galicia,,,,,,pending_review,
+Moaña,Pontevedra,galicia,,,,,,pending_review,
+Mondariz,Pontevedra,galicia,,,,,,pending_review,
+Mondariz-Balneario,Pontevedra,galicia,,,,,,pending_review,
+Moraña,Pontevedra,galicia,,,,,,pending_review,
+Mos,Pontevedra,galicia,,,,,,pending_review,
+Pontevedra,Pontevedra,galicia,Eléctrica Los Molinos S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/elemol/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Cruce manual porque Pontevedra también es provincia. Revisar antes de producción.
+Nigrán,Pontevedra,galicia,,,,,,pending_review,
+O Grove,Pontevedra,galicia,,,,,,pending_review,
+O Porriño,Pontevedra,galicia,,,,,,pending_review,
+O Rosal,Pontevedra,galicia,,,,,,pending_review,
+Oia,Pontevedra,galicia,,,,,,pending_review,
+Pazos de Borbén,Pontevedra,galicia,,,,,,pending_review,
+Poio,Pontevedra,galicia,,,,,,pending_review,
+Ponte Caldelas,Pontevedra,galicia,Eléctrica Los Molinos S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/elemol/,sector_association_public,matched_apyde_manual_alias,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Ponteareas,Pontevedra,galicia,"Eléctrica de Cantoña, S.L.",verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-cantona/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Pontecesures,Pontevedra,galicia,,,,,,pending_review,
+Portas,Pontevedra,galicia,,,,,,pending_review,
+Redondela,Pontevedra,galicia,,,,,,pending_review,
+Ribadumia,Pontevedra,galicia,,,,,,pending_review,
+Rodeiro,Pontevedra,galicia,,,,,,pending_review,
+Salceda de Caselas,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Salvaterra de Miño,Pontevedra,galicia,,,,,,pending_review,
+Sanxenxo,Pontevedra,galicia,,,,,,pending_review,
+Silleda,Pontevedra,galicia,Eléctrica de Gres S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-gres/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Soutomaior,Pontevedra,galicia,,,,,,pending_review,
+Tomiño,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Tui,Pontevedra,galicia,Sociedad Electricista de Tui S.A.,verified_partial,APYDE ficha pública,https://www.apyde.com/seta/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Valga,Pontevedra,galicia,,,,,,pending_review,
+Vigo,Pontevedra,galicia,,,,,,pending_review,
+Vila de Cruces,Pontevedra,galicia,Eléctrica de Gres S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/electrica-gres/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
+Vilaboa,Pontevedra,galicia,,,,,,pending_review,
+Vilagarcía de Arousa,Pontevedra,galicia,,,,,,pending_review,
+Vilanova de Arousa,Pontevedra,galicia,Compañía de Electrificación S.L.,verified_partial,APYDE ficha pública,https://www.apyde.com/electrificacion-sl/,sector_association_public,matched_apyde,APYDE lista zona de distribución. Revisar antes de pasar a producción.
