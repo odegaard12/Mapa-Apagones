@@ -1,0 +1,6 @@
+tool_id,name,url,use,risk
+edistribucion_official_distribution_page,e-distribución — distribución eléctrica,https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html,Confirmar presencia regional declarada. No usar como verificación municipal exclusiva.,Fuente regional amplia; requiere revisión de excepciones locales antes de producción.
+ufd_official_presence_page,UFD — quienes somos,https://www.ufd.es/quienes-somos/,Confirmar presencia regional declarada de UFD.,No usar para importación municipal masiva sin revisar solapes.
+ufd_official_zone_map,UFD — dónde estamos,https://www.ufd.es/quienes-somos/donde-estamos/,Herramienta oficial de consulta por zona.,Mapa orientativo en zonas limítrofes; no copiar direcciones ni datos de suministro.
+ide_official_distributor_map,i-DE — mapa de distribuidoras,https://www.i-de.es/conexion-red-electrica/mapa-de-distribuidoras,Herramienta oficial para identificar si i-DE opera en una zona.,"Herramienta de consulta, no tabla municipal completa; requiere revisión antes de producción."
+cnmc_censo_distributors,CNMC — censo de distribuidoras,https://sede.cnmc.gob.es/listado/censo/1,Confirmar existencia legal de distribuidoras y excepciones locales.,No demuestra por sí solo cobertura municipal.
