@@ -1,0 +1,28 @@
+e-distribución local exception hunt v0.10.2.4
+================================================
+Rows queued: 2861
+Province groups: 22
+Search queries generated: 88
+
+By dataset:
+- andalucia: 786
+- aragon: 739
+- catalunya: 948
+- extremadura: 388
+
+By exception_review_priority:
+- high_boundary_review: 738
+- local_exception_review: 2122
+- skip_already_productive: 1
+
+Production rule:
+- Do not import this research directly.
+- Use this queue to find local exceptions before any regional_default import.
+- Every production import must keep regional_default wording unless a local distributor has concrete public support.
+
+Privacy:
+- No user supply identifiers.
+- No addresses.
+- No private coordinates.
+- No embedded maps/base64.
+- No critical infrastructure inventory.
