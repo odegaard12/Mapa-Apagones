@@ -1,0 +1,30 @@
+e-distribución regional audit candidates
+========================================
+Total candidate municipality rows: 5629
+
+By dataset:
+- andalucia: 786
+- aragon: 739
+- canarias: 88
+- castilla_leon: 2298
+- catalunya: 948
+- ceuta: 1
+- extremadura: 388
+- galicia: 313
+- illes_balears: 68
+
+By review_status:
+- exclude_from_bulk_import: 2611
+- needs_municipal_review: 2473
+- needs_province_review: 388
+- safe_regional_default_candidate: 157
+
+By bulk_import_allowed:
+- no: 5472
+- review_first: 157
+
+Production rule:
+- Do not import this audit directly into production.
+- safe_regional_default_candidate still requires a final focused review.
+- needs_municipal_review and needs_province_review must stay out of production until improved.
+- castilla_leon and galicia are explicitly excluded from this bulk import path.

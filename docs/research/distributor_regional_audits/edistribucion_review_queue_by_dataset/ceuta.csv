@@ -1,0 +1,2 @@
+dataset_id,municipio,candidate_distributor,candidate_confidence,review_status,bulk_import_allowed,source_name,source_url,source_type,last_reviewed,notes
+ceuta,Ceuta,"e-distribución Redes Digitales, S.L.U.",regional_default_candidate,safe_regional_default_candidate,review_first,e-distribución — distribución eléctrica,https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html,official_distributor_public,2026-05-06,Ciudad autónoma pequeña; candidata razonable a regional_default tras comprobación de fuente.
