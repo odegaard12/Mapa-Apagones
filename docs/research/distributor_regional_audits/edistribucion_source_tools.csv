@@ -1,0 +1,5 @@
+source_name,source_url,source_type,use
+e-distribución — distribución eléctrica,https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html,official_distributor_public,"Confirma presencia pública por comunidades/provincias, no cobertura municipal exacta."
+e-distribución — nuestra red,https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/nuestras-redes.html,official_distributor_public,Contexto público de red y presencia territorial. No publicar infraestructura.
+CNMC — censo distribuidoras,https://sede.cnmc.gob.es/listado/censo/1,regulator_public_registry,Confirma existencia legal/R1. No basta para asignar municipio.
+i-DE — mapa de distribuidoras,https://www.i-de.es/conexion-red-electrica/mapa-de-distribuidoras,official_distributor_tool,Herramienta de contraste por municipio/zona. No descargar ni publicar infraestructura.
