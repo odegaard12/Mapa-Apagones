@@ -1,0 +1,55 @@
+Remaining regional distributor audit v0.10.2.3
+==============================================
+Total reviewed municipality rows: 7061
+
+Already productive datasets:
+- asturias: 78
+- canarias: 88
+- cantabria: 103
+- ceuta: 1
+- galicia: 313
+- illes_balears: 68
+- la_rioja: 175
+- murcia: 45
+- navarra: 288
+
+By target dataset:
+- andalucia: 786
+- aragon: 739
+- castilla_la_mancha: 921
+- castilla_leon: 2298
+- catalunya: 948
+- comunitat_valenciana: 544
+- euskadi: 255
+- extremadura: 388
+- madrid: 181
+- melilla: 1
+
+By review_status:
+- already_in_production: 1
+- manual_review_required: 1
+- multi_distributor_region_needs_municipal_review: 3400
+- official_tool_review_required: 799
+- regional_presence_confirmed_needs_boundary_review: 738
+- regional_presence_confirmed_review_local_exceptions: 2122
+
+By candidate_distributor:
+- e-distribución Redes Digitales, S.L.U.: 2861
+- i-DE Redes Eléctricas Inteligentes, S.A.U.: 799
+- multi-distribuidora: requiere revisión: 3400
+- unknown: 1
+
+Production rule:
+- Do not import this audit directly into production.
+- Use it to choose focused follow-up audits.
+- e-distribución regions need local-exception review first.
+- multi-distribuidora regions need municipal/province review.
+- i-DE tool-review regions need confirmation before import.
+- Melilla stays manual_review_required.
+
+Privacy:
+- No user supply identifiers.
+- No addresses.
+- No private coordinates.
+- No embedded maps/base64.
+- No critical infrastructure inventory.

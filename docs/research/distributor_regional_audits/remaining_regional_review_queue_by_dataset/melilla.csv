@@ -1,0 +1,2 @@
+dataset_id,municipio,province,zone_id,candidate_distributor,candidate_confidence,review_status,bulk_import_allowed,source_name,source_url,source_type,already_productive,notes
+melilla,Melilla,Melilla,municipality:melilla::melilla,unknown,unknown,manual_review_required,no,pendiente de fuente pública,,official_public_source_or_review_tool,no,No importar sin fuente pública específica.
