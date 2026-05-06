@@ -1,0 +1,24 @@
+Focused review e-distribución safe candidates v0.10.2.2
+========================================================
+Rows reviewed: 157
+
+By dataset:
+- canarias: 88
+- ceuta: 1
+- illes_balears: 68
+
+Decision:
+- Do not import to production yet.
+- Canarias, Illes Balears and Ceuta remain reasonable regional_default candidates.
+- Final check should focus on possible local/insular distributors before production.
+
+Evidence:
+- Official e-distribución page declares presence in Baleares, Canarias and Ciudad Autónoma de Ceuta.
+- Official e-distribución outage page lists dedicated outage contact areas for Baleares and Canarias and includes Ceuta.
+
+Safety:
+- No user supply identifiers.
+- No addresses.
+- No private coordinates.
+- No embedded maps/base64.
+- No critical infrastructure inventory.
