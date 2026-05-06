@@ -1,3 +1,11 @@
+## v0.10.2.0-data-navarra-rioja-murcia-distributor-hints
+
+- Añade pistas orientativas de distribuidora para Navarra, La Rioja y Región de Murcia.
+- Usa `regional_default` para i-DE en estas tres comunidades.
+- Mantiene las pistas en JSON público runtime para no inflar el bundle principal.
+- No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.
+- No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.1.9-data-asturias-cantabria-distributor-hints
 
 - Añade pistas orientativas de distribuidora para Asturias y Cantabria.
