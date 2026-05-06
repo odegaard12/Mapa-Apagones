@@ -1,0 +1,26 @@
+e-distribución safe regional import with local exceptions v0.10.2.2
+====================================================================
+Imported zones: 157
+New items: 157
+Updated items: 0
+
+By dataset:
+- canarias: 88
+- ceuta: 1
+- illes_balears: 68
+
+By source_kind:
+- local_exception: 3
+- regional_default: 154
+
+Local exceptions:
+- canarias / puerto_de_la_cruz: Distribuidora Eléctrica del Puerto de la Cruz, S.A.
+- ceuta / ceuta: Empresa de Alumbrado Eléctrico de Ceuta Distribución, S.A.U.
+- illes_balears / soller: Vall de Sóller Energia, S.L.U.
+
+Safety:
+- No user supply identifiers.
+- No addresses.
+- No private coordinates.
+- No embedded maps/base64.
+- No critical infrastructure inventory.

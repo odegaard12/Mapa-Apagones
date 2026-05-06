@@ -1428,6 +1428,1590 @@
       ]
     },
     {
+      "zone_id": "municipality:las_palmas::agaete",
+      "municipio": "Agaete",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::aguimes",
+      "municipio": "Agüimes",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::antigua",
+      "municipio": "Antigua",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::arrecife",
+      "municipio": "Arrecife",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::artenara",
+      "municipio": "Artenara",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::arucas",
+      "municipio": "Arucas",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::betancuria",
+      "municipio": "Betancuria",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::firgas",
+      "municipio": "Firgas",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::galdar",
+      "municipio": "Gáldar",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::haria",
+      "municipio": "Haría",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::ingenio",
+      "municipio": "Ingenio",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::la_aldea_de_san_nicolas",
+      "municipio": "La Aldea de San Nicolás",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::la_oliva",
+      "municipio": "La Oliva",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::las_palmas_de_gran_canaria",
+      "municipio": "Las Palmas de Gran Canaria",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::mogan",
+      "municipio": "Mogán",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::moya",
+      "municipio": "Moya",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::puerto_del_rosario",
+      "municipio": "Puerto del Rosario",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::pajara",
+      "municipio": "Pájara",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::san_bartolome",
+      "municipio": "San Bartolomé",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::san_bartolome_de_tirajana",
+      "municipio": "San Bartolomé de Tirajana",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::santa_brigida",
+      "municipio": "Santa Brígida",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::santa_lucia_de_tirajana",
+      "municipio": "Santa Lucía de Tirajana",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::santa_maria_de_guia_de_gran_canaria",
+      "municipio": "Santa María de Guía de Gran Canaria",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::teguise",
+      "municipio": "Teguise",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::tejeda",
+      "municipio": "Tejeda",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::telde",
+      "municipio": "Telde",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::teror",
+      "municipio": "Teror",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::tinajo",
+      "municipio": "Tinajo",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::tuineje",
+      "municipio": "Tuineje",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::tias",
+      "municipio": "Tías",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::valleseco",
+      "municipio": "Valleseco",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::valsequillo_de_gran_canaria",
+      "municipio": "Valsequillo de Gran Canaria",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::vega_de_san_mateo",
+      "municipio": "Vega de San Mateo",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:las_palmas::yaiza",
+      "municipio": "Yaiza",
+      "province": "Las Palmas",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::adeje",
+      "municipio": "Adeje",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::agulo",
+      "municipio": "Agulo",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::alajero",
+      "municipio": "Alajeró",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::arafo",
+      "municipio": "Arafo",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::arico",
+      "municipio": "Arico",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::arona",
+      "municipio": "Arona",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::barlovento",
+      "municipio": "Barlovento",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::brena_alta",
+      "municipio": "Breña Alta",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::brena_baja",
+      "municipio": "Breña Baja",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::buenavista_del_norte",
+      "municipio": "Buenavista del Norte",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::candelaria",
+      "municipio": "Candelaria",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::el_paso",
+      "municipio": "El Paso",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::el_pinar_de_el_hierro",
+      "municipio": "El Pinar de El Hierro",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::el_rosario",
+      "municipio": "El Rosario",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::el_sauzal",
+      "municipio": "El Sauzal",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::el_tanque",
+      "municipio": "El Tanque",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::fasnia",
+      "municipio": "Fasnia",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::frontera",
+      "municipio": "Frontera",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::fuencaliente_de_la_palma",
+      "municipio": "Fuencaliente de la Palma",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::garachico",
+      "municipio": "Garachico",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::garafia",
+      "municipio": "Garafía",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::granadilla_de_abona",
+      "municipio": "Granadilla de Abona",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::guia_de_isora",
+      "municipio": "Guía de Isora",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::guimar",
+      "municipio": "Güímar",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::hermigua",
+      "municipio": "Hermigua",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::icod_de_los_vinos",
+      "municipio": "Icod de los Vinos",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::la_guancha",
+      "municipio": "La Guancha",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::la_matanza_de_acentejo",
+      "municipio": "La Matanza de Acentejo",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::la_orotava",
+      "municipio": "La Orotava",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::la_victoria_de_acentejo",
+      "municipio": "La Victoria de Acentejo",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::los_llanos_de_aridane",
+      "municipio": "Los Llanos de Aridane",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::los_realejos",
+      "municipio": "Los Realejos",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::los_silos",
+      "municipio": "Los Silos",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::puerto_de_la_cruz",
+      "municipio": "Puerto de la Cruz",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Distribuidora Eléctrica del Puerto de la Cruz, S.A.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC censo R1-294 y web pública de la distribuidora",
+          "source_url": "https://www.electricapuertodelacruz.com/",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública conservadora: distribuidora local verificada para la zona; sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::puntagorda",
+      "municipio": "Puntagorda",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::puntallana",
+      "municipio": "Puntallana",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::san_andres_y_sauces",
+      "municipio": "San Andrés y Sauces",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::san_cristobal_de_la_laguna",
+      "municipio": "San Cristóbal de La Laguna",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::san_juan_de_la_rambla",
+      "municipio": "San Juan de la Rambla",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::san_miguel_de_abona",
+      "municipio": "San Miguel de Abona",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::san_sebastian_de_la_gomera",
+      "municipio": "San Sebastián de la Gomera",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::santa_cruz_de_tenerife",
+      "municipio": "Santa Cruz de Tenerife",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::santa_cruz_de_la_palma",
+      "municipio": "Santa Cruz de la Palma",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::santa_ursula",
+      "municipio": "Santa Úrsula",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::santiago_del_teide",
+      "municipio": "Santiago del Teide",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::tacoronte",
+      "municipio": "Tacoronte",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::tazacorte",
+      "municipio": "Tazacorte",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::tegueste",
+      "municipio": "Tegueste",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::tijarafe",
+      "municipio": "Tijarafe",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::valle_gran_rey",
+      "municipio": "Valle Gran Rey",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::vallehermoso",
+      "municipio": "Vallehermoso",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::valverde",
+      "municipio": "Valverde",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::vilaflor_de_chasna",
+      "municipio": "Vilaflor de Chasna",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:santa_cruz_de_tenerife::villa_de_mazo",
+      "municipio": "Villa de Mazo",
+      "province": "Santa Cruz de Tenerife",
+      "dataset_id": "canarias",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
       "zone_id": "municipality:cantabria::alfoz_de_lloredo",
       "municipio": "Alfoz de Lloredo",
       "province": "Cantabria",
@@ -3278,6 +4862,24 @@
           "source_url": "https://www.viesgodistribucion.com/home",
           "last_reviewed": "2026-05-05",
           "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:ceuta::ceuta",
+      "municipio": "Ceuta",
+      "province": "Ceuta",
+      "dataset_id": "ceuta",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Empresa de Alumbrado Eléctrico de Ceuta Distribución, S.A.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC censo R1-030",
+          "source_url": "https://sede.cnmc.gob.es/listado/censo/1",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública conservadora: distribuidora específica de Ceuta identificada en censo oficial; sin afirmar exclusividad ni cobertura total."
         }
       ]
     },
@@ -9016,6 +10618,1230 @@
           "source_url": "https://www.apyde.com/electrificacion-sl/",
           "last_reviewed": "2026-05-05",
           "coverage_note": "Pista pública conservadora: distribuidora verificada en el municipio o zona, sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::alaior",
+      "municipio": "Alaior",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::alaro",
+      "municipio": "Alaró",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::alcudia",
+      "municipio": "Alcúdia",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::algaida",
+      "municipio": "Algaida",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::andratx",
+      "municipio": "Andratx",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::ariany",
+      "municipio": "Ariany",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::arta",
+      "municipio": "Artà",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::banyalbufar",
+      "municipio": "Banyalbufar",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::binissalem",
+      "municipio": "Binissalem",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::bunyola",
+      "municipio": "Bunyola",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::buger",
+      "municipio": "Búger",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::calvia",
+      "municipio": "Calvià",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::campanet",
+      "municipio": "Campanet",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::campos",
+      "municipio": "Campos",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::capdepera",
+      "municipio": "Capdepera",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::ciutadella_de_menorca",
+      "municipio": "Ciutadella de Menorca",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::consell",
+      "municipio": "Consell",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::costitx",
+      "municipio": "Costitx",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::deia",
+      "municipio": "Deià",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::eivissa",
+      "municipio": "Eivissa",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::es_mercadal",
+      "municipio": "Es Mercadal",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::es_migjorn_gran",
+      "municipio": "Es Migjorn Gran",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::escorca",
+      "municipio": "Escorca",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::esporles",
+      "municipio": "Esporles",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::estellencs",
+      "municipio": "Estellencs",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::felanitx",
+      "municipio": "Felanitx",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::ferreries",
+      "municipio": "Ferreries",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::formentera",
+      "municipio": "Formentera",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::fornalutx",
+      "municipio": "Fornalutx",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::inca",
+      "municipio": "Inca",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::lloret_de_vistalegre",
+      "municipio": "Lloret de Vistalegre",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::lloseta",
+      "municipio": "Lloseta",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::llubi",
+      "municipio": "Llubí",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::llucmajor",
+      "municipio": "Llucmajor",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::manacor",
+      "municipio": "Manacor",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::mancor_de_la_vall",
+      "municipio": "Mancor de la Vall",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::maria_de_la_salut",
+      "municipio": "Maria de la Salut",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::marratxi",
+      "municipio": "Marratxí",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::mao",
+      "municipio": "Maó",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::mao_mahon",
+      "municipio": "Maó-Mahón",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::montuiri",
+      "municipio": "Montuïri",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::muro",
+      "municipio": "Muro",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::palma",
+      "municipio": "Palma",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::petra",
+      "municipio": "Petra",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::pollenca",
+      "municipio": "Pollença",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::porreres",
+      "municipio": "Porreres",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::puigpunyent",
+      "municipio": "Puigpunyent",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sa_pobla",
+      "municipio": "Sa Pobla",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sant_antoni_de_portmany",
+      "municipio": "Sant Antoni de Portmany",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sant_joan",
+      "municipio": "Sant Joan",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sant_joan_de_labritja",
+      "municipio": "Sant Joan de Labritja",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sant_josep_de_sa_talaia",
+      "municipio": "Sant Josep de sa Talaia",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sant_llorenc_des_cardassar",
+      "municipio": "Sant Llorenç des Cardassar",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sant_lluis",
+      "municipio": "Sant Lluís",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::santa_eugenia",
+      "municipio": "Santa Eugènia",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::santa_eularia_des_riu",
+      "municipio": "Santa Eulària des Riu",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::santa_margalida",
+      "municipio": "Santa Margalida",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::santa_maria_del_cami",
+      "municipio": "Santa María del Camí",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::santanyi",
+      "municipio": "Santanyí",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::selva",
+      "municipio": "Selva",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sencelles",
+      "municipio": "Sencelles",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::sineu",
+      "municipio": "Sineu",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::son_servera",
+      "municipio": "Son Servera",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::soller",
+      "municipio": "Sóller",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "Vall de Sóller Energia, S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC censo R1-056",
+          "source_url": "https://sede.cnmc.gob.es/listado/censo/1",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública conservadora: distribuidora local verificada por censo oficial; sin afirmar exclusividad ni cobertura total."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::valldemossa",
+      "municipio": "Valldemossa",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::vilafranca_de_bonany",
+      "municipio": "Vilafranca de Bonany",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::es_castell",
+      "municipio": "es Castell",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:illes_balears::ses_salines",
+      "municipio": "ses Salines",
+      "province": "Illes Balears",
+      "dataset_id": "illes_balears",
+      "last_reviewed": "2026-05-06",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura.",
+      "distributors": [
+        {
+          "name": "e-distribución Redes Digitales, S.L.U.",
+          "confidence": "regional_default",
+          "source_name": "e-distribución — distribución eléctrica",
+          "source_url": "https://www.edistribucion.com/es/conocenos/instalaciones-distribucion-red/distribucion-electrica.html",
+          "last_reviewed": "2026-05-06",
+          "coverage_note": "Pista pública orientativa: distribuidora regional probable; confirmar con comercializadora o distribuidora."
         }
       ]
     },
