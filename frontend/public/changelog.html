@@ -117,6 +117,20 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.2-data-edistribucion-safe-regional-with-exceptions</h2>
+      <ul>
+        <li>Añade a producción pistas de distribuidora para Canarias, Illes Balears y Ceuta tras revisión enfocada.</li>
+        <li>Importa 157 zonas: 154 como <code>regional_default</code> de e-distribución y 3 excepciones locales como <code>verified_partial</code>.</li>
+        <li>Excepciones locales: Puerto de la Cruz, Sóller y Ceuta.</li>
+        <li>Mantiene Andalucía, Aragón, Catalunya y Extremadura fuera de producción hasta revisión más detallada.</li>
+        <li>Mantiene Castilla y León y Galicia fuera de este flujo de importación masiva.</li>
+        <li>No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.</li>
+        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.0-data-navarra-rioja-murcia-distributor-hints</h2>
       <ul>
         <li>Añade pistas orientativas de distribuidora para Navarra, La Rioja y Región de Murcia.</li>

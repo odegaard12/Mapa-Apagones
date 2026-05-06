@@ -1,3 +1,13 @@
+## v0.10.2.2-data-edistribucion-safe-regional-with-exceptions
+
+- Añade a producción pistas de distribuidora para Canarias, Illes Balears y Ceuta tras revisión enfocada.
+- Importa 157 zonas: 154 como `regional_default` de e-distribución y 3 excepciones locales como `verified_partial`.
+- Excepciones locales: Puerto de la Cruz, Sóller y Ceuta.
+- Mantiene Andalucía, Aragón, Catalunya y Extremadura fuera de producción hasta revisión más detallada.
+- Mantiene Castilla y León y Galicia fuera de este flujo de importación masiva.
+- No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.
+- No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.
+
 ## v0.10.2.0-data-navarra-rioja-murcia-distributor-hints
 
 - Añade pistas orientativas de distribuidora para Navarra, La Rioja y Región de Murcia.
