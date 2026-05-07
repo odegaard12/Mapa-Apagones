@@ -103,3 +103,7 @@ echo
 echo "== repo_guard: distributor hints seguros =="
 python3 scripts/check_distributor_hints.py
 
+echo
+echo "== repo_guard: versión pública sincronizada =="
+python3 scripts/check_public_version_mentions.py
+

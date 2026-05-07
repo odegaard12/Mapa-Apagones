@@ -13,7 +13,7 @@ import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.2.2-data-edistribucion-safe-regional-with-exceptions'
+const APP_VERSION = 'v0.10.2.3-public-version-guard'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)

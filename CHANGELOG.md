@@ -1,3 +1,10 @@
+## v0.10.2.3-public-version-guard
+
+- Sincroniza la versión pública visible en README, `VERSION` y `APP_VERSION`.
+- Añade una guardia automática para detectar deriva entre versión de app, README y changelog.
+- Refuerza la confianza operativa del repositorio tras la auditoría avanzada.
+- No cambia backend, reportes, Turnstile, datos de distribuidoras ni datasets geográficos.
+
 ## v0.10.2.2-data-edistribucion-safe-regional-with-exceptions
 
 - Añade a producción pistas de distribuidora para Canarias, Illes Balears y Ceuta tras revisión enfocada.
