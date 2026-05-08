@@ -117,6 +117,18 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.8-backend-api-smoke-ci</h2>
+      <ul>
+        <li>Añade un smoke real de backend que arranca Uvicorn con SQLite temporal.</li>
+        <li>Prueba <code>/api/health</code>, <code>/api/report-preflight</code>, <code>/api/report</code> y <code>/api/incidents</code>.</li>
+        <li>Integra el smoke en GitHub Actions instalando dependencias reales del backend.</li>
+        <li>Usa Turnstile desactivado, IGN desactivado y HMAC anónimo temporal solo para test.</li>
+        <li>No cambia runtime de producción, frontend, reportes, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.7-trusted-proxy-client-ip</h2>
       <ul>
         <li>Endurece la obtención de IP cliente para no confiar ciegamente en <code>X-Forwarded-For</code>.</li>
