@@ -1,3 +1,11 @@
+## v0.10.3.8-post-merge-validation-runbook
+
+- Añade `scripts/post_merge_validate.sh` como runbook ejecutable de validación post-merge.
+- Agrupa guardias de privacidad, proxy/IP, HMAC, schema SQLite, dependencias, geografía, frontend estático, backend runtime y Docker Compose.
+- Añade `scripts/check_post_merge_validation.sh` e integración en `scripts/repo_guard.sh`.
+- Documenta el uso del runbook en `README.md`.
+- No cambia runtime de backend, frontend funcional, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.7-sqlite-schema-hardening
 
 - Endurece el schema SQLite del backend.
