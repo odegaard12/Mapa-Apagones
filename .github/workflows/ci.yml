@@ -25,7 +25,7 @@ jobs:
           node-version: "20"
 
       - name: Install backend dependencies
-        run: python -m pip install -r backend/requirements.txt
+        run: python -m pip install -r backend/requirements.lock.txt
 
       - name: Run backend API smoke
         run: python scripts/smoke_backend_api.py
@@ -38,11 +38,7 @@ jobs:
 
       - name: Install frontend dependencies
         run: |
-          if [ -f frontend/package-lock.json ]; then
-            npm --prefix frontend ci
-          else
-            npm --prefix frontend install
-          fi
+          npm --prefix frontend ci
 
       - name: Build frontend
         run: npm --prefix frontend run build

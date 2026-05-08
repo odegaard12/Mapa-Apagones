@@ -117,6 +117,18 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.0-reproducible-build-lockfiles</h2>
+      <ul>
+        <li>Añade lockfile de frontend con <code>frontend/package-lock.json</code>.</li>
+        <li>Añade lockfile de backend con <code>backend/requirements.lock.txt</code>.</li>
+        <li>Cambia CI y Dockerfiles para usar instalaciones reproducibles: <code>npm ci</code> y <code>requirements.lock.txt</code>.</li>
+        <li>Añade <code>scripts/check_dependency_locks.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
+        <li>Mejora la reproducibilidad sin cambiar el flujo público de usuario, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.9-backend-report-concurrency-smoke</h2>
       <ul>
         <li>Añade un smoke de concurrencia de backend para reportes simultáneos.</li>

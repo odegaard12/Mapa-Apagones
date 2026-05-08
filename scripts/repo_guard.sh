@@ -123,3 +123,7 @@ echo
 echo "== repo_guard: transacción de reportes concurrentes =="
 python3 scripts/check_report_transaction.py
 
+echo
+echo "== repo_guard: lockfiles reproducibles =="
+python3 scripts/check_dependency_locks.py
+

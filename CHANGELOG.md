@@ -1,3 +1,11 @@
+## v0.10.3.0-reproducible-build-lockfiles
+
+- Añade lockfile de frontend con `frontend/package-lock.json`.
+- Añade lockfile de backend con `backend/requirements.lock.txt`.
+- Cambia CI y Dockerfiles para usar instalaciones reproducibles: `npm ci` y `requirements.lock.txt`.
+- Añade `scripts/check_dependency_locks.py` e integra la guardia en `repo_guard.sh`.
+- Mejora la reproducibilidad sin cambiar el flujo público de usuario, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.2.9-backend-report-concurrency-smoke
 
 - Añade un smoke de concurrencia de backend para reportes simultáneos.
