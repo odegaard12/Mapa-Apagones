@@ -163,3 +163,7 @@ bash scripts/check_post_merge_validation.sh
 echo
 echo "== repo_guard: configuración backend modularizada =="
 python3 scripts/check_backend_settings_module.py
+
+echo
+echo "== repo_guard: privacidad backend modularizada =="
+python3 scripts/check_backend_privacy_module.py

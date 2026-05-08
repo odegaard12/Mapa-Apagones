@@ -118,6 +118,21 @@
 
 
     <section>
+      <h2>v0.10.4.0-backend-privacy-module</h2>
+      <ul>
+        <li>Extrae helpers de privacidad/HMAC a <code>backend/app/privacy.py</code>.</li>
+        <li>Mantiene <code>backend/app/main.py</code> usando <code>anon_hash</code>, <code>anon_hash_candidates</code> y <code>sql_in_clause</code> desde el nuevo módulo.</li>
+        <li>Actualiza la guardia de hashes anónimos para validar <code>main.py</code> + <code>privacy.py</code>.</li>
+        <li>Añade <code>scripts/check_backend_privacy_module.py</code> e integración en <code>scripts/repo_guard.sh</code>.</li>
+        <li>Actualiza el runbook post-merge para incluir la nueva guardia.</li>
+        <li>No cambia reportes, anonimización, Turnstile, proxy/IP, SQLite, frontend funcional, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+
+
+    <section>
       <h2>v0.10.3.9-backend-settings-module</h2>
       <ul>
         <li>Extrae la configuración de backend a <code>backend/app/settings.py</code>.</li>

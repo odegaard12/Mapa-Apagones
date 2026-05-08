@@ -5,6 +5,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 main = (ROOT / "backend/app/main.py").read_text(encoding="utf-8")
+privacy = (ROOT / "backend/app/privacy.py").read_text(encoding="utf-8")
+combined = main + "\n" + privacy
 
 errors = []
 
@@ -19,21 +21,14 @@ required_snippets = [
 ]
 
 for snippet in required_snippets:
-    if snippet not in main:
+    if snippet not in combined:
         errors.append(f"Falta snippet esperado: {snippet}")
-
-
-if "def validate_report_preflight(conn, payload: ReportIn, token_hash: str, ip_hash: str, token_hashes, ip_hashes)" not in main:
-    errors.append("validate_report_preflight debe recibir token_hashes/ip_hashes")
-
-if "validate_report_preflight(conn, payload, token_hash, ip_hash, token_hashes, ip_hashes)" not in main:
-    errors.append("report_preflight debe pasar token_hashes/ip_hashes a validate_report_preflight")
 
 for forbidden in [
     "token_hash = sha256(payload.token.strip())",
     "ip_hash = sha256(client_ip(request))",
 ]:
-    if forbidden in main:
+    if forbidden in combined:
         errors.append(f"Uso prohibido encontrado: {forbidden}")
 
 def hmac_hash(key: str, value: str) -> str:
