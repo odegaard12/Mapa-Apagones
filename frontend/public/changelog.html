@@ -117,6 +117,19 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.2-backend-report-lifecycle-smoke</h2>
+      <ul>
+        <li>Añade <code>scripts/smoke_backend_lifecycle.py</code> para probar un ciclo de vida más real del backend de reportes.</li>
+        <li>Valida errores básicos de <code>/api/report</code>, agrupación de reportes negativos, <code>/api/incidents</code>, filtro <code>bbox</code> y señales <code>Ya volvió</code>.</li>
+        <li>Comprueba en SQLite temporal que varias señales quedan agrupadas y que las señales de restauración neutralizan la incidencia.</li>
+        <li>Integra el smoke en GitHub Actions.</li>
+        <li>Añade <code>scripts/check_backend_lifecycle_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
+        <li>No cambia el flujo público de usuario, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.1-docker-compose-smoke-ci</h2>
       <ul>
         <li>Añade <code>docker-compose.ci.yml</code> para probar el stack Docker real sin tocar el stack local de producción/desarrollo.</li>

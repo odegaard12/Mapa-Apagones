@@ -33,6 +33,9 @@ jobs:
       - name: Run backend report concurrency smoke
         run: python scripts/smoke_backend_concurrency.py
 
+      - name: Run backend report lifecycle smoke
+        run: python scripts/smoke_backend_lifecycle.py
+
       - name: Guard repo hygiene
         run: bash scripts/repo_guard.sh --no-build
 

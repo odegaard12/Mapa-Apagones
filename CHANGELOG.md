@@ -1,3 +1,12 @@
+## v0.10.3.2-backend-report-lifecycle-smoke
+
+- Añade `scripts/smoke_backend_lifecycle.py` para probar un ciclo de vida más real del backend de reportes.
+- Valida errores básicos de `/api/report`, agrupación de reportes negativos, `/api/incidents`, filtro `bbox` y señales `Ya volvió`.
+- Comprueba en SQLite temporal que varias señales quedan agrupadas y que las señales de restauración neutralizan la incidencia.
+- Integra el smoke en GitHub Actions.
+- Añade `scripts/check_backend_lifecycle_smoke.py` e integra la guardia en `repo_guard.sh`.
+- No cambia el flujo público de usuario, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.1-docker-compose-smoke-ci
 
 - Añade `docker-compose.ci.yml` para probar el stack Docker real sin tocar el stack local de producción/desarrollo.

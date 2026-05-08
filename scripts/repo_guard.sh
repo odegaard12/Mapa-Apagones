@@ -131,3 +131,7 @@ echo
 echo "== repo_guard: Docker Compose smoke cableado en CI =="
 python3 scripts/check_docker_compose_smoke.py
 
+echo
+echo "== repo_guard: smoke ciclo de vida backend cableado en CI =="
+python3 scripts/check_backend_lifecycle_smoke.py
+
