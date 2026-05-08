@@ -13,7 +13,7 @@ import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.2.4-purge-tracked-backend-backups'
+const APP_VERSION = 'v0.10.2.5-hmac-anonymous-hashes'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)

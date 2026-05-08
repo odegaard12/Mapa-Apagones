@@ -1,4 +1,5 @@
 import hashlib
+import hmac
 import json
 import math
 import os
@@ -43,6 +44,11 @@ TURNSTILE_REQUIRED = os.getenv("TURNSTILE_REQUIRED", "1") == "1"
 TURNSTILE_SECRET_KEY = os.getenv("TURNSTILE_SECRET_KEY", "")
 TURNSTILE_VERIFY_URL = os.getenv("TURNSTILE_VERIFY_URL", "https://challenges.cloudflare.com/turnstile/v0/siteverify")
 TURNSTILE_TIMEOUT = float(os.getenv("TURNSTILE_TIMEOUT", "5"))
+
+ANON_HASH_KEY = os.getenv("ANON_HASH_KEY", "").strip()
+ANON_HASH_LEGACY_COMPAT = env_bool("ANON_HASH_LEGACY_COMPAT", "1")
+ANON_HASH_KEY_REQUIRED = env_bool("ANON_HASH_KEY_REQUIRED", "1" if TURNSTILE_ENABLED and TURNSTILE_REQUIRED else "0")
+ANON_HASH_DEV_FALLBACK = "dev-only-mapa-apagones-anon-hash-key"
 
 GRID_SIZE_M = 1600
 MATCH_INCIDENT_RADIUS_M = 1600
@@ -99,6 +105,52 @@ def parse_dt(value: Optional[str]) -> Optional[datetime]:
 
 def sha256(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def anonymization_secret() -> str:
+    if ANON_HASH_KEY:
+        return ANON_HASH_KEY
+
+    # Fallback transicional: evita caída si producción aún no define ANON_HASH_KEY,
+    # pero debe migrarse a una clave dedicada.
+    if TURNSTILE_SECRET_KEY:
+        return TURNSTILE_SECRET_KEY
+
+    if ANON_HASH_KEY_REQUIRED:
+        raise HTTPException(status_code=500, detail="Anonimización no configurada.")
+
+    return ANON_HASH_DEV_FALLBACK
+
+def anon_hash(value: str) -> str:
+    secret = anonymization_secret()
+    message = f"mapa-apagones-anon-v1:{value}".encode("utf-8")
+    return hmac.new(secret.encode("utf-8"), message, hashlib.sha256).hexdigest()
+
+def normalize_hash_values(values) -> Tuple[str, ...]:
+    if isinstance(values, str):
+        return (values,)
+    return tuple(str(value) for value in values if value)
+
+def anon_hash_candidates(value: str) -> Tuple[str, ...]:
+    normalized = str(value or "").strip()
+    current = anon_hash(normalized)
+
+    if not ANON_HASH_LEGACY_COMPAT:
+        return (current,)
+
+    legacy = sha256(normalized)
+    if legacy == current:
+        return (current,)
+
+    return (current, legacy)
+
+def sql_in_clause(column: str, values: Tuple[str, ...]) -> Tuple[str, list[str]]:
+    values = normalize_hash_values(values)
+    if not values:
+        raise HTTPException(status_code=500, detail="Hash anónimo inválido.")
+
+    placeholders = ", ".join(["?"] * len(values))
+    return f"{column} IN ({placeholders})", list(values)
 
 def configure_sqlite_connection(conn: sqlite3.Connection) -> None:
     conn.execute("PRAGMA busy_timeout = 5000")
@@ -309,17 +361,21 @@ def record_action(conn, token_hash: str, ip_hash: str, action: str):
         (str(uuid.uuid4()), token_hash, ip_hash, action, iso(utcnow())),
     )
 
-def assert_not_rate_limited(conn, token_hash: str, ip_hash: str):
+def assert_not_rate_limited(conn, token_hashes, ip_hashes):
     cutoff = iso(utcnow() - timedelta(hours=1))
+    token_clause, token_params = sql_in_clause("reporter_token_hash", normalize_hash_values(token_hashes))
+    ip_clause, ip_params = sql_in_clause("ip_hash", normalize_hash_values(ip_hashes))
+
     row = conn.execute(
-        """
+        f"""
         SELECT COUNT(*) AS c
         FROM action_log
         WHERE created_at >= ?
-          AND (reporter_token_hash = ? OR ip_hash = ?)
+          AND ({token_clause} OR {ip_clause})
         """,
-        (cutoff, token_hash, ip_hash),
+        [cutoff] + token_params + ip_params,
     ).fetchone()
+
     if row["c"] >= ABUSE_LIMIT_PER_HOUR:
         raise HTTPException(status_code=429, detail="Límite temporal alcanzado. Espera un poco y vuelve a intentarlo.")
 
@@ -830,8 +886,8 @@ def assert_existing_report_cooldown(conn, incident_id: str, token_hash: str, rep
         wait_sec = int(cooldown - elapsed)
         raise HTTPException(status_code=429, detail=f"Espera {wait_sec}s antes de volver a actualizar esta zona.")
 
-def validate_report_preflight(conn, payload: ReportIn, token_hash: str, ip_hash: str) -> dict:
-    assert_not_rate_limited(conn, token_hash, ip_hash)
+def validate_report_preflight(conn, payload: ReportIn, token_hash: str, ip_hash: str, token_hashes, ip_hashes) -> dict:
+    assert_not_rate_limited(conn, token_hashes, ip_hashes)
 
     now = utcnow()
 
@@ -843,7 +899,7 @@ def validate_report_preflight(conn, payload: ReportIn, token_hash: str, ip_hash:
         assert_existing_report_cooldown(conn, incident["id"], token_hash, payload.type, now)
         return {"ok": True, "incident_id": incident["id"], "zone_id": incident["zone_id"]}
 
-    nearby_user_report = find_user_nearby_active_report(conn, token_hash, payload.lat, payload.lng)
+    nearby_user_report = find_user_nearby_active_report(conn, token_hashes, payload.lat, payload.lng)
 
     current_active_negative = conn.execute(
         """
@@ -881,29 +937,27 @@ def validate_report_preflight(conn, payload: ReportIn, token_hash: str, ip_hash:
 
     return {"ok": True, "incident_id": None, "zone_id": None}
 
-def find_user_nearby_active_report(conn, token_hash: str, lat: float, lng: float) -> Optional[sqlite3.Row]:
+def find_user_nearby_active_report(conn, token_hashes, lat: float, lng: float) -> Optional[sqlite3.Row]:
+    token_clause, token_params = sql_in_clause("r.reporter_token_hash", normalize_hash_values(token_hashes))
+
     rows = conn.execute(
-        """
+        f"""
         SELECT r.*, i.center_lat, i.center_lng
         FROM reports r
         JOIN incidents i ON i.id = r.incident_id
-        WHERE r.reporter_token_hash = ?
+        WHERE {token_clause}
           AND r.status = 'active'
           AND r.report_type != 'vuelve'
           AND i.report_count_active > 0
         ORDER BY r.updated_at DESC
         """,
-        (token_hash,),
+        token_params,
     ).fetchall()
 
-    best = None
-    best_d = None
     for row in rows:
-        d = haversine_m(lat, lng, row["center_lat"], row["center_lng"])
-        if d <= USER_NEARBY_LOCK_M and (best_d is None or d < best_d):
-            best = row
-            best_d = d
-    return best
+        if haversine_m(lat, lng, row["center_lat"], row["center_lng"]) <= USER_NEARBY_LOCK_M:
+            return row
+    return None
 
 def create_incident(conn, lat: float, lng: float, base_type: str) -> str:
     grid = grid_for_point(lat, lng)
@@ -1138,11 +1192,15 @@ def report_preflight(payload: ReportIn, request: FastAPIRequest):
     conn = get_db()
     cleanup_old(conn)
 
-    token_hash = sha256(payload.token.strip())
-    ip_hash = sha256(client_ip(request))
+    raw_token = payload.token.strip()
+    raw_ip = client_ip(request)
+    token_hash = anon_hash(raw_token)
+    ip_hash = anon_hash(raw_ip)
+    token_hashes = anon_hash_candidates(raw_token)
+    ip_hashes = anon_hash_candidates(raw_ip)
 
     try:
-        result = validate_report_preflight(conn, payload, token_hash, ip_hash)
+        result = validate_report_preflight(conn, payload, token_hash, ip_hash, token_hashes, ip_hashes)
         conn.close()
         return result
     except HTTPException:
@@ -1162,15 +1220,19 @@ def report(payload: ReportIn, request: FastAPIRequest):
     conn = get_db()
     cleanup_old(conn)
 
-    token_hash = sha256(payload.token.strip())
-    ip_hash = sha256(client_ip(request))
-    assert_not_rate_limited(conn, token_hash, ip_hash)
+    raw_token = payload.token.strip()
+    raw_ip = client_ip(request)
+    token_hash = anon_hash(raw_token)
+    ip_hash = anon_hash(raw_ip)
+    token_hashes = anon_hash_candidates(raw_token)
+    ip_hashes = anon_hash_candidates(raw_ip)
+    assert_not_rate_limited(conn, token_hashes, ip_hashes)
 
     now = utcnow()
     previous_incident_to_recompute = None
     moved_zone = False
 
-    nearby_user_report = find_user_nearby_active_report(conn, token_hash, payload.lat, payload.lng)
+    nearby_user_report = find_user_nearby_active_report(conn, token_hashes, payload.lat, payload.lng)
 
     current_active_negative = conn.execute(
         """

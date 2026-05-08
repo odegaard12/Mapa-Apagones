@@ -1,3 +1,11 @@
+## v0.10.2.5-hmac-anonymous-hashes
+
+- Cambia los hashes anónimos de token e IP a HMAC-SHA256 con secreto de servidor.
+- Añade `ANON_HASH_KEY` y opciones de transición para compatibilidad con hashes antiguos.
+- Mantiene el almacenamiento de reportes anónimo y evita publicar IPs, tokens o identificadores reales.
+- Añade una guardia automática para impedir volver a `sha256(IP/token)` sin secreto.
+- No cambia el flujo público de reportes ni el frontend de usuario.
+
 ## v0.10.2.4-purge-tracked-backend-backups
 
 - Elimina copias `.bak` trackeadas de `backend/app/` para evitar código backend obsoleto en el repositorio público.

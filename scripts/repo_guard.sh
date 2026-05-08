@@ -111,3 +111,7 @@ echo
 echo "== repo_guard: backups/temporales trackeados =="
 python3 scripts/check_no_tracked_backup_artifacts.py
 
+echo
+echo "== repo_guard: hashes anónimos HMAC =="
+python3 scripts/check_anonymous_hashing.py
+
