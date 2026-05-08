@@ -1,3 +1,12 @@
+## v0.10.3.4-architecture-privacy-pipeline-docs
+
+- Añade documentación de arquitectura de reportes, privacidad, anti-abuso, proxy/IP, Turnstile, SQLite, CI y datos de distribuidoras.
+- Documenta explícitamente qué datos no se piden ni se deben añadir: cuentas, login, CUPS, texto libre, fotos, direcciones exactas o coordenadas privadas.
+- Explica el uso de HMAC-SHA256 para `reporter_token_hash` e `ip_hash`.
+- Explica la confianza en proxy mediante `TRUST_PROXY_HEADERS` y `TRUSTED_PROXY_CIDRS`.
+- Añade `scripts/check_architecture_docs.py` e integra la guardia en `repo_guard.sh`.
+- No cambia runtime, frontend, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.3-backend-privacy-abuse-smoke
 
 - Añade `scripts/smoke_backend_privacy_abuse.py` para validar privacidad y anti-abuso en runtime.

@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.3.3-backend-privacy-abuse-smoke.
+Versión actual visible: v0.10.3.4-architecture-privacy-pipeline-docs.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -262,3 +262,6 @@ Este proyecto está publicado en fase temprana. Los datos ciudadanos pueden cont
 ## Nota de seguridad operativa
 
 Este repositorio público documenta un modelo de despliegue genérico. Los detalles reales de red, túneles, puertos internos, rutas locales, credenciales, bases de datos, backups y borradores privados deben mantenerse fuera del repositorio y configurarse únicamente en entornos privados.
+
+
+- Arquitectura de reportes, privacidad y anti-abuso: docs/architecture/reporting-privacy-pipeline.md
