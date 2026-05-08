@@ -151,3 +151,7 @@ echo
 echo "== repo_guard: endpoint /api/status seguro =="
 python3 scripts/check_safe_status_endpoint.py
 
+echo
+echo "== repo_guard: schema SQLite endurecido =="
+python3 scripts/check_sqlite_schema_hardening.py
+

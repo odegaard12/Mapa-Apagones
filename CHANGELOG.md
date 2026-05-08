@@ -1,3 +1,13 @@
+## v0.10.3.7-sqlite-schema-hardening
+
+- Endurece el schema SQLite del backend.
+- Limpia duplicados activos antiguos por `incident_id` + `reporter_token_hash` antes de crear constraints.
+- Añade índice único parcial `uq_reports_active_incident_reporter` para impedir más de un reporte activo del mismo reporter anónimo en la misma incidencia.
+- Añade índices útiles para reports, expiración, zonas y action_log.
+- Añade `scripts/check_sqlite_schema_hardening.py`.
+- Añade `scripts/smoke_backend_schema.py` e integración en GitHub Actions.
+- No añade datos personales, no cambia frontend funcional, no cambia Turnstile, no cambia HMAC, no cambia distribuidoras ni datasets geográficos.
+
 ## v0.10.3.6-safe-runtime-status
 
 - Añade `/api/status` como endpoint operativo seguro del backend.

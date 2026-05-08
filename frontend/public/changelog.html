@@ -117,6 +117,20 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.7-sqlite-schema-hardening</h2>
+      <ul>
+        <li>Endurece el schema SQLite del backend.</li>
+        <li>Limpia duplicados activos antiguos por <code>incident_id</code> + <code>reporter_token_hash</code> antes de crear constraints.</li>
+        <li>Añade índice único parcial <code>uq_reports_active_incident_reporter</code> para impedir más de un reporte activo del mismo reporter anónimo en la misma incidencia.</li>
+        <li>Añade índices útiles para reports, expiración, zonas y action_log.</li>
+        <li>Añade <code>scripts/check_sqlite_schema_hardening.py</code>.</li>
+        <li>Añade <code>scripts/smoke_backend_schema.py</code> e integración en GitHub Actions.</li>
+        <li>No añade datos personales, no cambia frontend funcional, no cambia Turnstile, no cambia HMAC, no cambia distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.6-safe-runtime-status</h2>
       <ul>
         <li>Añade <code>/api/status</code> como endpoint operativo seguro del backend.</li>
