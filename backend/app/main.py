@@ -395,6 +395,13 @@ def on_startup():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     setup_db()
 
+def begin_report_write_transaction(conn):
+    # Serializa la sección crítica de escritura de reportes para evitar
+    # duplicados cuando llegan varios reportes simultáneos a la misma celda.
+    # BEGIN IMMEDIATE adquiere bloqueo de escritura antes de SELECT+INSERT/UPDATE.
+    if not conn.in_transaction:
+        conn.execute("BEGIN IMMEDIATE")
+
 def cleanup_old(conn):
     now = utcnow()
     conn.execute(
@@ -1271,6 +1278,7 @@ def report(payload: ReportIn, request: FastAPIRequest):
 
     conn = get_db()
     cleanup_old(conn)
+    begin_report_write_transaction(conn)
 
     raw_token = payload.token.strip()
     raw_ip = client_ip(request)
