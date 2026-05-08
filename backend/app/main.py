@@ -318,6 +318,80 @@ def ensure_column(conn, table_name: str, col_name: str, col_def: str):
     if col_name not in cols:
         conn.execute(f"ALTER TABLE {table_name} ADD COLUMN {col_name} {col_def}")
 
+
+def apply_schema_hardening(conn):
+    """
+    Endurecimiento incremental del schema SQLite.
+
+    Objetivos:
+    - evitar más de un reporte activo por reporter anónimo en la misma incidencia;
+    - limpiar duplicados activos antiguos antes de crear el índice único parcial;
+    - añadir índices de consulta usados por reportes, rate limit y limpieza.
+    """
+    conn.execute(
+        """
+        UPDATE reports
+        SET status = 'inactive'
+        WHERE status = 'active'
+          AND EXISTS (
+            SELECT 1
+            FROM reports newer
+            WHERE newer.status = 'active'
+              AND newer.incident_id = reports.incident_id
+              AND newer.reporter_token_hash = reports.reporter_token_hash
+              AND (
+                newer.updated_at > reports.updated_at
+                OR (
+                  newer.updated_at = reports.updated_at
+                  AND newer.created_at > reports.created_at
+                )
+                OR (
+                  newer.updated_at = reports.updated_at
+                  AND newer.created_at = reports.created_at
+                  AND newer.id > reports.id
+                )
+              )
+          )
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE UNIQUE INDEX IF NOT EXISTS uq_reports_active_incident_reporter
+        ON reports(incident_id, reporter_token_hash)
+        WHERE status = 'active'
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_reports_status_expires
+        ON reports(status, expires_at)
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_reports_token_status_updated
+        ON reports(reporter_token_hash, status, updated_at)
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_reports_zone_status
+        ON reports(zone_id, status)
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_action_log_token_ip_created
+        ON action_log(reporter_token_hash, ip_hash, created_at)
+        """
+    )
+
+
 def setup_db():
     conn = get_db()
     conn.executescript(
@@ -385,6 +459,7 @@ def setup_db():
     ensure_column(conn, "incidents", "display_zone", "TEXT")
     ensure_column(conn, "incidents", "zone_id", "TEXT")
     ensure_column(conn, "reports", "zone_id", "TEXT")
+    apply_schema_hardening(conn)
     ensure_zone_tables(conn)
 
     conn.commit()
