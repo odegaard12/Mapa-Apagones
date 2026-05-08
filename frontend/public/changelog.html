@@ -117,6 +117,17 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.6-compose-anon-hash-env</h2>
+      <ul>
+        <li>Pasa <code>ANON_HASH_KEY</code>, <code>ANON_HASH_KEY_REQUIRED</code> y <code>ANON_HASH_LEGACY_COMPAT</code> al contenedor backend desde Docker Compose.</li>
+        <li>Completa el despliegue operativo del HMAC anónimo añadido en v0.10.2.5.</li>
+        <li>Evita depender del fallback transicional a <code>TURNSTILE_SECRET_KEY</code>.</li>
+        <li>No cambia API, reportes, frontend, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.5-hmac-anonymous-hashes</h2>
       <ul>
         <li>Cambia los hashes anónimos de token e IP a HMAC-SHA256 con secreto de servidor.</li>

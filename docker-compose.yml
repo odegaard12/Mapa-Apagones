@@ -7,6 +7,9 @@ services:
       TURNSTILE_ENABLED: ${TURNSTILE_ENABLED:-0}
       TURNSTILE_REQUIRED: ${TURNSTILE_REQUIRED:-1}
       TURNSTILE_SECRET_KEY: ${TURNSTILE_SECRET_KEY:-}
+      ANON_HASH_KEY: ${ANON_HASH_KEY:-}
+      ANON_HASH_KEY_REQUIRED: ${ANON_HASH_KEY_REQUIRED:-0}
+      ANON_HASH_LEGACY_COMPAT: ${ANON_HASH_LEGACY_COMPAT:-1}
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173,http://localhost:8098,http://127.0.0.1:8098,https://mapa-apagones.es,https://www.mapa-apagones.es}
       DEBUG_ENDPOINTS: ${DEBUG_ENDPOINTS:-0}
     volumes:
