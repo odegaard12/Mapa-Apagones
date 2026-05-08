@@ -147,3 +147,7 @@ echo
 echo "== repo_guard: smoke frontend estático cableado en CI =="
 python3 scripts/check_frontend_static_smoke.py
 
+echo
+echo "== repo_guard: endpoint /api/status seguro =="
+python3 scripts/check_safe_status_endpoint.py
+

@@ -8,9 +8,11 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.3.5-frontend-static-smoke-ci.
+Versión actual visible: v0.10.3.6-safe-runtime-status.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
+
+Endpoint operativo seguro: `/api/status`, sin secretos, sin IPs reales, sin tokens y sin datos de usuarios.
 
 ## Identidad pública
 

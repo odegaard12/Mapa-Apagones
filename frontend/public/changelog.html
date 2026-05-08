@@ -117,6 +117,20 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.6-safe-runtime-status</h2>
+      <ul>
+        <li>Añade <code>/api/status</code> como endpoint operativo seguro del backend.</li>
+        <li>Expone solo checks agregados y booleanos: DB, tablas requeridas, HMAC, Turnstile, proxy confiable y debug.</li>
+        <li>No devuelve secretos, tokens, IPs, rutas privadas, CIDRs reales ni datos de usuarios.</li>
+        <li>Añade <code>scripts/check_safe_status_endpoint.py</code>.</li>
+        <li>Añade <code>scripts/smoke_backend_status.py</code> e integración en GitHub Actions.</li>
+        <li>Integra la guardia en <code>scripts/repo_guard.sh</code>.</li>
+        <li>No cambia frontend funcional, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.5-frontend-static-smoke-ci</h2>
       <ul>
         <li>Añade <code>scripts/smoke_frontend_static.py</code> para validar el build estático del frontend.</li>
