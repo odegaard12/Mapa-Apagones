@@ -36,6 +36,9 @@ jobs:
       - name: Run backend report lifecycle smoke
         run: python scripts/smoke_backend_lifecycle.py
 
+      - name: Run backend privacy abuse smoke
+        run: python scripts/smoke_backend_privacy_abuse.py
+
       - name: Guard repo hygiene
         run: bash scripts/repo_guard.sh --no-build
 
