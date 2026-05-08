@@ -1,3 +1,13 @@
+## v0.10.3.6-safe-runtime-status
+
+- Añade `/api/status` como endpoint operativo seguro del backend.
+- Expone solo checks agregados y booleanos: DB, tablas requeridas, HMAC, Turnstile, proxy confiable y debug.
+- No devuelve secretos, tokens, IPs, rutas privadas, CIDRs reales ni datos de usuarios.
+- Añade `scripts/check_safe_status_endpoint.py`.
+- Añade `scripts/smoke_backend_status.py` e integración en GitHub Actions.
+- Integra la guardia en `scripts/repo_guard.sh`.
+- No cambia frontend funcional, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.5-frontend-static-smoke-ci
 
 - Añade `scripts/smoke_frontend_static.py` para validar el build estático del frontend.

@@ -1442,3 +1442,67 @@ def report(payload: ReportIn, request: FastAPIRequest):
         "incident_id": incident_id,
         "incident": dict(incident),
     }
+
+@app.get("/api/status")
+def api_status():
+    """
+    Estado operativo seguro del backend.
+
+    No devuelve secretos, IPs, tokens, rutas privadas ni datos de usuarios.
+    Solo expone flags booleanos y checks agregados para diagnóstico público.
+    """
+    required_tables = {
+        "incidents": False,
+        "reports": False,
+        "action_log": False,
+        "geocode_cache": False,
+    }
+
+    db_ok = False
+    conn = None
+
+    try:
+        conn = get_db()
+        conn.execute("SELECT 1").fetchone()
+        rows = conn.execute(
+            "SELECT name FROM sqlite_master WHERE type = 'table'"
+        ).fetchall()
+        existing = {row[0] for row in rows}
+        required_tables = {name: name in existing for name in required_tables}
+        db_ok = all(required_tables.values())
+    except Exception:
+        db_ok = False
+    finally:
+        if conn is not None:
+            conn.close()
+
+    return {
+        "ok": bool(db_ok),
+        "service": "mapa-apagones-api",
+        "database": {
+            "ok": bool(db_ok),
+            "engine": "sqlite",
+            "required_tables": required_tables,
+        },
+        "privacy": {
+            "anonymous_hashing": "hmac-sha256",
+            "anon_hash_key_configured": bool(ANON_HASH_KEY),
+            "anon_hash_key_required": bool(ANON_HASH_KEY_REQUIRED),
+            "legacy_hash_compat_enabled": bool(ANON_HASH_LEGACY_COMPAT),
+            "stores_raw_ip": False,
+            "stores_raw_token": False,
+        },
+        "anti_abuse": {
+            "turnstile_enabled": bool(TURNSTILE_ENABLED),
+            "turnstile_required": bool(TURNSTILE_REQUIRED),
+            "rate_limiting_enabled": True,
+        },
+        "network": {
+            "trust_proxy_headers": bool(TRUST_PROXY_HEADERS),
+            "trusted_proxy_cidrs_configured": bool(TRUSTED_PROXY_CIDRS),
+        },
+        "debug": {
+            "debug_endpoints_enabled": bool(DEBUG_ENDPOINTS),
+        },
+    }
+
