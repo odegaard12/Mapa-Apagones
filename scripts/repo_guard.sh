@@ -107,3 +107,7 @@ echo
 echo "== repo_guard: versión pública sincronizada =="
 python3 scripts/check_public_version_mentions.py
 
+echo
+echo "== repo_guard: backups/temporales trackeados =="
+python3 scripts/check_no_tracked_backup_artifacts.py
+

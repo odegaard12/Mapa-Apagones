@@ -117,6 +117,17 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.4-purge-tracked-backend-backups</h2>
+      <ul>
+        <li>Elimina copias <code>.bak</code> trackeadas de <code>backend/app/</code> para evitar código backend obsoleto en el repositorio público.</li>
+        <li>Añade una guardia automática contra backups, temporales y artefactos de edición trackeados.</li>
+        <li>Reduce falsos positivos de auditoría sobre código antiguo que ya no forma parte del runtime.</li>
+        <li>No cambia backend runtime, reportes, Turnstile, datos de distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.3-public-version-guard</h2>
       <ul>
         <li>Sincroniza la versión pública visible en README, <code>VERSION</code> y <code>APP_VERSION</code>.</li>

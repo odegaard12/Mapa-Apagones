@@ -1,3 +1,10 @@
+## v0.10.2.4-purge-tracked-backend-backups
+
+- Elimina copias `.bak` trackeadas de `backend/app/` para evitar código backend obsoleto en el repositorio público.
+- Añade una guardia automática contra backups, temporales y artefactos de edición trackeados.
+- Reduce falsos positivos de auditoría sobre código antiguo que ya no forma parte del runtime.
+- No cambia backend runtime, reportes, Turnstile, datos de distribuidoras ni datasets geográficos.
+
 ## v0.10.2.3-public-version-guard
 
 - Sincroniza la versión pública visible en README, `VERSION` y `APP_VERSION`.
