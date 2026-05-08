@@ -1,0 +1,32 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      DB_PATH: /data/app.db
+      IGN_WFS_ENABLED: "0"
+      TURNSTILE_ENABLED: "0"
+      TURNSTILE_REQUIRED: "0"
+      ANON_HASH_KEY: "ci-compose-smoke-anon-hash-key-not-secret"
+      ANON_HASH_KEY_REQUIRED: "1"
+      ANON_HASH_LEGACY_COMPAT: "0"
+      TRUST_PROXY_HEADERS: "1"
+      TRUSTED_PROXY_CIDRS: "172.16.0.0/12,127.0.0.1/32,::1/128"
+      DEBUG_ENDPOINTS: "0"
+    tmpfs:
+      - /data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  web:
+    build:
+      context: ./frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${SMOKE_WEB_PORT:-18098}:80"

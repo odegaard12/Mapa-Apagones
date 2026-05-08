@@ -127,3 +127,7 @@ echo
 echo "== repo_guard: lockfiles reproducibles =="
 python3 scripts/check_dependency_locks.py
 
+echo
+echo "== repo_guard: Docker Compose smoke cableado en CI =="
+python3 scripts/check_docker_compose_smoke.py
+

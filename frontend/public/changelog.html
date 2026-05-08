@@ -117,6 +117,19 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.1-docker-compose-smoke-ci</h2>
+      <ul>
+        <li>Añade <code>docker-compose.ci.yml</code> para probar el stack Docker real sin tocar el stack local de producción/desarrollo.</li>
+        <li>Añade <code>scripts/smoke_docker_compose.sh</code>.</li>
+        <li>El smoke valida frontend, proxy <code>/api</code>, <code>/api/health</code>, <code>/api/report</code>, <code>/api/incidents</code> y <code>/data/distributor_hints.json</code>.</li>
+        <li>Integra el smoke Docker Compose en GitHub Actions.</li>
+        <li>Añade <code>scripts/check_docker_compose_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
+        <li>No cambia el flujo público de usuario, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.0-reproducible-build-lockfiles</h2>
       <ul>
         <li>Añade lockfile de frontend con <code>frontend/package-lock.json</code>.</li>

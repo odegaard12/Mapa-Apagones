@@ -1,3 +1,12 @@
+## v0.10.3.1-docker-compose-smoke-ci
+
+- Añade `docker-compose.ci.yml` para probar el stack Docker real sin tocar el stack local de producción/desarrollo.
+- Añade `scripts/smoke_docker_compose.sh`.
+- El smoke valida frontend, proxy `/api`, `/api/health`, `/api/report`, `/api/incidents` y `/data/distributor_hints.json`.
+- Integra el smoke Docker Compose en GitHub Actions.
+- Añade `scripts/check_docker_compose_smoke.py` e integra la guardia en `repo_guard.sh`.
+- No cambia el flujo público de usuario, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.0-reproducible-build-lockfiles
 
 - Añade lockfile de frontend con `frontend/package-lock.json`.
