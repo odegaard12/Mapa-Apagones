@@ -26,6 +26,7 @@ echo "== 3) Guardias estáticas =="
 python3 scripts/check_public_version_mentions.py
 python3 scripts/check_no_tracked_backup_artifacts.py
 python3 scripts/check_anonymous_hashing.py
+python3 scripts/check_backend_privacy_module.py
 python3 scripts/check_trusted_proxy_ip.py
 python3 scripts/check_report_transaction.py
 python3 scripts/check_dependency_locks.py

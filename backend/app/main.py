@@ -18,6 +18,12 @@ from fastapi import FastAPI, HTTPException, Request as FastAPIRequest
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from app.zones import ensure_zone_tables, sync_zone_for_incident, refresh_all_zones, get_zone_items
+from app.privacy import (
+    anon_hash,
+    anon_hash_candidates,
+    normalize_hash_values,
+    sql_in_clause,
+)
 from app.settings import (
     ABUSE_LIMIT_PER_HOUR,
     ALLOWED_ORIGINS,
@@ -84,55 +90,6 @@ def parse_dt(value: Optional[str]) -> Optional[datetime]:
     if not value:
         return None
     return datetime.fromisoformat(value)
-
-def sha256(value: str) -> str:
-    return hashlib.sha256(value.encode("utf-8")).hexdigest()
-
-
-def anonymization_secret() -> str:
-    if ANON_HASH_KEY:
-        return ANON_HASH_KEY
-
-    # Fallback transicional: evita caída si producción aún no define ANON_HASH_KEY,
-    # pero debe migrarse a una clave dedicada.
-    if TURNSTILE_SECRET_KEY:
-        return TURNSTILE_SECRET_KEY
-
-    if ANON_HASH_KEY_REQUIRED:
-        raise HTTPException(status_code=500, detail="Anonimización no configurada.")
-
-    return ANON_HASH_DEV_FALLBACK
-
-def anon_hash(value: str) -> str:
-    secret = anonymization_secret()
-    message = f"mapa-apagones-anon-v1:{value}".encode("utf-8")
-    return hmac.new(secret.encode("utf-8"), message, hashlib.sha256).hexdigest()
-
-def normalize_hash_values(values) -> Tuple[str, ...]:
-    if isinstance(values, str):
-        return (values,)
-    return tuple(str(value) for value in values if value)
-
-def anon_hash_candidates(value: str) -> Tuple[str, ...]:
-    normalized = str(value or "").strip()
-    current = anon_hash(normalized)
-
-    if not ANON_HASH_LEGACY_COMPAT:
-        return (current,)
-
-    legacy = sha256(normalized)
-    if legacy == current:
-        return (current,)
-
-    return (current, legacy)
-
-def sql_in_clause(column: str, values: Tuple[str, ...]) -> Tuple[str, list[str]]:
-    values = normalize_hash_values(values)
-    if not values:
-        raise HTTPException(status_code=500, detail="Hash anónimo inválido.")
-
-    placeholders = ", ".join(["?"] * len(values))
-    return f"{column} IN ({placeholders})", list(values)
 
 def configure_sqlite_connection(conn: sqlite3.Connection) -> None:
     conn.execute("PRAGMA busy_timeout = 5000")

@@ -13,6 +13,7 @@ required=(
   "check_public_version_mentions.py"
   "check_no_tracked_backup_artifacts.py"
   "check_anonymous_hashing.py"
+  "check_backend_privacy_module.py"
   "check_trusted_proxy_ip.py"
   "check_report_transaction.py"
   "check_dependency_locks.py"
