@@ -1,3 +1,10 @@
+## v0.10.2.6-compose-anon-hash-env
+
+- Pasa `ANON_HASH_KEY`, `ANON_HASH_KEY_REQUIRED` y `ANON_HASH_LEGACY_COMPAT` al contenedor backend desde Docker Compose.
+- Completa el despliegue operativo del HMAC anónimo añadido en v0.10.2.5.
+- Evita depender del fallback transicional a `TURNSTILE_SECRET_KEY`.
+- No cambia API, reportes, frontend, distribuidoras ni datasets geográficos.
+
 ## v0.10.2.5-hmac-anonymous-hashes
 
 - Cambia los hashes anónimos de token e IP a HMAC-SHA256 con secreto de servidor.
