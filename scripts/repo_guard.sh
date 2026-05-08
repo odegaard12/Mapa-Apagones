@@ -143,3 +143,7 @@ echo
 echo "== repo_guard: documentación arquitectura/privacidad =="
 python3 scripts/check_architecture_docs.py
 
+echo
+echo "== repo_guard: smoke frontend estático cableado en CI =="
+python3 scripts/check_frontend_static_smoke.py
+

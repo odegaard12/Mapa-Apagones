@@ -117,6 +117,21 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.5-frontend-static-smoke-ci</h2>
+      <ul>
+        <li>Añade <code>scripts/smoke_frontend_static.py</code> para validar el build estático del frontend.</li>
+        <li>Comprueba <code>dist/index.html</code>, assets JS/CSS, <code>changelog.html</code>, <code>robots.txt</code>, <code>sitemap.xml</code> y <code>dist/data/distributor_hints.json</code>.</li>
+        <li>Verifica que la versión pública actual aparece en el JS construido y en el changelog público.</li>
+        <li>Comprueba que el JSON público de distribuidoras se copia igual desde <code>frontend/public/data</code>.</li>
+        <li>Añade una revisión básica contra artefactos o textos sensibles/locales dentro de <code>dist</code>.</li>
+        <li>Integra el smoke en GitHub Actions después del build frontend.</li>
+        <li>Añade <code>scripts/check_frontend_static_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
+        <li>No cambia backend, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.4-architecture-privacy-pipeline-docs</h2>
       <ul>
         <li>Añade documentación de arquitectura de reportes, privacidad, anti-abuso, proxy/IP, Turnstile, SQLite, CI y datos de distribuidoras.</li>

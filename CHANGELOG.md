@@ -1,3 +1,14 @@
+## v0.10.3.5-frontend-static-smoke-ci
+
+- Añade `scripts/smoke_frontend_static.py` para validar el build estático del frontend.
+- Comprueba `dist/index.html`, assets JS/CSS, `changelog.html`, `robots.txt`, `sitemap.xml` y `dist/data/distributor_hints.json`.
+- Verifica que la versión pública actual aparece en el JS construido y en el changelog público.
+- Comprueba que el JSON público de distribuidoras se copia igual desde `frontend/public/data`.
+- Añade una revisión básica contra artefactos o textos sensibles/locales dentro de `dist`.
+- Integra el smoke en GitHub Actions después del build frontend.
+- Añade `scripts/check_frontend_static_smoke.py` e integra la guardia en `repo_guard.sh`.
+- No cambia backend, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.4-architecture-privacy-pipeline-docs
 
 - Añade documentación de arquitectura de reportes, privacidad, anti-abuso, proxy/IP, Turnstile, SQLite, CI y datos de distribuidoras.
