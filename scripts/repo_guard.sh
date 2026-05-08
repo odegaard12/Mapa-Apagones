@@ -139,3 +139,7 @@ echo
 echo "== repo_guard: smoke privacidad/anti-abuso backend cableado en CI =="
 python3 scripts/check_backend_privacy_abuse_smoke.py
 
+echo
+echo "== repo_guard: documentación arquitectura/privacidad =="
+python3 scripts/check_architecture_docs.py
+

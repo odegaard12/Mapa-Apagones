@@ -117,6 +117,19 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.4-architecture-privacy-pipeline-docs</h2>
+      <ul>
+        <li>Añade documentación de arquitectura de reportes, privacidad, anti-abuso, proxy/IP, Turnstile, SQLite, CI y datos de distribuidoras.</li>
+        <li>Documenta explícitamente qué datos no se piden ni se deben añadir: cuentas, login, CUPS, texto libre, fotos, direcciones exactas o coordenadas privadas.</li>
+        <li>Explica el uso de HMAC-SHA256 para <code>reporter_token_hash</code> e <code>ip_hash</code>.</li>
+        <li>Explica la confianza en proxy mediante <code>TRUST_PROXY_HEADERS</code> y <code>TRUSTED_PROXY_CIDRS</code>.</li>
+        <li>Añade <code>scripts/check_architecture_docs.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
+        <li>No cambia runtime, frontend, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.3-backend-privacy-abuse-smoke</h2>
       <ul>
         <li>Añade <code>scripts/smoke_backend_privacy_abuse.py</code> para validar privacidad y anti-abuso en runtime.</li>
