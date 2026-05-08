@@ -116,6 +116,20 @@
     <h1>Changelog</h1>
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
+
+    <section>
+      <h2>v0.10.3.9-backend-settings-module</h2>
+      <ul>
+        <li>Extrae la configuración de backend a <code>backend/app/settings.py</code>.</li>
+        <li>Reduce responsabilidad de <code>backend/app/main.py</code> sin cambiar comportamiento público.</li>
+        <li>Centraliza variables de entorno, constantes de reportes, Turnstile, HMAC, proxy/IP, geografía y límites API.</li>
+        <li>Añade <code>scripts/check_backend_settings_module.py</code> e integración en <code>scripts/repo_guard.sh</code>.</li>
+        <li>No cambia reportes, privacidad, Turnstile, HMAC, proxy, SQLite, frontend funcional, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+
     <section>
       <h2>v0.10.3.8-post-merge-validation-runbook</h2>
       <ul>

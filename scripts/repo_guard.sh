@@ -159,3 +159,7 @@ python3 scripts/check_sqlite_schema_hardening.py
 echo
 echo "== repo_guard: runbook validación post-merge =="
 bash scripts/check_post_merge_validation.sh
+
+echo
+echo "== repo_guard: configuración backend modularizada =="
+python3 scripts/check_backend_settings_module.py
