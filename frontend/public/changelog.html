@@ -117,6 +117,18 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.5-hmac-anonymous-hashes</h2>
+      <ul>
+        <li>Cambia los hashes anónimos de token e IP a HMAC-SHA256 con secreto de servidor.</li>
+        <li>Añade <code>ANON_HASH_KEY</code> y opciones de transición para compatibilidad con hashes antiguos.</li>
+        <li>Mantiene el almacenamiento de reportes anónimo y evita publicar IPs, tokens o identificadores reales.</li>
+        <li>Añade una guardia automática para impedir volver a <code>sha256(IP/token)</code> sin secreto.</li>
+        <li>No cambia el flujo público de reportes ni el frontend de usuario.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.4-purge-tracked-backend-backups</h2>
       <ul>
         <li>Elimina copias <code>.bak</code> trackeadas de <code>backend/app/</code> para evitar código backend obsoleto en el repositorio público.</li>
