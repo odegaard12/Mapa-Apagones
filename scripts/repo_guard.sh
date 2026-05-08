@@ -135,3 +135,7 @@ echo
 echo "== repo_guard: smoke ciclo de vida backend cableado en CI =="
 python3 scripts/check_backend_lifecycle_smoke.py
 
+echo
+echo "== repo_guard: smoke privacidad/anti-abuso backend cableado en CI =="
+python3 scripts/check_backend_privacy_abuse_smoke.py
+

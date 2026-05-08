@@ -117,6 +117,20 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.3-backend-privacy-abuse-smoke</h2>
+      <ul>
+        <li>Añade <code>scripts/smoke_backend_privacy_abuse.py</code> para validar privacidad y anti-abuso en runtime.</li>
+        <li>Comprueba que <code>reporter_token_hash</code> e <code>ip_hash</code> se guardan como hashes HMAC hex64, no como tokens o IPs reales.</li>
+        <li>Comprueba que los tokens de prueba y la IP raw no aparecen en columnas de texto de la SQLite temporal.</li>
+        <li>Valida que el límite anti-abuso por IP responde con <code>429</code> al superar el umbral.</li>
+        <li>Integra el smoke en GitHub Actions.</li>
+        <li>Añade <code>scripts/check_backend_privacy_abuse_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
+        <li>No cambia el flujo público de usuario, Turnstile, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.2-backend-report-lifecycle-smoke</h2>
       <ul>
         <li>Añade <code>scripts/smoke_backend_lifecycle.py</code> para probar un ciclo de vida más real del backend de reportes.</li>

@@ -1,3 +1,13 @@
+## v0.10.3.3-backend-privacy-abuse-smoke
+
+- Añade `scripts/smoke_backend_privacy_abuse.py` para validar privacidad y anti-abuso en runtime.
+- Comprueba que `reporter_token_hash` e `ip_hash` se guardan como hashes HMAC hex64, no como tokens o IPs reales.
+- Comprueba que los tokens de prueba y la IP raw no aparecen en columnas de texto de la SQLite temporal.
+- Valida que el límite anti-abuso por IP responde con `429` al superar el umbral.
+- Integra el smoke en GitHub Actions.
+- Añade `scripts/check_backend_privacy_abuse_smoke.py` e integra la guardia en `repo_guard.sh`.
+- No cambia el flujo público de usuario, Turnstile, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.2-backend-report-lifecycle-smoke
 
 - Añade `scripts/smoke_backend_lifecycle.py` para probar un ciclo de vida más real del backend de reportes.
