@@ -115,3 +115,7 @@ echo
 echo "== repo_guard: hashes anónimos HMAC =="
 python3 scripts/check_anonymous_hashing.py
 
+echo
+echo "== repo_guard: IP real solo desde proxy confiable =="
+python3 scripts/check_trusted_proxy_ip.py
+

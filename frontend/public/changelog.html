@@ -117,6 +117,18 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.7-trusted-proxy-client-ip</h2>
+      <ul>
+        <li>Endurece la obtención de IP cliente para no confiar ciegamente en <code>X-Forwarded-For</code>.</li>
+        <li>Solo usa <code>CF-Connecting-IP</code>, <code>X-Real-IP</code> o <code>X-Forwarded-For</code> si la conexión llega desde un proxy confiable.</li>
+        <li>Añade <code>TRUST_PROXY_HEADERS</code> y <code>TRUSTED_PROXY_CIDRS</code> para configurar los proxies autorizados.</li>
+        <li>Añade una guardia automática contra el patrón inseguro anterior.</li>
+        <li>No cambia reportes, Turnstile, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.6-compose-anon-hash-env</h2>
       <ul>
         <li>Pasa <code>ANON_HASH_KEY</code>, <code>ANON_HASH_KEY_REQUIRED</code> y <code>ANON_HASH_LEGACY_COMPAT</code> al contenedor backend desde Docker Compose.</li>
