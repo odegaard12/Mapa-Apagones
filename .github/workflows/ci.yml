@@ -42,3 +42,6 @@ jobs:
 
       - name: Build frontend
         run: npm --prefix frontend run build
+
+      - name: Run Docker Compose smoke
+        run: bash scripts/smoke_docker_compose.sh
