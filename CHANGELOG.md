@@ -1,3 +1,11 @@
+## v0.10.3.9-backend-settings-module
+
+- Extrae la configuración de backend a `backend/app/settings.py`.
+- Reduce responsabilidad de `backend/app/main.py` sin cambiar comportamiento público.
+- Centraliza variables de entorno, constantes de reportes, Turnstile, HMAC, proxy/IP, geografía y límites API.
+- Añade `scripts/check_backend_settings_module.py` e integración en `scripts/repo_guard.sh`.
+- No cambia reportes, privacidad, Turnstile, HMAC, proxy, SQLite, frontend funcional, distribuidoras ni datasets geográficos.
+
 ## v0.10.3.8-post-merge-validation-runbook
 
 - Añade `scripts/post_merge_validate.sh` como runbook ejecutable de validación post-merge.
