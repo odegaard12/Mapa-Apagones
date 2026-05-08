@@ -1,3 +1,11 @@
+## v0.10.2.8-backend-api-smoke-ci
+
+- Añade un smoke real de backend que arranca Uvicorn con SQLite temporal.
+- Prueba `/api/health`, `/api/report-preflight`, `/api/report` y `/api/incidents`.
+- Integra el smoke en GitHub Actions instalando dependencias reales del backend.
+- Usa Turnstile desactivado, IGN desactivado y HMAC anónimo temporal solo para test.
+- No cambia runtime de producción, frontend, reportes, distribuidoras ni datasets geográficos.
+
 ## v0.10.2.7-trusted-proxy-client-ip
 
 - Endurece la obtención de IP cliente para no confiar ciegamente en `X-Forwarded-For`.
