@@ -118,6 +118,19 @@
 
 
     <section>
+      <h2>v0.10.4.1-public-readme-version-sync</h2>
+      <ul>
+        <li>Sincroniza la versión pública visible en <code>README.md</code>, <code>VERSION</code> y <code>APP_VERSION</code>.</li>
+        <li>Corrige la deriva detectada por <code>scripts/post_merge_validate.sh</code> tras el merge de <code>v0.10.4.0-backend-privacy-module</code>.</li>
+        <li>Mantiene el runbook post-merge como comprobación obligatoria después de merges relevantes.</li>
+        <li>No cambia backend runtime, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+
+
+    <section>
       <h2>v0.10.4.0-backend-privacy-module</h2>
       <ul>
         <li>Extrae helpers de privacidad/HMAC a <code>backend/app/privacy.py</code>.</li>
