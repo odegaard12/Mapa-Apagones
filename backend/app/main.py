@@ -1,5 +1,6 @@
 import hashlib
 import hmac
+import ipaddress
 import json
 import math
 import os
@@ -49,6 +50,8 @@ ANON_HASH_KEY = os.getenv("ANON_HASH_KEY", "").strip()
 ANON_HASH_LEGACY_COMPAT = env_bool("ANON_HASH_LEGACY_COMPAT", "1")
 ANON_HASH_KEY_REQUIRED = env_bool("ANON_HASH_KEY_REQUIRED", "1" if TURNSTILE_ENABLED and TURNSTILE_REQUIRED else "0")
 ANON_HASH_DEV_FALLBACK = "dev-only-mapa-apagones-anon-hash-key"
+TRUST_PROXY_HEADERS = env_bool("TRUST_PROXY_HEADERS", "1")
+TRUSTED_PROXY_CIDRS = env_csv("TRUSTED_PROXY_CIDRS", "127.0.0.1/32,::1/128,172.16.0.0/12")
 
 GRID_SIZE_M = 1600
 MATCH_INCIDENT_RADIUS_M = 1600
@@ -164,13 +167,62 @@ def get_db():
     configure_sqlite_connection(conn)
     return conn
 
+
+def parse_ip_address(value: Optional[str]):
+    raw = str(value or "").strip().strip('"').strip("'")
+    if not raw:
+        return None
+
+    if raw.startswith("[") and "]" in raw:
+        raw = raw[1:raw.index("]")]
+    elif raw.count(":") == 1 and "." in raw:
+        raw = raw.rsplit(":", 1)[0]
+
+    try:
+        return ipaddress.ip_address(raw)
+    except ValueError:
+        return None
+
+def trusted_proxy_networks():
+    networks = []
+    for cidr in TRUSTED_PROXY_CIDRS:
+        try:
+            networks.append(ipaddress.ip_network(cidr, strict=False))
+        except ValueError:
+            continue
+    return tuple(networks)
+
+def is_trusted_proxy(host: Optional[str]) -> bool:
+    remote_ip = parse_ip_address(host)
+    if not remote_ip:
+        return False
+
+    return any(remote_ip in network for network in trusted_proxy_networks())
+
+def first_header_ip(request: FastAPIRequest, header_name: str):
+    raw = request.headers.get(header_name, "")
+    if not raw:
+        return None
+
+    if header_name.lower() == "x-forwarded-for":
+        raw = raw.split(",", 1)[0].strip()
+
+    return parse_ip_address(raw)
+
 def client_ip(request: FastAPIRequest) -> str:
-    forwarded = request.headers.get("x-forwarded-for", "").split(",")[0].strip()
-    if forwarded:
-        return forwarded
-    if request.client and request.client.host:
-        return request.client.host
-    return "unknown"
+    remote_host = request.client.host if request.client and request.client.host else ""
+
+    if TRUST_PROXY_HEADERS and is_trusted_proxy(remote_host):
+        for header_name in ("cf-connecting-ip", "x-real-ip", "x-forwarded-for"):
+            header_ip = first_header_ip(request, header_name)
+            if header_ip:
+                return str(header_ip)
+
+    remote_ip = parse_ip_address(remote_host)
+    if remote_ip:
+        return str(remote_ip)
+
+    return remote_host or "unknown"
 
 def verify_turnstile_or_403(turnstile_token: Optional[str], request: FastAPIRequest) -> None:
     if not TURNSTILE_ENABLED:

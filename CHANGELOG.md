@@ -1,3 +1,11 @@
+## v0.10.2.7-trusted-proxy-client-ip
+
+- Endurece la obtención de IP cliente para no confiar ciegamente en `X-Forwarded-For`.
+- Solo usa `CF-Connecting-IP`, `X-Real-IP` o `X-Forwarded-For` si la conexión llega desde un proxy confiable.
+- Añade `TRUST_PROXY_HEADERS` y `TRUSTED_PROXY_CIDRS` para configurar los proxies autorizados.
+- Añade una guardia automática contra el patrón inseguro anterior.
+- No cambia reportes, Turnstile, distribuidoras ni datasets geográficos.
+
 ## v0.10.2.6-compose-anon-hash-env
 
 - Pasa `ANON_HASH_KEY`, `ANON_HASH_KEY_REQUIRED` y `ANON_HASH_LEGACY_COMPAT` al contenedor backend desde Docker Compose.
