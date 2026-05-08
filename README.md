@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.3.7-sqlite-schema-hardening.
+Versión actual visible: v0.10.3.8-post-merge-validation-runbook.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -178,6 +178,16 @@ El frontend incluye una capa pública básica para el dominio previsto:
 - `/cookies/`
 
 Estas páginas son informativas y no cambian el flujo de reportes.
+
+## Validación post-merge
+
+Después de mergear cambios relevantes en `main`, se recomienda ejecutar:
+
+```bash
+scripts/post_merge_validate.sh
+```
+
+Este runbook agrupa las guardias estáticas, smokes de backend, smokes de frontend, smoke Docker Compose y comprobaciones de cobertura geográfica. Sirve para validar rápidamente que `main` sigue sano después de un merge importante.
 
 ## Validaciones del repositorio
 

@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SMOKE_PYTHON="${SMOKE_PYTHON:-python3}"
+SMOKE_WEB_PORT="${SMOKE_WEB_PORT:-18098}"
+
+echo "============================================================"
+echo " Mapa Apagones · post-merge validation"
+echo "============================================================"
+echo "Repo: $(pwd)"
+echo "Branch: $(git branch --show-current)"
+echo "Commit: $(git rev-parse --short HEAD)"
+echo
+
+echo "== 1) Git limpio =="
+git status --short
+test -z "$(git status --short)"
+
+echo
+echo "== 2) Versión pública =="
+cat VERSION
+grep -n "APP_VERSION" frontend/src/App.jsx | head
+
+echo
+echo "== 3) Guardias estáticas =="
+python3 scripts/check_public_version_mentions.py
+python3 scripts/check_no_tracked_backup_artifacts.py
+python3 scripts/check_anonymous_hashing.py
+python3 scripts/check_trusted_proxy_ip.py
+python3 scripts/check_report_transaction.py
+python3 scripts/check_dependency_locks.py
+python3 scripts/check_docker_compose_smoke.py
+python3 scripts/check_backend_lifecycle_smoke.py
+python3 scripts/check_backend_privacy_abuse_smoke.py
+python3 scripts/check_architecture_docs.py
+python3 scripts/check_frontend_static_smoke.py
+python3 scripts/check_safe_status_endpoint.py
+python3 scripts/check_sqlite_schema_hardening.py
+python3 scripts/check_distributor_hints.py
+
+echo
+echo "== 4) Repo guard completo =="
+bash scripts/repo_guard.sh --no-build
+
+echo
+echo "== 5) Geografía y cobertura =="
+node --check frontend/src/geo/datasets.js
+node --check frontend/src/grid/distributorHints.js
+python3 scripts/check_all_scope_datasets.py
+python3 scripts/audit_geo_datasets.py
+python3 scripts/check_spain_geo_coverage.py
+
+echo
+echo "== 6) Build frontend + smoke estático =="
+NODE_OPTIONS=--max-old-space-size=1536 npm --prefix frontend run build
+python3 scripts/smoke_frontend_static.py
+
+echo
+echo "== 7) Backend runtime smokes =="
+"$SMOKE_PYTHON" scripts/smoke_backend_status.py
+"$SMOKE_PYTHON" scripts/smoke_backend_schema.py
+"$SMOKE_PYTHON" scripts/smoke_backend_api.py
+"$SMOKE_PYTHON" scripts/smoke_backend_concurrency.py
+"$SMOKE_PYTHON" scripts/smoke_backend_lifecycle.py
+"$SMOKE_PYTHON" scripts/smoke_backend_privacy_abuse.py
+
+echo
+echo "== 8) Docker Compose smoke aislado =="
+SMOKE_WEB_PORT="$SMOKE_WEB_PORT" bash scripts/smoke_docker_compose.sh
+
+echo
+echo "============================================================"
+echo " OK post-merge validation completa"
+echo "============================================================"

@@ -117,6 +117,18 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.3.8-post-merge-validation-runbook</h2>
+      <ul>
+        <li>Añade <code>scripts/post_merge_validate.sh</code> como runbook ejecutable de validación post-merge.</li>
+        <li>Agrupa guardias de privacidad, proxy/IP, HMAC, schema SQLite, dependencias, geografía, frontend estático, backend runtime y Docker Compose.</li>
+        <li>Añade <code>scripts/check_post_merge_validation.sh</code> e integración en <code>scripts/repo_guard.sh</code>.</li>
+        <li>Documenta el uso del runbook en <code>README.md</code>.</li>
+        <li>No cambia runtime de backend, frontend funcional, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.3.7-sqlite-schema-hardening</h2>
       <ul>
         <li>Endurece el schema SQLite del backend.</li>

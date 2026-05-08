@@ -155,3 +155,7 @@ echo
 echo "== repo_guard: schema SQLite endurecido =="
 python3 scripts/check_sqlite_schema_hardening.py
 
+
+echo
+echo "== repo_guard: runbook validación post-merge =="
+bash scripts/check_post_merge_validation.sh
