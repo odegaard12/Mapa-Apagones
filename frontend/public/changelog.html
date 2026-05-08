@@ -117,6 +117,20 @@
     <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
 
     <section>
+      <h2>v0.10.2.9-backend-report-concurrency-smoke</h2>
+      <ul>
+        <li>Añade un smoke de concurrencia de backend para reportes simultáneos.</li>
+        <li>Serializa con <code>BEGIN IMMEDIATE</code> el endpoint <code>/api/report</code> para evitar duplicados concurrentes en la misma celda.</li>
+        <li>Añade una guardia automática para mantener esa protección transaccional.</li>
+        <li>Arranca Uvicorn con SQLite temporal y entorno de test.</li>
+        <li>Envía varios reportes concurrentes en la misma zona y verifica que quedan agrupados en una única incidencia activa.</li>
+        <li>Integra el smoke en GitHub Actions después del smoke API básico.</li>
+        <li>No cambia runtime de producción, frontend, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
+      </ul>
+    </section>
+
+
+    <section>
       <h2>v0.10.2.8-backend-api-smoke-ci</h2>
       <ul>
         <li>Añade un smoke real de backend que arranca Uvicorn con SQLite temporal.</li>

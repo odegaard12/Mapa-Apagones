@@ -30,6 +30,9 @@ jobs:
       - name: Run backend API smoke
         run: python scripts/smoke_backend_api.py
 
+      - name: Run backend report concurrency smoke
+        run: python scripts/smoke_backend_concurrency.py
+
       - name: Guard repo hygiene
         run: bash scripts/repo_guard.sh --no-build
 

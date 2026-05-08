@@ -1,3 +1,13 @@
+## v0.10.2.9-backend-report-concurrency-smoke
+
+- Añade un smoke de concurrencia de backend para reportes simultáneos.
+- Serializa con `BEGIN IMMEDIATE` el endpoint `/api/report` para evitar duplicados concurrentes en la misma celda.
+- Añade una guardia automática para mantener esa protección transaccional.
+- Arranca Uvicorn con SQLite temporal y entorno de test.
+- Envía varios reportes concurrentes en la misma zona y verifica que quedan agrupados en una única incidencia activa.
+- Integra el smoke en GitHub Actions después del smoke API básico.
+- No cambia runtime de producción, frontend, Turnstile, HMAC, distribuidoras ni datasets geográficos.
+
 ## v0.10.2.8-backend-api-smoke-ci
 
 - Añade un smoke real de backend que arranca Uvicorn con SQLite temporal.

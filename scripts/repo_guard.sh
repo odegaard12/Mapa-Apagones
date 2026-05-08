@@ -119,3 +119,7 @@ echo
 echo "== repo_guard: IP real solo desde proxy confiable =="
 python3 scripts/check_trusted_proxy_ip.py
 
+echo
+echo "== repo_guard: transacción de reportes concurrentes =="
+python3 scripts/check_report_transaction.py
+
