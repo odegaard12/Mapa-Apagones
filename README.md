@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.4.1-public-readme-version-sync.
+Versión actual visible: v0.10.4.2-audit-closeout.
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -178,6 +178,14 @@ El frontend incluye una capa pública básica para el dominio previsto:
 - `/cookies/`
 
 Estas páginas son informativas y no cambian el flujo de reportes.
+
+## Cierre de auditoría avanzada
+
+La fase de corrección derivada de la auditoría avanzada queda cerrada en:
+
+- `docs/audit/advanced-audit-closeout.md`
+
+Ese documento resume qué hallazgos se corrigieron, en qué PRs se cerraron y qué queda como roadmap normal no crítico.
 
 ## Validación post-merge
 

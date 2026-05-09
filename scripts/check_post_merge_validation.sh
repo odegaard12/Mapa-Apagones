@@ -21,6 +21,7 @@ required=(
   "check_backend_lifecycle_smoke.py"
   "check_backend_privacy_abuse_smoke.py"
   "check_architecture_docs.py"
+  "check_audit_closeout.py"
   "check_frontend_static_smoke.py"
   "check_safe_status_endpoint.py"
   "check_sqlite_schema_hardening.py"

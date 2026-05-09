@@ -1,3 +1,11 @@
+## v0.10.4.2-audit-closeout
+
+- Añade `docs/audit/advanced-audit-closeout.md` como cierre de la fase de auditoría avanzada.
+- Resume los hallazgos corregidos entre PR #102 y PR #119.
+- Diferencia deuda crítica ya cerrada de pendientes no críticos de roadmap normal.
+- Añade `scripts/check_audit_closeout.py` e integración en `scripts/repo_guard.sh` y `scripts/post_merge_validate.sh`.
+- No cambia runtime de backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datasets geográficos.
+
 ## v0.10.4.1-public-readme-version-sync
 
 - Sincroniza la versión pública visible en `README.md`, `VERSION` y `APP_VERSION`.
