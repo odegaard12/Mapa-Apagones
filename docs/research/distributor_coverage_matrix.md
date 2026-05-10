@@ -16,15 +16,15 @@ Generado desde los datos reales del repositorio el 2026-05-10.
 
 | Zona | Dataset | GeoJSON | Con pista | Pendiente | Cobertura | Estado | Confianza | Con fecha | Con fuente |
 |---|---:|---:|---:|---:|---:|---|---|---:|---:|
-| Galicia | `galicia` | 313 | 313 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 313 | 313 | 0 |
-| Asturias | `asturias` | 78 | 78 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 78 | 78 | 0 |
-| Cantabria | `cantabria` | 103 | 103 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 103 | 103 | 0 |
-| Navarra | `navarra` | 288 | 288 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 288 | 288 | 0 |
-| La Rioja | `la_rioja` | 175 | 175 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 175 | 175 | 0 |
-| Región de Murcia | `murcia` | 45 | 45 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 45 | 45 | 0 |
-| Canarias | `canarias` | 88 | 88 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 88 | 88 | 0 |
-| Illes Balears | `illes_balears` | 68 | 68 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 68 | 68 | 0 |
-| Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `sin_confianza_explicita` 1 | 1 | 0 |
+| Galicia | `galicia` | 313 | 313 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 172, `verified_partial` 154 | 313 | 0 |
+| Asturias | `asturias` | 78 | 78 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 78, `verified_partial` 2 | 78 | 0 |
+| Cantabria | `cantabria` | 103 | 103 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 103 | 103 | 0 |
+| Navarra | `navarra` | 288 | 288 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 288 | 288 | 0 |
+| La Rioja | `la_rioja` | 175 | 175 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 175 | 175 | 0 |
+| Región de Murcia | `murcia` | 45 | 45 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 45 | 45 | 0 |
+| Canarias | `canarias` | 88 | 88 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 87, `verified_partial` 1 | 88 | 0 |
+| Illes Balears | `illes_balears` | 68 | 68 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 67, `verified_partial` 1 | 68 | 0 |
+| Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 0 |
 | Melilla | `melilla` | 1 | 0 | 1 | 0,0% | pendiente | — | 0 | 0 |
 | Madrid | `madrid` | 181 | 0 | 181 | 0,0% | pendiente | — | 0 | 0 |
 | Euskadi | `euskadi` | 255 | 0 | 255 | 0,0% | pendiente | — | 0 | 0 |
