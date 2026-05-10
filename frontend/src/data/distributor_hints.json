@@ -14996,6 +14996,24 @@
       ]
     },
     {
+      "zone_id": "municipality:melilla::melilla",
+      "municipio": "Melilla",
+      "province": "Melilla",
+      "dataset_id": "melilla",
+      "last_reviewed": "2026-05-10",
+      "notes": "Dato público de orientación. No contiene CUPS, direcciones, coordenadas privadas ni inventario de infraestructura. Fuente principal: web oficial de GASELEC; apoyo regulatorio público: CNMC INS/DE/079/21.",
+      "distributors": [
+        {
+          "name": "Compañía Melillense de Gas y Electricidad, S.A. - GASELEC",
+          "confidence": "verified_partial",
+          "source_name": "GASELEC — web oficial distribuidora de energía eléctrica en Melilla",
+          "source_url": "https://gaselec.es/",
+          "last_reviewed": "2026-05-10",
+          "coverage_note": "Pista pública conservadora: GASELEC se presenta como empresa distribuidora de energía eléctrica en Melilla; confirmar siempre con comercializadora o distribuidora."
+        }
+      ]
+    },
+    {
       "zone_id": "municipality:murcia::abanilla",
       "municipio": "Abanilla",
       "province": "Murcia",

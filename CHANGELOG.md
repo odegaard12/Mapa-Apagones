@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.4.7-melilla-distributor-plus-review
+
+### Distribuidoras / datos públicos
+
+- Añade pista pública conservadora para Melilla con GASELEC.
+- Añade revisión previa para Madrid antes de cualquier importación masiva.
+- Añade plan de siguientes lotes de distribuidoras.
+- Regenera la matriz de cobertura de distribuidoras desde los datos reales del repositorio.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.
+
+
+
 ## v0.10.4.6-distributor-coverage-metadata
 
 ### Distribuidoras / cobertura

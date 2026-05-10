@@ -118,8 +118,12 @@ LAST_REVIEWED_KEYS = [
 SOURCE_KEYS = [
     "sources",
     "source",
+    "source_name",
+    "source_url",
     "fuentes",
     "fuente",
+    "nombre_fuente",
+    "url_fuente",
 ]
 
 DISTRIBUTOR_KEYS = [
