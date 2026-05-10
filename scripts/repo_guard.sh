@@ -148,6 +148,7 @@ python3 scripts/check_architecture_docs.py
 echo
 echo "== repo_guard: smoke frontend estático cableado en CI =="
 python3 scripts/check_frontend_static_smoke.py
+python3 scripts/check_public_changelog_current.py
 
 echo
 echo "== repo_guard: endpoint /api/status seguro =="

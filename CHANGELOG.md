@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.4.8-public-changelog-refresh
+
+### Changelog público
+
+- Corrige el changelog público para mostrar la versión actual en orden correcto.
+- Añade la entrada pública que faltaba para `v0.10.4.7-melilla-distributor-plus-review`.
+- Actualiza la fecha visible del changelog público a `2026-05-10`.
+- Añade `scripts/check_public_changelog_current.py` para evitar que la versión actual falte o aparezca antes del encabezado.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.
+
+
+
 ## v0.10.4.7-melilla-distributor-plus-review
 
 ### Distribuidoras / datos públicos

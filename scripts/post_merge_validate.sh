@@ -37,6 +37,7 @@ python3 scripts/check_architecture_docs.py
 python3 scripts/check_audit_closeout.py
 python3 scripts/check_distributor_data_safety.py
 python3 scripts/check_frontend_static_smoke.py
+python3 scripts/check_public_changelog_current.py
 python3 scripts/check_safe_status_endpoint.py
 python3 scripts/check_sqlite_schema_hardening.py
 python3 scripts/check_distributor_hints.py

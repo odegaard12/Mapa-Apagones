@@ -108,14 +108,37 @@
 </head>
 <body>
   <main>
+
+<div class="top">
+      <a class="pill" href="/">← Volver al mapa</a>
+      <span>Actualizado: 2026-05-10</span>
+    </div>
+
+    <h1>Changelog</h1>
+    <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
+
+
+<section>
+  <h2>v0.10.4.8-public-changelog-refresh</h2>
+  <h3>Changelog público</h3>
+  <ul>
+    <li>Corrige el changelog público para mostrar la versión actual en orden correcto.</li>
+    <li>Añade la entrada pública que faltaba para v0.10.4.7-melilla-distributor-plus-review.</li>
+    <li>Actualiza la fecha visible del changelog público.</li>
+    <li>Añade una guardia automática para evitar que la versión actual falte o aparezca antes del encabezado.</li>
+    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
+  </ul>
+</section>
+
 <section>
   <h2>v0.10.4.7-melilla-distributor-plus-review</h2>
   <h3>Distribuidoras / datos públicos</h3>
   <ul>
     <li>Añade pista pública conservadora para Melilla con GASELEC.</li>
+    <li>Melilla pasa a 1 / 1 zonas con pista pública de distribuidora.</li>
+    <li>Actualiza la matriz de cobertura: 1.160 zonas con pista pública y 7.055 pendientes.</li>
     <li>Añade revisión previa para Madrid antes de cualquier importación masiva.</li>
     <li>Añade plan de siguientes lotes de distribuidoras.</li>
-    <li>Regenera la matriz de cobertura desde los datos reales del repositorio.</li>
     <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.</li>
   </ul>
 </section>
@@ -161,16 +184,7 @@
   </ul>
 </section>
 
-    <div class="top">
-      <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-04-29</span>
-    </div>
-
-    <h1>Changelog</h1>
-    <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
-
-
-    <section>
+<section>
       <h2>v0.10.4.2-audit-closeout</h2>
       <ul>
         <li>Añade <code>docs/audit/advanced-audit-closeout.md</code> como cierre de la fase de auditoría avanzada.</li>
@@ -182,8 +196,6 @@
     </section>
 
 
-
-
     <section>
       <h2>v0.10.4.1-public-readme-version-sync</h2>
       <ul>
@@ -193,8 +205,6 @@
         <li>No cambia backend runtime, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datasets geográficos.</li>
       </ul>
     </section>
-
-
 
 
     <section>
@@ -210,8 +220,6 @@
     </section>
 
 
-
-
     <section>
       <h2>v0.10.3.9-backend-settings-module</h2>
       <ul>
@@ -222,7 +230,6 @@
         <li>No cambia reportes, privacidad, Turnstile, HMAC, proxy, SQLite, frontend funcional, distribuidoras ni datasets geográficos.</li>
       </ul>
     </section>
-
 
 
     <section>
@@ -530,7 +537,6 @@
     </section>
 
 
-
     <section>
       <h2>v0.10.1.3-grid-distributor-hints-foundation</h2>
       <ul>
@@ -544,7 +550,6 @@
         <li>No cambia mapa, polígonos, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
       </ul>
     </section>
-
 
 
         <section>
@@ -875,13 +880,6 @@
         <li>Mantiene privacidad por diseño: sin CUPS, sin nombre, sin dirección exacta y sin texto libre.</li>
       </ul>
     </section>
-
-
-
-
-
-
-
 
 
     
