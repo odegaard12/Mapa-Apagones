@@ -103,6 +103,7 @@ python3 scripts/check_spain_geo_coverage.py
 echo
 echo "== repo_guard: distributor hints seguros =="
 python3 scripts/check_distributor_hints.py
+python3 scripts/generate_distributor_coverage_matrix.py --check
 
 echo
 echo "== repo_guard: versión pública sincronizada =="

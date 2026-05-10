@@ -54,4 +54,5 @@ fi
 echo "OK post-merge validation guard"
 
 python3 scripts/check_distributor_data_safety.py
+python3 scripts/generate_distributor_coverage_matrix.py --check
 python3 scripts/check_geo_dataset_provinces.py

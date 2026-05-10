@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.4.4-geo-dataset-province-guard
+Versión actual visible: v0.10.4.5-distributor-coverage-matrix
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
