@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.4.6-distributor-coverage-metadata
+
+### Distribuidoras / cobertura
+
+- Corrige la matriz de cobertura para leer `confidence`, `source_name`, `source_url` y `last_reviewed` dentro de `distributors[]`.
+- Regenera `docs/research/distributor_coverage_matrix.md` desde los datos reales del repositorio.
+- Mantiene intactos los conteos de cobertura geográfica.
+- No importa nuevas distribuidoras.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.
+
+
+
 ## v0.10.4.5-distributor-coverage-matrix
 
 ### Distribuidoras / cobertura

@@ -228,8 +228,53 @@ def confidence_label(value: Any) -> str:
     return slug(value) or "sin_confianza_explicita"
 
 
+def nested_distributors(entry: dict[str, Any]) -> list[dict[str, Any]]:
+    distributors: list[dict[str, Any]] = []
+
+    for key in DISTRIBUTOR_KEYS:
+        value = entry.get(key)
+
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    distributors.append(item)
+                elif item not in (None, ""):
+                    distributors.append({"name": str(item)})
+
+        elif isinstance(value, dict):
+            distributors.append(value)
+
+        elif value not in (None, ""):
+            distributors.append({"name": str(value)})
+
+    return distributors
+
+
 def has_value(entry: dict[str, Any], keys: list[str]) -> bool:
-    return get_first(entry, keys) not in (None, "", [])
+    if get_first(entry, keys) not in (None, "", []):
+        return True
+
+    for distributor in nested_distributors(entry):
+        if get_first(distributor, keys) not in (None, "", []):
+            return True
+
+    return False
+
+
+def confidence_labels(entry: dict[str, Any]) -> list[str]:
+    top_level = get_first(entry, CONFIDENCE_KEYS)
+
+    if top_level not in (None, "", []):
+        return [confidence_label(top_level)]
+
+    labels: list[str] = []
+
+    for distributor in nested_distributors(entry):
+        value = get_first(distributor, CONFIDENCE_KEYS)
+        if value not in (None, "", []):
+            labels.append(confidence_label(value))
+
+    return labels or ["sin_confianza_explicita"]
 
 
 def build_stats() -> dict[str, Any]:
@@ -249,13 +294,13 @@ def build_stats() -> dict[str, Any]:
         zone_value = get_first(entry, ZONE_KEYS)
         zone_id = str(zone_value) if zone_value not in (None, "") else f"{dataset_id}::__entry_{index}"
 
-        confidence = confidence_label(get_first(entry, CONFIDENCE_KEYS))
-
         if dataset_id == "unknown":
             unknown_entries.append(entry)
 
         zones_by_dataset[dataset_id].add(zone_id)
-        confidence_by_dataset[dataset_id][confidence] += 1
+
+        for confidence in confidence_labels(entry):
+            confidence_by_dataset[dataset_id][confidence] += 1
 
         if has_value(entry, LAST_REVIEWED_KEYS):
             reviewed_by_dataset[dataset_id].add(zone_id)
