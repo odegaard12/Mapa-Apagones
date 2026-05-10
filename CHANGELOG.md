@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.10.4.4-geo-dataset-province-guard
+
+### Geografía / calidad de datos
+
+- Limpia del dataset público de Aragón features cuya provincia no pertenece a Aragón.
+- Añade `scripts/check_geo_dataset_provinces.py` para validar que cada GeoJSON autonómico solo contenga provincias de su ámbito.
+- Integra la nueva guardia en las validaciones del repositorio.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datos sensibles.
+
+
+
 ## v0.10.4.3-distributor-data-safety-policy
 
 ### Seguridad / datos públicos

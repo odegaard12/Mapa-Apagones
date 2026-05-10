@@ -51,6 +51,7 @@ node --check frontend/src/geo/datasets.js
 node --check frontend/src/grid/distributorHints.js
 python3 scripts/check_all_scope_datasets.py
 python3 scripts/audit_geo_datasets.py
+python3 scripts/check_geo_dataset_provinces.py
 python3 scripts/check_spain_geo_coverage.py
 
 echo
