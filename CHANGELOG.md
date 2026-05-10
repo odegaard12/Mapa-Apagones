@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.4.5-distributor-coverage-matrix
+
+### Distribuidoras / cobertura
+
+- Añade `docs/research/distributor_coverage_matrix.md` generada desde los GeoJSON y `distributor_hints.json` reales del repositorio.
+- Añade `scripts/generate_distributor_coverage_matrix.py` para regenerar y validar la matriz.
+- Integra la validación de matriz en las guardias del repositorio.
+- No importa nuevas distribuidoras.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.
+
+
+
 ## v0.10.4.4-geo-dataset-province-guard
 
 ### Geografía / calidad de datos
