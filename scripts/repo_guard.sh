@@ -171,3 +171,4 @@ python3 scripts/check_backend_privacy_module.py
 echo
 echo "== repo_guard: cierre auditoría avanzada =="
 python3 scripts/check_audit_closeout.py
+python3 scripts/check_distributor_data_safety.py

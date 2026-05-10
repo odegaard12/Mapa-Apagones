@@ -52,3 +52,5 @@ if ! grep -q "scripts/post_merge_validate.sh" "$README"; then
 fi
 
 echo "OK post-merge validation guard"
+
+python3 scripts/check_distributor_data_safety.py

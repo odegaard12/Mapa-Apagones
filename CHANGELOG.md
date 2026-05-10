@@ -1,3 +1,15 @@
+# Changelog
+
+## v0.10.4.3-distributor-data-safety-policy
+
+### Seguridad / datos públicos
+
+- Añadida política pública para futuras incorporaciones de distribuidoras.
+- Añadida guardia `scripts/check_distributor_data_safety.py` para bloquear campos o patrones sensibles en `distributor_hints.json`.
+- La guardia revisa CUPS, coordenadas privadas, direcciones exactas, datos de suministro, IP/token reales e indicios de infraestructura crítica.
+- Integrada la nueva guardia en los scripts de validación del repositorio.
+- No cambia runtime del backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, datasets geográficos ni datos de distribuidoras existentes.
+
 ## v0.10.4.2-audit-closeout
 
 - Añade `docs/audit/advanced-audit-closeout.md` como cierre de la fase de auditoría avanzada.

@@ -108,6 +108,17 @@
 </head>
 <body>
   <main>
+<section>
+  <h2>v0.10.4.3-distributor-data-safety-policy</h2>
+  <h3>Seguridad / datos públicos</h3>
+  <ul>
+    <li>Añadida política pública para futuras incorporaciones de distribuidoras.</li>
+    <li>Añadida guardia automática para bloquear campos o patrones sensibles en distributor_hints.json.</li>
+    <li>La guardia revisa CUPS, coordenadas privadas, direcciones exactas, datos de suministro, IP/token reales e indicios de infraestructura crítica.</li>
+    <li>No cambia runtime del backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, datasets geográficos ni datos de distribuidoras existentes.</li>
+  </ul>
+</section>
+
     <div class="top">
       <a class="pill" href="/">← Volver al mapa</a>
       <span>Actualizado: 2026-04-29</span>
