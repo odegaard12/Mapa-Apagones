@@ -8,24 +8,24 @@ Generado desde los datos reales del repositorio el 2026-05-10.
 
 - Datasets geográficos autonómicos: **19**.
 - Municipios/zonas normalizadas en GeoJSON: **8.215**.
-- Municipios/zonas con pista pública de distribuidora: **1.159**.
-- Municipios/zonas pendientes de pista pública: **7.056**.
+- Municipios/zonas con pista pública de distribuidora: **1.160**.
+- Municipios/zonas pendientes de pista pública: **7.055**.
 - Cobertura actual de pistas públicas: **14,1%**.
 
 ## Matriz por comunidad/dataset
 
 | Zona | Dataset | GeoJSON | Con pista | Pendiente | Cobertura | Estado | Confianza | Con fecha | Con fuente |
 |---|---:|---:|---:|---:|---:|---|---|---:|---:|
-| Galicia | `galicia` | 313 | 313 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 172, `verified_partial` 154 | 313 | 0 |
-| Asturias | `asturias` | 78 | 78 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 78, `verified_partial` 2 | 78 | 0 |
-| Cantabria | `cantabria` | 103 | 103 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 103 | 103 | 0 |
-| Navarra | `navarra` | 288 | 288 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 288 | 288 | 0 |
-| La Rioja | `la_rioja` | 175 | 175 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 175 | 175 | 0 |
-| Región de Murcia | `murcia` | 45 | 45 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 45 | 45 | 0 |
-| Canarias | `canarias` | 88 | 88 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 87, `verified_partial` 1 | 88 | 0 |
-| Illes Balears | `illes_balears` | 68 | 68 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 67, `verified_partial` 1 | 68 | 0 |
-| Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 0 |
-| Melilla | `melilla` | 1 | 0 | 1 | 0,0% | pendiente | — | 0 | 0 |
+| Galicia | `galicia` | 313 | 313 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 172, `verified_partial` 154 | 313 | 313 |
+| Asturias | `asturias` | 78 | 78 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 78, `verified_partial` 2 | 78 | 78 |
+| Cantabria | `cantabria` | 103 | 103 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 103 | 103 | 103 |
+| Navarra | `navarra` | 288 | 288 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 288 | 288 | 288 |
+| La Rioja | `la_rioja` | 175 | 175 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 175 | 175 | 175 |
+| Región de Murcia | `murcia` | 45 | 45 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 45 | 45 | 45 |
+| Canarias | `canarias` | 88 | 88 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 87, `verified_partial` 1 | 88 | 88 |
+| Illes Balears | `illes_balears` | 68 | 68 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 67, `verified_partial` 1 | 68 | 68 |
+| Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
+| Melilla | `melilla` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
 | Madrid | `madrid` | 181 | 0 | 181 | 0,0% | pendiente | — | 0 | 0 |
 | Euskadi | `euskadi` | 255 | 0 | 255 | 0,0% | pendiente | — | 0 | 0 |
 | Comunitat Valenciana | `comunitat_valenciana` | 544 | 0 | 544 | 0,0% | pendiente | — | 0 | 0 |
@@ -49,7 +49,6 @@ Generado desde los datos reales del repositorio el 2026-05-10.
 | Extremadura | 388 | 388 | 0 |
 | Euskadi | 255 | 255 | 0 |
 | Madrid | 181 | 181 | 0 |
-| Melilla | 1 | 1 | 0 |
 
 ## Lectura recomendada
 
