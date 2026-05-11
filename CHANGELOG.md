@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.5.0-comunitat-valenciana-distributor-hints
+
+### Distribuidoras / datos públicos
+
+- Añade pistas públicas de distribuidora para los 544 municipios de Comunitat Valenciana.
+- Usa i-DE como `regional_default` prudente donde no hay excepción local identificada.
+- Añade 11 excepciones cooperativas/locales como `verified_partial`.
+- Regenera la matriz de cobertura: 1.959 zonas con pista pública y 6.256 pendientes.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.
+
+
+
 ## v0.10.4.9-euskadi-distributor-hints
 
 ### Distribuidoras / datos públicos
