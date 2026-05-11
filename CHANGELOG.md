@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.10.5.2-public-readonly-smoke
+
+### Operaciones / producción pública
+
+- Añade `scripts/smoke_public_readonly.sh` para comprobar producción pública sin crear reportes.
+- El smoke valida web pública, changelog, JSON público de distribuidoras, `/api/health` y `/api/incidents?limit=5`.
+- Añade `scripts/check_public_readonly_smoke.py` para asegurar que el smoke sigue siendo read-only y no llama a `/api/report`.
+- Documenta el runbook en `docs/ops/public-readonly-smoke.md`.
+- No integra el smoke externo como CI obligatorio para evitar dependencia de red/producción.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.
+
+
+
 ## v0.10.5.1-hint-quality-reporting-audit
 
 ### Auditoría / calidad de datos y reportes
