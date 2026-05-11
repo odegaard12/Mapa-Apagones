@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.10.5.1-hint-quality-reporting-audit
+
+### Auditoría / calidad de datos y reportes
+
+- Añade auditoría generada de calidad de pistas de distribuidora actuales.
+- Añade auditoría generada de salud runtime del flujo de reportes.
+- Integra ambas auditorías en las guardias del repositorio.
+- Verifica cobertura de fuentes, fechas, confianza, duplicados y datasets con pistas.
+- Verifica que los smokes de reportes cubren API, lifecycle, concurrencia, privacidad/abuso y Docker Compose.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.
+
+
+
 ## v0.10.5.0-comunitat-valenciana-distributor-hints
 
 ### Distribuidoras / datos públicos
