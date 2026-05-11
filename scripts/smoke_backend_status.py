@@ -99,8 +99,8 @@ def main() -> int:
             privacy = body.get("privacy") or {}
             if privacy.get("anonymous_hashing") != "hmac-sha256":
                 raise RuntimeError(f"anonymous_hashing inválido: {body}")
-            if privacy.get("anon_hash_key_configured") is not True:
-                raise RuntimeError(f"anon_hash_key_configured debería ser true en smoke: {body}")
+            if privacy.get("anonymous_hashing_configured") is not True:
+                raise RuntimeError(f"anonymous_hashing_configured debería ser true en smoke: {body}")
             if privacy.get("stores_raw_ip") is not False or privacy.get("stores_raw_token") is not False:
                 raise RuntimeError(f"status declara almacenamiento raw inesperado: {body}")
 

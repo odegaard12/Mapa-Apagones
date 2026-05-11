@@ -1497,8 +1497,8 @@ def api_status():
         },
         "privacy": {
             "anonymous_hashing": "hmac-sha256",
-            "anon_hash_key_configured": bool(ANON_HASH_KEY),
-            "anon_hash_key_required": bool(ANON_HASH_KEY_REQUIRED),
+            "anonymous_hashing_configured": bool(ANON_HASH_KEY),
+            "anonymous_hashing_required": bool(ANON_HASH_KEY_REQUIRED),
             "legacy_hash_compat_enabled": bool(ANON_HASH_LEGACY_COMPAT),
             "stores_raw_ip": False,
             "stores_raw_token": False,

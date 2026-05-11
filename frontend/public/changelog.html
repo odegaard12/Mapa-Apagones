@@ -128,6 +128,20 @@
 
 
 
+
+
+<section>
+  <h2>v0.10.5.4-public-status-readonly-smoke</h2>
+  <h3>Operaciones / producción pública</h3>
+  <ul>
+    <li>Amplía el smoke público read-only para comprobar /api/status.</li>
+    <li>Renombra claves públicas de /api/status relacionadas con HMAC anónimo para evitar exponer nombres internos de variables sensibles.</li>
+    <li>Valida que /api/status no exponga secretos, rutas privadas, IPs privadas ni CIDRs reales.</li>
+    <li>Actualiza la guardia estática del smoke público read-only.</li>
+    <li>No crea reportes ni llama a /api/report.</li>
+    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
+  </ul>
+</section>
 <section>
   <h2>v0.10.5.3-reporting-timing-smoke</h2>
   <h3>Reportes / timing y salud operativa</h3>

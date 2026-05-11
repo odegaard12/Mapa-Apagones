@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.5.4-public-status-readonly-smoke
+
+### Operaciones / producción pública
+
+- Amplía `scripts/smoke_public_readonly.sh` para comprobar `/api/status` en producción pública.
+- Renombra las claves públicas de `/api/status` relacionadas con HMAC anónimo para evitar exponer nombres internos de variables sensibles.
+- Valida que `/api/status` devuelva JSON y no exponga secretos, rutas privadas, IPs privadas ni CIDRs reales.
+- Actualiza la guardia `scripts/check_public_readonly_smoke.py` para exigir la comprobación de `/api/status`.
+- Actualiza la documentación del runbook público read-only.
+- No crea reportes, no llama a `/api/report` y no cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.
+
+
 ## v0.10.5.3-reporting-timing-smoke
 
 ### Reportes / timing y salud operativa

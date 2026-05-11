@@ -8,6 +8,7 @@ Este smoke comprueba producción pública sin crear reportes.
 - Changelog público con versión y fecha.
 - JSON público `/data/distributor_hints.json`.
 - API pública `/api/health`.
+- API pública `/api/status` segura.
 - API pública `/api/incidents?limit=5`.
 
 ## Qué no hace
@@ -20,10 +21,11 @@ Este smoke comprueba producción pública sin crear reportes.
 - No sube fotos.
 - No publica direcciones exactas ni coordenadas privadas.
 - No toca la base de datos real.
+- No expone secretos, rutas privadas, IPs privadas ni CIDRs reales desde `/api/status`.
 
 ## Uso
 
-    EXPECTED_VERSION="v0.10.5.2-public-readonly-smoke" \
+    EXPECTED_VERSION="v0.10.5.4-public-status-readonly-smoke" \
     EXPECTED_DISTRIBUTOR_HINTS_ITEMS=1959 \
     scripts/smoke_public_readonly.sh
 

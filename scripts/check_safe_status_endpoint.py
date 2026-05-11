@@ -14,7 +14,7 @@ required = [
     '"anonymous_hashing": "hmac-sha256"',
     '"stores_raw_ip": False',
     '"stores_raw_token": False',
-    '"anon_hash_key_configured": bool(ANON_HASH_KEY)',
+    '"anonymous_hashing_configured": bool(ANON_HASH_KEY)',
     '"trusted_proxy_cidrs_configured": bool(TRUSTED_PROXY_CIDRS)',
 ]
 
