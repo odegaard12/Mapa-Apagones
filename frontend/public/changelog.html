@@ -111,7 +111,7 @@
 
 <div class="top">
       <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-05-10</span>
+      <span>Actualizado: 2026-05-11</span>
     </div>
 
     <h1>Changelog</h1>
@@ -124,6 +124,19 @@
 
 
 
+
+
+<section>
+  <h2>v0.10.5.2-public-readonly-smoke</h2>
+  <h3>Operaciones / producción pública</h3>
+  <ul>
+    <li>Añade un smoke público read-only para comprobar producción sin crear reportes.</li>
+    <li>Valida web pública, changelog, JSON público de distribuidoras, /api/health y /api/incidents?limit=5.</li>
+    <li>Añade una guardia estática para asegurar que el smoke no llama a /api/report.</li>
+    <li>Documenta el runbook operativo.</li>
+    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
+  </ul>
+</section>
 <section>
   <h2>v0.10.5.1-hint-quality-reporting-audit</h2>
   <h3>Auditoría / calidad de datos y reportes</h3>

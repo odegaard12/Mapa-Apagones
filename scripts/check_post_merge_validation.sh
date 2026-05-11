@@ -59,3 +59,4 @@ python3 scripts/generate_reporting_runtime_health_audit.py --check
 python3 scripts/generate_distributor_hint_quality_audit.py --check
 python3 scripts/check_geo_dataset_provinces.py
 python3 scripts/check_public_changelog_current.py
+python3 scripts/check_public_readonly_smoke.py
