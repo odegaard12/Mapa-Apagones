@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.10.5.7-public-coverage-linking
+
+### Público / SEO
+
+- Enlaza la página pública `cobertura-distribuidoras.html` desde la app principal.
+- Añade la página pública de cobertura de distribuidoras al sitemap.
+- Añade `scripts/check_public_coverage_linking.py` para evitar que la página quede huérfana.
+- Integra la guardia en repo guard, post-merge validation y check post-merge.
+- No importa nuevas distribuidoras.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos productivos.
+
 ## v0.10.5.6-public-distributor-coverage-page
 
 ### Distribuidoras / página pública
