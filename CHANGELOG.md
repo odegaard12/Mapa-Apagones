@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.5.9-madrid-ufd-partial-hints
+
+### Distribuidoras / Madrid parcial
+
+- Importa 9 pistas públicas de distribuidora para Comunidad de Madrid como `verified_partial`.
+- Añade UFD Distribución Electricidad, S.A. para Alcalá de Henares, Aranjuez, Ciempozuelos, Colmenar de Oreja, Getafe, Rivas-Vaciamadrid, San Martín de la Vega, Valdemoro y Villaconejos.
+- Mantiene Madrid capital y el resto de municipios pendientes fuera de producción.
+- No usa `regional_default` en Madrid.
+- Regenera matriz de cobertura, auditoría de calidad y página pública de cobertura.
+- No afirma exclusividad de red.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni frontend funcional de reportes.
+
 ## v0.10.5.8-madrid-distributor-deep-review
 
 ### Distribuidoras / revisión Madrid

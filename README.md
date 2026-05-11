@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.5.8-madrid-distributor-deep-review
+Versión actual visible: v0.10.5.9-madrid-ufd-partial-hints
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 

@@ -8,9 +8,9 @@ Generado desde los datos reales del repositorio el 2026-05-11.
 
 - Datasets geográficos autonómicos: **19**.
 - Municipios/zonas normalizadas en GeoJSON: **8.215**.
-- Municipios/zonas con pista pública de distribuidora: **1.959**.
-- Municipios/zonas pendientes de pista pública: **6.256**.
-- Cobertura actual de pistas públicas: **23,8%**.
+- Municipios/zonas con pista pública de distribuidora: **1.968**.
+- Municipios/zonas pendientes de pista pública: **6.247**.
+- Cobertura actual de pistas públicas: **24,0%**.
 
 ## Matriz por comunidad/dataset
 
@@ -26,7 +26,7 @@ Generado desde los datos reales del repositorio el 2026-05-11.
 | Illes Balears | `illes_balears` | 68 | 68 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 67, `verified_partial` 1 | 68 | 68 |
 | Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
 | Melilla | `melilla` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
-| Madrid | `madrid` | 181 | 0 | 181 | 0,0% | pendiente | — | 0 | 0 |
+| Madrid | `madrid` | 181 | 9 | 172 | 5,0% | parcial | `verified_partial` 9 | 9 | 9 |
 | Euskadi | `euskadi` | 255 | 255 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 252, `verified_partial` 3 | 255 | 255 |
 | Comunitat Valenciana | `comunitat_valenciana` | 544 | 544 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 533, `verified_partial` 11 | 544 | 544 |
 | Aragón | `aragon` | 734 | 0 | 734 | 0,0% | pendiente | — | 0 | 0 |
@@ -46,7 +46,7 @@ Generado desde los datos reales del repositorio el 2026-05-11.
 | Andalucía | 786 | 786 | 0 |
 | Aragón | 734 | 734 | 0 |
 | Extremadura | 388 | 388 | 0 |
-| Madrid | 181 | 181 | 0 |
+| Madrid | 172 | 181 | 9 |
 
 ## Lectura recomendada
 
