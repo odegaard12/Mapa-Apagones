@@ -1,6 +1,6 @@
 # Matriz de cobertura de pistas de distribuidoras
 
-Generado desde los datos reales del repositorio el 2026-05-10.
+Generado desde los datos reales del repositorio el 2026-05-11.
 
 > Esta matriz mide cobertura de **pistas públicas de distribuidora en el repositorio**, no cobertura eléctrica real ni exclusividad de red.
 
@@ -8,9 +8,9 @@ Generado desde los datos reales del repositorio el 2026-05-10.
 
 - Datasets geográficos autonómicos: **19**.
 - Municipios/zonas normalizadas en GeoJSON: **8.215**.
-- Municipios/zonas con pista pública de distribuidora: **1.160**.
-- Municipios/zonas pendientes de pista pública: **7.055**.
-- Cobertura actual de pistas públicas: **14,1%**.
+- Municipios/zonas con pista pública de distribuidora: **1.415**.
+- Municipios/zonas pendientes de pista pública: **6.800**.
+- Cobertura actual de pistas públicas: **17,2%**.
 
 ## Matriz por comunidad/dataset
 
@@ -27,7 +27,7 @@ Generado desde los datos reales del repositorio el 2026-05-10.
 | Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
 | Melilla | `melilla` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
 | Madrid | `madrid` | 181 | 0 | 181 | 0,0% | pendiente | — | 0 | 0 |
-| Euskadi | `euskadi` | 255 | 0 | 255 | 0,0% | pendiente | — | 0 | 0 |
+| Euskadi | `euskadi` | 255 | 255 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 252, `verified_partial` 3 | 255 | 255 |
 | Comunitat Valenciana | `comunitat_valenciana` | 544 | 0 | 544 | 0,0% | pendiente | — | 0 | 0 |
 | Aragón | `aragon` | 734 | 0 | 734 | 0,0% | pendiente | — | 0 | 0 |
 | Extremadura | `extremadura` | 388 | 0 | 388 | 0,0% | pendiente | — | 0 | 0 |
@@ -47,7 +47,6 @@ Generado desde los datos reales del repositorio el 2026-05-10.
 | Aragón | 734 | 734 | 0 |
 | Comunitat Valenciana | 544 | 544 | 0 |
 | Extremadura | 388 | 388 | 0 |
-| Euskadi | 255 | 255 | 0 |
 | Madrid | 181 | 181 | 0 |
 
 ## Lectura recomendada
