@@ -13,7 +13,7 @@ import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.5.6-public-distributor-coverage-page'
+const APP_VERSION = 'v0.10.5.7-public-coverage-linking'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -1441,7 +1441,7 @@ function enterReport() {
           <a href="/privacidad/" target="_blank" rel="noreferrer">Privacidad</a>
           <a href="/aviso-legal/" target="_blank" rel="noreferrer">Aviso legal</a>
           <a href="/cookies/" target="_blank" rel="noreferrer">Cookies</a>
-          <a href="/changelog.html" target="_blank" rel="noreferrer">{APP_VERSION}</a>
+          <a href="/cobertura-distribuidoras.html" target="_blank" rel="noreferrer">Cobertura distribuidoras</a><span aria-hidden="true"> · </span><a href="/changelog.html" target="_blank" rel="noreferrer">{APP_VERSION}</a>
         </div>
       </aside>
 
