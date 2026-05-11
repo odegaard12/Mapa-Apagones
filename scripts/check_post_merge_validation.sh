@@ -56,6 +56,7 @@ echo "OK post-merge validation guard"
 python3 scripts/check_distributor_data_safety.py
 python3 scripts/generate_distributor_coverage_matrix.py --check
 python3 scripts/generate_reporting_runtime_health_audit.py --check
+python3 scripts/check_reporting_timing_smoke.py
 python3 scripts/generate_distributor_hint_quality_audit.py --check
 python3 scripts/check_geo_dataset_provinces.py
 python3 scripts/check_public_changelog_current.py

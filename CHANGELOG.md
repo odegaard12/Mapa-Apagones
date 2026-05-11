@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.5.3-reporting-timing-smoke
+
+### Reportes / timing y salud operativa
+
+- Añade `scripts/smoke_reporting_timing.py` para medir duración de los smokes locales críticos de reportes.
+- Mide API básica, ciclo de vida de reportes, concurrencia y privacidad/abuso.
+- Añade `scripts/check_reporting_timing_smoke.py` para asegurar que el timing smoke sigue siendo local y no llama a producción.
+- Documenta el runbook en `docs/ops/reporting-timing-smoke.md`.
+- Integra la guardia estática en repo guard y el timing smoke en post-merge validation.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.
+
+
 ## v0.10.5.2-public-readonly-smoke
 
 ### Operaciones / producción pública

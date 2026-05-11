@@ -126,6 +126,19 @@
 
 
 
+
+
+<section>
+  <h2>v0.10.5.3-reporting-timing-smoke</h2>
+  <h3>Reportes / timing y salud operativa</h3>
+  <ul>
+    <li>Añade un smoke de timing para medir los smokes locales críticos de reportes.</li>
+    <li>Mide API básica, ciclo de vida de reportes, concurrencia y privacidad/abuso.</li>
+    <li>Añade una guardia para asegurar que el timing smoke sigue siendo local y no llama a producción.</li>
+    <li>Integra el timing smoke en la validación post-merge.</li>
+    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
+  </ul>
+</section>
 <section>
   <h2>v0.10.5.2-public-readonly-smoke</h2>
   <h3>Operaciones / producción pública</h3>
