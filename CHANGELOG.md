@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.5.6-public-distributor-coverage-page
+
+### Distribuidoras / página pública
+
+- Añade una página pública de cobertura de pistas de distribuidoras en `frontend/public/cobertura-distribuidoras.html`.
+- La página se genera desde los datos reales actuales del repositorio y resume cobertura, pendientes, confianza y lectura segura.
+- Añade `scripts/generate_public_distributor_coverage_page.py` para regenerar y validar la página.
+- Añade `scripts/check_public_distributor_coverage_page.py` como guardia específica.
+- Amplía el smoke público read-only para comprobar también `/cobertura-distribuidoras.html`.
+- No importa nuevas distribuidoras.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos productivos.
+
 ## v0.10.5.5-extremadura-distributor-review
 
 ### Distribuidoras / revisión Extremadura

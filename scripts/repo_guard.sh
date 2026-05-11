@@ -104,6 +104,8 @@ echo
 echo "== repo_guard: distributor hints seguros =="
 python3 scripts/check_distributor_hints.py
 python3 scripts/generate_distributor_coverage_matrix.py --check
+python3 scripts/check_public_distributor_coverage_page.py
+python3 scripts/generate_public_distributor_coverage_page.py --check
 python3 scripts/generate_reporting_runtime_health_audit.py --check
 python3 scripts/check_reporting_timing_smoke.py
 python3 scripts/generate_distributor_hint_quality_audit.py --check

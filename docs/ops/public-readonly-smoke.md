@@ -6,6 +6,7 @@ Este smoke comprueba producción pública sin crear reportes.
 
 - Web pública `/`.
 - Changelog público con versión y fecha.
+- Página pública de cobertura de distribuidoras.
 - JSON público `/data/distributor_hints.json`.
 - API pública `/api/health`.
 - API pública `/api/status` segura.

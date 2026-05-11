@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobertura pública de distribuidoras · Mapa Apagones</title>
+  <meta name="description" content="Cobertura orientativa de pistas públicas de distribuidora eléctrica por comunidad en Mapa Apagones. No pedimos CUPS, direcciones ni datos personales." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Cobertura pública de distribuidoras · Mapa Apagones" />
+  <meta property="og:description" content="Estado de cobertura de pistas públicas de distribuidora eléctrica por zona, sin CUPS ni datos personales." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mapa-apagones.es/cobertura-distribuidoras.html" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #657084;
+      --border: #dce2ec;
+      --ok: #e6f7ed;
+      --warn: #fff7df;
+      --pending: #f3f5f9;
+      --accent: #0b63ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, #eef5ff, var(--bg) 42%);
+      line-height: 1.5;
+    }
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.8);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--text);
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 18px 50px rgba(31, 45, 70, 0.08);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin: 0 0 16px;
+    }
+    h2 { margin-top: 0; letter-spacing: -0.02em; }
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 820px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .metric {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fbfcff;
+      padding: 14px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: -0.04em;
+    }
+    .metric span { color: var(--muted); font-size: 0.9rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 12px 34px rgba(31, 45, 70, 0.06);
+    }
+    ul { padding-left: 1.2rem; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+      font-size: 0.94rem;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: #3b4658;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    tr.complete { background: var(--ok); }
+    tr.partial { background: var(--warn); }
+    tr.pending { background: var(--pending); }
+    code {
+      background: rgba(11, 99, 206, 0.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 860px) {
+      main { width: min(100% - 20px, 1120px); padding-top: 18px; }
+      .hero { padding: 20px; border-radius: 20px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <a class="pill" href="/">← Volver al mapa</a>
+      <span>Actualizado: 2026-05-11 · v0.10.5.6-public-distributor-coverage-page</span>
+    </div>
+
+    <section class="hero">
+      <h1>Cobertura pública de distribuidoras</h1>
+      <p class="lead">
+        Esta página resume las pistas públicas de distribuidora eléctrica cargadas en Mapa Apagones.
+        Son datos orientativos para ayudar a identificar posibles distribuidoras por zona.
+        No afirma exclusividad de red y no sustituye una comprobación oficial con comercializadora o distribuidora.
+      </p>
+
+      <div class="metrics" aria-label="Resumen de cobertura">
+        <div class="metric"><strong>19</strong><span>datasets geográficos</span></div>
+        <div class="metric"><strong>8.215</strong><span>zonas normalizadas</span></div>
+        <div class="metric"><strong>1.959</strong><span>zonas con pista</span></div>
+        <div class="metric"><strong>6.256</strong><span>zonas pendientes</span></div>
+        <div class="metric"><strong>23,8%</strong><span>cobertura actual</span></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Cómo leer estos datos</h2>
+        <ul>
+          <li><strong>regional_default</strong>: pista regional orientativa, no exclusividad.</li>
+          <li><strong>verified_partial</strong>: presencia pública razonablemente verificada, no cobertura total exclusiva.</li>
+          <li>Las zonas pendientes siguen usando fallback seguro hasta tener revisión pública suficiente.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Privacidad</h2>
+        <ul>
+          <li>No pedimos CUPS.</li>
+          <li>No pedimos dirección exacta.</li>
+          <li>No pedimos cuentas, contratos, facturas ni datos de contador.</li>
+          <li>No publicamos coordenadas privadas ni inventario de infraestructura crítica.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Matriz por comunidad</h2>
+      <p class="note">
+        Generada desde la matriz real del repositorio. Si cambian los GeoJSON o las pistas públicas,
+        esta página debe regenerarse con <code>scripts/generate_public_distributor_coverage_page.py</code>.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Zona</th>
+              <th>Dataset</th>
+              <th>GeoJSON</th>
+              <th>Con pista</th>
+              <th>Pendiente</th>
+              <th>Cobertura</th>
+              <th>Estado</th>
+              <th>Confianza</th>
+              <th>Con fuente</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr class="complete">
+              <td>Galicia</td>
+              <td><code>galicia</code></td>
+              <td>313</td>
+              <td>313</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 172, `verified_partial` 154</td>
+              <td>313</td>
+            </tr>
+            <tr class="complete">
+              <td>Asturias</td>
+              <td><code>asturias</code></td>
+              <td>78</td>
+              <td>78</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 78, `verified_partial` 2</td>
+              <td>78</td>
+            </tr>
+            <tr class="complete">
+              <td>Cantabria</td>
+              <td><code>cantabria</code></td>
+              <td>103</td>
+              <td>103</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 103</td>
+              <td>103</td>
+            </tr>
+            <tr class="complete">
+              <td>Navarra</td>
+              <td><code>navarra</code></td>
+              <td>288</td>
+              <td>288</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 288</td>
+              <td>288</td>
+            </tr>
+            <tr class="complete">
+              <td>La Rioja</td>
+              <td><code>la_rioja</code></td>
+              <td>175</td>
+              <td>175</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 175</td>
+              <td>175</td>
+            </tr>
+            <tr class="complete">
+              <td>Región de Murcia</td>
+              <td><code>murcia</code></td>
+              <td>45</td>
+              <td>45</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 45</td>
+              <td>45</td>
+            </tr>
+            <tr class="complete">
+              <td>Canarias</td>
+              <td><code>canarias</code></td>
+              <td>88</td>
+              <td>88</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 87, `verified_partial` 1</td>
+              <td>88</td>
+            </tr>
+            <tr class="complete">
+              <td>Illes Balears</td>
+              <td><code>illes_balears</code></td>
+              <td>68</td>
+              <td>68</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 67, `verified_partial` 1</td>
+              <td>68</td>
+            </tr>
+            <tr class="complete">
+              <td>Ceuta</td>
+              <td><code>ceuta</code></td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`verified_partial` 1</td>
+              <td>1</td>
+            </tr>
+            <tr class="complete">
+              <td>Melilla</td>
+              <td><code>melilla</code></td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`verified_partial` 1</td>
+              <td>1</td>
+            </tr>
+            <tr class="pending">
+              <td>Madrid</td>
+              <td><code>madrid</code></td>
+              <td>181</td>
+              <td>0</td>
+              <td>181</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+            <tr class="complete">
+              <td>Euskadi</td>
+              <td><code>euskadi</code></td>
+              <td>255</td>
+              <td>255</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 252, `verified_partial` 3</td>
+              <td>255</td>
+            </tr>
+            <tr class="complete">
+              <td>Comunitat Valenciana</td>
+              <td><code>comunitat_valenciana</code></td>
+              <td>544</td>
+              <td>544</td>
+              <td>0</td>
+              <td>100,0%</td>
+              <td>con pista en todas las zonas</td>
+              <td>`regional_default` 533, `verified_partial` 11</td>
+              <td>544</td>
+            </tr>
+            <tr class="pending">
+              <td>Aragón</td>
+              <td><code>aragon</code></td>
+              <td>734</td>
+              <td>0</td>
+              <td>734</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+            <tr class="pending">
+              <td>Extremadura</td>
+              <td><code>extremadura</code></td>
+              <td>388</td>
+              <td>0</td>
+              <td>388</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+            <tr class="pending">
+              <td>Castilla-La Mancha</td>
+              <td><code>castilla_la_mancha</code></td>
+              <td>921</td>
+              <td>0</td>
+              <td>921</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+            <tr class="pending">
+              <td>Castilla y León</td>
+              <td><code>castilla_leon</code></td>
+              <td>2.298</td>
+              <td>0</td>
+              <td>2.298</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+            <tr class="pending">
+              <td>Andalucía</td>
+              <td><code>andalucia</code></td>
+              <td>786</td>
+              <td>0</td>
+              <td>786</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+            <tr class="pending">
+              <td>Catalunya</td>
+              <td><code>catalunya</code></td>
+              <td>948</td>
+              <td>0</td>
+              <td>948</td>
+              <td>0,0%</td>
+              <td>pendiente</td>
+              <td>—</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="note">
+      También puedes consultar el <a href="/changelog.html">changelog público</a>.
+    </p>
+  </main>
+</body>
+</html>

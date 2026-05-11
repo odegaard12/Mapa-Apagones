@@ -20,6 +20,7 @@ FORBIDDEN_TOKENS = [
 REQUIRED_TOKENS = [
     "curl -fsSL",
     "/changelog.html",
+    "/cobertura-distribuidoras.html",
     "/data/distributor_hints.json",
     "/api/health",
     "/api/status",
