@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.4.9-euskadi-distributor-hints
+
+### Distribuidoras / datos públicos
+
+- Añade pistas públicas de distribuidora para los 255 municipios de Euskadi.
+- Usa i-DE como `regional_default` prudente donde no hay excepción local identificada.
+- Añade excepciones locales `verified_partial` para Tolosa/Tolargi, Oñati/Oñargi y Aramaio/Aramaioko Argindar Banatzailea.
+- Regenera la matriz de cobertura: 1.415 zonas con pista pública y 6.800 pendientes.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.
+
+
+
 ## v0.10.4.8-public-changelog-refresh
 
 ### Changelog público
