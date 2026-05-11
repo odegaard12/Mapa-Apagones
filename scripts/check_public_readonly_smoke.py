@@ -22,6 +22,7 @@ REQUIRED_TOKENS = [
     "/changelog.html",
     "/data/distributor_hints.json",
     "/api/health",
+    "/api/status",
     "/api/incidents?limit=5",
     "EXPECTED_DISTRIBUTOR_HINTS_ITEMS",
 ]

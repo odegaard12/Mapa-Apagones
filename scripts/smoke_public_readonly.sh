@@ -13,6 +13,7 @@ INDEX_HTML="$TMP_DIR/index.html"
 CHANGELOG_HTML="$TMP_DIR/changelog.html"
 DISTRIBUTOR_JSON="$TMP_DIR/distributor_hints.json"
 HEALTH_JSON="$TMP_DIR/health.json"
+STATUS_JSON="$TMP_DIR/status.json"
 INCIDENTS_JSON="$TMP_DIR/incidents.json"
 
 echo "== Mapa Apagones · public read-only smoke =="
@@ -82,8 +83,33 @@ if not isinstance(data, dict):
 print("OK /api/health JSON")
 PY
 
+
 echo
-echo "== 5) API pública incidents read-only =="
+echo "== 5) API pública status seguro =="
+curl -fsSL "$PUBLIC_API_BASE_URL/api/status" -o "$STATUS_JSON"
+python3 - "$STATUS_JSON" <<'PY'
+import json
+import re
+import sys
+from pathlib import Path
+
+data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+if not isinstance(data, dict):
+    raise SystemExit("ERROR: /api/status no devuelve objeto JSON")
+
+dump = json.dumps(data, ensure_ascii=False, sort_keys=True).lower()
+for fragment in ["secret", "password", "passwd", "anon_hash_key", "turnstile_secret", "private_key", ".env", "/home/", "/root/", "/app_data/"]:
+    if fragment in dump:
+        raise SystemExit(f"ERROR: /api/status expone fragmento sensible: {fragment}")
+
+private_ip_pattern = re.compile(r"(?<!\\d)(10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|127\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|172\\.(?:1[6-9]|2\\d|3[0-1])\\.\\d{1,3}\\.\\d{1,3})(?:/\\d{1,2})?(?!\\d)")
+if private_ip_pattern.search(dump):
+    raise SystemExit("ERROR: /api/status expone IP/CIDR privada")
+
+print("OK /api/status JSON seguro")
+PY
+echo
+echo "== 6) API pública incidents read-only =="
 curl -fsSL "$PUBLIC_API_BASE_URL/api/incidents?limit=5" -o "$INCIDENTS_JSON"
 python3 - "$INCIDENTS_JSON" <<'PY'
 import json
