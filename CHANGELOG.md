@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.10.5.5-extremadura-distributor-review
+
+### Distribuidoras / revisión Extremadura
+
+- Añade una revisión previa de Extremadura antes de importar pistas públicas de distribuidora.
+- Genera `docs/research/distributor_import_batches/extremadura_import_review.md` desde el GeoJSON real de Extremadura.
+- Documenta que Extremadura tiene 388 municipios/zonas pendientes de clasificación.
+- Documenta fuentes públicas de alto nivel y la razón para no importar toda la comunidad como una única distribuidora todavía.
+- No importa nuevas distribuidoras.
+- No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos productivos.
+
 ## v0.10.5.4-public-status-readonly-smoke
 
 ### Operaciones / producción pública
