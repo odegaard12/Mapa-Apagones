@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.10.5.8-madrid-distributor-deep-review
+
+### Distribuidoras / revisión Madrid
+
+- Añade una revisión profunda previa de Comunidad de Madrid antes de importar pistas públicas de distribuidora.
+- Genera `docs/research/distributor_import_batches/madrid_deep_review.md` desde el GeoJSON real de Madrid.
+- Genera `docs/research/distributor_import_batches/madrid_municipality_review_queue.csv` con cola municipal de 181 zonas.
+- Clasifica candidatos UFD citados por fuente pública, Madrid capital como revisión multi-distribuidora y el resto como pendiente municipal.
+- Añade `scripts/generate_madrid_distributor_deep_review.py` y lo integra en las validaciones.
+- No importa nuevas distribuidoras ni cambia datos productivos.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni frontend funcional.
+
 ## v0.10.5.7-public-coverage-linking
 
 ### Público / SEO
