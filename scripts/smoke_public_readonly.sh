@@ -11,6 +11,7 @@ trap 'rm -rf "$TMP_DIR"' EXIT
 
 INDEX_HTML="$TMP_DIR/index.html"
 CHANGELOG_HTML="$TMP_DIR/changelog.html"
+COVERAGE_HTML="$TMP_DIR/cobertura-distribuidoras.html"
 DISTRIBUTOR_JSON="$TMP_DIR/distributor_hints.json"
 HEALTH_JSON="$TMP_DIR/health.json"
 STATUS_JSON="$TMP_DIR/status.json"
@@ -42,8 +43,27 @@ fi
 grep -E "Actualizado: [0-9]{4}-[0-9]{2}-[0-9]{2}" "$CHANGELOG_HTML" >/dev/null
 echo "OK changelog contiene fecha de actualización"
 
+
 echo
-echo "== 3) JSON público de distribuidoras =="
+echo "== 3) Página pública de cobertura de distribuidoras =="
+curl -fsSL "$PUBLIC_BASE_URL/cobertura-distribuidoras.html" -o "$COVERAGE_HTML"
+test -s "$COVERAGE_HTML"
+
+grep -F "Cobertura pública de distribuidoras" "$COVERAGE_HTML" >/dev/null
+grep -F "No pedimos CUPS" "$COVERAGE_HTML" >/dev/null
+
+if [ -n "$EXPECTED_VERSION" ]; then
+  grep -F "$EXPECTED_VERSION" "$COVERAGE_HTML" >/dev/null
+  echo "OK cobertura contiene versión esperada: $EXPECTED_VERSION"
+else
+  grep -E "v[0-9]+\.[0-9]+\.[0-9]+" "$COVERAGE_HTML" >/dev/null
+  echo "OK cobertura contiene versión pública"
+fi
+
+echo "OK página pública de cobertura"
+
+echo
+echo "== 4) JSON público de distribuidoras =="
 curl -fsSL "$PUBLIC_BASE_URL/data/distributor_hints.json" -o "$DISTRIBUTOR_JSON"
 python3 - "$DISTRIBUTOR_JSON" "$EXPECTED_DISTRIBUTOR_HINTS_ITEMS" <<'PY'
 import json
@@ -68,7 +88,7 @@ print("OK distributor_hints público")
 PY
 
 echo
-echo "== 4) API pública health =="
+echo "== 5) API pública health =="
 curl -fsSL "$PUBLIC_API_BASE_URL/api/health" -o "$HEALTH_JSON"
 python3 - "$HEALTH_JSON" <<'PY'
 import json
@@ -85,7 +105,7 @@ PY
 
 
 echo
-echo "== 5) API pública status seguro =="
+echo "== 6) API pública status seguro =="
 curl -fsSL "$PUBLIC_API_BASE_URL/api/status" -o "$STATUS_JSON"
 python3 - "$STATUS_JSON" <<'PY'
 import json
@@ -109,7 +129,7 @@ if private_ip_pattern.search(dump):
 print("OK /api/status JSON seguro")
 PY
 echo
-echo "== 6) API pública incidents read-only =="
+echo "== 7) API pública incidents read-only =="
 curl -fsSL "$PUBLIC_API_BASE_URL/api/incidents?limit=5" -o "$INCIDENTS_JSON"
 python3 - "$INCIDENTS_JSON" <<'PY'
 import json
