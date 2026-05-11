@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.5.2-public-readonly-smoke
+Versión actual visible: v0.10.5.3-reporting-timing-smoke
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 

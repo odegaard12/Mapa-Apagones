@@ -44,6 +44,7 @@ python3 scripts/check_sqlite_schema_hardening.py
 python3 scripts/check_distributor_hints.py
 python3 scripts/generate_distributor_coverage_matrix.py --check
 python3 scripts/generate_reporting_runtime_health_audit.py --check
+python3 scripts/check_reporting_timing_smoke.py
 python3 scripts/generate_distributor_hint_quality_audit.py --check
 
 echo
@@ -72,6 +73,7 @@ echo "== 7) Backend runtime smokes =="
 "$SMOKE_PYTHON" scripts/smoke_backend_concurrency.py
 "$SMOKE_PYTHON" scripts/smoke_backend_lifecycle.py
 "$SMOKE_PYTHON" scripts/smoke_backend_privacy_abuse.py
+"$SMOKE_PYTHON" scripts/smoke_reporting_timing.py
 
 echo
 echo "== 8) Docker Compose smoke aislado =="
