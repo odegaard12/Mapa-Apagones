@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.10.6.1-extremadura-verified-partial-hints
+
+- Importa 388 pistas públicas de distribuidora para Extremadura como `verified_partial`.
+- Usa propuesta local saneada desde visor público de distribuidoras de la Junta de Extremadura.
+- No importa Extremadura como `regional_default`.
+- Mantiene municipios multi-distribuidora con varias pistas `verified_partial`.
+- No añade CUPS, direcciones, teléfonos, emails, coordenadas, geometrías WFS ni respuesta raw.
+
 ## v0.10.6.0-extremadura-distributor-deep-audit
 
 ### Distribuidoras / auditoría Extremadura
