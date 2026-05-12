@@ -1,6 +1,6 @@
 # Matriz de cobertura de pistas de distribuidoras
 
-Generado desde los datos reales del repositorio el 2026-05-11.
+Generado desde los datos reales del repositorio el 2026-05-12.
 
 > Esta matriz mide cobertura de **pistas públicas de distribuidora en el repositorio**, no cobertura eléctrica real ni exclusividad de red.
 
