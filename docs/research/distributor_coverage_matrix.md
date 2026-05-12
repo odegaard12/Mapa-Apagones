@@ -8,9 +8,9 @@ Generado desde los datos reales del repositorio el 2026-05-12.
 
 - Datasets geográficos autonómicos: **19**.
 - Municipios/zonas normalizadas en GeoJSON: **8.215**.
-- Municipios/zonas con pista pública de distribuidora: **1.968**.
-- Municipios/zonas pendientes de pista pública: **6.247**.
-- Cobertura actual de pistas públicas: **24,0%**.
+- Municipios/zonas con pista pública de distribuidora: **2.356**.
+- Municipios/zonas pendientes de pista pública: **5.859**.
+- Cobertura actual de pistas públicas: **28,7%**.
 
 ## Matriz por comunidad/dataset
 
@@ -30,7 +30,7 @@ Generado desde los datos reales del repositorio el 2026-05-12.
 | Euskadi | `euskadi` | 255 | 255 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 252, `verified_partial` 3 | 255 | 255 |
 | Comunitat Valenciana | `comunitat_valenciana` | 544 | 544 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 533, `verified_partial` 11 | 544 | 544 |
 | Aragón | `aragon` | 734 | 0 | 734 | 0,0% | pendiente | — | 0 | 0 |
-| Extremadura | `extremadura` | 388 | 0 | 388 | 0,0% | pendiente | — | 0 | 0 |
+| Extremadura | `extremadura` | 388 | 388 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 530 | 388 | 388 |
 | Castilla-La Mancha | `castilla_la_mancha` | 921 | 0 | 921 | 0,0% | pendiente | — | 0 | 0 |
 | Castilla y León | `castilla_leon` | 2.298 | 0 | 2.298 | 0,0% | pendiente | — | 0 | 0 |
 | Andalucía | `andalucia` | 786 | 0 | 786 | 0,0% | pendiente | — | 0 | 0 |
@@ -45,7 +45,6 @@ Generado desde los datos reales del repositorio el 2026-05-12.
 | Castilla-La Mancha | 921 | 921 | 0 |
 | Andalucía | 786 | 786 | 0 |
 | Aragón | 734 | 734 | 0 |
-| Extremadura | 388 | 388 | 0 |
 | Madrid | 172 | 181 | 9 |
 
 ## Lectura recomendada

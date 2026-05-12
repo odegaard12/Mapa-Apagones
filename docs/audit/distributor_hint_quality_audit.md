@@ -4,8 +4,8 @@ Generado desde `frontend/public/data/distributor_hints.json`.
 
 ## Resumen
 
-- Total de zonas con pista pública: **1968**.
-- Datasets con pistas: **13**.
+- Total de zonas con pista pública: **2356**.
+- Datasets con pistas: **14**.
 - Zone IDs duplicados: **0**.
 - Errores bloqueantes detectados: **0**.
 - Avisos no bloqueantes detectados: **0**.
@@ -15,7 +15,7 @@ Generado desde `frontend/public/data/distributor_hints.json`.
 | Confianza | Entradas/distribuidoras |
 |---|---:|
 | `regional_default` | 1800 |
-| `verified_partial` | 183 |
+| `verified_partial` | 713 |
 
 ## Calidad por dataset
 
@@ -27,6 +27,7 @@ Generado desde `frontend/public/data/distributor_hints.json`.
 | `ceuta` | 1 | 1 | 1 | 1 | 0 | 1 |
 | `comunitat_valenciana` | 544 | 544 | 544 | 544 | 533 | 11 |
 | `euskadi` | 255 | 255 | 255 | 255 | 252 | 3 |
+| `extremadura` | 388 | 388 | 388 | 388 | 0 | 530 |
 | `galicia` | 313 | 313 | 313 | 313 | 172 | 154 |
 | `illes_balears` | 68 | 68 | 68 | 68 | 67 | 1 |
 | `la_rioja` | 175 | 175 | 175 | 175 | 175 | 0 |
