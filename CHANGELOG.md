@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.10.6.0-extremadura-distributor-deep-audit
+
+### Distribuidoras / auditoría Extremadura
+
+- Añade una auditoría profunda de Extremadura antes de importar pistas públicas de distribuidora.
+- Genera `docs/research/distributor_import_batches/extremadura_deep_audit.md` desde el GeoJSON real de Extremadura.
+- Genera `docs/research/distributor_import_batches/extremadura_municipality_review_queue.csv` con cola municipal de 388 zonas.
+- Genera `docs/research/distributor_import_batches/extremadura_distributor_sources.csv` con fuentes públicas de alto nivel.
+- Bloquea la importación regional automática: Extremadura requiere revisión municipal por presencia de varias distribuidoras.
+- Añade `scripts/generate_extremadura_distributor_deep_audit.py` y lo integra en validaciones.
+- No importa nuevas distribuidoras ni cambia datos productivos.
+- No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni frontend funcional.
+
 ## v0.10.5.9-madrid-ufd-partial-hints
 
 ### Distribuidoras / Madrid parcial

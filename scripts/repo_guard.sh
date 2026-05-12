@@ -108,6 +108,7 @@ python3 scripts/check_public_distributor_coverage_page.py
 python3 scripts/check_public_coverage_linking.py
 python3 scripts/generate_public_distributor_coverage_page.py --check
 python3 scripts/generate_madrid_distributor_deep_review.py --check
+python3 scripts/generate_extremadura_distributor_deep_audit.py --check
 python3 scripts/generate_reporting_runtime_health_audit.py --check
 python3 scripts/check_reporting_timing_smoke.py
 python3 scripts/generate_distributor_hint_quality_audit.py --check
