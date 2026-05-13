@@ -1,6 +1,6 @@
 # Matriz de cobertura de pistas de distribuidoras
 
-Generado desde los datos reales del repositorio el 2026-05-12.
+Generado desde los datos reales del repositorio el 2026-05-13.
 
 > Esta matriz mide cobertura de **pistas públicas de distribuidora en el repositorio**, no cobertura eléctrica real ni exclusividad de red.
 
@@ -8,9 +8,9 @@ Generado desde los datos reales del repositorio el 2026-05-12.
 
 - Datasets geográficos autonómicos: **19**.
 - Municipios/zonas normalizadas en GeoJSON: **8.215**.
-- Municipios/zonas con pista pública de distribuidora: **2.356**.
-- Municipios/zonas pendientes de pista pública: **5.859**.
-- Cobertura actual de pistas públicas: **28,7%**.
+- Municipios/zonas con pista pública de distribuidora: **2.610**.
+- Municipios/zonas pendientes de pista pública: **5.605**.
+- Cobertura actual de pistas públicas: **31,8%**.
 
 ## Matriz por comunidad/dataset
 
@@ -33,7 +33,7 @@ Generado desde los datos reales del repositorio el 2026-05-12.
 | Extremadura | `extremadura` | 388 | 388 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 530 | 388 | 388 |
 | Castilla-La Mancha | `castilla_la_mancha` | 921 | 0 | 921 | 0,0% | pendiente | — | 0 | 0 |
 | Castilla y León | `castilla_leon` | 2.298 | 0 | 2.298 | 0,0% | pendiente | — | 0 | 0 |
-| Andalucía | `andalucia` | 786 | 0 | 786 | 0,0% | pendiente | — | 0 | 0 |
+| Andalucía | `andalucia` | 786 | 254 | 532 | 32,3% | parcial | `verified_partial` 254 | 254 | 254 |
 | Catalunya | `catalunya` | 948 | 0 | 948 | 0,0% | pendiente | — | 0 | 0 |
 
 ## Zonas pendientes ordenadas por volumen
@@ -43,8 +43,8 @@ Generado desde los datos reales del repositorio el 2026-05-12.
 | Castilla y León | 2.298 | 2.298 | 0 |
 | Catalunya | 948 | 948 | 0 |
 | Castilla-La Mancha | 921 | 921 | 0 |
-| Andalucía | 786 | 786 | 0 |
 | Aragón | 734 | 734 | 0 |
+| Andalucía | 532 | 786 | 254 |
 | Madrid | 172 | 181 | 9 |
 
 ## Lectura recomendada

@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints
+
+- Importa 254 pistas públicas parciales para Andalucía como `verified_partial`.
+- Usa solo candidatos fuertes de E-Distribución Redes Digitales, S.L.U. con propietario de línea ≥95% en auditoría local saneada del WFS público MIEA `LineasElect`.
+- No importa Andalucía completa ni usa `regional_default`.
+- No publica Red Eléctrica como distribuidora municipal.
+- No publica nombres genéricos de pequeña distribuidora.
+- No añade CUPS, direcciones, teléfonos, emails, coordenadas, geometrías WFS ni respuesta raw.
+
 ## v0.10.6.1-extremadura-verified-partial-hints
 
 - Importa 388 pistas públicas de distribuidora para Extremadura como `verified_partial`.
