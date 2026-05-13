@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints
+Versión actual visible: v0.10.6.3-distributor-reliability-audit-ui
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -120,6 +120,12 @@ Los polígonos municipales se generan desde fuentes CNIG/IGN normalizadas median
 ## Distribuidoras eléctricas
 
 El proyecto prepara un modelo de pistas de distribuidora por municipio o zona, pensado para incorporar tanto grandes distribuidoras como distribuidoras locales pequeñas.
+
+Reglas de fiabilidad añadidas:
+
+- `verified_partial` debe leerse como pista pública fuerte, parcial o municipal, sin afirmar exclusividad.
+- `regional_default` debe leerse como orientación regional, no como verificación municipal fuerte.
+- La página pública `/fiabilidad-distribuidoras.html` resume esta diferencia.
 
 Reglas de este modelo:
 

@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-13",
+  "version_context": "v0.10.6.3-distributor-reliability-audit-ui",
+  "scope": [
+    "galicia",
+    "asturias",
+    "cantabria",
+    "la_rioja"
+  ],
+  "result": {
+    "new_importable_verified_partial_hints": 0,
+    "new_data_import_pr_recommended": false,
+    "ux_reliability_pr_recommended": true,
+    "galicia": {
+      "geo_zones": 313,
+      "hint_zones": 313,
+      "keep_verified_partial_zones": 141,
+      "regional_orientation_zones": 172,
+      "decision": "mantener pistas fuertes existentes y separar orientación regional en UI"
+    },
+    "asturias": {
+      "geo_zones": 78,
+      "hint_zones": 78,
+      "keep_verified_partial_zones": 2,
+      "regional_orientation_zones": 76,
+      "decision": "mantener Electra de Carbayín como pista fuerte y E-REDES regional como orientación"
+    },
+    "cantabria": {
+      "geo_zones": 103,
+      "hint_zones": 103,
+      "keep_verified_partial_zones": 0,
+      "regional_orientation_zones": 103,
+      "decision": "Viesgo debe mostrarse como orientación regional, no verificación municipal fuerte"
+    },
+    "la_rioja": {
+      "geo_zones": 175,
+      "hint_zones": 175,
+      "candidate_ide_interactive_map": 175,
+      "import_from_ide_map": false,
+      "decision": "no subir a verified_partial desde mapa i-DE por ser consulta interactiva por punto con reCAPTCHA"
+    }
+  },
+  "privacy": {
+    "no_cups": true,
+    "no_addresses": true,
+    "no_exact_coordinates": true,
+    "no_raw_html_js": true,
+    "no_tokens": true,
+    "no_wfs_geometry": true
+  }
+}

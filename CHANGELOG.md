@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.10.6.3-distributor-reliability-audit-ui
+
+- Añade auditoría pública saneada de fiabilidad para Galicia, Asturias, Cantabria y La Rioja.
+- Documenta que no hay nuevas pistas `verified_partial` importables en esta fase.
+- Separa conceptualmente `verified_partial` como pista fuerte y `regional_default` como orientación regional.
+- Añade decisión técnica saneada para no importar La Rioja 175/175 desde el mapa i-DE interactivo.
+- Añade página pública `/fiabilidad-distribuidoras.html`.
+- No añade CUPS, direcciones, coordenadas exactas, capturas, respuestas raw, tokens ni geometrías de red.
+
 ## v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints
 
 - Importa 254 pistas públicas parciales para Andalucía como `verified_partial`.
