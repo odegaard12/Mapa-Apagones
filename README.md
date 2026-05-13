@@ -8,7 +8,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.6.1-extremadura-verified-partial-hints
+Versión actual visible: v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 

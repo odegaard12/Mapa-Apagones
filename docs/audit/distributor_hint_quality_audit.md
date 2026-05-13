@@ -4,8 +4,8 @@ Generado desde `frontend/public/data/distributor_hints.json`.
 
 ## Resumen
 
-- Total de zonas con pista pública: **2356**.
-- Datasets con pistas: **14**.
+- Total de zonas con pista pública: **2610**.
+- Datasets con pistas: **15**.
 - Zone IDs duplicados: **0**.
 - Errores bloqueantes detectados: **0**.
 - Avisos no bloqueantes detectados: **0**.
@@ -15,12 +15,13 @@ Generado desde `frontend/public/data/distributor_hints.json`.
 | Confianza | Entradas/distribuidoras |
 |---|---:|
 | `regional_default` | 1800 |
-| `verified_partial` | 713 |
+| `verified_partial` | 967 |
 
 ## Calidad por dataset
 
 | Dataset | Zonas | Con fuente | Con fecha | Con notas | regional_default | verified_partial |
 |---|---:|---:|---:|---:|---:|---:|
+| `andalucia` | 254 | 254 | 254 | 254 | 0 | 254 |
 | `asturias` | 78 | 78 | 78 | 78 | 78 | 2 |
 | `canarias` | 88 | 88 | 88 | 88 | 87 | 1 |
 | `cantabria` | 103 | 103 | 103 | 103 | 103 | 0 |
