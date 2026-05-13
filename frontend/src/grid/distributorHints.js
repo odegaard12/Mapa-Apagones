@@ -1,3 +1,39 @@
+export function getDistributorConfidenceLabel(confidence) {
+  if (confidence === 'verified_partial') {
+    return 'Pista parcial verificada';
+  }
+
+  if (confidence === 'regional_default') {
+    return 'Orientación regional';
+  }
+
+  return 'Pista no clasificada';
+}
+
+export function getDistributorConfidenceDescription(confidence) {
+  if (confidence === 'verified_partial') {
+    return 'Fuente pública fuerte para esta zona o municipio, sin afirmar exclusividad ni cobertura total.';
+  }
+
+  if (confidence === 'regional_default') {
+    return 'Referencia regional útil, pero no equivale a verificación municipal fuerte.';
+  }
+
+  return 'No hay suficiente información pública para clasificar la fiabilidad de esta pista.';
+}
+
+export function getDistributorConfidenceRank(confidence) {
+  if (confidence === 'verified_partial') {
+    return 2;
+  }
+
+  if (confidence === 'regional_default') {
+    return 1;
+  }
+
+  return 0;
+}
+
 export const UNKNOWN_DISTRIBUTOR_LABEL = 'Consultar distribuidora de la zona'
 
 export const DISTRIBUTOR_CONFIDENCE_LABELS = {
@@ -9,7 +45,7 @@ export const DISTRIBUTOR_CONFIDENCE_LABELS = {
 
 export const DISTRIBUTOR_DISPLAY_LABELS = {
   verified_municipal: 'Distribuidora verificada',
-  verified_partial: 'Distribuidora probable',
+  verified_partial: 'Orientación regional',
   regional_default: 'Distribuidora orientativa',
   unknown: 'Distribuidora',
 }

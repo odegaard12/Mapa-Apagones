@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.10.6.4-distributor-confidence-labels
+
+- Mejora las etiquetas públicas de fiabilidad de pistas de distribuidora.
+- Muestra `verified_partial` como pista parcial verificada.
+- Muestra `regional_default` como orientación regional, no como verificación municipal fuerte.
+- Ajusta notas públicas para evitar vender como probable fuerte lo que solo es orientación regional.
+- No añade nuevas distribuidoras, CUPS, direcciones, coordenadas exactas, capturas, respuestas raw, tokens ni geometrías de red.
+
 ## v0.10.6.3-distributor-reliability-audit-ui
 
 - Añade auditoría pública saneada de fiabilidad para Galicia, Asturias, Cantabria y La Rioja.
