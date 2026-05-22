@@ -1,5 +1,5 @@
 {
-  "version": "v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints",
+  "version": "v0.10.6.4-distributor-confidence-labels",
   "policy": {
     "purpose": "Public distributor hints by municipality or zone, only from verified public sources.",
     "privacy": "No CUPS, no personal data, no exact user addresses, no private coordinates.",
