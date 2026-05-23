@@ -44,6 +44,8 @@ python3 scripts/check_sqlite_schema_hardening.py
 python3 scripts/check_distributor_hints.py
 echo '--- check_distributor_data_version ---'
 python3 scripts/check_distributor_data_version.py --repo-root .
+echo '--- check_andalucia_pending_review_queue ---'
+python3 scripts/check_andalucia_pending_review_queue.py
 python3 scripts/generate_distributor_coverage_matrix.py --check
 python3 scripts/check_public_distributor_coverage_page.py
 python3 scripts/check_public_coverage_linking.py
