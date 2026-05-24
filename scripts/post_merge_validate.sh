@@ -50,6 +50,8 @@ echo '--- check_andalucia_batch2_candidate_workbench ---'
 python3 scripts/check_andalucia_batch2_candidate_workbench.py
 echo '--- check_public_docs_freshness ---'
 python3 scripts/check_public_docs_freshness.py
+echo '--- check_public_pages_truthfulness ---'
+python3 scripts/check_public_pages_truthfulness.py
 python3 scripts/generate_distributor_coverage_matrix.py --check
 python3 scripts/check_public_distributor_coverage_page.py
 python3 scripts/check_public_coverage_linking.py
