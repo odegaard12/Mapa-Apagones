@@ -51,7 +51,7 @@
 - No raw external API responses.
 
 
-## v0.10.6.4-distributor-confidence-labels
+## v0.10.7.7-static-public-pages-clean
 
 - Mejora las etiquetas públicas de fiabilidad de pistas de distribuidora.
 - Muestra `verified_partial` como pista parcial verificada.

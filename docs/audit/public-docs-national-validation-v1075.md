@@ -6,8 +6,8 @@ This document records the public documentation refresh and validation state afte
 
 ## Current public version
 
-- VERSION: v0.10.6.4-distributor-confidence-labels
-- Public distributor JSON version expected: v0.10.6.4-distributor-confidence-labels
+- VERSION: v0.10.7.7-static-public-pages-clean
+- Public distributor JSON version expected: v0.10.7.7-static-public-pages-clean
 - Public distributor hint zones: 2610
 
 ## Andalucía distributor research baseline
