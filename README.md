@@ -195,6 +195,23 @@ Ese documento resume qué hallazgos se corrigieron, en qué PRs se cerraron y qu
 
 ## Validación post-merge
 
+Validaciones adicionales actuales:
+
+- `python3 scripts/check_distributor_data_version.py --repo-root .`
+- `python3 scripts/check_andalucia_pending_review_queue.py`
+- `python3 scripts/check_andalucia_batch2_candidate_workbench.py`
+- `python3 scripts/check_public_docs_freshness.py`
+- `scripts/run_public_smoke_expected_version.sh`
+
+Estado Andalucía distribuidoras:
+
+- 786 municipios/zones geográficas.
+- 254 hints públicos ya cubiertos.
+- 532 filas pendientes de revisión municipal.
+- 532 candidatos batch 2 en modo revisión manual.
+- Sin importación automática; cualquier futuro alta debe ser `verified_partial` y estar respaldada por fuente pública.
+
+
 Después de mergear cambios relevantes en `main`, se recomienda ejecutar:
 
 ```bash

@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.10.7.5 — Public docs, changelog and national validation refresh
+
+### Added
+- Public documentation freshness guard: `scripts/check_public_docs_freshness.py`.
+- Changelog/public-page refresh for the Andalucía distributor research pipeline.
+- Public audit closeout for the current national/distributor validation state.
+
+### Andalucía distributor research status
+- Andalucía municipal GeoJSON features: 786.
+- Existing public distributor hints: 254.
+- Pending review queue rows: 532.
+- Batch 2 candidate workbench rows: 532.
+- Candidate workbench remains manual-review-only; no distributor hints are imported by this release.
+
+### Validation
+- `check_distributor_hints.py` passes.
+- `check_distributor_data_version.py` passes.
+- `check_andalucia_pending_review_queue.py` passes.
+- `check_andalucia_batch2_candidate_workbench.py` passes.
+- Public smoke with expected distributor version passes.
+- National geographic coverage guards are part of the validation flow.
+
+### Safety
+- No CUPS.
+- No addresses.
+- No exact user coordinates.
+- No customer data.
+- No private grid inventory.
+- No raw external API responses.
+
+
 ## v0.10.6.4-distributor-confidence-labels
 
 - Mejora las etiquetas públicas de fiabilidad de pistas de distribuidora.
