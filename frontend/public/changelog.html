@@ -2,1309 +2,148 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Changelog | Mapa Apagones</title>
-  <meta name="description" content="Historial público de cambios de Mapa Apagones.">
-  <link rel="canonical" href="https://mapa-apagones.es/changelog.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog · Mapa Apagones</title>
   <style>
-    :root{color-scheme:light;--bg:#eef4ff;--card:rgba(255,255,255,.88);--text:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#2563eb}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 0%,rgba(59,130,246,.22),transparent 34rem),radial-gradient(circle at 85% 10%,rgba(14,165,233,.16),transparent 30rem),var(--bg);color:var(--text);line-height:1.58}
-    main{width:min(940px,calc(100% - 32px));margin:34px auto;padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:0 20px 60px rgba(15,23,42,.10);backdrop-filter:blur(18px)}
-    a{color:var(--accent)} h1{margin:0 0 8px;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.04em} h2{margin-top:28px;font-size:1.2rem} p,li{color:var(--muted)} ul{padding-left:1.25rem}
-    code{background:rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.08);border-radius:8px;padding:2px 6px;color:#0f172a}
-    .top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px;color:var(--muted);font-size:.92rem}
-    .pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.62);color:var(--muted);text-decoration:none;white-space:nowrap}
-    .notice{padding:14px 16px;border:1px solid rgba(37,99,235,.22);border-radius:18px;background:rgba(37,99,235,.08);color:#1e3a8a}
-    @media(max-width:600px){main{width:calc(100% - 18px);margin:9px auto;padding:18px;border-radius:20px} .top{align-items:flex-start;flex-direction:column;gap:8px} h1{font-size:1.8rem}}
-  
-    /* === mobile public page responsive v0.9.7.2 === */
-    @media (max-width: 720px) {
-      html {
-        min-height: 100%;
-      }
-
-      body {
-        min-height: 100dvh;
-        overflow-x: hidden;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      main {
-        width: min(100% - 20px, 860px) !important;
-        margin: max(10px, env(safe-area-inset-top, 0px)) auto max(10px, env(safe-area-inset-bottom, 0px)) !important;
-        padding: 18px !important;
-        border-radius: 20px !important;
-      }
-
-      .top {
-        align-items: flex-start !important;
-        flex-direction: column !important;
-        gap: 8px !important;
-        margin-bottom: 16px !important;
-        font-size: .82rem !important;
-      }
-
-      .pill {
-        max-width: 100%;
-        white-space: normal !important;
-        line-height: 1.15 !important;
-      }
-
-      h1 {
-        font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
-        line-height: 1.05 !important;
-        letter-spacing: -0.035em !important;
-      }
-
-      h2 {
-        margin-top: 22px !important;
-        font-size: 1.04rem !important;
-        line-height: 1.2 !important;
-      }
-
-      p,
-      li {
-        font-size: .94rem !important;
-        line-height: 1.55 !important;
-      }
-
-      ul {
-        padding-left: 1.05rem !important;
-      }
-
-      .notice {
-        padding: 12px 13px !important;
-        border-radius: 16px !important;
-      }
-
-      footer {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
-        overflow-wrap: anywhere !important;
-      }
-
-      a {
-        overflow-wrap: anywhere;
-      }
-    }
-
-    @media (max-width: 380px) {
-      main {
-        width: min(100% - 14px, 860px) !important;
-        padding: 14px !important;
-        border-radius: 18px !important;
-      }
-
-      p,
-      li {
-        font-size: .9rem !important;
-      }
-    }
-
-  </style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #d9e2ef;
+  --accent: #0f766e;
+  --accent-soft: #e6fffb;
+  --warn: #92400e;
+  --warn-soft: #fff7ed;
+  --bad: #991b1b;
+  --bad-soft: #fef2f2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+a { color: var(--accent); }
+.back {
+  display: inline-block;
+  margin-bottom: 18px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.eyebrow {
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 0 0 6px;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+h2 { margin-top: 34px; }
+.lead {
+  max-width: 860px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+.card, .release, .notice {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+}
+.metric strong {
+  display: block;
+  font-size: 1.8rem;
+}
+.metric span { color: var(--muted); }
+.notice {
+  background: var(--accent-soft);
+  border-color: #99f6e4;
+}
+.notice.warn {
+  background: var(--warn-soft);
+  border-color: #fed7aa;
+}
+.notice.bad {
+  background: var(--bad-soft);
+  border-color: #fecaca;
+}
+.table-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #eef4fb;
+  font-size: .9rem;
+}
+tr:last-child td { border-bottom: 0; }
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+  background: #eef2ff;
+}
+.badge.pending { background: var(--bad-soft); color: var(--bad); }
+.badge.partial { background: var(--warn-soft); color: var(--warn); }
+.badge.full { background: var(--accent-soft); color: var(--accent); }
+code {
+  background: #eef4fb;
+  padding: 2px 5px;
+  border-radius: 6px;
+}
+.release + .release { margin-top: 14px; }
+.release h2 { margin-top: 0; }
+.small { color: var(--muted); font-size: .92rem; }
+footer { margin-top: 34px; color: var(--muted); }
+</style>
 </head>
 <body>
-  <main>
+<main>
+  <a class="back" href="/">← Volver al mapa</a>
 
-<section class="release-card">
-  <h2>v0.10.7.6 — Public pages truthfulness and ordering refresh</h2>
-  <p>
-    Corrige el orden del changelog público y aclara la lectura de las páginas
-    públicas de cobertura y fiabilidad de distribuidoras.
-  </p>
-  <ul>
-    <li>100% con pista no significa 100% verificación municipal fuerte.</li>
-    <li><code>regional_default</code> queda aclarado como orientación regional.</li>
-    <li><code>verified_partial</code> queda aclarado como pista parcial o municipal, no exclusiva.</li>
-    <li>Las entradas por confianza se explican como pistas, no necesariamente zonas únicas.</li>
-    <li>Sin importación de nuevas distribuidoras.</li>
-  </ul>
-</section>
-
-
-<section>
+  <p class="eyebrow">Actualizado: 2026-05-24 · v0.10.7.7-static-public-pages-clean</p>
   <h1>Changelog</h1>
-
-<h2>v0.10.6.4-distributor-confidence-labels</h2>
-  <ul>
-    <li>Mejora las etiquetas públicas de fiabilidad de pistas de distribuidora.</li>
-    <li><code>verified_partial</code> se presenta como pista parcial verificada.</li>
-    <li><code>regional_default</code> se presenta como orientación regional, no como verificación municipal fuerte.</li>
-    <li>No añade CUPS, direcciones, coordenadas exactas, capturas, respuestas raw, tokens ni geometrías de red.</li>
-  </ul>
-</section>
-
-
-<div class="top">
-      <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-05-12</span>
-    </div>
-
-
-<section>
-  <h2>v0.10.6.3-distributor-reliability-audit-ui</h2>
-  <p><strong>2026-05-13</strong></p>
-  <ul>
-    <li>Añade auditoría pública saneada de fiabilidad para Galicia, Asturias, Cantabria y La Rioja.</li>
-    <li>Documenta que no hay nuevas pistas <code>verified_partial</code> importables en esta fase.</li>
-    <li>Separa <code>verified_partial</code> como pista fuerte y <code>regional_default</code> como orientación regional.</li>
-    <li>Añade decisión técnica saneada para no importar La Rioja 175/175 desde el mapa i-DE interactivo.</li>
-    <li>Añade página pública <code>/fiabilidad-distribuidoras.html</code>.</li>
-    <li>No añade CUPS, direcciones, coordenadas exactas, capturas, respuestas raw, tokens ni geometrías de red.</li>
-  </ul>
-
-  <h2>v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints</h2>
-  <p><strong>2026-05-13</strong></p>
-  <ul>
-    <li>Importa 254 pistas públicas parciales para Andalucía como <code>verified_partial</code>.</li>
-    <li>Usa solo candidatos fuertes de E-Distribución Redes Digitales, S.L.U. con propietario de línea ≥95% en auditoría local saneada del WFS público MIEA <code>LineasElect</code>.</li>
-    <li>No importa Andalucía completa ni usa <code>regional_default</code>.</li>
-    <li>No publica Red Eléctrica como distribuidora municipal.</li>
-    <li>No publica nombres genéricos de pequeña distribuidora.</li>
-    <li>No añade CUPS, direcciones, teléfonos, emails, coordenadas, geometrías WFS ni respuesta raw.</li>
-  </ul>
-
-  <h2>v0.10.6.1-extremadura-verified-partial-hints</h2>
-  <p><strong>2026-05-12</strong></p>
-  <ul>
-    <li>Importa 388 pistas públicas de distribuidora para Extremadura como <code>verified_partial</code>.</li>
-    <li>Usa propuesta local saneada desde visor público de distribuidoras de la Junta de Extremadura.</li>
-    <li>No importa Extremadura como <code>regional_default</code>.</li>
-    <li>Mantiene municipios multi-distribuidora con varias pistas <code>verified_partial</code>.</li>
-    <li>No añade CUPS, direcciones, teléfonos, emails, coordenadas, geometrías WFS ni respuesta raw.</li>
-  </ul>
-
-  <h2>v0.10.6.0-extremadura-distributor-deep-audit</h2>
-  <h3>Distribuidoras / auditoría Extremadura</h3>
-  <ul>
-    <li>Añade una auditoría profunda de Extremadura antes de importar pistas públicas de distribuidora.</li>
-    <li>Genera una revisión desde el GeoJSON real de Extremadura y una cola municipal de 388 zonas.</li>
-    <li>Documenta fuentes públicas de alto nivel: Junta de Extremadura, i-DE/Iberdrola España y CNMC.</li>
-    <li>Bloquea la importación regional automática: Extremadura requiere revisión municipal por presencia de varias distribuidoras.</li>
-    <li>No importa nuevas distribuidoras ni cambia datos productivos, backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni frontend funcional.</li>
-  </ul>
-</section>
-
-
-<section>
-  <h2>v0.10.5.9-madrid-ufd-partial-hints</h2>
-  <h3>Distribuidoras / Madrid parcial</h3>
-  <ul>
-    <li>Importa 9 pistas públicas de distribuidora para Madrid como <code>verified_partial</code>.</li>
-    <li>Añade UFD para Alcalá de Henares, Aranjuez, Ciempozuelos, Colmenar de Oreja, Getafe, Rivas-Vaciamadrid, San Martín de la Vega, Valdemoro y Villaconejos.</li>
-    <li>No importa Madrid capital ni el resto de municipios pendientes.</li>
-    <li>No usa <code>regional_default</code> en Madrid ni afirma exclusividad de red.</li>
-    <li>Regenera matriz, auditorías y página pública de cobertura.</li>
-  </ul>
-</section>
-
-
-<section>
-  <h2>v0.10.5.8-madrid-distributor-deep-review</h2>
-  <h3>Distribuidoras / revisión Madrid</h3>
-  <ul>
-    <li>Añade una revisión profunda previa de Comunidad de Madrid antes de importar pistas públicas de distribuidora.</li>
-    <li>Genera una cola municipal desde el GeoJSON real de Madrid con 181 zonas.</li>
-    <li>Clasifica candidatos UFD citados por fuente pública, Madrid capital como revisión multi-distribuidora y el resto como pendiente municipal.</li>
-    <li>Añade un generador y guardia para mantener la revisión actualizada.</li>
-    <li>No importa nuevas distribuidoras ni cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos productivos.</li>
-  </ul>
-</section>
-
-
-<section>
-  <h2>v0.10.5.7-public-coverage-linking</h2>
-  <h3>Público / SEO</h3>
-  <ul>
-    <li>Enlaza la página pública de cobertura de distribuidoras desde la app principal.</li>
-    <li>Añade la página al sitemap para mejorar descubrimiento público y SEO.</li>
-    <li>Añade una guardia automática para evitar que la página quede huérfana.</li>
-    <li>No importa nuevas distribuidoras ni cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos productivos.</li>
-  </ul>
-</section>
-
-
-<section>
-  <h2>v0.10.5.6-public-distributor-coverage-page</h2>
-  <h3>Distribuidoras / página pública</h3>
-  <ul>
-    <li>Añade una página pública de cobertura de pistas de distribuidoras.</li>
-    <li>La página resume cobertura, zonas pendientes, confianza y lectura segura desde datos reales del repositorio.</li>
-    <li>Añade un generador y una guardia automática para mantener la página actualizada.</li>
-    <li>Amplía el smoke público read-only para comprobar también la nueva página.</li>
-    <li>No importa nuevas distribuidoras ni cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos productivos.</li>
-  </ul>
-</section>
-
-
-<section>
-  <h2>v0.10.5.5-extremadura-distributor-review</h2>
-  <h3>Distribuidoras / revisión Extremadura</h3>
-  <ul>
-    <li>Añade una revisión previa de Extremadura antes de importar pistas públicas de distribuidora.</li>
-    <li>Genera una cola de 388 municipios/zonas pendientes desde el GeoJSON real.</li>
-    <li>Documenta que hay presencia pública de i-DE, pero también señales de varias distribuidoras en fuentes públicas de la Junta.</li>
-    <li>No importa nuevas distribuidoras ni cambia datos productivos.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni geografía.</li>
-  </ul>
-</section>
-
-    <p class="notice">Historial público resumido de cambios de Mapa Apagones, generado a partir de versiones curadas y commits recientes del repositorio.</p>
-
-
-<section>
-  <h2>v0.10.5.4-public-status-readonly-smoke</h2>
-  <h3>Operaciones / producción pública</h3>
-  <ul>
-    <li>Amplía el smoke público read-only para comprobar /api/status.</li>
-    <li>Renombra claves públicas de /api/status relacionadas con HMAC anónimo para evitar exponer nombres internos de variables sensibles.</li>
-    <li>Valida que /api/status no exponga secretos, rutas privadas, IPs privadas ni CIDRs reales.</li>
-    <li>Actualiza la guardia estática del smoke público read-only.</li>
-    <li>No crea reportes ni llama a /api/report.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
-  </ul>
-</section>
-<section>
-  <h2>v0.10.5.3-reporting-timing-smoke</h2>
-  <h3>Reportes / timing y salud operativa</h3>
-  <ul>
-    <li>Añade un smoke de timing para medir los smokes locales críticos de reportes.</li>
-    <li>Mide API básica, ciclo de vida de reportes, concurrencia y privacidad/abuso.</li>
-    <li>Añade una guardia para asegurar que el timing smoke sigue siendo local y no llama a producción.</li>
-    <li>Integra el timing smoke en la validación post-merge.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
-  </ul>
-</section>
-<section>
-  <h2>v0.10.5.2-public-readonly-smoke</h2>
-  <h3>Operaciones / producción pública</h3>
-  <ul>
-    <li>Añade un smoke público read-only para comprobar producción sin crear reportes.</li>
-    <li>Valida web pública, changelog, JSON público de distribuidoras, /api/health y /api/incidents?limit=5.</li>
-    <li>Añade una guardia estática para asegurar que el smoke no llama a /api/report.</li>
-    <li>Documenta el runbook operativo.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
-  </ul>
-</section>
-<section>
-  <h2>v0.10.5.1-hint-quality-reporting-audit</h2>
-  <h3>Auditoría / calidad de datos y reportes</h3>
-  <ul>
-    <li>Añade auditoría generada de calidad de pistas de distribuidora actuales.</li>
-    <li>Añade auditoría generada de salud runtime del flujo de reportes.</li>
-    <li>Integra ambas auditorías en las guardias del repositorio.</li>
-    <li>Verifica cobertura de fuentes, fechas, confianza, duplicados y datasets con pistas.</li>
-    <li>Verifica que los smokes de reportes cubren API, lifecycle, concurrencia, privacidad/abuso y Docker Compose.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
-  </ul>
-</section>
-<section>
-  <h2>v0.10.5.0-comunitat-valenciana-distributor-hints</h2>
-  <h3>Distribuidoras / datos públicos</h3>
-  <ul>
-    <li>Añade pistas públicas de distribuidora para los 544 municipios de Comunitat Valenciana.</li>
-    <li>Usa i-DE como regional_default prudente donde no hay excepción local identificada.</li>
-    <li>Añade 11 excepciones cooperativas/locales como verified_partial.</li>
-    <li>Regenera la matriz de cobertura: 1.959 zonas con pista pública y 6.256 pendientes.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.</li>
-  </ul>
-</section>
-<section>
-  <h2>v0.10.4.9-euskadi-distributor-hints</h2>
-  <h3>Distribuidoras / datos públicos</h3>
-  <ul>
-    <li>Añade pistas públicas de distribuidora para los 255 municipios de Euskadi.</li>
-    <li>Usa i-DE como regional_default prudente donde no hay excepción local identificada.</li>
-    <li>Añade excepciones locales verified_partial para Tolosa/Tolargi, Oñati/Oñargi y Aramaio/Aramaioko Argindar Banatzailea.</li>
-    <li>Regenera la matriz de cobertura: 1.415 zonas con pista pública y 6.800 pendientes.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.</li>
-  </ul>
-</section>
-<section>
-  <h2>v0.10.4.8-public-changelog-refresh</h2>
-  <h3>Changelog público</h3>
-  <ul>
-    <li>Corrige el changelog público para mostrar la versión actual en orden correcto.</li>
-    <li>Añade la entrada pública que faltaba para v0.10.4.7-melilla-distributor-plus-review.</li>
-    <li>Actualiza la fecha visible del changelog público.</li>
-    <li>Añade una guardia automática para evitar que la versión actual falte o aparezca antes del encabezado.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, geografía ni datos de distribuidoras.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>v0.10.4.7-melilla-distributor-plus-review</h2>
-  <h3>Distribuidoras / datos públicos</h3>
-  <ul>
-    <li>Añade pista pública conservadora para Melilla con GASELEC.</li>
-    <li>Melilla pasa a 1 / 1 zonas con pista pública de distribuidora.</li>
-    <li>Actualiza la matriz de cobertura: 1.160 zonas con pista pública y 7.055 pendientes.</li>
-    <li>Añade revisión previa para Madrid antes de cualquier importación masiva.</li>
-    <li>Añade plan de siguientes lotes de distribuidoras.</li>
-    <li>No cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>v0.10.4.6-distributor-coverage-metadata</h2>
-  <h3>Distribuidoras / cobertura</h3>
-  <ul>
-    <li>Corrige la matriz de cobertura para leer metadatos reales dentro de distributors[].</li>
-    <li>Regenera la matriz desde los datos reales del repositorio.</li>
-    <li>No importa nuevas distribuidoras ni cambia backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>v0.10.4.5-distributor-coverage-matrix</h2>
-  <h3>Distribuidoras / cobertura</h3>
-  <ul>
-    <li>Añade una matriz de cobertura de pistas de distribuidoras generada desde los datos reales del repositorio.</li>
-    <li>Añade un script para regenerar y validar la matriz automáticamente.</li>
-    <li>No importa nuevas distribuidoras ni cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite ni datasets geográficos.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>v0.10.4.4-geo-dataset-province-guard</h2>
-  <h3>Geografía / calidad de datos</h3>
-  <ul>
-    <li>Limpia del dataset público de Aragón features cuya provincia no pertenece a Aragón.</li>
-    <li>Añade una guardia para validar que cada GeoJSON autonómico solo contenga provincias de su ámbito.</li>
-    <li>No cambia backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datos sensibles.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>v0.10.4.3-distributor-data-safety-policy</h2>
-  <h3>Seguridad / datos públicos</h3>
-  <ul>
-    <li>Añadida política pública para futuras incorporaciones de distribuidoras.</li>
-    <li>Añadida guardia automática para bloquear campos o patrones sensibles en distributor_hints.json.</li>
-    <li>La guardia revisa CUPS, coordenadas privadas, direcciones exactas, datos de suministro, IP/token reales e indicios de infraestructura crítica.</li>
-    <li>No cambia runtime del backend, reportes, Turnstile, HMAC, proxy/IP, SQLite, datasets geográficos ni datos de distribuidoras existentes.</li>
-  </ul>
-</section>
-
-<section>
-      <h2>v0.10.4.2-audit-closeout</h2>
-      <ul>
-        <li>Añade <code>docs/audit/advanced-audit-closeout.md</code> como cierre de la fase de auditoría avanzada.</li>
-        <li>Resume los hallazgos corregidos entre PR #102 y PR #119.</li>
-        <li>Diferencia deuda crítica ya cerrada de pendientes no críticos de roadmap normal.</li>
-        <li>Añade <code>scripts/check_audit_closeout.py</code> e integración en <code>scripts/repo_guard.sh</code> y <code>scripts/post_merge_validate.sh</code>.</li>
-        <li>No cambia runtime de backend, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.4.1-public-readme-version-sync</h2>
-      <ul>
-        <li>Sincroniza la versión pública visible en <code>README.md</code>, <code>VERSION</code> y <code>APP_VERSION</code>.</li>
-        <li>Corrige la deriva detectada por <code>scripts/post_merge_validate.sh</code> tras el merge de <code>v0.10.4.0-backend-privacy-module</code>.</li>
-        <li>Mantiene el runbook post-merge como comprobación obligatoria después de merges relevantes.</li>
-        <li>No cambia backend runtime, frontend funcional, reportes, Turnstile, HMAC, proxy/IP, SQLite, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.4.0-backend-privacy-module</h2>
-      <ul>
-        <li>Extrae helpers de privacidad/HMAC a <code>backend/app/privacy.py</code>.</li>
-        <li>Mantiene <code>backend/app/main.py</code> usando <code>anon_hash</code>, <code>anon_hash_candidates</code> y <code>sql_in_clause</code> desde el nuevo módulo.</li>
-        <li>Actualiza la guardia de hashes anónimos para validar <code>main.py</code> + <code>privacy.py</code>.</li>
-        <li>Añade <code>scripts/check_backend_privacy_module.py</code> e integración en <code>scripts/repo_guard.sh</code>.</li>
-        <li>Actualiza el runbook post-merge para incluir la nueva guardia.</li>
-        <li>No cambia reportes, anonimización, Turnstile, proxy/IP, SQLite, frontend funcional, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.9-backend-settings-module</h2>
-      <ul>
-        <li>Extrae la configuración de backend a <code>backend/app/settings.py</code>.</li>
-        <li>Reduce responsabilidad de <code>backend/app/main.py</code> sin cambiar comportamiento público.</li>
-        <li>Centraliza variables de entorno, constantes de reportes, Turnstile, HMAC, proxy/IP, geografía y límites API.</li>
-        <li>Añade <code>scripts/check_backend_settings_module.py</code> e integración en <code>scripts/repo_guard.sh</code>.</li>
-        <li>No cambia reportes, privacidad, Turnstile, HMAC, proxy, SQLite, frontend funcional, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.8-post-merge-validation-runbook</h2>
-      <ul>
-        <li>Añade <code>scripts/post_merge_validate.sh</code> como runbook ejecutable de validación post-merge.</li>
-        <li>Agrupa guardias de privacidad, proxy/IP, HMAC, schema SQLite, dependencias, geografía, frontend estático, backend runtime y Docker Compose.</li>
-        <li>Añade <code>scripts/check_post_merge_validation.sh</code> e integración en <code>scripts/repo_guard.sh</code>.</li>
-        <li>Documenta el uso del runbook en <code>README.md</code>.</li>
-        <li>No cambia runtime de backend, frontend funcional, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.7-sqlite-schema-hardening</h2>
-      <ul>
-        <li>Endurece el schema SQLite del backend.</li>
-        <li>Limpia duplicados activos antiguos por <code>incident_id</code> + <code>reporter_token_hash</code> antes de crear constraints.</li>
-        <li>Añade índice único parcial <code>uq_reports_active_incident_reporter</code> para impedir más de un reporte activo del mismo reporter anónimo en la misma incidencia.</li>
-        <li>Añade índices útiles para reports, expiración, zonas y action_log.</li>
-        <li>Añade <code>scripts/check_sqlite_schema_hardening.py</code>.</li>
-        <li>Añade <code>scripts/smoke_backend_schema.py</code> e integración en GitHub Actions.</li>
-        <li>No añade datos personales, no cambia frontend funcional, no cambia Turnstile, no cambia HMAC, no cambia distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.6-safe-runtime-status</h2>
-      <ul>
-        <li>Añade <code>/api/status</code> como endpoint operativo seguro del backend.</li>
-        <li>Expone solo checks agregados y booleanos: DB, tablas requeridas, HMAC, Turnstile, proxy confiable y debug.</li>
-        <li>No devuelve secretos, tokens, IPs, rutas privadas, CIDRs reales ni datos de usuarios.</li>
-        <li>Añade <code>scripts/check_safe_status_endpoint.py</code>.</li>
-        <li>Añade <code>scripts/smoke_backend_status.py</code> e integración en GitHub Actions.</li>
-        <li>Integra la guardia en <code>scripts/repo_guard.sh</code>.</li>
-        <li>No cambia frontend funcional, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.5-frontend-static-smoke-ci</h2>
-      <ul>
-        <li>Añade <code>scripts/smoke_frontend_static.py</code> para validar el build estático del frontend.</li>
-        <li>Comprueba <code>dist/index.html</code>, assets JS/CSS, <code>changelog.html</code>, <code>robots.txt</code>, <code>sitemap.xml</code> y <code>dist/data/distributor_hints.json</code>.</li>
-        <li>Verifica que la versión pública actual aparece en el JS construido y en el changelog público.</li>
-        <li>Comprueba que el JSON público de distribuidoras se copia igual desde <code>frontend/public/data</code>.</li>
-        <li>Añade una revisión básica contra artefactos o textos sensibles/locales dentro de <code>dist</code>.</li>
-        <li>Integra el smoke en GitHub Actions después del build frontend.</li>
-        <li>Añade <code>scripts/check_frontend_static_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
-        <li>No cambia backend, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.4-architecture-privacy-pipeline-docs</h2>
-      <ul>
-        <li>Añade documentación de arquitectura de reportes, privacidad, anti-abuso, proxy/IP, Turnstile, SQLite, CI y datos de distribuidoras.</li>
-        <li>Documenta explícitamente qué datos no se piden ni se deben añadir: cuentas, login, CUPS, texto libre, fotos, direcciones exactas o coordenadas privadas.</li>
-        <li>Explica el uso de HMAC-SHA256 para <code>reporter_token_hash</code> e <code>ip_hash</code>.</li>
-        <li>Explica la confianza en proxy mediante <code>TRUST_PROXY_HEADERS</code> y <code>TRUSTED_PROXY_CIDRS</code>.</li>
-        <li>Añade <code>scripts/check_architecture_docs.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
-        <li>No cambia runtime, frontend, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.3-backend-privacy-abuse-smoke</h2>
-      <ul>
-        <li>Añade <code>scripts/smoke_backend_privacy_abuse.py</code> para validar privacidad y anti-abuso en runtime.</li>
-        <li>Comprueba que <code>reporter_token_hash</code> e <code>ip_hash</code> se guardan como hashes HMAC hex64, no como tokens o IPs reales.</li>
-        <li>Comprueba que los tokens de prueba y la IP raw no aparecen en columnas de texto de la SQLite temporal.</li>
-        <li>Valida que el límite anti-abuso por IP responde con <code>429</code> al superar el umbral.</li>
-        <li>Integra el smoke en GitHub Actions.</li>
-        <li>Añade <code>scripts/check_backend_privacy_abuse_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
-        <li>No cambia el flujo público de usuario, Turnstile, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.2-backend-report-lifecycle-smoke</h2>
-      <ul>
-        <li>Añade <code>scripts/smoke_backend_lifecycle.py</code> para probar un ciclo de vida más real del backend de reportes.</li>
-        <li>Valida errores básicos de <code>/api/report</code>, agrupación de reportes negativos, <code>/api/incidents</code>, filtro <code>bbox</code> y señales <code>Ya volvió</code>.</li>
-        <li>Comprueba en SQLite temporal que varias señales quedan agrupadas y que las señales de restauración neutralizan la incidencia.</li>
-        <li>Integra el smoke en GitHub Actions.</li>
-        <li>Añade <code>scripts/check_backend_lifecycle_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
-        <li>No cambia el flujo público de usuario, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.1-docker-compose-smoke-ci</h2>
-      <ul>
-        <li>Añade <code>docker-compose.ci.yml</code> para probar el stack Docker real sin tocar el stack local de producción/desarrollo.</li>
-        <li>Añade <code>scripts/smoke_docker_compose.sh</code>.</li>
-        <li>El smoke valida frontend, proxy <code>/api</code>, <code>/api/health</code>, <code>/api/report</code>, <code>/api/incidents</code> y <code>/data/distributor_hints.json</code>.</li>
-        <li>Integra el smoke Docker Compose en GitHub Actions.</li>
-        <li>Añade <code>scripts/check_docker_compose_smoke.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
-        <li>No cambia el flujo público de usuario, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.3.0-reproducible-build-lockfiles</h2>
-      <ul>
-        <li>Añade lockfile de frontend con <code>frontend/package-lock.json</code>.</li>
-        <li>Añade lockfile de backend con <code>backend/requirements.lock.txt</code>.</li>
-        <li>Cambia CI y Dockerfiles para usar instalaciones reproducibles: <code>npm ci</code> y <code>requirements.lock.txt</code>.</li>
-        <li>Añade <code>scripts/check_dependency_locks.py</code> e integra la guardia en <code>repo_guard.sh</code>.</li>
-        <li>Mejora la reproducibilidad sin cambiar el flujo público de usuario, reportes, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.9-backend-report-concurrency-smoke</h2>
-      <ul>
-        <li>Añade un smoke de concurrencia de backend para reportes simultáneos.</li>
-        <li>Serializa con <code>BEGIN IMMEDIATE</code> el endpoint <code>/api/report</code> para evitar duplicados concurrentes en la misma celda.</li>
-        <li>Añade una guardia automática para mantener esa protección transaccional.</li>
-        <li>Arranca Uvicorn con SQLite temporal y entorno de test.</li>
-        <li>Envía varios reportes concurrentes en la misma zona y verifica que quedan agrupados en una única incidencia activa.</li>
-        <li>Integra el smoke en GitHub Actions después del smoke API básico.</li>
-        <li>No cambia runtime de producción, frontend, Turnstile, HMAC, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.8-backend-api-smoke-ci</h2>
-      <ul>
-        <li>Añade un smoke real de backend que arranca Uvicorn con SQLite temporal.</li>
-        <li>Prueba <code>/api/health</code>, <code>/api/report-preflight</code>, <code>/api/report</code> y <code>/api/incidents</code>.</li>
-        <li>Integra el smoke en GitHub Actions instalando dependencias reales del backend.</li>
-        <li>Usa Turnstile desactivado, IGN desactivado y HMAC anónimo temporal solo para test.</li>
-        <li>No cambia runtime de producción, frontend, reportes, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.7-trusted-proxy-client-ip</h2>
-      <ul>
-        <li>Endurece la obtención de IP cliente para no confiar ciegamente en <code>X-Forwarded-For</code>.</li>
-        <li>Solo usa <code>CF-Connecting-IP</code>, <code>X-Real-IP</code> o <code>X-Forwarded-For</code> si la conexión llega desde un proxy confiable.</li>
-        <li>Añade <code>TRUST_PROXY_HEADERS</code> y <code>TRUSTED_PROXY_CIDRS</code> para configurar los proxies autorizados.</li>
-        <li>Añade una guardia automática contra el patrón inseguro anterior.</li>
-        <li>No cambia reportes, Turnstile, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.6-compose-anon-hash-env</h2>
-      <ul>
-        <li>Pasa <code>ANON_HASH_KEY</code>, <code>ANON_HASH_KEY_REQUIRED</code> y <code>ANON_HASH_LEGACY_COMPAT</code> al contenedor backend desde Docker Compose.</li>
-        <li>Completa el despliegue operativo del HMAC anónimo añadido en v0.10.2.5.</li>
-        <li>Evita depender del fallback transicional a <code>TURNSTILE_SECRET_KEY</code>.</li>
-        <li>No cambia API, reportes, frontend, distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.5-hmac-anonymous-hashes</h2>
-      <ul>
-        <li>Cambia los hashes anónimos de token e IP a HMAC-SHA256 con secreto de servidor.</li>
-        <li>Añade <code>ANON_HASH_KEY</code> y opciones de transición para compatibilidad con hashes antiguos.</li>
-        <li>Mantiene el almacenamiento de reportes anónimo y evita publicar IPs, tokens o identificadores reales.</li>
-        <li>Añade una guardia automática para impedir volver a <code>sha256(IP/token)</code> sin secreto.</li>
-        <li>No cambia el flujo público de reportes ni el frontend de usuario.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.4-purge-tracked-backend-backups</h2>
-      <ul>
-        <li>Elimina copias <code>.bak</code> trackeadas de <code>backend/app/</code> para evitar código backend obsoleto en el repositorio público.</li>
-        <li>Añade una guardia automática contra backups, temporales y artefactos de edición trackeados.</li>
-        <li>Reduce falsos positivos de auditoría sobre código antiguo que ya no forma parte del runtime.</li>
-        <li>No cambia backend runtime, reportes, Turnstile, datos de distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.3-public-version-guard</h2>
-      <ul>
-        <li>Sincroniza la versión pública visible en README, <code>VERSION</code> y <code>APP_VERSION</code>.</li>
-        <li>Añade una guardia automática para detectar deriva entre versión de app, README y changelog.</li>
-        <li>Refuerza la confianza operativa del repositorio tras la auditoría avanzada.</li>
-        <li>No cambia backend, reportes, Turnstile, datos de distribuidoras ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.2-data-edistribucion-safe-regional-with-exceptions</h2>
-      <ul>
-        <li>Añade a producción pistas de distribuidora para Canarias, Illes Balears y Ceuta tras revisión enfocada.</li>
-        <li>Importa 157 zonas: 154 como <code>regional_default</code> de e-distribución y 3 excepciones locales como <code>verified_partial</code>.</li>
-        <li>Excepciones locales: Puerto de la Cruz, Sóller y Ceuta.</li>
-        <li>Mantiene Andalucía, Aragón, Catalunya y Extremadura fuera de producción hasta revisión más detallada.</li>
-        <li>Mantiene Castilla y León y Galicia fuera de este flujo de importación masiva.</li>
-        <li>No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.</li>
-        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.2.0-data-navarra-rioja-murcia-distributor-hints</h2>
-      <ul>
-        <li>Añade pistas orientativas de distribuidora para Navarra, La Rioja y Región de Murcia.</li>
-        <li>Usa <code>regional_default</code> para i-DE en estas tres comunidades.</li>
-        <li>Mantiene las pistas en JSON público runtime para no inflar el bundle principal.</li>
-        <li>No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.</li>
-        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.9-data-asturias-cantabria-distributor-hints</h2>
-      <ul>
-        <li>Añade pistas orientativas de distribuidora para Asturias y Cantabria.</li>
-        <li>Usa <code>regional_default</code> para E-REDES en Asturias y Viesgo Distribución en Cantabria.</li>
-        <li>Añade Electra de Carbayín como <code>verified_partial</code> en Bimenes y Siero por fuente pública de área de distribución.</li>
-        <li>Mantiene las pistas en JSON público runtime para no inflar el bundle principal.</li>
-        <li>No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.</li>
-        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.8-geo-selector-cleanup</h2>
-      <ul>
-        <li>Limpia el selector de ámbitos geográficos.</li>
-        <li>Elimina el texto informativo obsoleto bajo el selector de comunidades.</li>
-        <li>Evita renderizar chips vacíos si algún dataset no tiene etiqueta visible.</li>
-        <li>No cambia datasets, polígonos, backend, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.7-distributor-hints-public-json</h2>
-      <ul>
-        <li>Mueve la carga de pistas de distribuidora a JSON público servido en runtime.</li>
-        <li>Copia <code>frontend/src/data/distributor_hints.json</code> a <code>frontend/public/data/distributor_hints.json</code>.</li>
-        <li>Evita incluir el dataset completo de distribuidoras en el bundle JavaScript principal.</li>
-        <li>Mantiene fallback seguro si el JSON público todavía no ha cargado o falla.</li>
-        <li>Prepara la app para importar más comunidades sin aumentar de forma lineal el JS inicial.</li>
-        <li>No cambia el contenido del dataset, backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.6-data-galicia-distributor-hints</h2>
-      <ul>
-        <li>Importa a producción la auditoría completa de distribuidoras para Galicia.</li>
-        <li>Añade pistas para los 313 concellos gallegos.</li>
-        <li>Conserva niveles de confianza diferenciados: <code>verified_partial</code> para fuentes concretas y <code>regional_default</code> para orientación regional/provincial.</li>
-        <li>Mantiene el wording seguro añadido en v0.10.1.5 para no presentar orientación regional como verificación municipal.</li>
-        <li>No añade CUPS, datos personales, direcciones exactas, coordenadas privadas ni inventario de infraestructura crítica.</li>
-        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.5-grid-distributor-confidence-wording</h2>
-      <ul>
-        <li>Diferencia el texto público según el nivel de confianza de la pista de distribuidora.</li>
-        <li>Mantiene <code>verified_partial</code> como distribuidora probable con aviso de varias distribuidoras posibles.</li>
-        <li>Muestra <code>regional_default</code> como distribuidora orientativa con recomendación de confirmar.</li>
-        <li>Mantiene el fallback seguro cuando no hay dato verificable.</li>
-        <li>No añade nuevas distribuidoras ni cambia el dataset productivo.</li>
-        <li>No toca backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.4-data-distributor-hints-galicia-moscoso</h2>
-      <ul>
-        <li>Añade las primeras pistas reales y conservadoras de distribuidora eléctrica.</li>
-        <li>Incorpora Eléctrica de Moscoso, S.L. para municipios de Pontevedra con fuente pública verificable.</li>
-        <li>Marca las entradas como <code>verified_partial</code> para evitar afirmar exclusividad o cobertura total.</li>
-        <li>Mantiene el fallback genérico en cualquier zona no verificada.</li>
-        <li>No añade CUPS, direcciones, coordenadas privadas ni inventario de infraestructura crítica.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.1.3-grid-distributor-hints-foundation</h2>
-      <ul>
-        <li>Añade la base técnica para futuras pistas de distribuidora por municipio o zona.</li>
-        <li>Crea el dataset inicial conservador <code>frontend/src/data/distributor_hints.json</code>.</li>
-        <li>Añade helper frontend para resolver el texto público de distribuidora sin cambiar backend.</li>
-        <li>Añade <code>scripts/check_distributor_hints.py</code> y lo integra en <code>scripts/repo_guard.sh</code>.</li>
-        <li>Prepara soporte para distribuidoras pequeñas, múltiples distribuidoras y niveles de confianza.</li>
-        <li>No añade datos reales de distribuidoras todavía.</li>
-        <li>No pide CUPS ni publica infraestructura eléctrica sensible.</li>
-        <li>No cambia mapa, polígonos, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-
-        <section>
-      <h2>v0.10.1.2-docs-public-polish</h2>
-      <ul>
-        <li>Pule la documentación pública tras completar la fase geográfica.</li>
-        <li>Actualiza el README con la lista real de ámbitos geográficos disponibles.</li>
-        <li>Añade una sección de validaciones del repositorio.</li>
-        <li>Documenta las guardias geográficas y de seguridad en <code>CONTRIBUTING.md</code>.</li>
-        <li>Mantiene claro que los datasets individuales deben incluirse también en “Toda España”.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No toca datasets municipales, mapa, polígonos ni matching geográfico.</li>
-      </ul>
-    </section>
-
-<section>
-      <h2>v0.10.1.1-repo-purify</h2>
-      <ul>
-        <li>Limpia artefactos locales/operativos redundantes si estaban trackeados.</li>
-        <li>Refuerza <code>.gitignore</code> para evitar subir backups, auditorías, SARIF, bases de datos locales y GeoJSON raw.</li>
-        <li>Añade configuración <code>.gitleaks.toml</code> para permitir el placeholder vacío documentado <code>TURNSTILE_SECRET_KEY=</code> sin ocultar secretos reales.</li>
-        <li>Elimina GeoJSON raw redundantes si no están referenciados por la aplicación.</li>
-        <li>Mantiene intactos backend, reportes, Turnstile, rate limiting, datasets municipales publicados y lógica de polígonos.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.1.0-geo-complete-spain-audit</h2>
-      <ul>
-        <li>Añade una auditoría de cobertura geográfica completa de España.</li>
-        <li>Verifica que las 17 comunidades autónomas y Ceuta/Melilla están declaradas como datasets individuales.</li>
-        <li>Verifica que todos los <code>municipiosPath</code> individuales están incluidos en <code>municipiosPaths</code> de “Toda España”.</li>
-        <li>Verifica que los GeoJSON municipales publicados existen, tienen features, no superan el límite de tamaño y mantienen propiedades normalizadas.</li>
-        <li>Añade comprobaciones de municipios críticos para detectar regresiones de cuadrado/celda.</li>
-        <li>Integra la nueva auditoría en <code>scripts/repo_guard.sh</code>.</li>
-        <li>No añade nuevas zonas geográficas.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.0.9-geo-andalucia-catalunya</h2>
-      <ul>
-        <li>Añade Andalucía al selector geográfico.</li>
-        <li>Añade Catalunya al selector geográfico.</li>
-        <li>Publica los datasets municipales normalizados de Andalucía y Catalunya.</li>
-        <li>Añade ambos datasets a la carga lazy de “Toda España”.</li>
-        <li>Mantiene la guardia automática para impedir datasets individuales fuera de <code>municipiosPaths</code>.</li>
-        <li>No regenera ningún GeoJSON gigante.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.0.8-geo-all-scope-new-datasets</h2>
-      <ul>
-        <li>Corrige la carga de “Toda España” para incluir todos los datasets municipales individuales declarados.</li>
-        <li>Evita que datasets nuevos como Euskadi, Extremadura y Castilla-La Mancha caigan al cuadrado/celda fallback en el ámbito general.</li>
-        <li>Añade una guardia automática para detectar datasets individuales no incluidos en “Toda España”.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.0.7-geo-euskadi-extremadura-clm</h2>
-      <ul>
-        <li>Añade Euskadi al selector geográfico.</li>
-        <li>Añade Extremadura al selector geográfico.</li>
-        <li>Añade Castilla-La Mancha al selector geográfico.</li>
-        <li>Publica datasets municipales normalizados para las tres comunidades.</li>
-        <li>Añade estos datasets a la carga lazy de “Toda España”.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.0.6-geo-loader-dataset-id</h2>
-      <ul>
-        <li>Corrige el loader geográfico para aceptar tanto un ID de dataset como un objeto dataset.</li>
-        <li>Restaura la carga real de polígonos municipales tras la carga lazy de “Toda España”.</li>
-        <li>Evita que zonas con polígono válido caigan al rectángulo/celda fallback.</li>
-        <li>No cambia backend, reportes, Turnstile, rate limiting ni datos personales.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.0.5-geo-spatial-polygon-match</h2>
-      <ul>
-        <li>Corrige el matching visual de incidencias activas contra polígonos municipales.</li>
-        <li>Añade fallback espacial: si <code>zone_id</code> o nombre/provincia no encajan, usa el punto de la incidencia para buscar el polígono que lo contiene.</li>
-        <li>Evita cuadrados/celdas en municipios con variantes oficiales, bilingües o diferencias de normalización.</li>
-        <li>Mantiene el cuadrado solo cuando no hay polígono disponible o el punto no cae dentro de ningún municipio cargado.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.0.4-geo-normalize-municipality-datasets</h2>
-      <ul>
-        <li>Normaliza todos los datasets municipales publicados para que compartan el mismo esquema.</li>
-        <li>Asegura <code>municipio</code>, <code>mun_name</code>, <code>name</code>, <code>province</code>, <code>prov_name</code>, <code>dataset_id</code> y <code>zone_id</code> en cada feature.</li>
-        <li>Corrige casos donde una incidencia activa caía a cuadrado/celda aunque existía polígono municipal.</li>
-        <li>Añade <code>scripts/audit_geo_datasets.py</code> para detectar datasets incompletos antes de seguir añadiendo comunidades.</li>
-        <li>Mantiene la carga lazy de “Toda España” por datasets individuales.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni infraestructura eléctrica.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.0.3-geo-lazy-all-scope</h2>
-      <ul>
-        <li>Cambia “Toda España” para cargar polígonos desde datasets municipales individuales.</li>
-        <li>Elimina el GeoJSON combinado <code>toda_espana_municipios.geojson</code> para evitar límites de Cloudflare Pages.</li>
-        <li>Mantiene el comportamiento visual: municipio cuando hay polígono, fallback cuando no lo hay.</li>
-        <li>Prepara la app para añadir comunidades grandes sin regenerar un archivo único gigante.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-        <li>No añade distribuidoras ni datos eléctricos nuevos.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.10.0.2-geo-canarias</h2>
-      <ul>
-        <li>Añade Canarias al selector geográfico.</li>
-        <li>Publica <code>frontend/public/data/canarias_municipios.geojson</code> como dataset municipal normalizado.</li>
-        <li>Regenera <code>toda_espana_municipios.geojson</code> incluyendo Canarias en versión slim compatible con Cloudflare Pages.</li>
-        <li>Mantiene el GeoJSON nacional bruto fuera del repositorio.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.0.1-geo-valencia-balears</h2>
-      <ul>
-        <li>Añade Comunitat Valenciana al selector geográfico.</li>
-        <li>Añade Illes Balears al selector geográfico.</li>
-        <li>Publica datasets municipales normalizados para ambas comunidades.</li>
-        <li>Regenera <code>toda_espana_municipios.geojson</code> incluyendo las nuevas zonas en versión slim compatible con Cloudflare Pages.</li>
-        <li>Mantiene el GeoJSON nacional bruto fuera del repositorio.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.10.0.0-geo-small-communities</h2>
-      <ul>
-        <li>Añade La Rioja al selector geográfico.</li>
-        <li>Añade Región de Murcia al selector geográfico.</li>
-        <li>Añade Ceuta y Melilla al selector geográfico.</li>
-        <li>Publica datasets municipales normalizados para las cuatro zonas.</li>
-        <li>Regenera <code>toda_espana_municipios.geojson</code> incluyendo las nuevas zonas con versión slim compatible con Cloudflare Pages.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.9-mobile-active-zone-actions</h2>
-      <ul>
-        <li>En móvil, al pulsar una zona activa del mapa se abre directamente el modo Reportar con esa zona preseleccionada.</li>
-        <li>Mantiene en escritorio el flujo de explorar/detalle para evitar cambios bruscos de UX.</li>
-        <li>Conserva la selección canónica por <code>zone_id</code>, <code>id</code> o <code>incident_id</code>.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.8-navarra-report-button</h2>
-      <ul>
-        <li>Corrige el botón “Reportar” en móvil y escritorio: ahora siempre entra en modo reportar.</li>
-        <li>Si hay una zona activa seleccionada, “Reportar” abre el reporte preasociado a esa zona sin crear un punto manual nuevo.</li>
-        <li>Añade Navarra al selector geográfico.</li>
-        <li>Publica <code>frontend/public/data/navarra_municipios.geojson</code>.</li>
-        <li>Regenera <code>toda_espana_municipios.geojson</code> incluyendo Navarra.</li>
-        <li>Añade compatibilidad explícita para <code>Valle de Elorz/Elortzibar</code>.</li>
-        <li>No cambia backend, Turnstile, rate limiting, privacidad ni consenso de “Ya volvió”.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.7-restore-consensus-mobile</h2>
-      <ul>
-        <li>Cambia “Ya volvió” a lógica de consenso: no borra toda la zona si quedan más avisos activos.</li>
-        <li>Una señal de vuelta neutraliza una confirmación activa: 1 corte + 1 vuelve resuelve, 5 cortes + 1 vuelve deja 4 activas.</li>
-        <li>Hace que la señal “Ya volvió” dure lo mismo que el aviso activo para no reactivar zonas a los pocos minutos.</li>
-        <li>En móvil, al pulsar una zona activa se prioriza abrir la incidencia real y sus acciones.</li>
-        <li>No añade comunidades, no cambia Turnstile, privacidad, rate limiting ni dependencias.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.6-restore-clears-active-zone</h2>
-      <ul>
-        <li>Corrige el flujo “Ya volvió” para que resuelva la zona activa objetivo.</li>
-        <li>Si otro navegador/dispositivo marca que volvió la luz, se cierran los reportes negativos activos de esa zona.</li>
-        <li>Evita que una zona siga marcada/activa después de resolverla correctamente.</li>
-        <li>Limpia selección, punto manual y destino tras una resolución correcta.</li>
-        <li>Añade validación con base de datos temporal para probar el caso: usuario A reporta, usuario B marca “Ya volvió”.</li>
-        <li>No toca datasets geográficos, Turnstile, rate limiting, privacidad ni dependencias.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.5-all-scope-polygons</h2>
-      <ul>
-        <li>Corrige el ámbito “Toda España” para usar polígonos municipales combinados de las comunidades disponibles.</li>
-        <li>Evita que zonas como Zuera o Madrid caigan a cuadrado/celda cuando ya existe GeoJSON municipal.</li>
-        <li>Mantiene el cuadrado solo como fallback o selección manual temporal cuando no hay polígono disponible.</li>
-        <li>Genera <code>toda_espana_municipios.geojson</code> desde datasets ya publicados, en formato ligero para no superar el límite de Cloudflare Pages.</li>
-        <li>No cambia backend, privacidad, Turnstile, rate limiting ni flujo de reportes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.4-report-selection-state</h2>
-      <ul>
-        <li>Corrige selección de zonas activas usando una clave compatible con <code>zone_id</code>, <code>id</code> e <code>incident_id</code>.</li>
-        <li>Corrige clicks sobre polígonos/celdas activas también en modo reportar.</li>
-        <li>Evita que el botón “Reportar” borre una zona activa ya seleccionada.</li>
-        <li>Limpia estado visual cuando una zona queda resuelta o desaparece.</li>
-        <li>No cambia backend, privacidad, Turnstile, dependencias ni datasets geográficos.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.3-geo-aragon</h2>
-      <ul>
-        <li>Añade Aragón al selector geográfico.</li>
-        <li>Publica un GeoJSON municipal curado para Aragón.</li>
-        <li>Normaliza propiedades municipales para enlazar incidencias con polígonos.</li>
-        <li>Limpia el listado geográfico del README.</li>
-        <li>No cambia backend, privacidad, Turnstile ni lógica de reportes.</li>
-        <li>No sube el GeoJSON nacional bruto.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.2-geo-madrid-polygon-match</h2>
-      <ul>
-        <li>Normaliza el GeoJSON de Comunidad de Madrid para enlazar incidencias con polígonos municipales reales.</li>
-        <li>Añade <code>municipio</code>, <code>province</code>, <code>zone_id</code> y <code>dataset_id</code> a cada feature de Madrid.</li>
-        <li>Corrige la selección frontend para aceptar <code>id</code>, <code>zone_id</code> o <code>incident_id</code>.</li>
-        <li>No cambia backend, Turnstile, paquetes, privacidad ni flujo de reportes.</li>
-        <li>Mantiene “Toda España” sin cambio automático de ámbito.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.9.1-geo-madrid</h2>
-      <ul>
-        <li>Añade Comunidad de Madrid al selector geográfico.</li>
-        <li>Publica solo el GeoJSON municipal curado de Madrid.</li>
-        <li>No añade overlays nuevos ni cambia el flujo de reportes.</li>
-        <li>No toca backend, Turnstile, privacidad ni rate limiting.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.9.9.0-repo-hygiene-guardrails</h2>
-      <ul>
-        <li>Limpia el repositorio tras el rollback de estabilidad.</li>
-        <li>Elimina backups locales del control de versiones si se habían colado.</li>
-        <li>Refuerza <code>.gitignore</code> para backups, diagnósticos, logs, bases de datos, <code>.env</code> y GeoJSON brutos.</li>
-        <li>Añade guardas automáticas y CI básico para fallar antes del merge, no en producción.</li>
-        <li>Documenta un plan de estabilidad para rehacer geografía de forma incremental.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.9.8.9-stability-rollback</h2>
-      <ul>
-        <li>Rollback conservador al último frontend estable: <code>v0.9.8.3-black-screen-fix</code>.</li>
-        <li>Retira las capas experimentales de comunidades nuevas, selección municipal persistente y overlays problemáticos.</li>
-        <li>Recupera una base fiable para reportar, resolver y navegar sin pantalla negra.</li>
-        <li>Mantiene privacidad por diseño: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin coordenadas exactas públicas.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.9.8.3-black-screen-fix</h2>
-      <ul>
-        <li>Corrige pantalla negra tras enviar o resolver un aviso.</li>
-        <li>Elimina una referencia JavaScript inexistente que podía romper React después del reporte.</li>
-        <li>Mantiene el overlay de reporte, pero evita que deje la app sin renderizar.</li>
-        <li>No cambia backend, privacidad, Turnstile ni lógica de reportes.</li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>v0.9.8.2-report-overlay-stability</h2>
-      <ul>
-        <li>Unifica el overlay de reporte para que no parezca que se abren dos ventanas distintas.</li>
-        <li>Añade limpieza automática del overlay tras finalizar o si queda bloqueado.</li>
-        <li>Reajusta el mapa al cerrar avisos para evitar pantalla negra hasta refrescar.</li>
-        <li>No cambia backend ni la política de privacidad.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.8.1-report-actions-restore</h2>
-      <ul>
-        <li>Corrige acciones directas de incidencia: “Yo también” y “Ya volvió” ya no saltan al panel manual.</li>
-        <li>Mejora el reconocimiento de zona activa al marcar “Ya volvió” desde un punto cercano o visible.</li>
-        <li>Los errores de validación/verificación se muestran como aviso de error, no como éxito.</li>
-        <li>Reduce cambios bruscos entre overlay, panel y mapa durante el envío.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.8.0-report-overlay-flow</h2>
-      <ul>
-        <li>Mejora el overlay de reporte para explicar el flujo real de envío.</li>
-        <li>Cambia “detectando ayuntamiento” por validación de zona, protección anti-abuso, guardado anónimo y actualización de zona agregada.</li>
-        <li>Añade textos de ayuda más claros y menos alarmistas durante el envío.</li>
-        <li>Mantiene privacidad por diseño: sin CUPS, sin nombre, sin dirección exacta y sin texto libre.</li>
-      </ul>
-    </section>
-
-
-    
-    <section>
-      <h2>v0.9.7.9-manual-restore-target</h2>
-      <ul>
-        <li>Corrige “Ya volvió” desde el modo Reportar manual cuando el punto cae sobre una zona activa.</li>
-        <li>El frontend deduce la incidencia visible y envía <code>incident_id</code>/<code>zone_id</code> cuando corresponde.</li>
-        <li>El backend añade fallback por bounds/celda activa antes de usar solo proximidad.</li>
-        <li>Evita repetir <code>preflight</code> después de Turnstile si ya se validó antes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>v0.9.7.8-report-flow-stability</h2>
-      <ul>
-        <li>Estabiliza el flujo de reporte, confirmación y “Ya volvió”.</li>
-        <li>Los cooldowns se comprueban antes del envío visual.</li>
-        <li>Mejora mensajes móviles y acciones visibles sin cambiar la política de privacidad.</li>
-      </ul>
-    </section>
-
-<h2>v0.9.7.7-stable-rollback</h2>
-    <ul>
-      <li>Rollback de la pasada de banners que causaba regresiones móviles.</li>
-      <li>Recupera el flujo estable de reporte y acciones.</li>
-      <li>Mantiene Turnstile con fallback suave.</li>
-      <li>Corrige selección, acciones de incidencia, “Ya volvió” y mensajes duplicados.</li>
-    </ul>
-
-    <h2>v0.9.7.5-turnstile-soft-fallback</h2>
-    <ul>
-      <li>Hotfix de estabilidad para reportes si Turnstile queda bloqueado por el navegador.</li>
-      <li>Turnstile sigue activo, pero ya no deja el envío colgado.</li>
-      <li>Fallback a protección local y rate limiting del backend.</li>
-      <li>Evita estados permanentes como “Enviando…” o “Preparando…”.</li>
-    </ul>
-
-    <h2>v0.9.7.4-turnstile-managed</h2>
-    <ul>
-      <li>Hotfix de Turnstile para widget Managed/Gestionado.</li>
-      <li>Usa tamaño flexible o compacto según pantalla.</li>
-      <li>Mantiene comprobación al confirmar sin caja fija cortada.</li>
-      <li>Mejora compatibilidad en PC, iPhone/Safari y móviles pequeños.</li>
-    </ul>
-
-    <h2>v0.9.7.3-ios-turnstile-submit</h2>
-    <ul>
-      <li>Hotfix del flujo de reporte en iPhone/Safari.</li>
-      <li>El botón Confirmar reintenta preparar Turnstile invisible si todavía no está listo.</li>
-      <li>Si la verificación no responde, el botón se libera y aparece un mensaje claro.</li>
-      <li>Mantiene API pública, Turnstile invisible y flujo de reporte sin caja visual.</li>
-    </ul>
-
-    <h2>v0.9.7.2-mobile-responsive</h2>
-    <ul>
-      <li>Ajustes responsive para móviles con safe-area.</li>
-      <li>Paneles inferiores menos propensos a cortar botones.</li>
-      <li>Footer legal y versión más flexible en pantallas pequeñas.</li>
-      <li>Páginas públicas y changelog mejor adaptados a móvil.</li>
-    </ul>
-
-    <h2>v0.9.7.1-render-hotfix</h2>
-    <ul>
-      <li>Corrige un fallo de render detectado tras v0.9.7.</li>
-      <li>Mantiene los mensajes de éxito con cierre automático.</li>
-      <li>Mantiene Turnstile invisible activo.</li>
-    </ul>
-
-    <h2>v0.9.7-report-feedback</h2>
-    <ul>
-      <li>Mejora del feedback al enviar reportes.</li>
-      <li>Textos más naturales durante la preparación del envío.</li>
-      <li>Mensajes de éxito con cierre automático.</li>
-      <li>Turnstile invisible se mantiene activo sin ocupar espacio visual.</li>
-    </ul>
-
-    <h2>v0.9.6-invisible-turnstile</h2>
-    <ul>
-      <li>Turnstile pasa a modo invisible.</li>
-      <li>La verificación anti-abuso se ejecuta al pulsar Confirmar.</li>
-      <li>Se elimina el bloque blanco visible que se cortaba en móvil y desktop.</li>
-      <li>El formulario de reporte queda más limpio y compacto.</li>
-    </ul>
-
-    <h2>v0.9.5-mobile-usability</h2>
-    <ul>
-      <li>Recupera filtros, lista y enlaces legales en móvil.</li>
-      <li>Oculta el panel vacío de explorar en móvil.</li>
-      <li>Reportar queda como panel inferior separado.</li>
-      <li>Ajusta Turnstile para que no se corte en PC ni móvil.</li>
-      <li>Usa Turnstile normal en escritorio y compacto en móvil.</li>
-    </ul>
-
-    <h2>v0.9.4-mobile-compact-sheet</h2>
-    <ul>
-      <li>Panel inferior mucho más bajo en modo explorar.</li>
-      <li>Reportar pasa a bottom sheet compacto.</li>
-      <li>Turnstile vuelve a modo horizontal normal y se controla por CSS.</li>
-      <li>Reducción de botones, pestañas, chips, textos y espaciados en móvil.</li>
-    </ul>
-
-    <h2>v0.9.3-mobile-shell</h2>
-    <ul>
-      <li>Rediseño móvil adicional del modo explorar y reportar.</li>
-      <li>Panel inferior compacto para reportar.</li>
-      <li>Turnstile compacto en móvil/tablet para evitar cortes.</li>
-      <li>Ajuste de topbar, botones, filtros, paneles, chips y controles.</li>
-    </ul>
-
-    <h2>v0.9.2-mobile-report</h2>
-    <ul>
-      <li>Rediseño inicial del flujo de reporte en móvil.</li>
-      <li>Panel de reporte menos invasivo.</li>
-      <li>Changelog público actualizado.</li>
-    </ul>
-
-    <h2>v0.9.1-public-legal</h2>
-    <ul>
-      <li>Dominio público activo: https://mapa-apagones.es.</li>
-      <li>Páginas públicas legales listas para producción.</li>
-      <li>Correos públicos del proyecto.</li>
-      <li>SEO básico, robots.txt, sitemap.xml, Open Graph y JSON-LD.</li>
-    </ul>
-
-    <h2>v0.9.0-geo-north-cyl</h2>
-    <ul>
-      <li>Mapa ciudadano funcional.</li>
-      <li>Reportes por zona.</li>
-      <li>Base geográfica inicial: Galicia, Asturias, Cantabria y Castilla y León.</li>
-    </ul>
-
-    <h2>v0.8.x-public-infra</h2>
-    <ul>
-      <li>Cloudflare Pages preparado.</li>
-      <li>API separada mediante `VITE_API_BASE_URL`.</li>
-      <li>CORS, Docker, backups, healthchecks y SQLite WAL.</li>
-    </ul>
-
-    <h2>v0.7.x-security-abuse</h2>
-    <ul>
-      <li>Turnstile.</li>
-      <li>Rate limiting.</li>
-      <li>Endpoints con `bbox`, `limit` y límites duros.</li>
-    </ul>
-
-    <h2>v0.6.0-foundation</h2>
-    <ul>
-      <li>Base legal inicial.</li>
-      <li>Backup/restore inicial.</li>
-      <li>Limpieza de diseño de incidencias.</li>
-    </ul>
-
-    <h2>v0.5.0-alpha</h2>
-    <ul>
-      <li>Mapa ciudadano funcional inicial.</li>
-      <li>Incidencias por zona.</li>
-      <li>Lógica inicial de estados.</li>
-    </ul>
-
-    <h2>Historial técnico reciente desde Git</h2>
-    <ul>
-      <li><code>2026-04-28</code> <code>0ed074f</code> PR #31 from odegaard12/feat/mobile-report-redesign-v2</li>
-<li><code>2026-04-28</code> <code>42ee120</code> PR #30 from odegaard12/feat/ux-turnstile-mobile-density-v1</li>
-<li><code>2026-04-28</code> <code>7241812</code> PR #29 from odegaard12/fix/public-legal-legacy-pages-v1</li>
-<li><code>2026-04-28</code> <code>05e23ac</code> PR #28 from odegaard12/fix/public-changelog-page-v1</li>
-<li><code>2026-04-28</code> <code>371347a</code> PR #27 from odegaard12/docs/legal-production-texts-v1</li>
-<li><code>2026-04-28</code> <code>a8106cb</code> PR #26 from odegaard12/feat/ux-initial-spain-scale-v1</li>
-<li><code>2026-04-28</code> <code>618b82e</code> PR #25 from odegaard12/feat/public-pages-seo-v1</li>
-<li><code>2026-04-28</code> <code>f2ce6dc</code> PR #23 from odegaard12/ops/sqlite-backup-health-v1</li>
-<li><code>2026-04-27</code> <code>e25093d</code> PR #22 from odegaard12/chore/frontend-dockerignore-v1</li>
-<li><code>2026-04-27</code> <code>d802ab0</code> PR #21 from odegaard12/feat/cloudflare-pages-ready-v1</li>
-<li><code>2026-04-27</code> <code>b87b044</code> PR #20 from odegaard12/feat/api-bbox-limit-v1</li>
-<li><code>2026-04-27</code> <code>c1ea5e0</code> PR #19 from odegaard12/fix/prod-cors-debug-v1</li>
-<li><code>2026-04-27</code> <code>3df7d17</code> PR #18 from odegaard12/docs/public-project-identity-v1</li>
-<li><code>2026-04-27</code> <code>90b9cb9</code> PR #17 from odegaard12/docs/public-project-identity-v1</li>
-<li><code>2026-04-27</code> <code>358d356</code> PR #16 from odegaard12/feat/security-turnstile-v1</li>
-<li><code>2026-04-27</code> <code>1aae301</code> PR #15 from odegaard12/feat/geo-castilla-leon-v1</li>
-<li><code>2026-04-27</code> <code>f75f323</code> PR #14 from odegaard12/feat/geo-cantabria-v1</li>
-<li><code>2026-04-27</code> <code>91cfab6</code> PR #13 from odegaard12/fix/geo-normalize-galicia-asturias-pipeline-v1</li>
-<li><code>2026-04-27</code> <code>508c84a</code> PR #12 from odegaard12/fix/zone-id-accent-slug-normalization-v1</li>
-<li><code>2026-04-27</code> <code>028c6a0</code> PR #11 from odegaard12/feat/geo-cnig-pipeline-v1</li>
-<li><code>2026-04-27</code> <code>8b5d134</code> PR #10 from odegaard12/fix/geo-all-dataset-remount-hardening-v1</li>
-<li><code>2026-04-27</code> <code>0fa3540</code> PR #9 from odegaard12/fix/report-feedback-and-scope-freedom</li>
-<li><code>2026-04-27</code> <code>1fe8878</code> PR #8 from odegaard12/feat/geo-spain-source-pipeline</li>
-<li><code>2026-04-26</code> <code>d644c83</code> PR #7 from odegaard12/feat/geo-multidataset-state</li>
-<li><code>2026-04-26</code> <code>6606992</code> PR #6 from odegaard12/feat/geo-loader-spain-ready</li>
-<li><code>2026-04-26</code> <code>1e2fe94</code> PR #5 from odegaard12/chore/geo-version-sync-and-state-hardening</li>
-<li><code>2026-04-26</code> <code>a505b80</code> PR #4 from odegaard12/fix/geo-live-refresh-clarity</li>
-<li><code>2026-04-26</code> <code>8d61cb4</code> PR #3 from odegaard12/fix/polygon-resolution-v1</li>
-<li><code>2026-04-26</code> <code>6d4f1ce</code> PR #2 from odegaard12/feat/municipality-polygons</li>
-<li><code>2026-04-25</code> <code>142b0a2</code> PR #1 from odegaard12/feat/zones-backend-wip</li>
-<li><code>2026-04-24</code> <code>d4f6494</code> docs: improve README and restore license</li>
-<li><code>2026-04-24</code> <code>7ee5442</code> chore: public-safe snapshot without personal or runtime data</li>
-    </ul>
-  
-
-
-
-<section class="release-card">
-  <h2>v0.10.7.5 — Public docs, changelog and national validation refresh</h2>
-  <p>
-    Se actualiza la documentación pública y el changelog para reflejar el trabajo
-    reciente de validación nacional y la preparación conservadora del batch 2 de
-    distribuidoras en Andalucía.
+  <p class="lead">
+    Historial público curado de cambios importantes. El historial técnico completo está disponible en GitHub.
   </p>
-  <ul>
-    <li>Andalucía: 786 municipios/zones geográficas verificadas.</li>
-    <li>Andalucía: 254 hints públicos ya cubiertos.</li>
-    <li>Andalucía: 532 filas pendientes en cola de revisión.</li>
-    <li>Workbench batch 2: 532 candidatos en modo revisión manual.</li>
-    <li>Sin importación automática de distribuidoras en esta actualización.</li>
-    <li>Nuevos guards para frescura documental y validaciones post-merge.</li>
-  </ul>
-  <p>
-    Privacidad: sin CUPS, sin direcciones, sin coordenadas exactas, sin datos de
-    clientes y sin inventario privado de red.
-  </p>
-</section>
+  <section class="release"><h2>v0.10.7.7 — Static public pages clean refresh</h2><p class="eyebrow">2026-05-24</p><ul><li>Reordena el changelog público con una entrada actual arriba.</li><li>Regenera las páginas estáticas de cobertura y fiabilidad con diseño limpio.</li><li>Actualiza la lectura pública de comunidades completas, parciales y pendientes.</li><li>Aclara que faltan pistas de distribuidora verificadas, no comunidades geográficas.</li><li>No importa nuevas distribuidoras.</li></ul></section><section class="release"><h2>v0.10.7.6 — Public pages truthfulness and ordering refresh</h2><p class="eyebrow">2026-05-24</p><ul><li>Corrige el orden del changelog público.</li><li>Aclara que 100% con pista no significa 100% verificación municipal fuerte.</li><li>Aclara regional_default y verified_partial.</li><li>Añade guard de verdad pública para páginas estáticas.</li></ul></section><section class="release"><h2>v0.10.7.5 — Public docs, changelog and national validation refresh</h2><p class="eyebrow">2026-05-24</p><ul><li>Actualiza documentación pública tras el trabajo de Andalucía.</li><li>Andalucía batch 2: 532 candidatos en modo revisión manual.</li><li>Añade guard de frescura documental.</li></ul></section><section class="release"><h2>v0.10.7.4 — Andalucía batch 2 candidate workbench</h2><p class="eyebrow">2026-05-24</p><ul><li>Crea un workbench de 532 candidatos Andalucía batch 2 en modo revisión manual.</li><li>No importa datos automáticamente.</li><li>Integra validador en post-merge.</li></ul></section><section class="release"><h2>v0.10.7.2 — Andalucía pending review queue</h2><p class="eyebrow">2026-05-23</p><ul><li>Genera cola saneada de 532 zonas pendientes de revisión en Andalucía.</li><li>Valida 786 features GeoJSON y 254 hints ya cubiertos.</li></ul></section><section class="release"><h2>v0.10.6.4-distributor-confidence-labels</h2><p class="eyebrow">2026-05-13</p><ul><li>Mejora etiquetas públicas de fiabilidad de pistas de distribuidora.</li><li>verified_partial se presenta como pista parcial verificada.</li><li>regional_default se presenta como orientación regional.</li></ul></section><section class="release"><h2>v0.10.6.3-distributor-reliability-audit-ui</h2><p class="eyebrow">2026-05-13</p><ul><li>Añade auditoría pública saneada de fiabilidad para Galicia, Asturias, Cantabria y La Rioja.</li><li>Añade página pública de fiabilidad de distribuidoras.</li></ul></section><section class="release"><h2>v0.10.6.2-andalucia-edistribucion-strong-lineowner-hints</h2><p class="eyebrow">2026-05-13</p><ul><li>Importa 254 pistas públicas parciales para Andalucía como verified_partial.</li><li>Usa solo candidatos fuertes de E-Distribución Redes Digitales, S.L.U.</li></ul></section><section class="release"><h2>v0.10.6.1-extremadura-verified-partial-hints</h2><p class="eyebrow">2026-05-12</p><ul><li>Importa 388 zonas de Extremadura con pistas públicas verified_partial.</li><li>Mantiene municipios multi-distribuidora con varias pistas.</li></ul></section><section class="release"><h2>v0.10.5.9-madrid-ufd-partial-hints</h2><p class="eyebrow">2026-05-11</p><ul><li>Importa 9 pistas públicas de UFD para Comunidad de Madrid.</li><li>Mantiene el resto de Madrid pendiente.</li></ul></section><section class="release"><h2>v0.10.5.6-public-distributor-coverage-page</h2><p class="eyebrow">2026-05-11</p><ul><li>Añade página pública de cobertura de pistas de distribuidoras.</li><li>Añade generador y guardia automática.</li></ul></section><section class="release"><h2>v0.10.1.0-geo-complete-spain-audit</h2><p class="eyebrow">2026-05-04</p><ul><li>Verifica cobertura geográfica completa de España.</li><li>Comprueba 17 comunidades autónomas y Ceuta/Melilla.</li></ul></section><section class="release"><h2>v0.9.1-public-legal</h2><p class="eyebrow">2026-04-28</p><ul><li>Dominio público activo.</li><li>Páginas legales, SEO básico y correos públicos.</li></ul></section>
 
+  <footer>
+    Mapa Apagones · páginas estáticas desplegadas por Cloudflare Pages desde el repositorio público.
+  </footer>
 </main>
 </body>
 </html>

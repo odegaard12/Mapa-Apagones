@@ -2,265 +2,200 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Fiabilidad de pistas de distribuidoras
-
-<div class="notice public-reliability-note">
-  <strong>Nota de vigencia:</strong>
-  esta página explica los criterios de fiabilidad actuales y conserva una auditoría histórica.
-  La cobertura global actual debe consultarse en la página pública de cobertura de distribuidoras.
-</div>
-
-
-<div class="notice">
-  <strong>Nota de vigencia:</strong>
-  esta página explica los criterios de fiabilidad y conserva una auditoría
-  histórica de Galicia, Asturias, Cantabria y La Rioja. La cobertura global
-  actual debe consultarse en la página de cobertura de distribuidoras.
-</div>
- · Mapa Apagones</title>
-  <meta name="description" content="Cómo interpreta Mapa Apagones la fiabilidad de las pistas públicas de distribuidoras eléctricas.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiabilidad de pistas de distribuidoras · Mapa Apagones</title>
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #dbe3ef;
-      --accent: #0f766e;
-      --warn: #92400e;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #020617;
-        --card: #0f172a;
-        --text: #e2e8f0;
-        --muted: #94a3b8;
-        --border: #1e293b;
-        --accent: #5eead4;
-        --warn: #fbbf24;
-      }
-    }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    main {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 28px 18px 44px;
-    }
-    .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 12px;
-      color: var(--text);
-      text-decoration: none;
-      background: var(--card);
-    }
-    section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      margin: 16px 0;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
-    }
-    h1 {
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.05;
-      margin: 0 0 12px;
-    }
-    h2 {
-      margin-top: 0;
-      font-size: 24px;
-    }
-    p {
-      color: var(--muted);
-    }
-    strong {
-      color: var(--text);
-    }
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .metric {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-      background: color-mix(in srgb, var(--card) 88%, var(--bg));
-    }
-    .metric strong {
-      display: block;
-      font-size: 26px;
-      margin-bottom: 4px;
-    }
-    .metric span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 14px;
-      font-size: 14px;
-    }
-    th, td {
-      border-bottom: 1px solid var(--border);
-      padding: 10px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: color-mix(in srgb, var(--card) 80%, var(--bg));
-    }
-    code {
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      padding: 2px 5px;
-      background: color-mix(in srgb, var(--card) 78%, var(--bg));
-    }
-    .good { color: var(--accent); font-weight: 700; }
-    .warn { color: var(--warn); font-weight: 700; }
-    ul { color: var(--muted); }
-  </style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #d9e2ef;
+  --accent: #0f766e;
+  --accent-soft: #e6fffb;
+  --warn: #92400e;
+  --warn-soft: #fff7ed;
+  --bad: #991b1b;
+  --bad-soft: #fef2f2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+a { color: var(--accent); }
+.back {
+  display: inline-block;
+  margin-bottom: 18px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.eyebrow {
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 0 0 6px;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+h2 { margin-top: 34px; }
+.lead {
+  max-width: 860px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+.card, .release, .notice {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+}
+.metric strong {
+  display: block;
+  font-size: 1.8rem;
+}
+.metric span { color: var(--muted); }
+.notice {
+  background: var(--accent-soft);
+  border-color: #99f6e4;
+}
+.notice.warn {
+  background: var(--warn-soft);
+  border-color: #fed7aa;
+}
+.notice.bad {
+  background: var(--bad-soft);
+  border-color: #fecaca;
+}
+.table-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #eef4fb;
+  font-size: .9rem;
+}
+tr:last-child td { border-bottom: 0; }
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+  background: #eef2ff;
+}
+.badge.pending { background: var(--bad-soft); color: var(--bad); }
+.badge.partial { background: var(--warn-soft); color: var(--warn); }
+.badge.full { background: var(--accent-soft); color: var(--accent); }
+code {
+  background: #eef4fb;
+  padding: 2px 5px;
+  border-radius: 6px;
+}
+.release + .release { margin-top: 14px; }
+.release h2 { margin-top: 0; }
+.small { color: var(--muted); font-size: .92rem; }
+footer { margin-top: 34px; color: var(--muted); }
+</style>
 </head>
 <body>
-  <main>
-    <div class="top">
-      <a class="pill" href="/">← Volver al mapa</a>
-      <span>Criterios vigentes revisados: 2026-05-24 · Documento histórico base: v0.10.6.3-distributor-reliability-audit-ui</span>
-    </div>
+<main>
+  <a class="back" href="/">← Volver al mapa</a>
 
-    <section>
-      <h1>Fiabilidad de pistas de distribuidoras</h1>
-      <p>
-        Mapa Apagones usa pistas públicas para ayudar a orientar al usuario sobre posibles distribuidoras por municipio o zona.
-        Estas pistas no sustituyen a la confirmación oficial de la comercializadora o distribuidora.
-      </p>
-      <div class="metrics">
-        <div class="metric"><strong>4</strong><span>datasets auditados en esta fase</span></div>
-        <div class="metric"><strong>669</strong><span>zonas revisadas en norte/oeste</span></div>
-        <div class="metric"><strong>143</strong><span>zonas con pista fuerte actual</span></div>
-        <div class="metric"><strong>526</strong><span>zonas solo orientativas</span></div>
-      </div>
-    </section>
+  <p class="eyebrow">Criterios vigentes revisados: 2026-05-24 · v0.10.7.7-static-public-pages-clean</p>
+  <h1>Fiabilidad de pistas de distribuidoras</h1>
+  <p class="lead">
+    Mapa Apagones usa pistas públicas para orientar al usuario sobre posibles distribuidoras por municipio o zona.
+    Estas pistas no sustituyen a la confirmación oficial.
+  </p>
 
-    <section>
-      <h2>Niveles de fiabilidad</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nivel</th>
-            <th>Cómo debe leerse</th>
-            <th>Qué no significa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>verified_partial</code></td>
-            <td><span class="good">Pista pública fuerte</span> para una presencia municipal, parcial o local.</td>
-            <td>No afirma exclusividad ni cobertura total del municipio.</td>
-          </tr>
-          <tr>
-            <td><code>regional_default</code></td>
-            <td><span class="warn">Orientación regional</span> cuando no hay prueba municipal fuerte.</td>
-            <td>No debe venderse como verificación municipal fuerte.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <section class="notice warn">
+    Esta página resume criterios vigentes a escala nacional. La auditoría histórica de Galicia, Asturias,
+    Cantabria y La Rioja queda integrada como antecedente, pero la tabla actual cubre los 19 datasets geográficos.
+  </section>
 
-    <section>
-      <h2>Auditoría Galicia, Asturias, Cantabria y La Rioja</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Dataset</th>
-            <th>Zonas</th>
-            <th>Pistas actuales</th>
-            <th>Fuertes actuales</th>
-            <th>Orientativas</th>
-            <th>Decisión</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Galicia</td>
-            <td>313</td>
-            <td>313</td>
-            <td>141</td>
-            <td>172</td>
-            <td>Mantener pistas fuertes y aclarar orientación regional.</td>
-          </tr>
-          <tr>
-            <td>Asturias</td>
-            <td>78</td>
-            <td>78</td>
-            <td>2</td>
-            <td>76</td>
-            <td>Mantener Electra de Carbayín como fuerte; E-REDES como orientación.</td>
-          </tr>
-          <tr>
-            <td>Cantabria</td>
-            <td>103</td>
-            <td>103</td>
-            <td>0</td>
-            <td>103</td>
-            <td>Viesgo debe mostrarse como orientación regional.</td>
-          </tr>
-          <tr>
-            <td>La Rioja</td>
-            <td>175</td>
-            <td>175</td>
-            <td>0</td>
-            <td>175</td>
-            <td>No subir a <code>verified_partial</code> desde el mapa i-DE interactivo.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <h2>Niveles de fiabilidad</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Nivel</th><th>Cómo debe leerse</th><th>Qué no significa</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>verified_partial</code></td>
+          <td>Pista pública fuerte para una presencia municipal, parcial o local.</td>
+          <td>No afirma exclusividad ni cobertura total del municipio.</td>
+        </tr>
+        <tr>
+          <td><code>regional_default</code></td>
+          <td>Orientación regional cuando no hay prueba municipal fuerte.</td>
+          <td>No es verificación municipal fuerte.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <section>
-      <h2>Decisión sobre La Rioja</h2>
-      <p>
-        El mapa público de i-DE observado funciona como consulta interactiva por punto y está protegido por reCAPTCHA.
-        Sirve como orientación individual, pero no como fuente municipal masiva reproducible para importar 175 municipios como verificados.
-      </p>
-      <ul>
-        <li>No se automatizan consultas protegidas por reCAPTCHA.</li>
-        <li>No se guardan coordenadas, direcciones, capturas ni respuestas raw.</li>
-        <li>La Rioja queda como orientación regional hasta encontrar una fuente municipal/zonal reproducible.</li>
-      </ul>
-    </section>
+  <h2>Estado nacional por comunidad</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Zona</th>
+          <th>Zonas</th>
+          <th>Con orientación/pista</th>
+          <th>Pendientes</th>
+          <th>Estado</th>
+          <th>Entradas por confianza</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Castilla y León</td><td>2.298</td><td>0</td><td>2.298</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Catalunya</td><td>948</td><td>0</td><td>948</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Castilla-La Mancha</td><td>921</td><td>0</td><td>921</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Aragón</td><td>734</td><td>0</td><td>734</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Andalucía</td><td>786</td><td>254</td><td>532</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 254</td></tr><tr><td>Comunidad de Madrid</td><td>181</td><td>9</td><td>172</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 9</td></tr><tr><td>Extremadura</td><td>388</td><td>388</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>verified_partial: 530</td></tr><tr><td>Galicia</td><td>313</td><td>313</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 172, verified_partial: 154</td></tr><tr><td>Comunitat Valenciana</td><td>544</td><td>544</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 533, verified_partial: 11</td></tr><tr><td>Euskadi</td><td>255</td><td>255</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 252, verified_partial: 3</td></tr><tr><td>Navarra</td><td>288</td><td>288</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 288</td></tr><tr><td>La Rioja</td><td>175</td><td>175</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 175</td></tr><tr><td>Asturias</td><td>78</td><td>78</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 78, verified_partial: 2</td></tr><tr><td>Cantabria</td><td>103</td><td>103</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 103</td></tr><tr><td>Canarias</td><td>88</td><td>88</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 87, verified_partial: 1</td></tr><tr><td>Illes Balears</td><td>68</td><td>68</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 67, verified_partial: 1</td></tr><tr><td>Región de Murcia</td><td>45</td><td>45</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 45</td></tr><tr><td>Ceuta</td><td>1</td><td>1</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>verified_partial: 1</td></tr><tr><td>Melilla</td><td>1</td><td>1</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>verified_partial: 1</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-    <section>
-      <h2>Qué falta para mejorar datos</h2>
-      <p>
-        Para subir más municipios a <code>verified_partial</code> hace falta una fuente pública más fuerte:
-        listado municipal oficial, capa pública descargable saneable o documentación pública por municipio/zona.
-      </p>
-    </section>
-  </main>
+  <h2>Qué falta para mejorar datos</h2>
+  <div class="notice">
+    Para subir más municipios a <code>verified_partial</code> hace falta una fuente pública más fuerte:
+    listado municipal oficial, capa pública descargable saneable o documentación pública por municipio/zona.
+    No se automatizan consultas protegidas por CAPTCHA y no se guardan coordenadas, direcciones, capturas ni respuestas raw.
+  </div>
+
+  <footer>
+    Mapa Apagones · páginas estáticas desplegadas por Cloudflare Pages desde el repositorio público.
+  </footer>
+</main>
 </body>
 </html>
