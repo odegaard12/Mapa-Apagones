@@ -159,7 +159,7 @@
   <main>
     <div class="top">
       <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-05-12 · v0.10.6.4-distributor-confidence-labels</span>
+      <span>Datos: distributor_hints v0.10.6.4-distributor-confidence-labels · Página revisada: 2026-05-24 · v0.10.7.6-public-pages-truthfulness</span>
     </div>
 
     <section class="hero">
@@ -181,7 +181,26 @@
 
     <section class="grid">
       <article class="card">
-        <h2>Cómo leer estos datos</h2>
+        <h2>Cómo leer estos datos
+
+<div class="notice public-truthfulness-note">
+  <strong>Lectura correcta de la cobertura:</strong>
+  100% con pista no significa 100% verificación municipal fuerte.
+  <code>regional_default</code> es orientación regional. No es verificación municipal fuerte.
+  <code>verified_partial</code> es una pista pública parcial o municipal, no una garantía de exclusividad.
+  Las entradas por confianza cuentan pistas de distribuidora; una zona puede tener más de una entrada.
+</div>
+
+
+<div class="notice">
+  <strong>Lectura importante:</strong>
+  100% con pista no significa 100% verificación municipal fuerte.
+  Puede significar que todas las zonas tienen una orientación regional
+  <code>regional_default</code>. Las entradas por confianza cuentan pistas de
+  distribuidora, no necesariamente zonas únicas; por eso una zona con varias
+  distribuidoras puede sumar más de una entrada.
+</div>
+</h2>
         <ul>
           <li><strong>regional_default</strong>: pista regional orientativa, no exclusividad.</li>
           <li><strong>verified_partial</strong>: presencia pública razonablemente verificada, no cobertura total exclusiva.</li>
@@ -201,7 +220,14 @@
     </section>
 
     <section class="card">
-      <h2>Matriz por comunidad</h2>
+      <h2>Matriz por comunidad
+
+<p class="small-note">
+  Nota: en comunidades con varias distribuidoras por zona, las entradas
+  <code>verified_partial</code> pueden superar el número de zonas porque cuentan
+  pistas de distribuidora, no municipios únicos.
+</p>
+</h2>
       <p class="note">
         Generada desde la matriz real del repositorio. Si cambian los GeoJSON o las pistas públicas,
         esta página debe regenerarse con <code>scripts/generate_public_distributor_coverage_page.py</code>.
@@ -214,12 +240,12 @@
               <th>Zona</th>
               <th>Dataset</th>
               <th>GeoJSON</th>
-              <th>Con pista</th>
-              <th>Pendiente</th>
+              <th>Zonas con pista</th>
+              <th>Zonas pendientes</th>
               <th>Cobertura</th>
               <th>Estado</th>
-              <th>Confianza</th>
-              <th>Con fuente</th>
+              <th>Entradas por confianza</th>
+              <th>Zonas con fuente</th>
             </tr>
           </thead>
           <tbody>
@@ -231,7 +257,7 @@
               <td>313</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 172, `verified_partial` 154</td>
               <td>313</td>
             </tr>
@@ -242,7 +268,7 @@
               <td>78</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 78, `verified_partial` 2</td>
               <td>78</td>
             </tr>
@@ -253,7 +279,7 @@
               <td>103</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 103</td>
               <td>103</td>
             </tr>
@@ -264,7 +290,7 @@
               <td>288</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 288</td>
               <td>288</td>
             </tr>
@@ -275,7 +301,7 @@
               <td>175</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 175</td>
               <td>175</td>
             </tr>
@@ -286,7 +312,7 @@
               <td>45</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 45</td>
               <td>45</td>
             </tr>
@@ -297,7 +323,7 @@
               <td>88</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 87, `verified_partial` 1</td>
               <td>88</td>
             </tr>
@@ -308,7 +334,7 @@
               <td>68</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 67, `verified_partial` 1</td>
               <td>68</td>
             </tr>
@@ -319,7 +345,7 @@
               <td>1</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`verified_partial` 1</td>
               <td>1</td>
             </tr>
@@ -330,7 +356,7 @@
               <td>1</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`verified_partial` 1</td>
               <td>1</td>
             </tr>
@@ -352,7 +378,7 @@
               <td>255</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 252, `verified_partial` 3</td>
               <td>255</td>
             </tr>
@@ -363,7 +389,7 @@
               <td>544</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`regional_default` 533, `verified_partial` 11</td>
               <td>544</td>
             </tr>
@@ -385,7 +411,7 @@
               <td>388</td>
               <td>0</td>
               <td>100,0%</td>
-              <td>con pista en todas las zonas</td>
+              <td>todas las zonas tienen orientación o pista pública</td>
               <td>`verified_partial` 530</td>
               <td>388</td>
             </tr>
