@@ -12,26 +12,27 @@ FILES = {
 
 REQUIRED = {
     "coverage": [
+        "v0.10.7.7-static-public-pages-clean",
         "100% con pista no significa 100% verificación municipal fuerte",
         "regional_default",
-        "no es verificación municipal fuerte",
+        "no verificación municipal",
         "verified_partial",
-        "entradas por confianza",
-        "zonas con pista",
-        "zonas pendientes",
-        "distributor_hints v0.10.6.4-distributor-confidence-labels",
-        "v0.10.7.6-public-pages-truthfulness",
+        "Zonas con orientación/pista",
+        "Zonas pendientes",
+        "Las comunidades con cero pistas no faltan del mapa",
     ],
     "reliability": [
-        "criterios vigentes revisados: 2026-05-24",
-        "documento histórico base",
-        "cobertura global actual debe consultarse",
+        "v0.10.7.7-static-public-pages-clean",
+        "criterios vigentes a escala nacional",
+        "Estado nacional por comunidad",
         "regional_default",
         "verified_partial",
+        "No es verificación municipal fuerte",
     ],
     "changelog": [
+        "v0.10.7.7",
+        "Static public pages clean refresh",
         "v0.10.7.6",
-        "public pages truthfulness",
         "v0.10.7.5",
         "v0.10.6.4-distributor-confidence-labels",
     ],
@@ -42,6 +43,9 @@ FORBIDDEN = [
     "github_pat_",
     "-----BEGIN RSA PRIVATE KEY-----",
     "-----BEGIN OPENSSH PRIVATE KEY-----",
+    "Historial técnico reciente desde Git",
+    "4\ndatasets auditados en esta fase",
+    "Actualizado: 2026-05-12",
 ]
 
 
@@ -58,25 +62,29 @@ def main() -> int:
             continue
 
         raw = read(path)
-        text = raw.lower()
+        low = raw.lower()
 
         for snippet in REQUIRED[key]:
-            if snippet.lower() not in text:
+            if snippet.lower() not in low:
                 errors.append(f"{path}: missing snippet: {snippet}")
 
         for forbidden in FORBIDDEN:
-            if forbidden.lower() in text:
-                errors.append(f"{path}: forbidden sensitive snippet: {forbidden}")
+            if forbidden.lower() in low:
+                errors.append(f"{path}: forbidden stale/sensitive snippet: {forbidden}")
 
     changelog = read(FILES["changelog"]).lower() if FILES["changelog"].exists() else ""
-    pos_1076 = changelog.find("v0.10.7.6")
-    pos_1075 = changelog.find("v0.10.7.5")
-    pos_1064 = changelog.find("v0.10.6.4-distributor-confidence-labels")
+    markers = [
+        "v0.10.7.7",
+        "v0.10.7.6",
+        "v0.10.7.5",
+        "v0.10.6.4-distributor-confidence-labels",
+    ]
+    positions = [changelog.find(m.lower()) for m in markers]
 
-    if pos_1076 == -1 or pos_1075 == -1 or pos_1064 == -1:
-        errors.append("changelog: missing version ordering markers")
-    elif not (pos_1076 < pos_1075 and pos_1076 < pos_1064):
-        errors.append("changelog: v0.10.7.6 must appear before older entries")
+    if any(pos == -1 for pos in positions):
+        errors.append(f"changelog: missing markers {markers}")
+    elif positions != sorted(positions):
+        errors.append(f"changelog: wrong order {positions}")
 
     if errors:
         print("FAIL public pages truthfulness")

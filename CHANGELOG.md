@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.10.7.7 — Static public pages clean refresh
+
+### Changed
+- Regenerates the static public changelog as a curated, correctly ordered page.
+- Regenerates the distributor coverage page with clearer national ordering and wording.
+- Regenerates the distributor reliability page as current national criteria, not only an old 4-dataset audit.
+- Adds `scripts/generate_clean_static_public_pages.py`.
+- Adds `scripts/check_clean_static_public_pages.py`.
+
+### Clarified
+- Geographic communities are present as 19 datasets and 8215 normalized zones.
+- Missing work is distributor hint verification, not missing map communities.
+- `regional_default` is orientation, not municipal verification.
+- `verified_partial` is partial/source-backed and not exclusive.
+
+### Safety
+- No distributor hints are imported.
+- No CUPS, addresses, coordinates, secrets, backups, logs, raw external API responses or private grid inventory are added.
+
+
 ## v0.10.7.5 — Public docs, changelog and national validation refresh
 
 ### Added

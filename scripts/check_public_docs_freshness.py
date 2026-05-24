@@ -17,6 +17,7 @@ REQUIRED_FILES = [
     Path("docs/audit/andalucia-v1072-closeout.md"),
     Path("docs/audit/andalucia-batch2-candidate-workbench-v1074.md"),
     Path("docs/audit/public-docs-national-validation-v1075.md"),
+    Path("docs/audit/static-public-pages-clean-v1077.md"),
     Path("scripts/check_distributor_data_version.py"),
     Path("scripts/check_andalucia_pending_review_queue.py"),
     Path("scripts/check_andalucia_batch2_candidate_workbench.py"),
@@ -37,10 +38,11 @@ REQUIRED_TEXT_CASE_INSENSITIVE = {
         "check_andalucia_batch2_candidate_workbench.py",
     ],
     "frontend/public/changelog.html": [
-        "andalucía",
-        "batch 2",
-        "532",
+        "v0.10.7.7",
+        "Static public pages clean refresh",
+        "v0.10.7.6",
         "v0.10.7.5",
+        "v0.10.6.4-distributor-confidence-labels",
     ],
     "scripts/post_merge_validate.sh": [
         "check_distributor_data_version.py",
@@ -93,6 +95,7 @@ def main() -> int:
         Path("CHANGELOG.md"),
         Path("frontend/public/changelog.html"),
         Path("docs/audit/public-docs-national-validation-v1075.md"),
+    Path("docs/audit/static-public-pages-clean-v1077.md"),
     ]:
         if not path.exists():
             continue
