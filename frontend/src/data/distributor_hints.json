@@ -1,5 +1,5 @@
 {
-  "version": "v0.10.6.4-distributor-confidence-labels",
+  "version": "v0.10.7.7-static-public-pages-clean",
   "policy": {
     "purpose": "Public distributor hints by municipality or zone, only from verified public sources.",
     "privacy": "No CUPS, no personal data, no exact user addresses, no private coordinates.",

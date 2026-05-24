@@ -5,7 +5,7 @@ import re
 import sys
 from pathlib import Path
 
-APP_VER = "v0.10.6.4-distributor-confidence-labels"
+APP_VER = "v0.10.7.7-static-public-pages-clean"
 
 REQUIRED_FILES = [
     Path("README.md"),
@@ -26,7 +26,7 @@ REQUIRED_FILES = [
 
 REQUIRED_TEXT_CASE_INSENSITIVE = {
     "README.md": [
-        "versión actual visible: v0.10.6.4-distributor-confidence-labels",
+        "versión actual visible: v0.10.7.7-static-public-pages-clean",
         "andalucía",
         "scripts/post_merge_validate.sh",
         "check_public_docs_freshness.py",
@@ -42,7 +42,7 @@ REQUIRED_TEXT_CASE_INSENSITIVE = {
         "Static public pages clean refresh",
         "v0.10.7.6",
         "v0.10.7.5",
-        "v0.10.6.4-distributor-confidence-labels",
+        "v0.10.7.7-static-public-pages-clean",
     ],
     "scripts/post_merge_validate.sh": [
         "check_distributor_data_version.py",
