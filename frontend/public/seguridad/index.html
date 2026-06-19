@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Política pública de seguridad y privacidad de Mapa Apagones."
+  >
+  <title>Seguridad · Mapa Apagones</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7c;
+      --line: #dbe3ef;
+      --primary: #245fd6;
+      --warning: #9a5a00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .shell {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-bottom: 18px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .hero,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(32, 55, 90, 0.08);
+    }
+
+    .hero {
+      padding: clamp(24px, 5vw, 46px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.08;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .warning {
+      border-left: 5px solid #e99b29;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    code {
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .shell {
+        width: min(100% - 20px, 920px);
+        padding-top: 18px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <a class="back" href="/">← Volver al mapa</a>
+
+    <section class="hero">
+      <p class="eyebrow">Seguridad y privacidad</p>
+      <h1>Ayúdanos a comunicar problemas de forma segura</h1>
+      <p class="lead">
+        Mapa Apagones es un proyecto ciudadano sin cuentas, sin CUPS y sin
+        direcciones exactas. Las vulnerabilidades deben comunicarse de forma
+        privada para evitar exponer usuarios, secretos o el propio servicio.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Comunicación privada</h2>
+        <p>
+          Escribe a
+          <a href="mailto:privacidad@mapa-apagones.es?subject=%5BSEGURIDAD%5D">
+            privacidad@mapa-apagones.es
+          </a>
+          con el asunto <code>[SEGURIDAD]</code>.
+        </p>
+        <p>
+          Indica el componente afectado, el impacto y pasos mínimos para
+          reproducir el problema sin incluir datos personales.
+        </p>
+      </section>
+
+      <section class="card warning">
+        <h2>No lo publiques en una issue</h2>
+        <p>
+          No abras una issue pública con detalles explotables. No adjuntes
+          tokens, cookies, bases de datos, backups, logs completos, CUPS,
+          direcciones ni coordenadas privadas.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Tiempos objetivo</h2>
+        <ul>
+          <li>Acuse de recibo: hasta 5 días laborables.</li>
+          <li>Clasificación inicial: hasta 10 días laborables.</li>
+          <li>Los problemas críticos reciben prioridad.</li>
+        </ul>
+        <p>Estos plazos son objetivos operativos, no garantías contractuales.</p>
+      </section>
+
+      <section class="card">
+        <h2>Alcance</h2>
+        <p>
+          Incluye la web, la API, el flujo anónimo de reportes, controles
+          antiabuso, privacidad y exposición accidental de datos o secretos.
+        </p>
+        <p>
+          No autoriza escaneos masivos, denegación de servicio, ingeniería
+          social ni acceso a datos de otras personas.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      Política revisada: 2026-06-19 · Mapa Apagones
+    </footer>
+  </main>
+</body>
+</html>

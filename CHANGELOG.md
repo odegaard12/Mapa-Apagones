@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased — 2026-06-19
+
+### Security and repository governance
+
+- Add a formal responsible-disclosure policy.
+- Add a public security information page.
+- Make CI and secret-scan status visible in README.
+- Document dependency, PR batching and maintenance policy.
+- Add a governance guard to post-merge validation.
+- Record the updated repository-health assessment.
+
 ## v0.10.7.7 — Static public pages clean refresh
 
 ### Changed
