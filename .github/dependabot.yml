@@ -5,6 +5,7 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 3
     groups:
       frontend-runtime-minor-patch:
         patterns:
@@ -22,13 +23,7 @@ updates:
           - "minor"
           - "patch"
     ignore:
-      - dependency-name: "react"
-        update-types:
-          - "version-update:semver-major"
-      - dependency-name: "react-dom"
-        update-types:
-          - "version-update:semver-major"
-      - dependency-name: "react-leaflet"
+      - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
 
@@ -36,24 +31,32 @@ updates:
     directory: "/backend"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 2
     groups:
       backend-patches:
         patterns:
-          - "fastapi"
-          - "starlette"
-          - "uvicorn"
-          - "click"
-          - "httptools"
-          - "pydantic"
-          - "pydantic-core"
+          - "*"
         update-types:
           - "patch"
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 2
     groups:
-      github-actions:
+      github-actions-minor-patch:
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
