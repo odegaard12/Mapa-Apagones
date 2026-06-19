@@ -292,10 +292,18 @@ def build_html() -> str:
       <div class="metrics" aria-label="Resumen de cobertura">
         <div class="metric"><strong>{html.escape(summary["datasets"])}</strong><span>datasets geográficos</span></div>
         <div class="metric"><strong>{html.escape(summary["geo_total"])}</strong><span>zonas normalizadas</span></div>
-        <div class="metric"><strong>{html.escape(summary["with_hint"])}</strong><span>zonas con pista</span></div>
+        <div class="metric"><strong>{html.escape(summary["with_hint"])}</strong><span>Zonas con orientación/pista</span></div>
         <div class="metric"><strong>{html.escape(summary["pending"])}</strong><span>zonas pendientes</span></div>
         <div class="metric"><strong>{html.escape(summary["coverage"])}</strong><span>cobertura actual</span></div>
       </div>
+    </section>
+
+    <section class="card">
+      <h2>Lectura correcta de la cobertura</h2>
+      <p><strong>100% con pista no significa 100% verificación municipal fuerte.</strong></p>
+      <p><code>regional_default</code> es orientación regional, no verificación municipal.</p>
+      <p><code>verified_partial</code> es una pista pública parcial o municipal, no una garantía de exclusividad.</p>
+      <p>Las comunidades con cero pistas no faltan del mapa: tienen geografía municipal, pero siguen pendientes de una pista pública suficientemente segura.</p>
     </section>
 
     <section class="grid">
@@ -362,7 +370,8 @@ def main() -> int:
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
 
-    html_text = build_html()
+    raw_html = build_html()
+    html_text = "\n".join(line.rstrip() for line in raw_html.splitlines()) + "\n"
 
     if args.check:
         if not OUTPUT.exists():

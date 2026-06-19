@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.11.0.0-map-ux-reliability
+
+
+**Mapa 2.0: UX y fiabilidad pública**
+**Mapa 2.0: UX y fiabilidad pública**
+
+### Added
+
+- Navegación móvil map-first: Mapa, Zonas, Reportar y Filtros.
+- Estados de carga, vacío y fallo de API con Reintentar y frescura visible.
+- Fiabilidad ciudadana explicada mediante ciclo de vida, confirmaciones, recencia y recuperación.
+- Separación explícita respecto a la pista pública de distribuidora.
+- Accesibilidad, foco, ARIA, reduced-motion y objetivos táctiles.
+- Guard específico integrado en validación post-merge.
+
 ## Unreleased — 2026-06-19
 
 ### Security and repository governance
@@ -62,7 +77,7 @@
 - No raw external API responses.
 
 
-## v0.10.7.7-static-public-pages-clean
+## v0.11.0.0-map-ux-reliability
 
 - Mejora las etiquetas públicas de fiabilidad de pistas de distribuidora.
 - Muestra `verified_partial` como pista parcial verificada.
