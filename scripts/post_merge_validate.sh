@@ -56,6 +56,8 @@ echo '--- check_clean_static_public_pages ---'
 python3 scripts/check_clean_static_public_pages.py
 echo '--- check_dependency_update_policy ---'
 python3 scripts/check_dependency_update_policy.py
+echo '--- check_dependabot_low_noise_policy ---'
+python3 scripts/check_dependabot_low_noise_policy.py
 python3 scripts/generate_distributor_coverage_matrix.py --check
 python3 scripts/check_public_distributor_coverage_page.py
 python3 scripts/check_public_coverage_linking.py
