@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, Rectangle, TileLayer, useMapEvents } from 'react-leaflet'
 import ZonePolygons from './components/ZonePolygons.jsx'
+import IncidentReliability, { DistributorReliability, ReliabilityBadge } from './components/IncidentReliability.jsx'
+import MobileMapNavigation from './components/MobileMapNavigation.jsx'
 import {
   DEFAULT_GEO_DATASET_ID,
   GEO_DATASET_LIST,
@@ -13,7 +15,7 @@ import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.10.7.7-static-public-pages-clean'
+const APP_VERSION = 'v0.11.0.0-map-ux-reliability'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -431,6 +433,10 @@ export default function App() {
 
   const [hours, setHours] = useState(24)
   const [incidents, setIncidents] = useState([])
+  const [incidentsLoading, setIncidentsLoading] = useState(true)
+  const [incidentsError, setIncidentsError] = useState('')
+  const [incidentsUpdatedAt, setIncidentsUpdatedAt] = useState(null)
+  const [mobileSection, setMobileSection] = useState('map')
   const [municipiosGeoJson, setMunicipiosGeoJson] = useState(null)
   const [geoLoading, setGeoLoading] = useState(false)
   const [geoDatasetId, setGeoDatasetId] = useState(() => getInitialGeoDatasetId())
@@ -468,22 +474,28 @@ export default function App() {
   const [statusFilter, setStatusFilter] = useState('all')
   const [mapInstance, setMapInstance] = useState(null)
 
-  async function loadIncidents() {
+  async function loadIncidents({ silent = false } = {}) {
     const seq = ++incidentsLoadSeqRef.current
     const includeResolved = statusFilter === 'resuelta' ? 1 : 0
-    const params = new URLSearchParams({
-      hours: String(hours),
-      include_resolved: String(includeResolved),
-      limit: '500',
-    })
-
+    const params = new URLSearchParams({ hours: String(hours), include_resolved: String(includeResolved), limit: '500' })
     const bbox = mapBoundsToBboxParam(mapInstance)
     if (bbox) params.set('bbox', bbox)
-
-    const res = await apiFetch(`/api/zones?${params.toString()}`)
-    const data = await res.json()
-    if (seq !== incidentsLoadSeqRef.current) return
-    setIncidents(Array.isArray(data.items) ? data.items : [])
+    if (!silent) setIncidentsLoading(true)
+    setIncidentsError('')
+    try {
+      const res = await apiFetch(`/api/zones?${params.toString()}`)
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(data.detail || `La API respondió con estado ${res.status}`)
+      if (seq !== incidentsLoadSeqRef.current) return
+      setIncidents(Array.isArray(data.items) ? data.items : [])
+      setIncidentsUpdatedAt(new Date().toISOString())
+    } catch (error) {
+      if (seq !== incidentsLoadSeqRef.current) return
+      console.error('No se pudieron cargar las incidencias', error)
+      setIncidentsError(error?.message || 'No se pudo conectar con la API pública.')
+    } finally {
+      if (seq === incidentsLoadSeqRef.current) setIncidentsLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -531,14 +543,14 @@ export default function App() {
 
   useEffect(() => {
     loadIncidents()
-    const id = setInterval(loadIncidents, 30000)
+    const id = setInterval(() => loadIncidents({ silent: true }), 30000)
     return () => clearInterval(id)
   }, [hours, statusFilter, mapInstance])
 
   useEffect(() => {
     if (!mapInstance) return undefined
 
-    const refreshVisibleIncidents = () => loadIncidents()
+    const refreshVisibleIncidents = () => loadIncidents({ silent: true })
     mapInstance.on('moveend', refreshVisibleIncidents)
     mapInstance.on('zoomend', refreshVisibleIncidents)
 
@@ -1155,13 +1167,18 @@ setMessage('Selecciona una zona del mapa.')
 
   function enterExplore() {
     setMode('explore')
+    setMobileSection('map')
     setReportPoint(null)
     setReportTargetMeta(null)
   }
 
+  function openMobileZones() { setMode('explore'); setLeftTab('incidents'); setMobileSection('zones') }
+  function openMobileFilters() { setMode('explore'); setLeftTab('filters'); setMobileSection('filters') }
+
   
 function enterReport() {
     setMode('report')
+    setMobileSection('report')
     setLeftTab('incidents')
     setMessage('')
 
@@ -1296,6 +1313,7 @@ function enterReport() {
         footer={overlayConfig?.footer}
       />
       <FloatingToast message={toastMessage} tone={toastTone} onClose={() => setToastMessage('')} />
+      <MobileMapNavigation active={mode === 'report' ? 'report' : mobileSection} onMap={enterExplore} onZones={openMobileZones} onReport={enterReport} onFilters={openMobileFilters} />
       <header className="topbar glass">
         <div className="brand-block">
           <div className="brand-logo">⚡</div>
@@ -1311,6 +1329,7 @@ function enterReport() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar municipio o incidencia..."
+            aria-label="Buscar municipio o incidencia"
           />
         </div>
 
@@ -1349,12 +1368,14 @@ function enterReport() {
               </div>
             </div>
 
-            <div className="incident-list">
-              {activeVisible.length === 0 ? (
-                <div className="empty-state">
-                  <strong>Sin zonas activas</strong>
-                  <span>Prueba otra ventana temporal o cambia el filtro.</span>
-                </div>
+            <div className="data-freshness" role="status" aria-live="polite"><span className={`freshness-dot ${incidentsError ? 'error' : ''}`} aria-hidden="true" /><span>{incidentsLoading ? 'Actualizando incidencias…' : incidentsError ? 'No se pudo actualizar' : incidentsUpdatedAt ? `Datos actualizados ${formatTimeAgo(incidentsUpdatedAt).toLowerCase()}` : 'Esperando la primera actualización'}</span>{incidentsError ? <button type="button" onClick={() => loadIncidents()}>Reintentar</button> : null}</div>
+            <div className="incident-list" aria-busy={incidentsLoading}>
+              {incidentsLoading && incidents.length === 0 ? (
+                <div className="empty-state loading-state"><span className="state-spinner" aria-hidden="true" /><strong>Cargando zonas activas</strong><span>Consultando la API pública y preparando el mapa.</span></div>
+              ) : incidentsError && incidents.length === 0 ? (
+                <div className="empty-state error-state"><strong>No pudimos cargar las incidencias</strong><span>{incidentsError}</span><button type="button" className="btn-secondary" onClick={() => loadIncidents()}>Reintentar</button></div>
+              ) : activeVisible.length === 0 ? (
+                <div className="empty-state"><strong>No hay zonas que coincidan</strong><span>No significa que el suministro esté garantizado. Prueba otra ventana, otro ámbito o elimina los filtros.</span><button type="button" className="btn-secondary" onClick={() => { setStatusFilter('all'); setQuery(''); setHours(24) }}>Limpiar filtros</button></div>
               ) : (
                 activeVisible.map((incident) => {
                   const selected = incidentMatchesSelected(incident, selectedIncidentId)
@@ -1365,9 +1386,8 @@ function enterReport() {
                       onClick={() => focusIncident(incident)}
                     >
                       <div className="incident-item-top">
-                        <span className="status-pill" style={{ background: statusColor(incident.status) }}>
-                          {statusLabel(incident.status)}
-                        </span>
+                        <span className="status-pill" style={{ background: statusColor(incident.status) }}>{statusLabel(incident.status)}</span>
+                        <ReliabilityBadge incident={incident} compact />
                       </div>
 
                       <div className="incident-item-title">{zoneTitle(incident)}</div>
@@ -1566,6 +1586,8 @@ function enterReport() {
               </div>
             </div>
 
+            <IncidentReliability incident={selectedIncident} formatTimeAgo={formatTimeAgo} statusLabel={statusLabel} />
+            <DistributorReliability distributor={selectedDistributor} />
             <div className="stats-strip two">
               <div>
                 <span>Confirmaciones</span>

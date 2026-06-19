@@ -4,6 +4,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+CURRENT_VERSION = Path("VERSION").read_text(encoding="utf-8").strip()
+
 PAGES = [
     Path("frontend/public/changelog.html"),
     Path("frontend/public/cobertura-distribuidoras.html"),
@@ -19,7 +21,7 @@ REQUIRED = {
         "Historial público curado",
     ],
     "frontend/public/cobertura-distribuidoras.html": [
-        "v0.10.7.7-static-public-pages-clean",
+        CURRENT_VERSION,
         "19</strong><span>datasets geográficos",
         "8.215</strong><span>zonas normalizadas",
         "100% con pista no significa 100% verificación municipal fuerte",
@@ -30,7 +32,7 @@ REQUIRED = {
         "Las comunidades con cero pistas no faltan del mapa",
     ],
     "frontend/public/fiabilidad-distribuidoras.html": [
-        "v0.10.7.7-static-public-pages-clean",
+        CURRENT_VERSION,
         "criterios vigentes a escala nacional",
         "19 datasets geográficos",
         "Estado nacional por comunidad",

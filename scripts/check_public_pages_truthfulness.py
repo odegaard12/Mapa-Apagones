@@ -4,6 +4,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+CURRENT_VERSION = Path("VERSION").read_text(encoding="utf-8").strip()
+
 FILES = {
     "coverage": Path("frontend/public/cobertura-distribuidoras.html"),
     "reliability": Path("frontend/public/fiabilidad-distribuidoras.html"),
@@ -12,7 +14,7 @@ FILES = {
 
 REQUIRED = {
     "coverage": [
-        "v0.10.7.7-static-public-pages-clean",
+        CURRENT_VERSION,
         "100% con pista no significa 100% verificación municipal fuerte",
         "regional_default",
         "no verificación municipal",
@@ -22,7 +24,7 @@ REQUIRED = {
         "Las comunidades con cero pistas no faltan del mapa",
     ],
     "reliability": [
-        "v0.10.7.7-static-public-pages-clean",
+        CURRENT_VERSION,
         "criterios vigentes a escala nacional",
         "Estado nacional por comunidad",
         "regional_default",

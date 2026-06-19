@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+python3 scripts/check_map_ux_reliability.py
+
 SMOKE_PYTHON="${SMOKE_PYTHON:-python3}"
 SMOKE_WEB_PORT="${SMOKE_WEB_PORT:-18098}"
 

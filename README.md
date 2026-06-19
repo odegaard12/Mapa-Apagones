@@ -16,7 +16,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.10.7.7-static-public-pages-clean
+Versión actual visible: v0.11.0.0-map-ux-reliability
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
