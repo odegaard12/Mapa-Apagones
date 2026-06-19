@@ -50,6 +50,8 @@ echo '--- check_andalucia_batch2_candidate_workbench ---'
 python3 scripts/check_andalucia_batch2_candidate_workbench.py
 echo '--- check_national_distributor_next_wave_queue ---'
 python3 scripts/check_national_distributor_next_wave_queue.py
+echo '--- check_aragon_wave1_source_audit ---'
+python3 scripts/check_aragon_wave1_source_audit.py
 echo '--- check_public_docs_freshness ---'
 python3 scripts/check_public_docs_freshness.py
 echo '--- check_public_pages_truthfulness ---'
