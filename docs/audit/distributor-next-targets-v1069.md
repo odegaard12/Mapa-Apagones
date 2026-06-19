@@ -121,3 +121,16 @@ This roadmap intentionally does not:
 - Change frontend behavior.
 - Change confidence labels.
 - Add sensitive data.
+
+## National next-wave follow-up v0.10.8.1
+
+A sanitized 4,901-row research queue now covers the four geographic datasets
+that currently have no public distributor hints:
+
+- Aragón: 734
+- Castilla-La Mancha: 921
+- Catalunya: 948
+- Castilla y León: 2,298
+
+The queue is research-only. Candidate distributor and source fields remain
+empty until reproducible public evidence is reviewed.
