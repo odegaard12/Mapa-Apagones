@@ -73,3 +73,16 @@ Reglas obligatorias:
 
 Si no se puede verificar la distribuidora de una zona, debe mantenerse el fallback público: `Consultar distribuidora de la zona`.
 
+<!-- security-reporting:start -->
+## Vulnerabilidades y privacidad
+
+No abras una issue o pull request público con una vulnerabilidad explotable,
+un secreto o datos personales.
+
+Consulta [SECURITY.md](SECURITY.md) y comunica el problema de forma privada a
+`privacidad@mapa-apagones.es`.
+
+Los ejemplos deben estar saneados. No incluyas CUPS, direcciones exactas,
+coordenadas privadas, tokens, bases de datos, backups, logs completos ni
+respuestas raw de servicios externos.
+<!-- security-reporting:end -->

@@ -1,5 +1,13 @@
 # Mapa Apagones
 
+<!-- repo-health-badges:start -->
+[![CI](https://github.com/odegaard12/Mapa-Apagones/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/odegaard12/Mapa-Apagones/actions/workflows/ci.yml)
+[![Secret scan](https://github.com/odegaard12/Mapa-Apagones/actions/workflows/secret-scan.yml/badge.svg?branch=main)](https://github.com/odegaard12/Mapa-Apagones/actions/workflows/secret-scan.yml)
+[![Web pública](https://img.shields.io/website?url=https%3A%2F%2Fmapa-apagones.es&label=mapa-apagones.es)](https://mapa-apagones.es)
+[![Security policy](https://img.shields.io/badge/security-policy-blue.svg)](SECURITY.md)
+<!-- repo-health-badges:end -->
+
+
 Mapa ciudadano de avisos de apagones, cortes eléctricos e incidencias de suministro.
 
 Repositorio público del proyecto publicado en:
@@ -13,6 +21,22 @@ Versión actual visible: v0.10.7.7-static-public-pages-clean
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
 Endpoint operativo seguro: `/api/status`, sin secretos, sin IPs reales, sin tokens y sin datos de usuarios.
+
+<!-- maintenance-security:start -->
+## Mantenimiento y seguridad
+
+El proyecto mantiene automatización pública para CI y detección de secretos.
+
+- Política de seguridad y divulgación responsable: [SECURITY.md](SECURITY.md).
+- Política de mantenimiento y dependencias: [MAINTENANCE.md](MAINTENANCE.md).
+- Canal público informativo: [mapa-apagones.es/seguridad/](https://mapa-apagones.es/seguridad/).
+- Las vulnerabilidades no deben publicarse en issues.
+- Las dependencias se actualizan con una política conservadora y validación
+  completa antes del merge.
+- Las investigaciones de distribuidoras se agrupan en lotes con valor y no
+  generan imports ni PRs automáticas.
+
+<!-- maintenance-security:end -->
 
 ## Identidad pública
 

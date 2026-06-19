@@ -1439,6 +1439,8 @@ function enterReport() {
 
         <div className="left-footer">
           <a href="/privacidad/" target="_blank" rel="noreferrer">Privacidad</a>
+              <span aria-hidden="true">·</span>
+              <a href="/seguridad/">Seguridad</a>
           <a href="/aviso-legal/" target="_blank" rel="noreferrer">Aviso legal</a>
           <a href="/cookies/" target="_blank" rel="noreferrer">Cookies</a>
           <a href="/cobertura-distribuidoras.html" target="_blank" rel="noreferrer">Cobertura distribuidoras</a><span aria-hidden="true"> · </span><a href="/fiabilidad-distribuidoras.html" target="_blank" rel="noreferrer">Fiabilidad distribuidoras</a><span aria-hidden="true"> · </span><a href="/changelog.html" target="_blank" rel="noreferrer">{APP_VERSION}</a>
