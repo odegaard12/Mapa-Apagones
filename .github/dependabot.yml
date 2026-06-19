@@ -1,18 +1,53 @@
 version: 2
+
 updates:
   - package-ecosystem: "npm"
     directory: "/frontend"
     schedule:
       interval: "weekly"
     groups:
-      frontend-dependencies:
+      frontend-runtime-minor-patch:
         patterns:
-          - "*"
+          - "react"
+          - "react-dom"
+          - "react-leaflet"
+        update-types:
+          - "minor"
+          - "patch"
+      frontend-tooling-minor-patch:
+        patterns:
+          - "vite"
+          - "@vitejs/plugin-react"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      - dependency-name: "react"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "react-dom"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "react-leaflet"
+        update-types:
+          - "version-update:semver-major"
 
   - package-ecosystem: "pip"
     directory: "/backend"
     schedule:
       interval: "weekly"
+    groups:
+      backend-patches:
+        patterns:
+          - "fastapi"
+          - "starlette"
+          - "uvicorn"
+          - "click"
+          - "httptools"
+          - "pydantic"
+          - "pydantic-core"
+        update-types:
+          - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
