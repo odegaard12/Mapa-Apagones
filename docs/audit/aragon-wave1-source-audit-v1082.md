@@ -3,9 +3,11 @@
 ## Summary
 
 - Aragón review rows: **734**
-- Rows with repository-local evidence hits: **734**
+- Rows with repository-local reference hits: **734**
 - Imported distributor hints: **0**
 - Every row remains `import_eligible=no`.
+
+> Los `repository-local reference hits` solo confirman que la zona aparece en inventarios o colas del repositorio. No constituyen por sí mismos evidencia municipal de distribuidora.
 
 ## Evidence policy
 

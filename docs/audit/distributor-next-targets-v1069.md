@@ -134,3 +134,16 @@ that currently have no public distributor hints:
 
 The queue is research-only. Candidate distributor and source fields remain
 empty until reproducible public evidence is reviewed.
+
+## Aragón wave 2 candidate gate v0.10.8.3
+
+Aragón now has a 734-row candidate matrix with a strict evidence gate.
+
+- 733 municipalities remain regional-context only.
+- Barbastro is a strong secondary candidate.
+- Barbastro still lacks primary operator/regulator confirmation.
+- Current import-eligible municipalities: 0.
+- Wave 1 repository references are explicitly separated from real
+  distributor evidence.
+
+No productive distributor hints are changed by this phase.
