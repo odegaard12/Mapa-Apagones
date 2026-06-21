@@ -1,0 +1,4 @@
+source_id,source_name,source_url,source_type,scope,candidate_distributor,evidence_strength,municipal_import_eligible,review_status,notes
+edistribucion_catalunya_official,e-distribución — Nuestro negocio (Catalunya),https://www.edistribucion.com/es/conocenos/nuestro-negocio.html,official_operator,regional_catalunya,"E-Distribución Redes Digitales, S.L.U.",regional_presence_only,no,reviewed_context,"La fuente oficial declara actividad mayoritaria en Catalunya, pero no aporta matriz municipal reproducible."
+cnmc_energy_official,CNMC — Energía,https://www.cnmc.es/sectores-que-regulamos/energia,official_regulator,national,,regulatory_discovery_source,no,source_registry,Portal regulatorio nacional.
+dogc_catalunya_official,Diari Oficial de la Generalitat de Catalunya (DOGC),https://dogc.gencat.cat/,official_journal,regional_catalunya,,official_discovery_source,no,source_registry,Fuente primaria para concesiones y autorizaciones de red municipal en Catalunya.
