@@ -2,7 +2,7 @@
 
 ## Summary
 
-- Catalunya review rows: **948**
+- Catalunya review rows: **947**
 - Imported distributor hints: **0**
 - Every row remains `import_eligible=no`.
 
@@ -17,5 +17,5 @@
 |---|---:|
 | Barcelona | 311 |
 | Girona | 221 |
-| Lleida | 232 |
+| Lleida | 231 |
 | Tarragona | 184 |
