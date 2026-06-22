@@ -68,9 +68,9 @@ a {
   top: 16px;
   left: 16px;
   right: 16px;
-  height: 78px;
+  height: 64px;
   padding: 0 14px;
-  border-radius: 28px;
+  border-radius: 20px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 16px;
@@ -85,9 +85,9 @@ a {
 }
 
 .brand-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
   display: grid;
   place-items: center;
   font-size: 1.1rem;
@@ -96,7 +96,7 @@ a {
 }
 
 .brand-title {
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -174,11 +174,11 @@ a {
 .left-panel {
   position: absolute;
   z-index: 940;
-  top: 108px;
+  top: 92px;
   left: 16px;
-  width: 320px;
-  height: calc(100vh - 124px);
-  border-radius: 28px;
+  width: 300px;
+  height: calc(100vh - 108px);
+  border-radius: 24px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -376,10 +376,10 @@ a {
   position: absolute;
   z-index: 950;
   right: 16px;
-  top: 108px;
-  width: 360px;
+  top: 92px;
+  width: 320px;
   min-height: 220px;
-  border-radius: 28px;
+  border-radius: 24px;
   padding: 18px;
 }
 
@@ -552,9 +552,9 @@ a {
     left: 12px;
     right: 12px;
     width: auto;
-    height: 230px;
-    top: auto;
-    bottom: 250px;
+    height: auto;
+    top: 148px;
+    bottom: 80px;
   }
 
   .incident-list {
@@ -573,7 +573,7 @@ a {
     right: 12px;
     width: auto;
     top: auto;
-    bottom: 12px;
+    bottom: 80px;
   }
 
   .stats-strip,
