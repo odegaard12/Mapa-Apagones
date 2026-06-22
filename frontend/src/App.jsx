@@ -1301,8 +1301,17 @@ function enterReport() {
     return /error|no se pudo|selecciona/i.test(toastMessage) ? 'error' : 'success'
   }, [toastMessage])
 
+  // Determine mobile CSS class for section visibility
+  const mobileCls = (() => {
+    if (mode === 'report') return 'mobile-report'
+    if (selectedIncident && mobileSection === 'map') return 'mobile-incident'
+    if (mobileSection === 'zones') return 'mobile-zones'
+    if (mobileSection === 'filters') return 'mobile-filters'
+    return 'mobile-map'
+  })()
+
   return (
-    <div className={`app app-${mode}`}>
+    <div className={`app app-${mode} ${mobileCls}`}>
       <FeedbackOverlay
         open={Boolean(overlayConfig)}
         title={overlayConfig?.title}
@@ -1313,7 +1322,13 @@ function enterReport() {
         footer={overlayConfig?.footer}
       />
       <FloatingToast message={toastMessage} tone={toastTone} onClose={() => setToastMessage('')} />
-      <MobileMapNavigation active={mode === 'report' ? 'report' : mobileSection} onMap={enterExplore} onZones={openMobileZones} onReport={enterReport} onFilters={openMobileFilters} />
+      <MobileMapNavigation
+        active={mode === 'report' ? 'report' : mobileSection}
+        onMap={enterExplore}
+        onZones={openMobileZones}
+        onReport={enterReport}
+        onFilters={openMobileFilters}
+      />
       <header className="topbar glass">
         <div className="brand-block">
           <div className="brand-logo">⚡</div>
