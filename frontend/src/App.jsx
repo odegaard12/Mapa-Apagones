@@ -15,7 +15,7 @@ import { incidentBelongsToDataset } from './geo/incidentScope'
 import { apiFetch } from './api.js'
 import { getDistributorHintDisplay, loadDistributorHints } from './grid/distributorHints.js'
 
-const APP_VERSION = 'v0.11.0.0-map-ux-reliability'
+const APP_VERSION = 'v0.12.0'
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
 const TURNSTILE_ENABLED = Boolean(TURNSTILE_SITE_KEY)
@@ -1174,6 +1174,8 @@ setMessage('Selecciona una zona del mapa.')
 
   function openMobileZones() { setMode('explore'); setLeftTab('incidents'); setMobileSection('zones') }
   function openMobileFilters() { setMode('explore'); setLeftTab('filters'); setMobileSection('filters') }
+  function openMobileInfo() { setMobileSection('info') }
+  function closeMobileSheet() { setMobileSection('map') }
 
   
 function enterReport() {
@@ -1304,6 +1306,7 @@ function enterReport() {
   // Determine mobile CSS class for section visibility
   const mobileCls = (() => {
     if (mode === 'report') return 'mobile-report'
+    if (mobileSection === 'info') return 'mobile-info'
     if (selectedIncident && mobileSection === 'map') return 'mobile-incident'
     if (mobileSection === 'zones') return 'mobile-zones'
     if (mobileSection === 'filters') return 'mobile-filters'
@@ -1328,6 +1331,7 @@ function enterReport() {
         onZones={openMobileZones}
         onReport={enterReport}
         onFilters={openMobileFilters}
+        onInfo={openMobileInfo}
       />
       <header className="topbar glass">
         <div className="brand-block">
@@ -1361,13 +1365,25 @@ function enterReport() {
       </header>
 
       <aside className="left-panel glass">
-        <div className="left-tabs">
-          <button className={leftTab === 'incidents' ? 'tab-btn active' : 'tab-btn'} onClick={() => setLeftTab('incidents')}>
-            Zonas
-          </button>
-          <button className={leftTab === 'filters' ? 'tab-btn active' : 'tab-btn'} onClick={() => setLeftTab('filters')}>
-            Filtros
-          </button>
+        <div className="panel-head" style={{ paddingTop: 4 }}>
+          {mobileSection === 'info' ? (
+            <>
+              <span className="panel-chip blue">Info</span>
+              <button className="panel-close-btn" aria-label="Cerrar" onClick={closeMobileSheet}>✕</button>
+            </>
+          ) : (
+            <>
+              <div className="left-tabs" style={{ flex: 1 }}>
+                <button className={leftTab === 'incidents' ? 'tab-btn active' : 'tab-btn'} onClick={() => setLeftTab('incidents')}>
+                  Zonas
+                </button>
+                <button className={leftTab === 'filters' ? 'tab-btn active' : 'tab-btn'} onClick={() => setLeftTab('filters')}>
+                  Filtros
+                </button>
+              </div>
+              <button className="panel-close-btn" aria-label="Cerrar panel" onClick={closeMobileSheet}>✕</button>
+            </>
+          )}
         </div>
 
         {leftTab === 'incidents' ? (
@@ -1472,13 +1488,53 @@ function enterReport() {
           </div>
         )}
 
+        {mobileSection === 'info' ? (
+          <div className="info-panel-links">
+            <a className="info-link-row" href="/privacidad/" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">🔒</span> Privacidad
+            </a>
+            <a className="info-link-row" href="/seguridad/" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">🛡️</span> Seguridad
+            </a>
+            <a className="info-link-row" href="/aviso-legal/" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">📄</span> Aviso legal
+            </a>
+            <a className="info-link-row" href="/cookies/" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">🍪</span> Cookies
+            </a>
+            <a className="info-link-row" href="/como-funciona/" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">❓</span> Cómo funciona
+            </a>
+            <a className="info-link-row" href="/cobertura-distribuidoras.html" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">⚡</span> Cobertura distribuidoras
+            </a>
+            <a className="info-link-row" href="/fiabilidad-distribuidoras.html" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">📊</span> Fiabilidad distribuidoras
+            </a>
+            <a className="info-link-row" href="/changelog.html" target="_blank" rel="noreferrer">
+              <span className="info-link-icon">📝</span> Changelog
+            </a>
+            <div className="info-version-badge">
+              <span>Versión actual</span>
+              <strong>{APP_VERSION}</strong>
+            </div>
+          </div>
+        ) : null}
+
         <div className="left-footer">
           <a href="/privacidad/" target="_blank" rel="noreferrer">Privacidad</a>
-              <span aria-hidden="true">·</span>
-              <a href="/seguridad/">Seguridad</a>
+          <span className="sep" aria-hidden="true">·</span>
+          <a href="/seguridad/" target="_blank" rel="noreferrer">Seguridad</a>
+          <span className="sep" aria-hidden="true">·</span>
           <a href="/aviso-legal/" target="_blank" rel="noreferrer">Aviso legal</a>
+          <span className="sep" aria-hidden="true">·</span>
           <a href="/cookies/" target="_blank" rel="noreferrer">Cookies</a>
-          <a href="/cobertura-distribuidoras.html" target="_blank" rel="noreferrer">Cobertura distribuidoras</a><span aria-hidden="true"> · </span><a href="/fiabilidad-distribuidoras.html" target="_blank" rel="noreferrer">Fiabilidad distribuidoras</a><span aria-hidden="true"> · </span><a href="/changelog.html" target="_blank" rel="noreferrer">{APP_VERSION}</a>
+          <span className="sep" aria-hidden="true">·</span>
+          <a href="/cobertura-distribuidoras.html" target="_blank" rel="noreferrer">Cobertura distribuidoras</a>
+          <span className="sep" aria-hidden="true">·</span>
+          <a href="/fiabilidad-distribuidoras.html" target="_blank" rel="noreferrer">Fiabilidad distribuidoras</a>
+          <span className="sep" aria-hidden="true">·</span>
+          <a href="/changelog.html" target="_blank" rel="noreferrer">{APP_VERSION}</a>
         </div>
       </aside>
 
@@ -1536,6 +1592,7 @@ function enterReport() {
           <section className="right-panel glass">
             <div className="panel-head">
               <span className="panel-chip blue">Reportar</span>
+              <button className="panel-close-btn" aria-label="Cancelar reporte" onClick={enterExplore}>✕</button>
             </div>
 
             <h3>{reportPoint ? 'Zona seleccionada' : 'Selecciona una zona'}</h3>
@@ -1581,6 +1638,7 @@ function enterReport() {
               <span className="panel-chip" style={{ background: statusColor(selectedIncident.status) }}>
                 {statusLabel(selectedIncident.status)}
               </span>
+              <button className="panel-close-btn" aria-label="Cerrar detalle" onClick={() => { setSelectedIncidentId(null); closeMobileSheet() }}>✕</button>
             </div>
 
             <h3>{typeLabel(selectedIncident.primary_type)}</h3>
@@ -1635,6 +1693,7 @@ function enterReport() {
           <section className="right-panel glass empty">
             <div className="panel-head">
               <span className="panel-chip blue">{mode === 'explore' ? 'Explorar' : 'Reportar'}</span>
+              <button className="panel-close-btn" aria-label="Cerrar panel" onClick={mode === 'report' ? enterExplore : closeMobileSheet}>✕</button>
             </div>
             <h3>{mode === 'explore' ? 'Selecciona una zona' : 'Selecciona una zona'}</h3>
             <div className="panel-subtitle">
