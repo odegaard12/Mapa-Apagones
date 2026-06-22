@@ -1,5 +1,5 @@
 /* =========================================================
-   MAPA APAGONES — Design System
+   MAPA APAGONES v0.12.0 — Design System
    ========================================================= */
 
 :root {
@@ -10,17 +10,18 @@
   --text:        #eef4ff;
   --muted:       #9eb0c8;
   --line:        rgba(190, 207, 235, 0.11);
-  --glass:       rgba(12, 21, 36, 0.72);
-  --glass-soft:  rgba(17, 28, 47, 0.60);
-  --shadow:      0 12px 40px rgba(4, 8, 16, 0.36);
+  --glass:       rgba(12, 21, 36, 0.80);
+  --glass-soft:  rgba(17, 28, 47, 0.64);
+  --shadow:      0 12px 40px rgba(4, 8, 16, 0.40);
   --blue:        #4f8cff;
   --blue-2:      #2f6cf5;
   --green:       #79d58a;
-  --blur:        blur(16px);
+  --blur:        blur(18px);
   --radius-lg:   20px;
   --radius-md:   14px;
   --radius-sm:   10px;
-  --nav-h:       0px; /* overridden on mobile */
+  --nav-h:       60px;
+  --sheet-h:     62vh; /* Height of bottom sheets on mobile */
 }
 
 * { box-sizing: border-box; }
@@ -73,7 +74,7 @@ a {
 }
 
 /* =========================================================
-   TOP BAR  — compact for PC
+   TOP BAR
    ========================================================= */
 .topbar {
   position: absolute;
@@ -104,8 +105,8 @@ a {
   display: grid;
   place-items: center;
   font-size: 1rem;
-  background: linear-gradient(180deg, rgba(79,140,255,0.28), rgba(34,72,172,0.24));
-  border: 1px solid rgba(190, 207, 235, 0.1);
+  background: linear-gradient(180deg, rgba(79,140,255,0.30), rgba(34,72,172,0.26));
+  border: 1px solid rgba(190, 207, 235, 0.12);
   flex-shrink: 0;
 }
 
@@ -120,7 +121,7 @@ a {
 .brand-subtitle {
   margin-top: 2px;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -137,7 +138,7 @@ a {
   min-width: 0;
 }
 
-.search-icon { color: var(--muted); font-size: 16px; }
+.search-icon { color: var(--muted); font-size: 15px; }
 
 .search-box input {
   width: 100%;
@@ -166,7 +167,7 @@ a {
 }
 
 .mode-btn {
-  min-width: 82px;
+  min-width: 84px;
   height: 34px;
   border: 0;
   border-radius: var(--radius-sm);
@@ -184,7 +185,7 @@ a {
 }
 
 /* =========================================================
-   LEFT PANEL
+   LEFT PANEL — PC
    ========================================================= */
 .left-panel {
   position: absolute;
@@ -230,9 +231,7 @@ a {
   gap: 8px;
 }
 
-.summary-grid.two {
-  grid-template-columns: 1fr 1fr;
-}
+.summary-grid.two { grid-template-columns: 1fr 1fr; }
 
 .summary-card {
   border-radius: var(--radius-sm);
@@ -260,6 +259,7 @@ a {
   gap: 6px;
   font-size: 0.78rem;
   color: var(--muted);
+  flex-wrap: wrap;
 }
 
 .freshness-dot {
@@ -282,7 +282,6 @@ a {
   padding-right: 2px;
 }
 
-/* Scrollbar */
 .incident-list::-webkit-scrollbar { width: 4px; }
 .incident-list::-webkit-scrollbar-track { background: transparent; }
 .incident-list::-webkit-scrollbar-thumb {
@@ -307,7 +306,7 @@ a {
 
 @keyframes pulse-opacity {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.6; }
+  50%       { opacity: 0.55; }
 }
 
 .state-spinner {
@@ -320,9 +319,7 @@ a {
   animation: spin 0.8s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .incident-item {
   border: 1px solid rgba(190, 207, 235, 0.08);
@@ -398,14 +395,23 @@ a {
   overflow-y: auto;
   flex: 1;
   min-height: 0;
+  padding-bottom: 4px;
+}
+
+.filters-wrap::-webkit-scrollbar { width: 4px; }
+.filters-wrap::-webkit-scrollbar-thumb {
+  background: rgba(190, 207, 235, 0.15);
+  border-radius: 4px;
 }
 
 .filter-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .chip-row {
@@ -423,7 +429,7 @@ a {
   color: var(--text);
   cursor: pointer;
   font-size: 0.82rem;
-  transition: background 140ms;
+  transition: background 140ms, border-color 140ms;
 }
 
 .chip.active {
@@ -431,20 +437,22 @@ a {
   border-color: transparent;
 }
 
-/* Left footer */
+/* Left footer (PC only) */
 .left-footer {
   margin-top: auto;
   padding-top: 10px;
   border-top: 1px solid rgba(190, 207, 235, 0.07);
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 10px;
+  align-items: center;
+  gap: 4px 8px;
   font-size: 0.72rem;
   color: var(--muted);
 }
 
 .left-footer a { color: var(--muted); }
 .left-footer a:hover { color: var(--text); }
+.left-footer .sep { opacity: 0.4; }
 
 /* =========================================================
    MAP STAGE
@@ -452,6 +460,7 @@ a {
 .map-stage {
   position: absolute;
   inset: 0;
+  z-index: 1;
 }
 
 .map {
@@ -462,14 +471,14 @@ a {
 .leaflet-container { background: #c9d8e8; }
 
 .leaflet-control-attribution {
-  background: rgba(255,255,255,0.7) !important;
+  background: rgba(255,255,255,0.72) !important;
   backdrop-filter: blur(6px);
   border-radius: 8px 0 0 0 !important;
   font-size: 10px !important;
 }
 
 /* =========================================================
-   RIGHT PANEL
+   RIGHT PANEL — PC
    ========================================================= */
 .right-panel {
   position: absolute;
@@ -480,13 +489,46 @@ a {
   min-height: 180px;
   border-radius: var(--radius-lg);
   padding: 16px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 
 .right-panel.empty { min-height: 140px; }
 
+.right-panel::-webkit-scrollbar { width: 4px; }
+.right-panel::-webkit-scrollbar-thumb {
+  background: rgba(190, 207, 235, 0.15);
+  border-radius: 4px;
+}
+
 .panel-head {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Close button — only used on mobile sheets */
+.panel-close-btn {
+  display: none;
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(190, 207, 235, 0.14);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  transition: background 140ms, color 140ms;
+}
+
+.panel-close-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: var(--text);
 }
 
 .right-panel h3 {
@@ -499,6 +541,7 @@ a {
 .panel-subtitle {
   color: #d3e1f7;
   font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .info-list {
@@ -579,14 +622,19 @@ a {
   font-weight: 800;
   font-size: 0.88rem;
   cursor: pointer;
-  transition: opacity 150ms;
+  transition: opacity 150ms, transform 80ms;
 }
 
-.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary:active,
+.btn-secondary:active,
+.btn-green:active { transform: scale(0.97); }
+
+.btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .btn-primary {
   background: linear-gradient(180deg, var(--blue) 0%, var(--blue-2) 100%);
   color: white;
+  box-shadow: 0 4px 14px rgba(47,108,245,0.22);
 }
 
 .btn-secondary {
@@ -596,7 +644,7 @@ a {
 }
 
 .btn-green {
-  background: rgba(121, 213, 138, 0.1);
+  background: rgba(121, 213, 138, 0.10);
   border: 1px solid rgba(121, 213, 138, 0.34);
   color: #8ce4a2;
 }
@@ -605,13 +653,63 @@ a {
   margin-top: 12px;
   color: #9ec1ff;
   font-size: 0.84rem;
+  line-height: 1.4;
 }
 
 .turnstile-box { margin-top: 14px; }
 .turnstile-hint { margin: 6px 0 0; font-size: 0.78rem; color: var(--muted); }
 
 /* =========================================================
-   RESPONSIVE — TABLET  (≤ 1180px)
+   INFO PANEL (policies / version)
+   ========================================================= */
+.info-panel-links {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.info-link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(190, 207, 235, 0.07);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 120ms;
+}
+
+.info-link-row:hover {
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+}
+
+.info-link-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.info-version-badge {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(79,140,255,0.08);
+  border: 1px solid rgba(79,140,255,0.18);
+  font-size: 0.82rem;
+  color: #9cc0ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET (≤ 1180px)
    ========================================================= */
 @media (max-width: 1180px) {
   .topbar {
@@ -621,81 +719,66 @@ a {
     top: 10px;
     left: 10px;
     right: 10px;
+    gap: 8px;
   }
 
   .top-controls { grid-column: 1 / -1; }
 
   .left-panel,
-  .right-panel {
-    top: 130px;
-  }
+  .right-panel { top: 132px; }
 
-  .left-panel { height: calc(100vh - 146px); }
+  .left-panel { height: calc(100vh - 148px); }
 }
 
 /* =========================================================
-   RESPONSIVE — SMALL TABLET  (≤ 900px)
+   RESPONSIVE — SMALL TABLET (≤ 900px)
    ========================================================= */
 @media (max-width: 900px) {
-  .topbar {
-    grid-template-columns: auto 1fr;
-  }
-
   .brand-subtitle { display: none; }
 
   .left-panel {
     left: 10px;
-    width: 260px;
+    width: 256px;
   }
 
   .right-panel {
     right: 10px;
-    width: 258px;
+    width: 254px;
   }
 }
 
 /* =========================================================
-   MOBILE  (≤ 768px)
-   — Full mobile-first layout with bottom tab bar
+   MOBILE (≤ 768px)
+   =========================================================
+   Layout:
+   - Map always fills the screen (fixed, inset 0 ~ nav-h)
+   - Bottom nav bar fixed at bottom (height: var(--nav-h))
+   - PC panels (left/right) hidden
+   - Bottom sheets appear as overlays anchored at the bottom,
+     height = var(--sheet-h), with a handle and close button.
+     The map remains visible and interactive above the sheet.
    ========================================================= */
 @media (max-width: 768px) {
-  :root { --nav-h: 60px; }
-
   body { overflow: hidden; }
 
-  /* ---- Top bar: stacks on two rows, smaller ---- */
+  /* Topbar: smaller, single-row on mobile */
   .topbar {
-    top: 8px;
-    left: 8px;
-    right: 8px;
+    top: 6px;
+    left: 6px;
+    right: 6px;
     padding: 8px 10px;
     height: auto;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: auto 1fr;
     gap: 8px;
     border-radius: var(--radius-md);
   }
 
-  .topbar-row1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-  }
-
   .brand-subtitle { display: none; }
 
-  .search-box {
-    width: 100%;
-    height: 36px;
-    border-radius: var(--radius-sm);
-  }
-
-  /* Mode buttons hidden on mobile — replaced by bottom nav */
+  /* Mode buttons hidden on mobile — bottom nav handles navigation */
   .top-controls { display: none; }
 
-  /* ---- Map always fills screen ---- */
+  /* Map fills the whole screen always */
   .map-stage {
     position: fixed;
     inset: 0;
@@ -703,61 +786,103 @@ a {
     z-index: 1;
   }
 
-  /* ---- Left panel: full-screen overlay, shown only when active section ---- */
-  .left-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: var(--nav-h);
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-    z-index: 900;
-    padding: 16px;
-    gap: 14px;
-
-    /* Hidden by default — JS controls via app-explore + mobile-show classes */
-    display: none;
+  .leaflet-bottom {
+    margin-bottom: calc(var(--nav-h) + 4px) !important;
   }
 
-  /* ---- Right panel: full-screen overlay ---- */
+  /* ---- PC panels: hidden ---- */
+  .left-panel,
   .right-panel {
+    /* Reset PC positioning */
     position: fixed;
-    top: 0;
+    top: auto;
     left: 0;
     right: 0;
-    bottom: var(--nav-h);
     width: 100%;
-    height: auto;
-    border-radius: 0;
-    z-index: 900;
-    padding: 20px 16px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+    padding: 0 16px 16px;
+    max-height: var(--sheet-h);
+    height: var(--sheet-h);
+    bottom: var(--nav-h);
+    z-index: 800;
     overflow-y: auto;
-
-    display: none;
+    display: none; /* hidden by default, shown by class */
+    flex-direction: column;
+    gap: 12px;
+    animation: sheetIn 220ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
-  /* ---- Show panels based on app state class ---- */
+  /* Show close button on mobile */
+  .panel-close-btn {
+    display: flex;
+  }
 
-  /* "zones" section → show left panel */
-  .app.mobile-zones .left-panel,
+  /* Sheet drag handle (visual only) */
+  .left-panel::before,
+  .right-panel::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(190, 207, 235, 0.22);
+    margin: 12px auto 12px;
+    flex-shrink: 0;
+  }
+
+  @keyframes sheetIn {
+    from { transform: translateY(100%); opacity: 0.6; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+
+  /* ---- Visibility controlled by classes on .app ---- */
+
+  /* Zones panel */
+  .app.mobile-zones .left-panel {
+    display: flex;
+  }
+
+  /* Filters panel (reuses left-panel) */
   .app.mobile-filters .left-panel {
     display: flex;
   }
 
-  /* "report" section or incident selected → show right panel */
-  .app.mobile-report .right-panel,
-  .app.mobile-incident .right-panel {
-    display: block;
+  /* Report panel — smaller height so map is clearly visible */
+  .app.mobile-report .right-panel {
+    display: flex;
+    height: auto;
+    max-height: 52vh;
   }
 
-  /* When map is visible, Leaflet controls stay clear of nav */
-  .leaflet-bottom { margin-bottom: calc(var(--nav-h) + 4px); }
+  /* Incident detail panel */
+  .app.mobile-incident .right-panel {
+    display: flex;
+    height: auto;
+    max-height: var(--sheet-h);
+  }
 
-  .summary-grid { grid-template-columns: 1fr 1fr; }
-  .stats-strip  { grid-template-columns: 1fr 1fr; }
-  .action-row   { flex-direction: row; }
+  /* Info panel */
+  .app.mobile-info .left-panel {
+    display: flex;
+  }
+
+  /* ---- Layout tweaks inside sheets ---- */
+  .summary-grid   { grid-template-columns: 1fr 1fr; }
+  .stats-strip    { grid-template-columns: 1fr 1fr; }
+  .action-row     { flex-direction: row; }
+
+  /* Bigger touch targets */
+  .chip           { min-height: 40px; font-size: 0.86rem; }
+  .type-btn       { min-height: 44px; font-size: 0.9rem; }
+  .btn-primary,
+  .btn-secondary,
+  .btn-green      { height: 48px; font-size: 0.92rem; border-radius: var(--radius-md); }
+  .tab-btn        { min-height: 40px; }
+  .incident-item  { padding: 14px; }
+
+  /* Left footer hidden on mobile — moved to info sheet */
+  .left-footer { display: none; }
 }
 
 /* =========================================================
@@ -771,19 +896,19 @@ a {
   .mobile-map-nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     height: var(--nav-h);
-    background: rgba(8, 16, 30, 0.96);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-top: 1px solid rgba(190, 207, 235, 0.1);
+    background: rgba(7, 14, 26, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(190, 207, 235, 0.10);
     z-index: 9999;
     padding-bottom: env(safe-area-inset-bottom, 0px);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.5);
   }
 
   .mobile-map-nav button {
@@ -795,13 +920,14 @@ a {
     border: none;
     background: transparent;
     color: #64748b;
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 600;
-    padding: 6px 0;
+    padding: 6px 4px;
     cursor: pointer;
     gap: 3px;
     transition: color 150ms;
-    min-height: 100%;
+    letter-spacing: 0.02em;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .mobile-map-nav button.active {
@@ -809,30 +935,32 @@ a {
   }
 
   .mobile-map-nav-icon {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
+    transition: transform 150ms;
+  }
+
+  .mobile-map-nav button.active .mobile-map-nav-icon {
+    transform: scale(1.1);
   }
 }
 
 /* =========================================================
-   FEEDBACK OVERLAY & TOAST animations
+   FEEDBACK & TOAST ANIMATIONS
    ========================================================= */
 @keyframes apagonesOverlayFade {
   from { opacity: 0; transform: translateY(10px) scale(0.98); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 @keyframes apagonesSpinner {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-
 @keyframes apagonesPulse {
   0%   { transform: scale(0.9); opacity: 0.65; }
   50%  { transform: scale(1.08); opacity: 1; }
   100% { transform: scale(0.9); opacity: 0.65; }
 }
-
 @keyframes apagonesToastIn {
   from { opacity: 0; transform: translate(-50%, 14px) scale(0.98); }
   to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
