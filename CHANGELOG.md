@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.12.0 — 2026-06-22
+
+### Responsive overhaul y UX movil
+
+#### Added
+- Barra inferior movil rediseñada: 5 pestañas (Mapa, Zonas, Reportar, Filtros, Info) con pill indicator y glow azul al activar.
+- Pestaña Info movil: Privacidad, Seguridad, Aviso Legal, Cookies, Como funciona, Cobertura/Fiabilidad distribuidoras, Changelog.
+- Boton cerrar (x) en todos los paneles moviles.
+- Favicon moderno (rayo electrico sobre fondo oscuro).
+- meta theme-color, Open Graph y Twitter Card mejorados.
+
+#### Changed
+- Paneles movil como bottom sheets (62pct pantalla): mapa siempre visible e interactuable.
+- Panel Reportar reducido (~50pct) para que mapa siga siendo clickable.
+- Interfaz escritorio mas compacta: topbar 60px, paneles 288-296px.
+- VERSION y APP_VERSION: v0.12.0.
+
+#### Fixed
+- Solapamiento de paneles sobre el mapa en movil.
+- Barra inferior ya no aparece en escritorio.
+- Links de politicas inaccesibles en movil.
+- aria-label duplicado en nav.
+
+
 ## v0.11.0.0-map-ux-reliability
 
 
@@ -258,7 +282,31 @@
 
 ## v0.10.4.8-public-changelog-refresh
 
-### Changelog público
+### Changelog
+
+## v0.12.0 — 2026-06-22
+
+### Responsive overhaul y UX movil
+
+#### Added
+- Barra inferior movil rediseñada: 5 pestañas (Mapa, Zonas, Reportar, Filtros, Info) con pill indicator y glow azul al activar.
+- Pestaña Info movil: Privacidad, Seguridad, Aviso Legal, Cookies, Como funciona, Cobertura/Fiabilidad distribuidoras, Changelog.
+- Boton cerrar (x) en todos los paneles moviles.
+- Favicon moderno (rayo electrico sobre fondo oscuro).
+- meta theme-color, Open Graph y Twitter Card mejorados.
+
+#### Changed
+- Paneles movil como bottom sheets (62pct pantalla): mapa siempre visible e interactuable.
+- Panel Reportar reducido (~50pct) para que mapa siga siendo clickable.
+- Interfaz escritorio mas compacta: topbar 60px, paneles 288-296px.
+- VERSION y APP_VERSION: v0.12.0.
+
+#### Fixed
+- Solapamiento de paneles sobre el mapa en movil.
+- Barra inferior ya no aparece en escritorio.
+- Links de politicas inaccesibles en movil.
+- aria-label duplicado en nav.
+ público
 
 - Corrige el changelog público para mostrar la versión actual en orden correcto.
 - Añade la entrada pública que faltaba para `v0.10.4.7-melilla-distributor-plus-review`.
@@ -835,6 +883,30 @@
 - Mejora autocierre/cierre manual de mensajes y estabilidad móvil del panel de acciones.
 
 # Changelog
+
+## v0.12.0 — 2026-06-22
+
+### Responsive overhaul y UX movil
+
+#### Added
+- Barra inferior movil rediseñada: 5 pestañas (Mapa, Zonas, Reportar, Filtros, Info) con pill indicator y glow azul al activar.
+- Pestaña Info movil: Privacidad, Seguridad, Aviso Legal, Cookies, Como funciona, Cobertura/Fiabilidad distribuidoras, Changelog.
+- Boton cerrar (x) en todos los paneles moviles.
+- Favicon moderno (rayo electrico sobre fondo oscuro).
+- meta theme-color, Open Graph y Twitter Card mejorados.
+
+#### Changed
+- Paneles movil como bottom sheets (62pct pantalla): mapa siempre visible e interactuable.
+- Panel Reportar reducido (~50pct) para que mapa siga siendo clickable.
+- Interfaz escritorio mas compacta: topbar 60px, paneles 288-296px.
+- VERSION y APP_VERSION: v0.12.0.
+
+#### Fixed
+- Solapamiento de paneles sobre el mapa en movil.
+- Barra inferior ya no aparece en escritorio.
+- Links de politicas inaccesibles en movil.
+- aria-label duplicado en nav.
+
 
 ## v0.9.7.7-stable-rollback
 
