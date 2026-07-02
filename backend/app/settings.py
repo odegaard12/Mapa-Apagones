@@ -23,11 +23,14 @@ def validate_https_url(name: str, value: str, allowed_hosts: list[str]) -> str:
     parsed = urlparse(value)
     hostname = (parsed.hostname or "").strip().lower()
     allowed = {host.strip().lower() for host in allowed_hosts if host.strip()}
+    port = parsed.port
 
     if parsed.scheme != "https":
         raise RuntimeError(f"{name} debe usar https.")
     if not hostname or hostname not in allowed:
         raise RuntimeError(f"{name} debe apuntar a un host permitido.")
+    if port not in (None, 443):
+        raise RuntimeError(f"{name} solo permite el puerto 443.")
     if parsed.username or parsed.password or parsed.params or parsed.query or parsed.fragment:
         raise RuntimeError(f"{name} no puede incluir credenciales, query ni fragment.")
 
