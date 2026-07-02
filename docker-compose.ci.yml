@@ -15,7 +15,7 @@ services:
       TRUSTED_PROXY_CIDRS: "172.16.0.0/12,127.0.0.1/32,::1/128"
       DEBUG_ENDPOINTS: "0"
     tmpfs:
-      - /data
+      - /data:uid=1000,gid=1000,mode=1770
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3).read()"]
       interval: 5s
