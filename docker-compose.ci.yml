@@ -9,12 +9,13 @@ services:
       TURNSTILE_REQUIRED: "0"
       ANON_HASH_KEY: "ci-compose-smoke-anon-hash-key-not-secret"
       ANON_HASH_KEY_REQUIRED: "1"
+      ANON_HASH_ALLOW_DEV_FALLBACK: "0"
       ANON_HASH_LEGACY_COMPAT: "0"
       TRUST_PROXY_HEADERS: "1"
       TRUSTED_PROXY_CIDRS: "172.16.0.0/12,127.0.0.1/32,::1/128"
       DEBUG_ENDPOINTS: "0"
     tmpfs:
-      - /data
+      - /data:uid=1000,gid=1000,mode=1770
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3).read()"]
       interval: 5s
@@ -29,4 +30,4 @@ services:
       backend:
         condition: service_healthy
     ports:
-      - "${SMOKE_WEB_PORT:-18098}:80"
+      - "${SMOKE_WEB_PORT:-18098}:8080"

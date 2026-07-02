@@ -47,9 +47,18 @@ function fallbackUuid() {
   return [hex.slice(0, 8), hex.slice(8, 12), hex.slice(12, 16), hex.slice(16, 20), hex.slice(20, 32)].join('-')
 }
 
+let volatileToken = ''
+
 function getToken() {
   const key = 'apagones_token'
-  let token = localStorage.getItem(key)
+  let token = ''
+
+  try {
+    token = sessionStorage.getItem(key) || ''
+  } catch {
+    token = volatileToken
+  }
+
   if (!token) {
     token =
       typeof globalThis !== 'undefined' &&
@@ -57,8 +66,15 @@ function getToken() {
       typeof globalThis.crypto.randomUUID === 'function'
         ? globalThis.crypto.randomUUID()
         : fallbackUuid()
-    localStorage.setItem(key, token)
+
+    try {
+      sessionStorage.setItem(key, token)
+    } catch {
+      volatileToken = token
+    }
   }
+
+  volatileToken = token
   return token
 }
 

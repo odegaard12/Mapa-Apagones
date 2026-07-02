@@ -12,8 +12,6 @@ required = [
     "frontend-tooling-minor-patch",
     "backend-patches",
     "github-actions-minor-patch",
-    "version-update:semver-major",
-    "version-update:semver-minor",
     "open-pull-requests-limit: 2",
 ]
 
@@ -28,15 +26,15 @@ if not (0 <= pip_pos < actions_pos):
     raise SystemExit("ERROR: estructura Dependabot inesperada")
 
 pip_block = text[pip_pos:actions_pos]
-for value in [
-    "backend-patches",
-    '"version-update:semver-major"',
-    '"version-update:semver-minor"',
-]:
+for value in ["backend-patches"]:
     if value not in pip_block:
         raise SystemExit(f"ERROR: falta en bloque pip: {value}")
 
+for forbidden in ['"version-update:semver-major"', '"version-update:semver-minor"']:
+    if forbidden in text:
+        raise SystemExit(f"ERROR: Dependabot no debe ignorar {forbidden}")
+
 print("OK Dependabot low-noise policy")
-print("npm: majors ignorados")
-print("pip: solo parches automáticos")
-print("github-actions: majors ignorados")
+print("npm: majors permitidos")
+print("pip: parches agrupados y majors permitidos")
+print("github-actions: majors permitidos")

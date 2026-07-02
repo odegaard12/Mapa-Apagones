@@ -47,16 +47,23 @@ def main() -> int:
         "frontend-runtime-minor-patch",
         "frontend-tooling-minor-patch",
         "backend-patches",
-        "version-update:semver-major",
     ]
     for value in required:
         assert value in dependabot, f"Dependabot policy missing {value}"
+
+    forbidden = [
+        "version-update:semver-major",
+        "version-update:semver-minor",
+    ]
+    for value in forbidden:
+        assert value not in dependabot, f"Dependabot should not ignore {value}"
 
     print("OK dependency update policy")
     print("fastapi=0.136.3")
     print("pydantic_core=2.46.4")
     print("react_major=18")
     print("react_leaflet_major=4")
+    print("dependabot_majors=enabled")
     return 0
 
 
