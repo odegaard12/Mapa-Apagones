@@ -276,9 +276,12 @@ URL local:
 Backend:
 
     DB_PATH=/data/app.db
-    TURNSTILE_ENABLED=0
+    TURNSTILE_ENABLED=1
     TURNSTILE_SECRET_KEY=
+    ANON_HASH_KEY=
     IGN_WFS_ENABLED=1
+
+Para desactivar Turnstile o usar la clave de anonimización de desarrollo, hazlo solo de forma explícita en tu entorno local.
 
 Frontend en Cloudflare Pages:
 

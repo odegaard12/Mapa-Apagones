@@ -5,11 +5,11 @@ from typing import Tuple
 from fastapi import HTTPException
 
 from app.settings import (
+    ANON_HASH_ALLOW_DEV_FALLBACK,
     ANON_HASH_DEV_FALLBACK,
     ANON_HASH_KEY,
     ANON_HASH_KEY_REQUIRED,
     ANON_HASH_LEGACY_COMPAT,
-    TURNSTILE_SECRET_KEY,
 )
 
 
@@ -21,15 +21,10 @@ def anonymization_secret() -> str:
     if ANON_HASH_KEY:
         return ANON_HASH_KEY
 
-    # Fallback transicional: evita caída si producción aún no define ANON_HASH_KEY,
-    # pero debe migrarse a una clave dedicada.
-    if TURNSTILE_SECRET_KEY:
-        return TURNSTILE_SECRET_KEY
+    if ANON_HASH_ALLOW_DEV_FALLBACK and not ANON_HASH_KEY_REQUIRED:
+        return ANON_HASH_DEV_FALLBACK
 
-    if ANON_HASH_KEY_REQUIRED:
-        raise HTTPException(status_code=500, detail="Anonimización no configurada.")
-
-    return ANON_HASH_DEV_FALLBACK
+    raise HTTPException(status_code=500, detail="Anonimización no configurada.")
 
 
 def anon_hash(value: str) -> str:

@@ -1,9 +1,8 @@
-import hashlib
-import hmac
 import ipaddress
 import json
 import math
 import os
+import re
 import sqlite3
 import uuid
 import xml.etree.ElementTree as ET
@@ -28,7 +27,6 @@ from app.settings import (
     ABUSE_LIMIT_PER_HOUR,
     ALLOWED_ORIGINS,
     ALLOWED_TYPES,
-    ANON_HASH_DEV_FALLBACK,
     ANON_HASH_KEY,
     ANON_HASH_KEY_REQUIRED,
     ANON_HASH_LEGACY_COMPAT,
@@ -47,6 +45,7 @@ from app.settings import (
     MAX_API_LIMIT,
     NEW_INCIDENT_COOLDOWN_SEC,
     NEW_ZONE_COOLDOWN_SEC,
+    PUBLIC_READ_LIMIT_PER_MINUTE,
     REPORT_TTL_HOURS,
     RESTORE_TTL_MINUTES,
     SAME_TYPE_COOLDOWN_SEC,
@@ -62,6 +61,7 @@ from app.settings import (
 )
 
 app = FastAPI(title="Apagones Ciudadanos")
+SQLITE_IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
 app.add_middleware(
     CORSMiddleware,
@@ -149,7 +149,7 @@ def client_ip(request: FastAPIRequest) -> str:
     remote_host = request.client.host if request.client and request.client.host else ""
 
     if TRUST_PROXY_HEADERS and is_trusted_proxy(remote_host):
-        for header_name in ("cf-connecting-ip", "x-real-ip", "x-forwarded-for"):
+        for header_name in ("x-real-ip", "x-forwarded-for"):
             header_ip = first_header_ip(request, header_name)
             if header_ip:
                 return str(header_ip)
@@ -245,14 +245,23 @@ def grid_for_point(lat: float, lng: float, size_m: int = GRID_SIZE_M):
         "center_lng": center_lng,
     }
 
+def quote_sqlite_identifier(value: str) -> str:
+    normalized = str(value or "").strip()
+    if not SQLITE_IDENTIFIER_RE.fullmatch(normalized):
+        raise ValueError(f"Identificador SQLite inválido: {value!r}")
+    return f'"{normalized}"'
+
 def table_columns(conn, table_name: str):
-    rows = conn.execute(f"PRAGMA table_info({table_name})").fetchall()
+    rows = conn.execute(f"PRAGMA table_info({quote_sqlite_identifier(table_name)})").fetchall()
     return {row["name"] for row in rows}
 
 def ensure_column(conn, table_name: str, col_name: str, col_def: str):
     cols = table_columns(conn, table_name)
     if col_name not in cols:
-        conn.execute(f"ALTER TABLE {table_name} ADD COLUMN {col_name} {col_def}")
+        conn.execute(
+            f"ALTER TABLE {quote_sqlite_identifier(table_name)} "
+            f"ADD COLUMN {quote_sqlite_identifier(col_name)} {col_def}"
+        )
 
 
 def apply_schema_hardening(conn):
@@ -324,6 +333,13 @@ def apply_schema_hardening(conn):
         """
         CREATE INDEX IF NOT EXISTS idx_action_log_token_ip_created
         ON action_log(reporter_token_hash, ip_hash, created_at)
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_action_log_action_ip_created
+        ON action_log(action, ip_hash, created_at)
         """
     )
 
@@ -448,6 +464,24 @@ def assert_not_rate_limited(conn, token_hashes, ip_hashes):
 
     if row["c"] >= ABUSE_LIMIT_PER_HOUR:
         raise HTTPException(status_code=429, detail="Límite temporal alcanzado. Espera un poco y vuelve a intentarlo.")
+
+def assert_not_public_read_rate_limited(conn, ip_hashes):
+    cutoff = iso(utcnow() - timedelta(minutes=1))
+    ip_clause, ip_params = sql_in_clause("ip_hash", normalize_hash_values(ip_hashes))
+
+    row = conn.execute(
+        f"""
+        SELECT COUNT(*) AS c
+        FROM action_log
+        WHERE created_at >= ?
+          AND action = 'public-read'
+          AND {ip_clause}
+        """,
+        [cutoff] + ip_params,
+    ).fetchone()
+
+    if row["c"] >= PUBLIC_READ_LIMIT_PER_MINUTE:
+        raise HTTPException(status_code=429, detail="Consulta temporalmente limitada. Espera un poco y vuelve a intentarlo.")
 
 def clamp_int(value: int, default: int, min_value: int, max_value: int) -> int:
     try:
@@ -1147,111 +1181,139 @@ def debug_incidents():
     return {"items": out, "summary": summary}
 
 @app.get("/api/incidents")
-def incidents(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None, limit: int = DEFAULT_API_LIMIT):
+def incidents(
+    request: FastAPIRequest,
+    hours: int = 24,
+    include_resolved: int = 0,
+    bbox: Optional[str] = None,
+    limit: int = DEFAULT_API_LIMIT,
+):
     hours = clamp_int(hours, 24, 1, MAX_API_HOURS)
     limit = clamp_int(limit, DEFAULT_API_LIMIT, 1, MAX_API_LIMIT)
     bbox_filter = parse_bbox_query(bbox)
 
     conn = get_db()
-    refresh_all_incidents(conn)
-    cutoff = iso(utcnow() - timedelta(hours=hours))
+    try:
+        raw_ip = client_ip(request)
+        ip_hash = anon_hash(raw_ip)
+        ip_hashes = anon_hash_candidates(raw_ip)
+        assert_not_public_read_rate_limited(conn, ip_hashes)
+        record_action(conn, ip_hash, ip_hash, "public-read")
+        conn.commit()
+        refresh_all_incidents(conn)
+        cutoff = iso(utcnow() - timedelta(hours=hours))
 
-    where = ["last_report_at >= ?"]
-    params: list[object] = [cutoff]
+        where = ["last_report_at >= ?"]
+        params: list[object] = [cutoff]
 
-    if include_resolved:
-        where.append("(report_count_active > 0 OR status = 'resuelta')")
-    else:
-        where.append("report_count_active > 0")
+        if include_resolved:
+            where.append("(report_count_active > 0 OR status = 'resuelta')")
+        else:
+            where.append("report_count_active > 0")
 
-    if bbox_filter:
-        min_lng, min_lat, max_lng, max_lat = bbox_filter
-        where.append("lng_max >= ? AND lng_min <= ? AND lat_max >= ? AND lat_min <= ?")
-        params.extend([min_lng, max_lng, min_lat, max_lat])
+        if bbox_filter:
+            min_lng, min_lat, max_lng, max_lat = bbox_filter
+            where.append("lng_max >= ? AND lng_min <= ? AND lat_max >= ? AND lat_min <= ?")
+            params.extend([min_lng, max_lng, min_lat, max_lat])
 
-    params.append(limit)
+        params.append(limit)
 
-    rows = conn.execute(
-        f"""
-        SELECT *
-        FROM incidents
-        WHERE {' AND '.join(where)}
-        ORDER BY report_count_active DESC, last_report_at DESC
-        LIMIT ?
-        """,
-        params,
-    ).fetchall()
+        rows = conn.execute(
+            f"""
+            SELECT *
+            FROM incidents
+            WHERE {' AND '.join(where)}
+            ORDER BY report_count_active DESC, last_report_at DESC
+            LIMIT ?
+            """,
+            params,
+        ).fetchall()
 
-    out = [dict(r) for r in rows]
-    conn.close()
-    return {"items": out, "limit": limit, "hours": hours}
+        out = [dict(r) for r in rows]
+        return {"items": out, "limit": limit, "hours": hours}
+    finally:
+        conn.close()
 
 @app.get("/api/zones")
-def zones(hours: int = 24, include_resolved: int = 0, bbox: Optional[str] = None, limit: int = DEFAULT_API_LIMIT):
+def zones(
+    request: FastAPIRequest,
+    hours: int = 24,
+    include_resolved: int = 0,
+    bbox: Optional[str] = None,
+    limit: int = DEFAULT_API_LIMIT,
+):
     hours = clamp_int(hours, 24, 1, MAX_API_HOURS)
     limit = clamp_int(limit, DEFAULT_API_LIMIT, 1, MAX_API_LIMIT)
     bbox_filter = parse_bbox_query(bbox)
 
     conn = get_db()
-    refresh_all_incidents(conn)
+    try:
+        raw_ip = client_ip(request)
+        ip_hash = anon_hash(raw_ip)
+        ip_hashes = anon_hash_candidates(raw_ip)
+        assert_not_public_read_rate_limited(conn, ip_hashes)
+        record_action(conn, ip_hash, ip_hash, "public-read")
+        conn.commit()
+        refresh_all_incidents(conn)
 
-    raw_items = get_zone_items(conn, hours=hours, include_resolved=bool(include_resolved))
-    items = []
+        raw_items = get_zone_items(conn, hours=hours, include_resolved=bool(include_resolved))
+        items = []
 
-    for z in raw_items:
-        if not bbox_overlaps(
-            z["bbox_min_lat"],
-            z["bbox_max_lat"],
-            z["bbox_min_lng"],
-            z["bbox_max_lng"],
-            bbox_filter,
-        ):
-            continue
+        for z in raw_items:
+            if not bbox_overlaps(
+                z["bbox_min_lat"],
+                z["bbox_max_lat"],
+                z["bbox_min_lng"],
+                z["bbox_max_lng"],
+                bbox_filter,
+            ):
+                continue
 
-        latest_incident = conn.execute(
-            """
-            SELECT id, primary_type, status, last_report_at
-            FROM incidents
-            WHERE zone_id = ?
-            ORDER BY report_count_active DESC, last_report_at DESC
-            LIMIT 1
-            """,
-            (z["id"],),
-        ).fetchone()
+            latest_incident = conn.execute(
+                """
+                SELECT id, primary_type, status, last_report_at
+                FROM incidents
+                WHERE zone_id = ?
+                ORDER BY report_count_active DESC, last_report_at DESC
+                LIMIT 1
+                """,
+                (z["id"],),
+            ).fetchone()
 
-        primary_type = latest_incident["primary_type"] if latest_incident else "sin_luz"
+            primary_type = latest_incident["primary_type"] if latest_incident else "sin_luz"
 
-        items.append({
-            "id": z["id"],
-            "incident_id": latest_incident["id"] if latest_incident else None,
-            "display_zone": z["display_name"],
-            "municipio": z["municipio"],
-            "province": z["province"],
-            "center_lat": z["center_lat"],
-            "center_lng": z["center_lng"],
-            "lat_min": z["bbox_min_lat"],
-            "lat_max": z["bbox_max_lat"],
-            "lng_min": z["bbox_min_lng"],
-            "lng_max": z["bbox_max_lng"],
-            "status": z["status"],
-            "primary_type": primary_type,
-            "report_count_active": z["confirmations_active"],
-            "unique_reporters_active": z["confirmations_active"],
-            "last_report_at": z["last_report_at"],
-            "resolved_at": z["resolved_at"],
-            "zone_id": z["id"],
-        })
+            items.append({
+                "id": z["id"],
+                "incident_id": latest_incident["id"] if latest_incident else None,
+                "display_zone": z["display_name"],
+                "municipio": z["municipio"],
+                "province": z["province"],
+                "center_lat": z["center_lat"],
+                "center_lng": z["center_lng"],
+                "lat_min": z["bbox_min_lat"],
+                "lat_max": z["bbox_max_lat"],
+                "lng_min": z["bbox_min_lng"],
+                "lng_max": z["bbox_max_lng"],
+                "status": z["status"],
+                "primary_type": primary_type,
+                "report_count_active": z["confirmations_active"],
+                "unique_reporters_active": z["confirmations_active"],
+                "last_report_at": z["last_report_at"],
+                "resolved_at": z["resolved_at"],
+                "zone_id": z["id"],
+            })
 
-        if len(items) >= limit:
-            break
+            if len(items) >= limit:
+                break
 
-    summary = {
-        "active_zones": sum(1 for i in items if int(i.get("report_count_active", 0)) > 0),
-        "confirmations": sum(int(i.get("report_count_active", 0)) for i in items),
-    }
+        summary = {
+            "active_zones": sum(1 for i in items if int(i.get("report_count_active", 0)) > 0),
+            "confirmations": sum(int(i.get("report_count_active", 0)) for i in items),
+        }
 
-    conn.close()
-    return {"items": items, "summary": summary, "limit": limit, "hours": hours}
+        return {"items": items, "summary": summary, "limit": limit, "hours": hours}
+    finally:
+        conn.close()
 
 
 @app.post("/api/report/preflight")
@@ -1516,4 +1578,3 @@ def api_status():
             "debug_endpoints_enabled": bool(DEBUG_ENDPOINTS),
         },
     }
-
