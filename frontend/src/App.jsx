@@ -89,6 +89,7 @@ function typeLabel(type) {
 
 function statusLabel(status) {
   return {
+    corte_confirmado: '⚠️ CORTE CONFIRMADO',
     senal_debil: 'Débil',
     probable: 'Probable',
     activa: 'Activa',
@@ -100,6 +101,7 @@ function statusLabel(status) {
 
 function statusColor(status) {
   return {
+    corte_confirmado: '#DC2626',
     senal_debil: '#D4A938',
     probable: '#F58A4B',
     activa: '#EB6343',
