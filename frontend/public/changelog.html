@@ -152,11 +152,23 @@ footer { margin-top: 34px; color: var(--muted); }
 <main>
   <a class="back" href="/">← Volver al mapa</a>
 
-  <p class="eyebrow">Actualizado: 2026-06-22</p>
+  <p class="eyebrow">Actualizado: 2026-09-11</p>
   <h1>Changelog</h1>
   <p class="lead">
     Historial público curado de cambios importantes. El historial técnico completo está disponible en GitHub.
   </p>
+
+  <section class="release" id="v0121" style="border-left:3px solid #0f766e;">
+    <h2 style="margin-top:0;">v0.12.1 — <span style="font-weight:400;font-size:0.9rem;">11 de septiembre de 2026</span></h2>
+    <p class="eyebrow" style="margin-top:-8px;">2026-09-11</p>
+    <p><strong>Detección automática de cortes confirmados y SEO</strong></p>
+    <ul>
+      <li>Nuevo estado <strong>corte confirmado</strong>: se activa automáticamente cuando 5 o más personas reportan en la misma zona en menos de 10 minutos.</li>
+      <li>Se muestra con etiqueta y color de alerta diferenciados del resto de estados.</li>
+      <li>Añadidas etiquetas canónicas y meta tags a páginas públicas para mejorar el posicionamiento en buscadores.</li>
+      <li>Actualización de dependencias (frontend y backend) con validación de build antes del merge.</li>
+    </ul>
+  </section>
 
   <section class="release" id="v0120" style="border-left:3px solid #0f766e;">
     <h2 style="margin-top:0;">v0.12.0 — <span style="font-weight:400;font-size:0.9rem;">22 de junio de 2026</span></h2>

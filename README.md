@@ -16,7 +16,7 @@ Repositorio público del proyecto publicado en:
 
 Estado actual:
 
-Versión actual visible: v0.11.0.0-map-ux-reliability
+Versión actual visible: v0.12.0
 
     Publicado en Cloudflare Pages con dominio público activo, API pública por túnel/reverse proxy seguro y Turnstile activo para reportes.
 
@@ -80,7 +80,7 @@ Permite reportar, de forma rápida:
 - Baja tensión.
 - Ya volvió.
 
-La aplicación agrupa los reportes por zona aproximada y muestra estados de confianza como señal débil, probable, activa o resuelta.
+La aplicación agrupa los reportes por zona aproximada y muestra estados de confianza como señal débil, probable, activa, corte confirmado (5+ reportes en 10 minutos) o resuelta.
 
 ## Qué no es
 
