@@ -714,7 +714,18 @@ def fill_incident_geodata_if_missing(conn, incident_id: str):
         ),
     )
 
-def compute_incident_status(active_negative_unique: int, last_negative_at: Optional[datetime], has_restore_signal: bool) -> str:
+def compute_incident_status(active_negative_unique: int, last_negative_at: Optional[datetime], has_restore_signal: bool, rapid_cluster_count: int = 0) -> str:
+    """
+    Compute incident status with automatic outage detection.
+
+    - corte_confirmado: 5+ reports within 10 minutes (real power outage pattern)
+    - activa: 4+ active reports within 45 min (confirmed incident)
+    - probable: 2-3 active reports within 45 min
+    - senal_debil: 1 report within 45 min
+    - degradandose: no new reports in 45-90 min
+    - probablemente_resuelta: 90+ min without reports, or restore signal
+    - resuelta: no active reports
+    """
     if active_negative_unique <= 0:
         return "resuelta"
 
@@ -723,6 +734,10 @@ def compute_incident_status(active_negative_unique: int, last_negative_at: Optio
         return "resuelta"
 
     age_min = (now - last_negative_at).total_seconds() / 60
+
+    # Auto-detect real outages: 5+ reports in rapid succession
+    if rapid_cluster_count >= 5 and age_min <= 10:
+        return "corte_confirmado"
 
     if age_min <= 45:
         if active_negative_unique >= 4:
@@ -769,10 +784,17 @@ def recompute_incident(conn, incident_id: str):
     last_negative_at = max((parse_dt(r["updated_at"]) for r in negative_rows), default=None)
     last_any_at = max((parse_dt(r["updated_at"]) for r in rows), default=None)
 
+    # Auto-outage detection: count reports within 10 minutes
+    rapid_cluster_count = 0
+    if last_negative_at:
+        cutoff_10min = iso(last_negative_at - timedelta(minutes=10))
+        rapid_cluster_count = len([r for r in negative_rows if parse_dt(r["created_at"]) and parse_dt(r["created_at"]) >= parse_dt(cutoff_10min)])
+
     status = compute_incident_status(
         active_negative_unique=active_negative_unique,
         last_negative_at=last_negative_at,
         has_restore_signal=active_restore_unique > 0,
+        rapid_cluster_count=rapid_cluster_count,
     )
 
     counter = Counter([r["report_type"] for r in negative_rows])
