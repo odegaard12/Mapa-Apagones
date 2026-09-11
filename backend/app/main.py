@@ -784,11 +784,15 @@ def recompute_incident(conn, incident_id: str):
     last_negative_at = max((parse_dt(r["updated_at"]) for r in negative_rows), default=None)
     last_any_at = max((parse_dt(r["updated_at"]) for r in rows), default=None)
 
-    # Auto-outage detection: count reports within 10 minutes
+    # Auto-outage detection: count reports created within 10 minutes of each other.
+    # Anchored on the newest created_at (not last_negative_at/updated_at) so the
+    # window stays consistent with what's being counted, even if a report is
+    # later refreshed/updated without a new creation.
     rapid_cluster_count = 0
-    if last_negative_at:
-        cutoff_10min = iso(last_negative_at - timedelta(minutes=10))
-        rapid_cluster_count = len([r for r in negative_rows if parse_dt(r["created_at"]) and parse_dt(r["created_at"]) >= parse_dt(cutoff_10min)])
+    last_negative_created_at = max((parse_dt(r["created_at"]) for r in negative_rows if parse_dt(r["created_at"])), default=None)
+    if last_negative_created_at:
+        cutoff_10min = last_negative_created_at - timedelta(minutes=10)
+        rapid_cluster_count = len([r for r in negative_rows if parse_dt(r["created_at"]) and parse_dt(r["created_at"]) >= cutoff_10min])
 
     status = compute_incident_status(
         active_negative_unique=active_negative_unique,
