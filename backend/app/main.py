@@ -71,6 +71,15 @@ app.add_middleware(
     allow_credentials=False,
 )
 
+
+@app.middleware("http")
+async def add_security_headers(request: FastAPIRequest, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["X-Frame-Options"] = "DENY"
+    return response
+
 class ReportIn(BaseModel):
     lat: float = Field(ge=27.0, le=45.0)
     lng: float = Field(ge=-19.0, le=5.0)
