@@ -1,0 +1,18 @@
+{
+  "name": "Mapa Apagones",
+  "short_name": "Apagones",
+  "description": "Mapa ciudadano de avisos de apagones, cortes eléctricos e incidencias de suministro agregadas por zona.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111d",
+  "theme_color": "#07111d",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
