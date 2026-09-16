@@ -272,6 +272,25 @@ a {
 
 .freshness-dot.error { background: #f87171; }
 
+.btn-refresh {
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line, #dbe3ef);
+  background: transparent;
+  color: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.btn-refresh:hover:not(:disabled) { background: rgba(0, 0, 0, 0.05); }
+.btn-refresh:disabled { opacity: 0.6; cursor: default; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-refresh { transition: none; }
+}
+
 .incident-list {
   display: grid;
   gap: 8px;

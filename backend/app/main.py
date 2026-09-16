@@ -1166,7 +1166,20 @@ def get_or_create_incident_id(
 
 @app.get("/api/health")
 def health():
-    return {"ok": True}
+    db_ok = False
+    try:
+        conn = get_db()
+        conn.execute("SELECT 1").fetchone()
+        conn.close()
+        db_ok = True
+    except Exception:
+        db_ok = False
+
+    return {
+        "ok": db_ok,
+        "database": "ok" if db_ok else "error",
+        "checked_at": iso(utcnow()),
+    }
 
 @app.get("/api/debug/incidents")
 def debug_incidents():
@@ -1306,7 +1319,7 @@ def zones(
 
             latest_incident = conn.execute(
                 """
-                SELECT id, primary_type, status, last_report_at
+                SELECT id, primary_type, status, last_report_at, created_at
                 FROM incidents
                 WHERE zone_id = ?
                 ORDER BY report_count_active DESC, last_report_at DESC
@@ -1333,6 +1346,7 @@ def zones(
                 "primary_type": primary_type,
                 "report_count_active": z["confirmations_active"],
                 "unique_reporters_active": z["confirmations_active"],
+                "created_at": latest_incident["created_at"] if latest_incident else None,
                 "last_report_at": z["last_report_at"],
                 "resolved_at": z["resolved_at"],
                 "zone_id": z["id"],
