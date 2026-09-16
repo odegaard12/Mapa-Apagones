@@ -140,6 +140,19 @@ function formatTimeAgo(isoValue) {
   return `Hace ${Math.floor(diff / 86400)} d`
 }
 
+function formatExactDateTime(isoValue) {
+  if (!isoValue) return null
+  const date = new Date(isoValue)
+  if (Number.isNaN(date.getTime())) return null
+  return date.toLocaleString('es-ES', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+}
+
 function latlngToMercator(lat, lng) {
   const x = EARTH_R * (lng * Math.PI / 180)
   const clampedLat = Math.max(Math.min(lat, 85.05112878), -85.05112878)
@@ -1417,7 +1430,7 @@ function enterReport() {
               </div>
             </div>
 
-            <div className="data-freshness" role="status" aria-live="polite"><span className={`freshness-dot ${incidentsError ? 'error' : ''}`} aria-hidden="true" /><span>{incidentsLoading ? 'Actualizando incidencias…' : incidentsError ? 'No se pudo actualizar' : incidentsUpdatedAt ? `Datos actualizados ${formatTimeAgo(incidentsUpdatedAt).toLowerCase()}` : 'Esperando la primera actualización'}</span>{incidentsError ? <button type="button" onClick={() => loadIncidents()}>Reintentar</button> : null}</div>
+            <div className="data-freshness" role="status" aria-live="polite"><span className={`freshness-dot ${incidentsError ? 'error' : ''}`} aria-hidden="true" /><span>{incidentsLoading ? 'Actualizando incidencias…' : incidentsError ? 'No se pudo actualizar' : incidentsUpdatedAt ? `Datos actualizados ${formatTimeAgo(incidentsUpdatedAt).toLowerCase()}` : 'Esperando la primera actualización'}</span><button type="button" className="btn-refresh" onClick={() => loadIncidents()} disabled={incidentsLoading} aria-label="Actualizar incidencias ahora">{incidentsError ? 'Reintentar' : '↻ Actualizar'}</button></div>
             <div className="incident-list" aria-busy={incidentsLoading}>
               {incidentsLoading && incidents.length === 0 ? (
                 <div className="empty-state loading-state"><span className="state-spinner" aria-hidden="true" /><strong>Cargando zonas activas</strong><span>Consultando la API pública y preparando el mapa.</span></div>
@@ -1688,6 +1701,14 @@ function enterReport() {
                 <span>Actualización</span>
                 <strong>{formatTimeAgo(selectedIncident.last_report_at)}</strong>
               </div>
+            </div>
+            <div className="info-row">
+              <span>Detectado</span>
+              <strong>{formatExactDateTime(selectedIncident.created_at) || 'sin datos'}</strong>
+            </div>
+            <div className="info-row">
+              <span>Actualizado</span>
+              <strong>{formatExactDateTime(selectedIncident.last_report_at) || 'sin datos'}</strong>
             </div>
 
             <div className="action-row">
