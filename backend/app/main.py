@@ -89,6 +89,13 @@ class ReportIn(BaseModel):
     incident_id: Optional[str] = Field(default=None, max_length=80)
     zone_id: Optional[str] = Field(default=None, max_length=80)
 
+class DistributorSuggestionIn(BaseModel):
+    zone_id: str = Field(min_length=1, max_length=120)
+    distributor_name: str = Field(min_length=2, max_length=80)
+    token: str = Field(min_length=16, max_length=128)
+
+DISTRIBUTOR_SUGGESTION_CONSENSUS_MIN = 3
+
 def utcnow() -> datetime:
     return datetime.now(timezone.utc)
 
@@ -406,11 +413,23 @@ def setup_db():
             created_at TEXT NOT NULL
         );
 
+        CREATE TABLE IF NOT EXISTS distributor_suggestions (
+            id TEXT PRIMARY KEY,
+            zone_id TEXT NOT NULL,
+            distributor_name TEXT NOT NULL,
+            distributor_name_normalized TEXT NOT NULL,
+            reporter_token_hash TEXT NOT NULL,
+            ip_hash TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            UNIQUE(zone_id, reporter_token_hash)
+        );
+
         CREATE INDEX IF NOT EXISTS idx_incidents_last_report_at ON incidents(last_report_at);
         CREATE INDEX IF NOT EXISTS idx_incidents_cell_key ON incidents(cell_key);
         CREATE INDEX IF NOT EXISTS idx_reports_incident ON reports(incident_id);
         CREATE INDEX IF NOT EXISTS idx_reports_token ON reports(reporter_token_hash);
         CREATE INDEX IF NOT EXISTS idx_action_log_created ON action_log(created_at);
+        CREATE INDEX IF NOT EXISTS idx_distributor_suggestions_zone ON distributor_suggestions(zone_id);
         """
     )
 
@@ -1563,6 +1582,82 @@ def report(payload: ReportIn, request: FastAPIRequest):
         "action": action,
         "incident_id": incident_id,
         "incident": dict(incident),
+    }
+
+@app.post("/api/distributor-suggestion")
+def submit_distributor_suggestion(payload: DistributorSuggestionIn, request: FastAPIRequest):
+    """
+    Crowdsourcing anónimo: un usuario indica qué distribuidora eléctrica da
+    servicio en su zona. No se usa para reemplazar fuentes públicas verificadas,
+    solo para zonas sin pista (confidence=unknown). Un envío por token por zona;
+    se necesita consenso (DISTRIBUTOR_SUGGESTION_CONSENSUS_MIN coincidencias)
+    para que aparezca como sugerido en la UI.
+    """
+    name = payload.distributor_name.strip()
+    if len(name) < 2:
+        raise HTTPException(status_code=400, detail="Nombre de distribuidora inválido")
+
+    conn = get_db()
+    cleanup_old(conn)
+
+    raw_token = payload.token.strip()
+    raw_ip = client_ip(request)
+    token_hash = anon_hash(raw_token)
+    ip_hash = anon_hash(raw_ip)
+    token_hashes = anon_hash_candidates(raw_token)
+    ip_hashes = anon_hash_candidates(raw_ip)
+    assert_not_rate_limited(conn, token_hashes, ip_hashes)
+
+    normalized = normalize_text(name)
+    now = utcnow()
+
+    conn.execute(
+        """
+        INSERT INTO distributor_suggestions (
+            id, zone_id, distributor_name, distributor_name_normalized,
+            reporter_token_hash, ip_hash, created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(zone_id, reporter_token_hash) DO UPDATE SET
+            distributor_name = excluded.distributor_name,
+            distributor_name_normalized = excluded.distributor_name_normalized,
+            ip_hash = excluded.ip_hash,
+            created_at = excluded.created_at
+        """,
+        (str(uuid.uuid4()), payload.zone_id, name, normalized, token_hash, ip_hash, iso(now)),
+    )
+    record_action(conn, token_hash, ip_hash, "distributor_suggestion_submitted")
+    conn.commit()
+    conn.close()
+    return {"ok": True}
+
+@app.get("/api/distributor-suggestions")
+def get_distributor_suggestions(zone_id: str):
+    conn = get_db()
+    rows = conn.execute(
+        """
+        SELECT distributor_name_normalized, distributor_name, COUNT(DISTINCT reporter_token_hash) AS votes
+        FROM distributor_suggestions
+        WHERE zone_id = ?
+        GROUP BY distributor_name_normalized
+        ORDER BY votes DESC
+        """,
+        (zone_id,),
+    ).fetchall()
+    conn.close()
+
+    candidates = [
+        {"distributor_name": r["distributor_name"], "votes": r["votes"]}
+        for r in rows
+    ]
+    top = candidates[0] if candidates else None
+    community_verified = bool(top and top["votes"] >= DISTRIBUTOR_SUGGESTION_CONSENSUS_MIN)
+
+    return {
+        "zone_id": zone_id,
+        "candidates": candidates,
+        "community_verified": community_verified,
+        "consensus_min": DISTRIBUTOR_SUGGESTION_CONSENSUS_MIN,
     }
 
 @app.get("/api/status")

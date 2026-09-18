@@ -218,6 +218,78 @@ function distributorHint(incident) {
   return getDistributorHintDisplay(incident)
 }
 
+function DistributorCrowdsourcePrompt({ zoneId }) {
+  const [value, setValue] = useState('')
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [result, setResult] = useState(null)
+
+  useEffect(() => {
+    let cancelled = false
+    if (!zoneId) return undefined
+    apiFetch(`/api/distributor-suggestions?zone_id=${encodeURIComponent(zoneId)}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => { if (!cancelled) setResult(data) })
+      .catch(() => {})
+    return () => { cancelled = true }
+  }, [zoneId])
+
+  if (!zoneId) return null
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const name = value.trim()
+    if (name.length < 2) return
+    setStatus('sending')
+    try {
+      const res = await apiFetch('/api/distributor-suggestion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ zone_id: zoneId, distributor_name: name, token: getToken() }),
+      })
+      if (!res.ok) throw new Error('failed')
+      setStatus('sent')
+      setValue('')
+      const refreshed = await apiFetch(`/api/distributor-suggestions?zone_id=${encodeURIComponent(zoneId)}`)
+      if (refreshed.ok) setResult(await refreshed.json())
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (result?.community_verified && result.candidates?.[0]) {
+    return (
+      <div className="empty-state" style={{ fontSize: '0.82rem' }}>
+        <strong>Distribuidora sugerida por la comunidad</strong>
+        <span>{result.candidates[0].distributor_name} ({result.candidates[0].votes} confirmaciones). No es una fuente oficial verificada.</span>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="empty-state" style={{ fontSize: '0.82rem', gap: '8px' }}>
+      <strong>¿Sabes qué distribuidora da servicio aquí?</strong>
+      <span>No tenemos fuente pública verificada para esta zona. Tu respuesta ayuda a otros usuarios (no sustituye fuentes oficiales).</span>
+      <div style={{ display: 'flex', gap: '6px' }}>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Ej: E-REDES, Endesa, Iberdrola..."
+          maxLength={80}
+          className="search-box"
+          style={{ flex: 1, height: '36px' }}
+          disabled={status === 'sending'}
+        />
+        <button type="submit" className="btn-secondary" disabled={status === 'sending' || value.trim().length < 2}>
+          {status === 'sending' ? '...' : 'Enviar'}
+        </button>
+      </div>
+      {status === 'sent' && <span style={{ color: 'var(--green)' }}>Gracias, registrado.</span>}
+      {status === 'error' && <span style={{ color: '#f87171' }}>No se pudo enviar, inténtalo de nuevo.</span>}
+    </form>
+  )
+}
+
 function MapClickSelector({ mode, onPick }) {
   useMapEvents({
     click(e) {
@@ -1692,6 +1764,9 @@ function enterReport() {
 
             <IncidentReliability incident={selectedIncident} formatTimeAgo={formatTimeAgo} statusLabel={statusLabel} />
             <DistributorReliability distributor={selectedDistributor} />
+            {selectedDistributor?.confidence === 'unknown' && (
+              <DistributorCrowdsourcePrompt zoneId={selectedIncident?.zone_id || selectedIncident?.id || null} />
+            )}
             <div className="stats-strip two">
               <div>
                 <span>Confirmaciones</span>
