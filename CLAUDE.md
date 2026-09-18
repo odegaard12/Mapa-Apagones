@@ -33,7 +33,7 @@ Backend: FastAPI + SQLite + HMAC-SHA256 hashing (anónimo, sin PII)
    - Hashing anónimo (HMAC-SHA256) para token/IP
    - Agregación por zona aproximada
 5. **Distribuidoras**: solo fuentes públicas verificables. Sin CAPTCHA-bypass, sin scraping agresivo.
-6. **Despliegue a .103**: requiere `git pull && docker compose up -d --build` manual (sin SSH autorizado).
+6. **Despliegue a .103**: `git pull && docker compose up -d --build` en `/home/odegaard12/apagones-web`. Requiere acceso a la Raspberry (el operador humano gestiona sus propias credenciales fuera de este repo).
 
 ---
 
@@ -77,24 +77,23 @@ curl -s http://127.0.0.1:8098/api/health
 
 ## ESTADO ACTUAL (2026-09-18)
 
-### main (HEAD: 1b53168)
-- ✅ PR #225 mergeado: timestamps de incidencia + refresco manual
-- ✅ PR #224: PWA manifest + canonical tag en /seguridad/
-- ✅ PR #223: README/changelog sync (v0.12.1)
-- ✅ PR #222: CVE fixes (starlette, idna) + security headers en Cloudflare
-- ✅ PR #221: 5 Dependabot PRs merged
-- ✅ PR #220: Auto-detección de cortes (5+ reports en 10 min)
+### main — todo mergeado y desplegado en producción
+- ✅ PR #225: timestamps de incidencia + refresco manual
+- ✅ PR #226: mobile responsive design (map 100% ancho, panels respetan nav)
+- ✅ PR #227: investigación distribuidoras (documentado, sin fuentes públicas viables)
+- ✅ PR #228: auditoría UX completa + CLAUDE.md inicial
+- ✅ PR #229: fix contraste barra inferior móvil
+- ✅ Backend en `.103` actualizado y verificado healthy en producción
 
 ### Frontend estático
 - ✅ Cloudflare Pages: despliega automáticamente en push a main
 - ✅ CSP/HSTS/Referrer-Policy/X-Frame-Options vía `frontend/public/_headers`
 - ✅ CORS: `ALLOWED_ORIGINS` restringido, `allow_credentials=False`
-- ✅ PWA: manifest.json + service worker ready
+- ✅ PWA: manifest.webmanifest presente
 
-### Backend (en .103)
-- ⚠️ **PENDIENTE**: aplicar `git pull && docker compose up -d --build` (PR #225 fixes)
-- ✅ `/api/health`: valida conexión real a SQLite
-- ✅ `/api/zones`: incluye `created_at` de incidencias (bug fixed en PR #225)
+### Backend (en .103) — desplegado y verificado 2026-09-18
+- ✅ `/api/health`: valida conexión real a SQLite — confirmado en producción
+- ✅ `/api/zones`: incluye `created_at` de incidencias — confirmado en producción
 - ✅ Rate limiting: `ABUSE_LIMIT_PER_HOUR` (escritura), `PUBLIC_READ_LIMIT_PER_MINUTE` (lectura)
 
 ### Cobertura de distribuidoras
@@ -110,58 +109,41 @@ curl -s http://127.0.0.1:8098/api/health
 
 ## TRABAJO PENDIENTE
 
-### BLOQUEADO (requiere decisión/acción usuario)
-- [ ] Mergear PR #225 en GitHub (main está protegida)
-- [ ] Aplicar `git pull && docker compose up -d --build` en .103 para que fixes lleguen a producción
+### Decisión de usuario pendiente
 - [ ] Estrategia para 4 regiones sin distribuidoras:
   - A) Dejar como "unknown" (honesto, sin datos falsos)
   - B) Usar distribuidora regional default (menos preciso)
   - C) Implementar crowdsourcing (formulario "¿Tu distribuidora es...?")
 
-### RAMAS LISTAS PARA PR (2026-09-18)
-```
-fix/mobile-responsive-design   ← CSS fixes (map 100% ancho, panels respetan nav)
-feat/distributor-sources-spain ← Investigación (documento DISTRIBUTOR_RESEARCH.md)
-audit/mobile-ux-complete       ← Auditoría UX (documento AUDIT_UX_MOBILE.md)
-```
-
-### RAMAS ANTIGUAS (considerar cerrar)
-```
-docs/reconcile-pr225-state     ← Reconciliation de docs (no mergeada)
-chore/dependabot-batch-sept    ← Viejos, ya merged
-docs/readme-changelog-sync     ← Ya merged como PR #223
-security/headers-and-cve-fixes ← Ya merged como PR #222
-seo/*                          ← Ya merged
-feat/auto-outage-detection     ← Ya merged como PR #220
-```
+### Ramas
+Sin ramas locales huérfanas al cierre de esta sesión. Revisar `gh pr list --state open` por PRs de Dependabot que puedan seguir abiertos aunque su contenido ya esté en main (se cierran solos al siguiente escaneo).
 
 ---
 
 ## DECISIONES TOMADAS (que no repetir)
 
-1. **No revertir PR #225**: está merged, documentado. Siguiente sesión continúa desde ahí.
-2. **Diseño móvil**: CSS fixes no rompen desktop. Testear en 375×812.
+1. **No revertir nada mergeado** — main es la fuente de verdad.
+2. **Diseño móvil**: CSS fixes no rompen desktop. Testear en 375×812 y desktop.
 3. **Distribuidoras**: sin fuentes públicas = documentar el bloqueo en lugar de inventar datos.
 4. **UX**: todos los botones funcionan (MAPA/ZONAS/REPORTAR/FILTROS/INFO). No hay bloqueadores.
+5. **Barra inferior móvil**: contraste corregido tras feedback de usuario (color inactivo alineado con `--muted`).
 
 ---
 
 ## PUNTOS FRÁGILES (precaución)
 
-- **Raspberry .103**: SSH no autorizado. Requiere user manual `git pull && docker compose up -d --build`.
-- **React 18→19**: PRs #217/#218 rompen Cloudflare Pages build. No mergear hasta resolver.
-- **Dependabot**: 5 PRs viejos abiertos (#216/#215/#213/#212/#211). Se cerrarán solos cuando Dependabot los rescane.
+- **React 18→19**: PRs de Dependabot rompen Cloudflare Pages build. No mergear hasta investigar la causa.
 - **Scroll en paneles mobile**: scrollbar es pequeño (4px). En pantallas muy pequeñas podría ser poco visible.
 
 ---
 
 ## PRÓXIMOS PASOS (recomendación)
 
-1. Mergear `fix/mobile-responsive-design` (impacto visual, ya testeado)
-2. Decidir estrategia para 4 regiones sin distribuidoras (A/B/C arriba)
-3. Implementar si es C (crowdsourcing)
-4. Auditoría de performance (Lighthouse, Core Web Vitals real)
-5. Considerar dark mode refinement
+1. Decidir estrategia para 4 regiones sin distribuidoras (A/B/C arriba)
+2. Implementar si es C (crowdsourcing)
+3. Auditoría de performance (Lighthouse, Core Web Vitals real)
+4. Investigar por qué React 19 rompe el build de Cloudflare Pages
+5. Seguir recogiendo feedback de UX real de usuarios
 
 ---
 
@@ -169,9 +151,8 @@ feat/auto-outage-detection     ← Ya merged como PR #220
 
 **Próxima sesión:**
 1. `git fetch origin && git log main -5` — confirmar estado de main
-2. Revisar si PRs nuevas fueron mergeadas en GitHub
-3. Aplicar fixes en .103 si fue necesario
-4. Continuar desde "Trabajo Pendiente" arriba
+2. Revisar `gh pr list --state open` por PRs pendientes
+3. Continuar desde "Trabajo Pendiente" arriba
 
 **Graphify**: el grafo existe en `graphify-out/`. Usar `graphify query "<pregunta>"` antes de explorar código.
 
@@ -179,11 +160,10 @@ feat/auto-outage-detection     ← Ya merged como PR #220
 
 ## CONTACTO / LOGS
 
-- **User email**: oscarandroid2000@gmail.com
 - **Repo**: https://github.com/odegaard12/Mapa-Apagones
 - **Cloudflare Pages**: mapa-apagones.es
-- **Backend**: .103 (srv-web-01-lan)
+- **Backend**: Raspberry en red local, acceso gestionado por el operador fuera de este repo
 
 ---
 
-**Última revisión**: 2026-09-18 por Claude Haiku 4.5
+**Última revisión**: 2026-09-18
