@@ -478,16 +478,26 @@ a {
    ========================================================= */
 .map-stage {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 
 .map {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
-.leaflet-container { background: #c9d8e8; }
+.leaflet-container {
+  background: #c9d8e8;
+  width: 100% !important;
+  height: 100% !important;
+}
 
 .leaflet-control-attribution {
   background: rgba(255,255,255,0.72) !important;
@@ -797,16 +807,30 @@ a {
   /* Mode buttons hidden on mobile — bottom nav handles navigation */
   .top-controls { display: none; }
 
-  /* Map fills the whole screen always */
+  /* Map fills the whole screen, respecting bottom nav */
   .map-stage {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: var(--nav-h);
     z-index: 1;
+    width: 100%;
+  }
+
+  .map {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .leaflet-container {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .leaflet-bottom {
-    margin-bottom: calc(var(--nav-h) + 4px) !important;
+    margin-bottom: calc(var(--nav-h) + 8px) !important;
   }
 
   /* ---- PC panels: hidden ---- */
@@ -820,12 +844,14 @@ a {
     width: 100%;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     border-bottom: none;
-    padding: 0 16px 16px;
+    padding: 16px;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
     max-height: var(--sheet-h);
     height: var(--sheet-h);
     bottom: var(--nav-h);
     z-index: 800;
     overflow-y: auto;
+    overflow-x: hidden;
     display: none; /* hidden by default, shown by class */
     flex-direction: column;
     gap: 12px;
