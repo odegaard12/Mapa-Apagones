@@ -98,3 +98,53 @@ Búsqueda de fuentes públicas verificables para 4 regiones (4,901 municipios si
 - [ ] Confirmar con usuario si acepta dejar como "unknown"
 - [ ] O solicitar autorización para contacto administrativo con distribuidoras
 - [ ] O implementar formulario de crowdsourcing ("¿Tu distribuidora es...?")
+
+---
+
+## ACTUALIZACIÓN 2026-09-19 — Fuente real encontrada
+
+**Se encontró y explotó una fuente pública real**, corrigiendo la conclusión anterior de "sin fuentes públicas descargables".
+
+### Fuente: CNMC (regulador nacional) — Mapa de capacidad de acceso en redes de distribución
+
+- Portal: https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415
+- API subyacente (ArcGIS FeatureServer, pública, sin autenticación, sin CAPTCHA):
+  `https://services9.arcgis.com/F9FmuOlj5xjEjPRZ/arcgis/rest/services/Demanda_en_Distribucion/FeatureServer/4`
+- Campos relevantes: `PROVINCIA`, `MUNICIPIO`, `DESCRIPCION` (nombre legal de la distribuidora), `GESTOR_RED` (código R1-xxx)
+- Los gestores de red están **obligados por regulación** (RDC/DE/001/25) a reportar esta información mensualmente a la CNMC
+- Consulta vía API REST estándar (GET con parámetros de query), sin scraping de HTML ni evasión de protecciones
+
+### Cómo se descubrió
+
+1. Se revisó cómo se obtuvieron los datos ya existentes de Andalucía (`distributor_hints.json`) → llevó a un WFS de la Junta de Andalucía
+2. Búsqueda del patrón equivalente para las 4 regiones faltantes → no había WFS regional útil (Aragón: capa sin nombre de distribuidora)
+3. Búsqueda de fuente **nacional** en vez de regional → CNMC publica mapas de capacidad de acceso desde abril 2026
+4. Las apps son ArcGIS Experience Builder → se localizó el FeatureServer real inspeccionando la config del item de ArcGIS Online
+5. El FeatureServer expone datos estructurados por municipio, consultables sin restricciones
+
+### Resultado de la importación (2026-09-19)
+
+| Región | Municipios cubiertos | Total región | % |
+|---|---:|---:|---:|
+| Aragón | 138 | 734 | 18.8% |
+| Catalunya | 157 | 948 | 16.6% |
+| Castilla-La Mancha | 154 | 921 | 16.7% |
+| Castilla y León | 251 | 2.298 | 10.9% |
+| **Total** | **700** | **4.901** | **14.3%** |
+
+37 municipios tienen múltiples distribuidoras detectadas (zonas con más de una subestación de distinto operador) — se listan todas, sin afirmar exclusividad.
+
+7 municipios de Catalunya no matchearon por variantes de artículo catalán no estándar (Les, L', Els, Es) — pendiente de fix menor de normalización.
+
+**Confidence asignado**: `verified_partial` — es dato real de un operador con subestación en el municipio, pero no confirma cobertura del 100% del término municipal (municipios grandes pueden tener varios operadores en distintas zonas).
+
+### Por qué el hallazgo previo (0% viable) no era incorrecto, solo incompleto
+
+Las auditorías previas (`docs/audit/aragon-wave2-candidate-gate-v1083.md`, etc.) buscaban fuentes **regionales** (DOGC, DOCM, boletines autonómicos) y confirmaron correctamente que ninguna tenía datos descargables a nivel municipal. Nadie había buscado a nivel **nacional** (CNMC como regulador, no las comunidades autónomas). Ese fue el gap.
+
+### Próximos pasos posibles
+
+- Aplicar el mismo método a Madrid (actualmente 9/181, 5%) y otras regiones con cobertura parcial
+- Arreglar el matching de los 7 municipios catalanes con artículo no estándar
+- Revisar si el FeatureServer de generación (`Capacidad_Periodo`) aporta datos adicionales
+- Considerar automatizar la re-sincronización mensual (CNMC publica actualizaciones mensuales)

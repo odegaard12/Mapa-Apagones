@@ -18,14 +18,18 @@ Prioridad P0 (roto) → P1 (SEO/seguridad/fiabilidad/UX importante/datos) → P2
 
 ## P1 — Datos y cobertura de distribuidoras
 
-Cobertura geográfica (comunidades autónomas): **completa, 19/19**. No confundir con cobertura de distribuidora eléctrica, que es lo que falta:
+Cobertura geográfica (comunidades autónomas): **completa, 19/19**. No confundir con cobertura de distribuidora eléctrica.
 
-- [ ] Castilla y León — 2.298 zonas, 0% con pista de distribuidora.
-- [ ] Catalunya — 948 zonas, 0%.
-- [ ] Castilla-La Mancha — 921 zonas, 0%.
-- [ ] Aragón — 734 zonas, 0%.
+**2026-09-19: fuente pública real encontrada (CNMC, regulador nacional) e importada.** Ver `DISTRIBUTOR_RESEARCH.md` para el detalle técnico completo.
 
-Requiere investigación de fuentes públicas verificables por región (listados municipales oficiales, capas públicas descargables, documentación pública por municipio). Política del proyecto: no CAPTCHA-bypass, no scraping agresivo, no coordenadas/direcciones/capturas guardadas. Es trabajo de investigación de datos, no una tarea que se resuelva escribiendo código.
+- [x] Castilla y León — 251/2.298 (10.9%), antes 0%.
+- [x] Catalunya — 157/948 (16.6%), antes 0%.
+- [x] Castilla-La Mancha — 154/921 (16.7%), antes 0%.
+- [x] Aragón — 138/734 (18.8%), antes 0%.
+
+Pendiente (no bloqueante): completar el resto de municipios con más FeatureServers de CNMC (generación, transporte), arreglar 7 municipios catalanes con artículo no estándar (Les/L'/Els/Es), y aplicar el mismo método a Madrid (actualmente 9/181, 5%).
+
+Para el resto sin cobertura verificada: crowdsourcing anónimo ya implementado (`/api/distributor-suggestion`), visible en el panel de incidencia cuando `confidence === 'unknown'`.
 
 ## P1 — UX importante
 
