@@ -152,11 +152,26 @@ footer { margin-top: 34px; color: var(--muted); }
 <main>
   <a class="back" href="/">← Volver al mapa</a>
 
-  <p class="eyebrow">Actualizado: 2026-09-11</p>
+  <p class="eyebrow">Actualizado: 2026-09-19</p>
   <h1>Changelog</h1>
   <p class="lead">
     Historial público curado de cambios importantes. El historial técnico completo está disponible en GitHub.
   </p>
+
+  <section class="release" id="v0130" style="border-left:3px solid #0f766e;">
+    <h2 style="margin-top:0;">v0.13.0 — <span style="font-weight:400;font-size:0.9rem;">19 de septiembre de 2026</span></h2>
+    <p class="eyebrow" style="margin-top:-8px;">2026-09-19</p>
+    <p><strong>Diseño móvil, crowdsourcing y +876 municipios con distribuidora verificada</strong></p>
+    <ul>
+      <li>Corregido bug de producción: fechas de "Detectado" y "Actualizado" no se mostraban en el panel de incidencia.</li>
+      <li>Botón de refresco manual real en el panel de zonas.</li>
+      <li>Mapa a 100% de ancho en móvil (antes se cortaba en los bordes); paneles ya no se superponen con la barra inferior.</li>
+      <li>Contraste corregido en la barra de navegación inferior (botones inactivos ilegibles).</li>
+      <li>Nuevo: sugerencia de distribuidora por la comunidad (crowdsourcing anónimo) cuando no hay fuente pública verificada; requiere 3 confirmaciones independientes y siempre se marca como aporte no oficial.</li>
+      <li>Cobertura de distribuidora ampliada con datos reales del regulador nacional (CNMC): Madrid 5%→34,3%, Andalucía 32,3%→47,2%, Aragón/Catalunya/Castilla-La Mancha/Castilla y León de 0% a 10,9–18,8%. Cobertura nacional 31,8%→42,4%.</li>
+      <li>Páginas de cobertura y fiabilidad de distribuidoras rediseñadas: resumen con métricas, tabla ordenada por cobertura, marcador visual para zonas recién mejoradas.</li>
+    </ul>
+  </section>
 
   <section class="release" id="v0121" style="border-left:3px solid #0f766e;">
     <h2 style="margin-top:0;">v0.12.1 — <span style="font-weight:400;font-size:0.9rem;">11 de septiembre de 2026</span></h2>
