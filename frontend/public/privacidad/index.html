@@ -2,226 +2,134 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Privacidad | Mapa Apagones</title>
-  <meta name="description" content="Política de privacidad de Mapa Apagones: datos mínimos, sin cuentas, sin CUPS y reportes agregados por zona.">
-  <link rel="canonical" href="https://mapa-apagones.es/privacidad/">
-  <meta property="og:title" content="Privacidad | Mapa Apagones">
-  <meta property="og:description" content="Política de privacidad de Mapa Apagones: datos mínimos, sin cuentas, sin CUPS y reportes agregados por zona.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mapa-apagones.es/privacidad/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacidad · Mapa Apagones</title>
+  <meta name="description" content="Política de privacidad de Mapa Apagones: datos mínimos, sin cuentas, sin CUPS y reportes agregados por zona." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mapa-apagones.es/privacidad/" />
+  <meta property="og:title" content="Privacidad · Mapa Apagones" />
+  <meta property="og:description" content="Política de privacidad de Mapa Apagones: datos mínimos, sin cuentas, sin CUPS y reportes agregados por zona." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mapa-apagones.es/privacidad/" />
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #eef4ff;
-      --card: rgba(255,255,255,.86);
-      --text: #0f172a;
-      --muted: #475569;
-      --line: rgba(15,23,42,.12);
-      --accent: #2563eb;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(59,130,246,.22), transparent 34rem),
-        radial-gradient(circle at 85% 10%, rgba(14,165,233,.16), transparent 30rem),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.58;
-    }
-    main {
-      width: min(860px, calc(100% - 32px));
-      margin: 34px auto;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--card);
-      box-shadow: 0 20px 60px rgba(15,23,42,.10);
-      backdrop-filter: blur(18px);
-    }
-    a { color: var(--accent); }
-    h1 { margin: 0 0 8px; font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -0.04em; }
-    h2 { margin-top: 28px; font-size: 1.2rem; }
-    p, li { color: var(--muted); }
-    ul { padding-left: 1.25rem; }
-    .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,.62);
-      color: var(--muted);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .notice {
-      padding: 14px 16px;
-      border: 1px solid rgba(37,99,235,.22);
-      border-radius: 18px;
-      background: rgba(37,99,235,.08);
-      color: #1e3a8a;
-    }
-    footer {
-      margin-top: 32px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .92rem;
-    }
-  
-    /* === mobile public page responsive v0.9.7.2 === */
-    @media (max-width: 720px) {
-      html {
-        min-height: 100%;
-      }
-
-      body {
-        min-height: 100dvh;
-        overflow-x: hidden;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      main {
-        width: min(100% - 20px, 860px) !important;
-        margin: max(10px, env(safe-area-inset-top, 0px)) auto max(10px, env(safe-area-inset-bottom, 0px)) !important;
-        padding: 18px !important;
-        border-radius: 20px !important;
-      }
-
-      .top {
-        align-items: flex-start !important;
-        flex-direction: column !important;
-        gap: 8px !important;
-        margin-bottom: 16px !important;
-        font-size: .82rem !important;
-      }
-
-      .pill {
-        max-width: 100%;
-        white-space: normal !important;
-        line-height: 1.15 !important;
-      }
-
-      h1 {
-        font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
-        line-height: 1.05 !important;
-        letter-spacing: -0.035em !important;
-      }
-
-      h2 {
-        margin-top: 22px !important;
-        font-size: 1.04rem !important;
-        line-height: 1.2 !important;
-      }
-
-      p,
-      li {
-        font-size: .94rem !important;
-        line-height: 1.55 !important;
-      }
-
-      ul {
-        padding-left: 1.05rem !important;
-      }
-
-      .notice {
-        padding: 12px 13px !important;
-        border-radius: 16px !important;
-      }
-
-      footer {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
-        overflow-wrap: anywhere !important;
-      }
-
-      a {
-        overflow-wrap: anywhere;
-      }
-    }
-
-    @media (max-width: 380px) {
-      main {
-        width: min(100% - 14px, 860px) !important;
-        padding: 14px !important;
-        border-radius: 18px !important;
-      }
-
-      p,
-      li {
-        font-size: .9rem !important;
-      }
-    }
-
-  </style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #d9e2ef;
+  --accent: #0f766e;
+  --accent-soft: #e6fffb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #eef9f7, var(--bg) 45%);
+  color: var(--text);
+  line-height: 1.55;
+}
+main {
+  width: min(860px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.8);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+.eyebrow { color: var(--muted); font-size: .92rem; margin: 0 0 8px; }
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+}
+h2 { margin-top: 30px; font-size: 1.15rem; letter-spacing: -0.01em; }
+.notice {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+}
+.notice.accent { background: var(--accent-soft); border-color: #99f6e4; }
+p, li { color: var(--muted); }
+ul { padding-left: 1.2rem; }
+footer {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .9rem;
+}
+</style>
 </head>
 <body>
-  <main>
-    <div class="top">
-      <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-04-28</span>
-    </div>
-    <h1>Política de privacidad</h1>
-    <p class="notice">Mapa Apagones está diseñado con minimización de datos: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin publicación de viviendas exactas.</p>
+<main>
+  <a class="back" href="/">← Volver al mapa</a>
+  <p class="eyebrow">Actualizado: 2026-09-19</p>
+  <h1>Política de privacidad</h1>
 
-    <h2>Responsable y contacto</h2>
-    <p>Para consultas relacionadas con privacidad puedes escribir a <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a>.</p>
+  <div class="notice accent">
+    Mapa Apagones está diseñado con minimización de datos: sin cuentas, sin CUPS, sin texto libre, sin fotos y sin publicación de viviendas exactas.
+  </div>
 
-    <h2>Qué datos trata la plataforma</h2>
-    <p>La plataforma está diseñada para tratar únicamente información técnica y operativa necesaria para mostrar incidencias agregadas y prevenir abusos. Según la funcionalidad activa, pueden tratarse:</p>
-    <ul>
-      <li>Tipo de incidencia reportada: sin luz, microcortes, baja tensión o ya volvió.</li>
-      <li>Zona aproximada, celda o ámbito geográfico agregado.</li>
-      <li>Fecha y hora técnica del reporte o actualización.</li>
-      <li>Estado agregado de la zona y número de confirmaciones.</li>
-      <li>Identificador técnico local del navegador, almacenado localmente, para reducir duplicados.</li>
-      <li>Hashes técnicos derivados del identificador local y/o de la IP para rate limiting, anti-abuso y coherencia operativa.</li>
-      <li>Registros técnicos mínimos necesarios para seguridad, diagnóstico y mantenimiento.</li>
-    </ul>
+  <h2>Responsable y contacto</h2>
+  <p>Para consultas relacionadas con privacidad puedes escribir a <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a>.</p>
 
-    <h2>Qué datos no se solicitan</h2>
-    <ul>
-      <li>No se crean cuentas de usuario.</li>
-      <li>No se solicita CUPS.</li>
-      <li>No se solicita nombre, DNI, teléfono ni datos de contrato eléctrico.</li>
-      <li>No se solicita dirección exacta.</li>
-      <li>No se permiten fotos ni texto libre en los reportes.</li>
-      <li>No se publica la ubicación exacta de viviendas.</li>
-    </ul>
+  <h2>Qué datos trata la plataforma</h2>
+  <p>La plataforma está diseñada para tratar únicamente información técnica y operativa necesaria para mostrar incidencias agregadas y prevenir abusos. Según la funcionalidad activa, pueden tratarse:</p>
+  <ul>
+    <li>Tipo de incidencia reportada: sin luz, microcortes, baja tensión o ya volvió.</li>
+    <li>Zona aproximada, celda o ámbito geográfico agregado.</li>
+    <li>Fecha y hora técnica del reporte o actualización.</li>
+    <li>Estado agregado de la zona y número de confirmaciones.</li>
+    <li>Identificador técnico local del navegador, almacenado localmente, para reducir duplicados.</li>
+    <li>Hashes técnicos derivados del identificador local y/o de la IP para rate limiting, anti-abuso y coherencia operativa.</li>
+    <li>Registros técnicos mínimos necesarios para seguridad, diagnóstico y mantenimiento.</li>
+    <li>Si envías una sugerencia anónima de distribuidora eléctrica para tu zona, se guarda el texto sugerido junto a los mismos hashes técnicos anteriores, nunca datos identificativos.</li>
+  </ul>
 
-    <h2>Finalidad</h2>
-    <p>Los datos se usan para mostrar avisos ciudadanos agregados por zona, evitar duplicados, limitar abuso o spam, mantener la seguridad técnica del servicio y mejorar la fiabilidad operativa.</p>
+  <h2>Qué datos no se solicitan</h2>
+  <ul>
+    <li>No se crean cuentas de usuario.</li>
+    <li>No se solicita CUPS.</li>
+    <li>No se solicita nombre, DNI, teléfono ni datos de contrato eléctrico.</li>
+    <li>No se solicita dirección exacta.</li>
+    <li>No se permiten fotos ni texto libre en los reportes.</li>
+    <li>No se publica la ubicación exacta de viviendas.</li>
+  </ul>
 
-    <h2>Turnstile y protección anti-abuso</h2>
-    <p>En producción, el formulario de reporte puede usar Cloudflare Turnstile para verificar que el envío no procede de automatizaciones abusivas. El token de Turnstile se usa para validación y no debe almacenarse en la base de datos de reportes.</p>
+  <h2>Finalidad</h2>
+  <p>Los datos se usan para mostrar avisos ciudadanos agregados por zona, evitar duplicados, limitar abuso o spam, mantener la seguridad técnica del servicio y mejorar la fiabilidad operativa.</p>
 
-    <h2>Conservación</h2>
-    <p>Los reportes están pensados para ser temporales y caducar pasado un periodo operativo. Los registros técnicos de seguridad o anti-abuso se conservarán solo durante el tiempo razonablemente necesario para proteger el servicio.</p>
+  <h2>Turnstile y protección anti-abuso</h2>
+  <p>En producción, el formulario de reporte puede usar Cloudflare Turnstile para verificar que el envío no procede de automatizaciones abusivas. El token de Turnstile se usa para validación y no debe almacenarse en la base de datos de reportes.</p>
 
-    <h2>Terceros técnicos</h2>
-    <p>La web puede usar Cloudflare para alojamiento, seguridad, DNS, Pages, Turnstile o enrutamiento, y OpenStreetMap/Leaflet para la visualización cartográfica. Estos servicios pueden recibir solicitudes técnicas necesarias para entregar la web o los mapas.</p>
+  <h2>Conservación</h2>
+  <p>Los reportes están pensados para ser temporales y caducar pasado un periodo operativo. Los registros técnicos de seguridad o anti-abuso se conservarán solo durante el tiempo razonablemente necesario para proteger el servicio.</p>
 
-    <h2>Derechos y consultas</h2>
-    <p>Para cualquier consulta razonable sobre privacidad, escribe a <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a>. Al no existir cuentas ni perfiles personales, algunas solicitudes pueden depender de la información técnica disponible para identificar un reporte concreto.</p>
+  <h2>Terceros técnicos</h2>
+  <p>La web puede usar Cloudflare para alojamiento, seguridad, DNS, Pages, Turnstile o enrutamiento, y OpenStreetMap/Leaflet para la visualización cartográfica. Estos servicios pueden recibir solicitudes técnicas necesarias para entregar la web o los mapas.</p>
 
-    <footer>
-      <p>Contacto general: <a href="mailto:contacto@mapa-apagones.es">contacto@mapa-apagones.es</a></p>
-      <p>Privacidad: <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a></p>
-    </footer>
-  </main>
+  <h2>Derechos y consultas</h2>
+  <p>Para cualquier consulta razonable sobre privacidad, escribe a <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a>. Al no existir cuentas ni perfiles personales, algunas solicitudes pueden depender de la información técnica disponible para identificar un reporte concreto.</p>
+
+  <footer>
+    <p>Contacto general: <a href="mailto:contacto@mapa-apagones.es">contacto@mapa-apagones.es</a></p>
+    <p>Privacidad: <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a></p>
+  </footer>
+</main>
 </body>
 </html>
