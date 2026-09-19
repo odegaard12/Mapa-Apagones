@@ -93,15 +93,31 @@ def changelog_date() -> str:
     return extract(r"Actualizado:\s*([0-9]{4}-[0-9]{2}-[0-9]{2})", text, "2026-05-11")
 
 
+NEW_SOURCE_DATASETS = {"aragon", "catalunya", "castilla_la_mancha", "castilla_leon", "andalucia", "madrid"}
+
+
+def coverage_sort_key(row: dict[str, str]) -> float:
+    match = re.search(r"([\d.,]+)\s*%", row.get("coverage", ""))
+    if not match:
+        return -1.0
+    try:
+        return float(match.group(1).replace(",", "."))
+    except ValueError:
+        return -1.0
+
+
 def build_html() -> str:
     matrix_text = read(MATRIX)
     version = read(VERSION_FILE).strip()
     updated = changelog_date()
     summary, rows = parse_matrix(matrix_text)
+    rows = sorted(rows, key=coverage_sort_key, reverse=True)
 
     row_html = []
     for row in rows:
         cls = status_class(row)
+        if row["dataset"] in NEW_SOURCE_DATASETS:
+            cls += " new-source"
         row_html.append(
             f"""
             <tr class="{cls}">
@@ -257,6 +273,21 @@ def build_html() -> str:
     tr.complete {{ background: var(--ok); }}
     tr.partial {{ background: var(--warn); }}
     tr.pending {{ background: var(--pending); }}
+    tr.new-source td:first-child {{ position: relative; }}
+    tr.new-source td:first-child::before {{
+      content: '●';
+      color: var(--accent);
+      margin-right: 6px;
+      font-size: 0.7rem;
+    }}
+    .legend {{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: .86rem;
+      margin: 10px 0 0;
+    }}
     code {{
       background: rgba(11, 99, 206, 0.08);
       padding: 2px 6px;
@@ -332,7 +363,9 @@ def build_html() -> str:
       <p class="note">
         Generada desde la matriz real del repositorio. Si cambian los GeoJSON o las pistas públicas,
         esta página debe regenerarse con <code>scripts/generate_public_distributor_coverage_page.py</code>.
+        Ordenada por cobertura, de mayor a menor.
       </p>
+      <p class="legend"><span style="color:var(--accent)">●</span> = mejorado el 2026-09-19 con datos públicos de CNMC (regulador nacional). Detalle en <a href="https://github.com/odegaard12/Mapa-Apagones/blob/main/DISTRIBUTOR_RESEARCH.md">DISTRIBUTOR_RESEARCH.md</a>.</p>
 
       <div class="table-wrap">
         <table>

@@ -148,3 +148,31 @@ Las auditorías previas (`docs/audit/aragon-wave2-candidate-gate-v1083.md`, etc.
 - Arreglar el matching de los 7 municipios catalanes con artículo no estándar
 - Revisar si el FeatureServer de generación (`Capacidad_Periodo`) aporta datos adicionales
 - Considerar automatizar la re-sincronización mensual (CNMC publica actualizaciones mensuales)
+
+---
+
+## ACTUALIZACIÓN 2026-09-19 (parte 2) — Expansión nacional completa
+
+Tras el hallazgo inicial (700 municipios en las 4 regiones objetivo), se amplió la consulta al FeatureServer
+de CNMC a **todo el territorio nacional** (6.186 filas totales), no solo las 4 regiones sin cobertura.
+
+**Bug encontrado y corregido durante el proceso**: Extremadura (ya al 100%) usa una convención de `zone_id`
+distinta a la del resto (`municipality:extremadura::xxx` en vez de `municipality:{provincia}::xxx`). Al
+matchear contra el `zone_id` canónico del GeoJSON se generaron 91 duplicados reales (mismo municipio, dos
+entradas). Se detectó comparando pares (municipio, provincia) duplicados y se eliminaron las entradas nuevas
+redundantes, conservando las originales. **Cero duplicados** confirmado tras la limpieza.
+
+### Resultado final combinado (ambas pasadas)
+
+| Región | Antes sesión | Ahora | Municipios nuevos |
+|---|---:|---:|---:|
+| Madrid | 5,0% (9/181) | **34,3%** (62/181) | +53 |
+| Andalucía | 32,3% (254/786) | **47,2%** (371/786) | +117 |
+| Aragón | 0% | **18,8%** (138/734) | +138 |
+| Catalunya | 0% | **17,2%** (163/948) | +163 |
+| Castilla-La Mancha | 0% | **16,7%** (154/921) | +154 |
+| Castilla y León | 0% | **10,9%** (251/2.298) | +251 |
+| **Total nacional** | 31,8% | **42,4%** (3.486/8.215) | **+876** |
+
+Extremadura se mantuvo en 100% (388/388) tras la limpieza de duplicados — no se tocó, solo se evitó
+contaminarla con entradas redundantes.

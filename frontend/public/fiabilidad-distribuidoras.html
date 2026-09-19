@@ -30,7 +30,7 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at top left, #eef9f7, var(--bg) 45%);
   color: var(--text);
   line-height: 1.55;
 }
@@ -39,70 +39,78 @@ main {
   margin: 0 auto;
   padding: 28px 0 56px;
 }
-a { color: var(--accent); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 .back {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-bottom: 18px;
-  text-decoration: none;
   font-weight: 700;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.8);
+  padding: 8px 14px;
+  border-radius: 999px;
 }
 .eyebrow {
   color: var(--muted);
-  font-size: .95rem;
-  margin: 0 0 6px;
+  font-size: .92rem;
+  margin: 0 0 8px;
 }
 h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
   margin: 0 0 12px;
 }
-h2 { margin-top: 34px; }
+h2 { margin-top: 36px; letter-spacing: -0.01em; }
 .lead {
   max-width: 860px;
   color: var(--muted);
   font-size: 1.08rem;
 }
-.grid {
+.summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin: 24px 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
 }
-.card, .release, .notice {
+.summary-grid .metric {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(16, 24, 40, .05);
+}
+.metric strong {
+  display: block;
+  font-size: 1.9rem;
+  letter-spacing: -0.03em;
+}
+.metric span { color: var(--muted); font-size: .88rem; }
+.notice {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
 }
-.metric strong {
-  display: block;
-  font-size: 1.8rem;
-}
-.metric span { color: var(--muted); }
-.notice {
-  background: var(--accent-soft);
-  border-color: #99f6e4;
-}
-.notice.warn {
-  background: var(--warn-soft);
-  border-color: #fed7aa;
-}
-.notice.bad {
-  background: var(--bad-soft);
-  border-color: #fecaca;
-}
+.notice.accent { background: var(--accent-soft); border-color: #99f6e4; }
+.notice.warn { background: var(--warn-soft); border-color: #fed7aa; }
+.notice.bad { background: var(--bad-soft); border-color: #fecaca; }
+.notice h3 { margin: 0 0 8px; font-size: 1.02rem; }
 .table-wrap {
   overflow-x: auto;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 18px;
   box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+  margin-top: 14px;
 }
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 860px;
+  min-width: 720px;
 }
 th, td {
   padding: 12px 14px;
@@ -112,16 +120,26 @@ th, td {
 }
 th {
   background: #eef4fb;
-  font-size: .9rem;
+  font-size: .86rem;
+  position: sticky;
+  top: 0;
 }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 tr:last-child td { border-bottom: 0; }
+tr.new-source td:first-child { position: relative; }
+tr.new-source td:first-child::before {
+  content: '●';
+  color: var(--accent);
+  margin-right: 6px;
+  font-size: 0.7rem;
+}
 .badge {
   display: inline-block;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 999px;
-  font-size: .82rem;
+  font-size: .8rem;
   font-weight: 700;
-  background: #eef2ff;
+  white-space: nowrap;
 }
 .badge.pending { background: var(--bad-soft); color: var(--bad); }
 .badge.partial { background: var(--warn-soft); color: var(--warn); }
@@ -130,28 +148,52 @@ code {
   background: #eef4fb;
   padding: 2px 5px;
   border-radius: 6px;
+  font-size: .92em;
 }
-.release + .release { margin-top: 14px; }
-.release h2 { margin-top: 0; }
-.small { color: var(--muted); font-size: .92rem; }
-footer { margin-top: 34px; color: var(--muted); }
+.small { color: var(--muted); font-size: .88rem; }
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: .86rem;
+  margin-top: 10px;
+}
+.legend .dot { color: var(--accent); }
+footer { margin-top: 34px; color: var(--muted); font-size: .9rem; }
+@media (max-width: 720px) {
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
 <body>
 <main>
   <a class="back" href="/">← Volver al mapa</a>
 
-  <p class="eyebrow">Criterios vigentes revisados: 2026-05-24 · v0.11.0.0-map-ux-reliability</p>
+  <p class="eyebrow">Criterios vigentes revisados: 2026-09-19 · v0.12.1</p>
   <h1>Fiabilidad de pistas de distribuidoras</h1>
   <p class="lead">
     Mapa Apagones usa pistas públicas para orientar al usuario sobre posibles distribuidoras por municipio o zona.
-    Estas pistas no sustituyen a la confirmación oficial.
+    Estas pistas no sustituyen a la confirmación oficial con tu comercializadora o distribuidora.
   </p>
 
-  <section class="notice warn">
-    Esta página resume criterios vigentes a escala nacional. La auditoría histórica de Galicia, Asturias,
-    Cantabria y La Rioja queda integrada como antecedente, pero la tabla actual cubre los 19 datasets geográficos.
-  </section>
+  <div class="summary-grid" aria-label="Resumen nacional">
+    <div class="metric"><strong>8.215</strong><span>zonas totales</span></div>
+    <div class="metric"><strong>3.486</strong><span>con pista pública</span></div>
+    <div class="metric"><strong>42,4%</strong><span>cobertura nacional</span></div>
+    <div class="metric"><strong>19/19</strong><span>comunidades con algo de dato</span></div>
+  </div>
+
+  <div class="notice accent">
+    <h3>Actualización 2026-09-19</h3>
+    <p style="margin:0">
+      Se importaron <strong>876 municipios nuevos</strong> desde una fuente pública nacional (CNMC, regulador eléctrico
+      obligado por regulación a publicar esta información). Aragón, Catalunya, Castilla-La Mancha y Castilla y León
+      pasaron de 0% de cobertura a tener datos reales. Madrid subió de 5% a 34,3% y Andalucía de 32,3% a 47,2%.
+      Marcadas con <span class="dot">●</span> en la tabla. Detalle técnico en
+      <a href="https://github.com/odegaard12/Mapa-Apagones/blob/main/DISTRIBUTOR_RESEARCH.md">DISTRIBUTOR_RESEARCH.md</a>.
+    </p>
+  </div>
 
   <h2>Niveles de fiabilidad</h2>
   <div class="table-wrap">
@@ -162,43 +204,79 @@ footer { margin-top: 34px; color: var(--muted); }
       <tbody>
         <tr>
           <td><code>verified_partial</code></td>
-          <td>Pista pública fuerte para una presencia municipal, parcial o local.</td>
-          <td>No afirma exclusividad ni cobertura total del municipio.</td>
+          <td>Pista pública fuerte para una presencia municipal, parcial o local (p. ej. subestación con capacidad registrada por el regulador nacional en ese municipio).</td>
+          <td>No afirma exclusividad ni cobertura del 100% del término municipal.</td>
         </tr>
         <tr>
           <td><code>regional_default</code></td>
           <td>Orientación regional cuando no hay prueba municipal fuerte.</td>
           <td>No es verificación municipal fuerte.</td>
         </tr>
+        <tr>
+          <td><code>unknown</code> + comunidad</td>
+          <td>Sin pista pública verificada. Los usuarios pueden sugerir una distribuidora (crowdsourcing anónimo); se marca como "sugerida por la comunidad" solo con 3+ confirmaciones independientes.</td>
+          <td>Nunca se presenta como fuente oficial.</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <h2>Estado nacional por comunidad</h2>
+  <p class="legend"><span class="dot">●</span> = mejorado el 2026-09-19 con datos de CNMC</p>
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
           <th>Zona</th>
-          <th>Zonas</th>
-          <th>Con orientación/pista</th>
-          <th>Pendientes</th>
+          <th class="num">Zonas</th>
+          <th class="num">Con pista</th>
+          <th class="num">Pendientes</th>
+          <th class="num">Cobertura</th>
           <th>Estado</th>
           <th>Entradas por confianza</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Castilla y León</td><td>2.298</td><td>0</td><td>2.298</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Catalunya</td><td>948</td><td>0</td><td>948</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Castilla-La Mancha</td><td>921</td><td>0</td><td>921</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Aragón</td><td>734</td><td>0</td><td>734</td><td><span class="badge pending">Pendiente</span></td><td>—</td></tr><tr><td>Andalucía</td><td>786</td><td>254</td><td>532</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 254</td></tr><tr><td>Comunidad de Madrid</td><td>181</td><td>9</td><td>172</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 9</td></tr><tr><td>Extremadura</td><td>388</td><td>388</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>verified_partial: 530</td></tr><tr><td>Galicia</td><td>313</td><td>313</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 172, verified_partial: 154</td></tr><tr><td>Comunitat Valenciana</td><td>544</td><td>544</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 533, verified_partial: 11</td></tr><tr><td>Euskadi</td><td>255</td><td>255</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 252, verified_partial: 3</td></tr><tr><td>Navarra</td><td>288</td><td>288</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 288</td></tr><tr><td>La Rioja</td><td>175</td><td>175</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 175</td></tr><tr><td>Asturias</td><td>78</td><td>78</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 78, verified_partial: 2</td></tr><tr><td>Cantabria</td><td>103</td><td>103</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 103</td></tr><tr><td>Canarias</td><td>88</td><td>88</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 87, verified_partial: 1</td></tr><tr><td>Illes Balears</td><td>68</td><td>68</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 67, verified_partial: 1</td></tr><tr><td>Región de Murcia</td><td>45</td><td>45</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>regional_default: 45</td></tr><tr><td>Ceuta</td><td>1</td><td>1</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>verified_partial: 1</td></tr><tr><td>Melilla</td><td>1</td><td>1</td><td>0</td><td><span class="badge full">Con orientación/pista en todas las zonas</span></td><td>verified_partial: 1</td></tr>
+        <tr><td>Galicia</td><td class="num">313</td><td class="num">313</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>verified_partial: 154, regional_default: 172</td></tr>
+        <tr><td>Asturias</td><td class="num">78</td><td class="num">78</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 78, verified_partial: 2</td></tr>
+        <tr><td>Cantabria</td><td class="num">103</td><td class="num">103</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 103</td></tr>
+        <tr><td>Navarra</td><td class="num">288</td><td class="num">288</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 288</td></tr>
+        <tr><td>La Rioja</td><td class="num">175</td><td class="num">175</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 175</td></tr>
+        <tr><td>Región de Murcia</td><td class="num">45</td><td class="num">45</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 45</td></tr>
+        <tr><td>Canarias</td><td class="num">88</td><td class="num">88</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 87, verified_partial: 1</td></tr>
+        <tr><td>Illes Balears</td><td class="num">68</td><td class="num">68</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 67, verified_partial: 1</td></tr>
+        <tr><td>Ceuta</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>verified_partial: 1</td></tr>
+        <tr><td>Melilla</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>verified_partial: 1</td></tr>
+        <tr><td>Euskadi</td><td class="num">255</td><td class="num">255</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 252, verified_partial: 3</td></tr>
+        <tr><td>Comunitat Valenciana</td><td class="num">544</td><td class="num">544</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>regional_default: 533, verified_partial: 11</td></tr>
+        <tr><td>Extremadura</td><td class="num">388</td><td class="num">388</td><td class="num">0</td><td class="num">100%</td><td><span class="badge full">Completa</span></td><td>verified_partial: 530</td></tr>
+        <tr class="new-source"><td>Andalucía</td><td class="num">786</td><td class="num">371</td><td class="num">415</td><td class="num">47,2%</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 379</td></tr>
+        <tr class="new-source"><td>Comunidad de Madrid</td><td class="num">181</td><td class="num">62</td><td class="num">119</td><td class="num">34,3%</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 70</td></tr>
+        <tr class="new-source"><td>Aragón</td><td class="num">734</td><td class="num">138</td><td class="num">596</td><td class="num">18,8%</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 147</td></tr>
+        <tr class="new-source"><td>Catalunya</td><td class="num">948</td><td class="num">163</td><td class="num">785</td><td class="num">17,2%</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 175</td></tr>
+        <tr class="new-source"><td>Castilla-La Mancha</td><td class="num">921</td><td class="num">154</td><td class="num">767</td><td class="num">16,7%</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 161</td></tr>
+        <tr class="new-source"><td>Castilla y León</td><td class="num">2.298</td><td class="num">251</td><td class="num">2.047</td><td class="num">10,9%</td><td><span class="badge partial">Parcial</span></td><td>verified_partial: 262</td></tr>
       </tbody>
     </table>
   </div>
 
   <h2>Qué falta para mejorar datos</h2>
   <div class="notice">
-    Para subir más municipios a <code>verified_partial</code> hace falta una fuente pública más fuerte:
-    listado municipal oficial, capa pública descargable saneable o documentación pública por municipio/zona.
-    No se automatizan consultas protegidas por CAPTCHA y no se guardan coordenadas, direcciones, capturas ni respuestas raw.
+    <p style="margin:0 0 8px">
+      Para subir más municipios a <code>verified_partial</code> hace falta una fuente pública verificable:
+      listado municipal oficial, capa pública descargable saneable, o documentación por municipio/zona.
+      No se automatizan consultas protegidas por CAPTCHA y no se guardan coordenadas, direcciones, capturas ni respuestas raw.
+    </p>
+    <p style="margin:0" class="small">
+      Además del trabajo de investigación de fuentes, cualquier usuario puede sugerir la distribuidora de su zona
+      desde el panel de la incidencia cuando aparece como "sin determinar" — se necesitan 3 confirmaciones
+      independientes para mostrarse, y siempre queda marcado como aporte de la comunidad, nunca como fuente oficial.
+    </p>
   </div>
+
+  <p class="small" style="margin-top:18px">
+    También puedes consultar la <a href="/cobertura-distribuidoras.html">página de cobertura completa por zona</a>.
+  </p>
 
   <footer>
     Mapa Apagones · páginas estáticas desplegadas por Cloudflare Pages desde el repositorio público.

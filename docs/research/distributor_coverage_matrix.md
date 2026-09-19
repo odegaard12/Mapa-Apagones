@@ -1,6 +1,6 @@
 # Matriz de cobertura de pistas de distribuidoras
 
-Generado desde los datos reales del repositorio el 2026-06-19.
+Generado desde los datos reales del repositorio el 2026-09-19.
 
 > Esta matriz mide cobertura de **pistas públicas de distribuidora en el repositorio**, no cobertura eléctrica real ni exclusividad de red.
 
@@ -8,9 +8,9 @@ Generado desde los datos reales del repositorio el 2026-06-19.
 
 - Datasets geográficos autonómicos: **19**.
 - Municipios/zonas normalizadas en GeoJSON: **8.215**.
-- Municipios/zonas con pista pública de distribuidora: **2.610**.
-- Municipios/zonas pendientes de pista pública: **5.605**.
-- Cobertura actual de pistas públicas: **31,8%**.
+- Municipios/zonas con pista pública de distribuidora: **3.486**.
+- Municipios/zonas pendientes de pista pública: **4.729**.
+- Cobertura actual de pistas públicas: **42,4%**.
 
 ## Matriz por comunidad/dataset
 
@@ -26,26 +26,26 @@ Generado desde los datos reales del repositorio el 2026-06-19.
 | Illes Balears | `illes_balears` | 68 | 68 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 67, `verified_partial` 1 | 68 | 68 |
 | Ceuta | `ceuta` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
 | Melilla | `melilla` | 1 | 1 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 1 | 1 | 1 |
-| Madrid | `madrid` | 181 | 9 | 172 | 5,0% | parcial | `verified_partial` 9 | 9 | 9 |
+| Madrid | `madrid` | 181 | 62 | 119 | 34,3% | parcial | `verified_partial` 70 | 62 | 62 |
 | Euskadi | `euskadi` | 255 | 255 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 252, `verified_partial` 3 | 255 | 255 |
 | Comunitat Valenciana | `comunitat_valenciana` | 544 | 544 | 0 | 100,0% | con pista en todas las zonas | `regional_default` 533, `verified_partial` 11 | 544 | 544 |
-| Aragón | `aragon` | 734 | 0 | 734 | 0,0% | pendiente | — | 0 | 0 |
+| Aragón | `aragon` | 734 | 138 | 596 | 18,8% | parcial | `verified_partial` 147 | 138 | 138 |
 | Extremadura | `extremadura` | 388 | 388 | 0 | 100,0% | con pista en todas las zonas | `verified_partial` 530 | 388 | 388 |
-| Castilla-La Mancha | `castilla_la_mancha` | 921 | 0 | 921 | 0,0% | pendiente | — | 0 | 0 |
-| Castilla y León | `castilla_leon` | 2.298 | 0 | 2.298 | 0,0% | pendiente | — | 0 | 0 |
-| Andalucía | `andalucia` | 786 | 254 | 532 | 32,3% | parcial | `verified_partial` 254 | 254 | 254 |
-| Catalunya | `catalunya` | 948 | 0 | 948 | 0,0% | pendiente | — | 0 | 0 |
+| Castilla-La Mancha | `castilla_la_mancha` | 921 | 154 | 767 | 16,7% | parcial | `verified_partial` 161 | 154 | 154 |
+| Castilla y León | `castilla_leon` | 2.298 | 251 | 2.047 | 10,9% | parcial | `verified_partial` 262 | 251 | 251 |
+| Andalucía | `andalucia` | 786 | 371 | 415 | 47,2% | parcial | `verified_partial` 379 | 371 | 371 |
+| Catalunya | `catalunya` | 948 | 163 | 785 | 17,2% | parcial | `verified_partial` 175 | 163 | 163 |
 
 ## Zonas pendientes ordenadas por volumen
 
 | Zona | Pendientes | GeoJSON | Con pista |
 |---|---:|---:|---:|
-| Castilla y León | 2.298 | 2.298 | 0 |
-| Catalunya | 948 | 948 | 0 |
-| Castilla-La Mancha | 921 | 921 | 0 |
-| Aragón | 734 | 734 | 0 |
-| Andalucía | 532 | 786 | 254 |
-| Madrid | 172 | 181 | 9 |
+| Castilla y León | 2.047 | 2.298 | 251 |
+| Catalunya | 785 | 948 | 163 |
+| Castilla-La Mancha | 767 | 921 | 154 |
+| Aragón | 596 | 734 | 138 |
+| Andalucía | 415 | 786 | 371 |
+| Madrid | 119 | 181 | 62 |
 
 ## Lectura recomendada
 
