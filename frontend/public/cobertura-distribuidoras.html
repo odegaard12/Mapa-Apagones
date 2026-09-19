@@ -10,7 +10,6 @@
   <meta property="og:description" content="Estado de cobertura de pistas públicas de distribuidora eléctrica por zona, sin CUPS ni datos personales." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mapa-apagones.es/cobertura-distribuidoras.html" />
-  <link rel="canonical" href="https://mapa-apagones.es/cobertura-distribuidoras.html" />
   <style>
     :root {
       color-scheme: light;
@@ -139,6 +138,21 @@
     tr.complete { background: var(--ok); }
     tr.partial { background: var(--warn); }
     tr.pending { background: var(--pending); }
+    tr.new-source td:first-child { position: relative; }
+    tr.new-source td:first-child::before {
+      content: '●';
+      color: var(--accent);
+      margin-right: 6px;
+      font-size: 0.7rem;
+    }
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: .86rem;
+      margin: 10px 0 0;
+    }
     code {
       background: rgba(11, 99, 206, 0.08);
       padding: 2px 6px;
@@ -160,7 +174,7 @@
   <main>
     <div class="top">
       <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-06-19 · v0.11.0.0-map-ux-reliability</span>
+      <span>Actualizado: 2026-09-11 · v0.12.1</span>
     </div>
 
     <section class="hero">
@@ -174,9 +188,9 @@
       <div class="metrics" aria-label="Resumen de cobertura">
         <div class="metric"><strong>19</strong><span>datasets geográficos</span></div>
         <div class="metric"><strong>8.215</strong><span>zonas normalizadas</span></div>
-        <div class="metric"><strong>2.610</strong><span>Zonas con orientación/pista</span></div>
-        <div class="metric"><strong>5.605</strong><span>zonas pendientes</span></div>
-        <div class="metric"><strong>31,8%</strong><span>cobertura actual</span></div>
+        <div class="metric"><strong>3.486</strong><span>Zonas con orientación/pista</span></div>
+        <div class="metric"><strong>4.729</strong><span>zonas pendientes</span></div>
+        <div class="metric"><strong>42,4%</strong><span>cobertura actual</span></div>
       </div>
     </section>
 
@@ -214,7 +228,9 @@
       <p class="note">
         Generada desde la matriz real del repositorio. Si cambian los GeoJSON o las pistas públicas,
         esta página debe regenerarse con <code>scripts/generate_public_distributor_coverage_page.py</code>.
+        Ordenada por cobertura, de mayor a menor.
       </p>
+      <p class="legend"><span style="color:var(--accent)">●</span> = mejorado el 2026-09-19 con datos públicos de CNMC (regulador nacional). Detalle en <a href="https://github.com/odegaard12/Mapa-Apagones/blob/main/DISTRIBUTOR_RESEARCH.md">DISTRIBUTOR_RESEARCH.md</a>.</p>
 
       <div class="table-wrap">
         <table>
@@ -343,17 +359,6 @@
               <td>`verified_partial` 1</td>
               <td>1</td>
             </tr>
-            <tr class="partial">
-              <td>Madrid</td>
-              <td><code>madrid</code></td>
-              <td>181</td>
-              <td>9</td>
-              <td>172</td>
-              <td>5,0%</td>
-              <td>parcial</td>
-              <td>`verified_partial` 9</td>
-              <td>9</td>
-            </tr>
             <tr class="complete">
               <td>Euskadi</td>
               <td><code>euskadi</code></td>
@@ -376,17 +381,6 @@
               <td>`regional_default` 533, `verified_partial` 11</td>
               <td>544</td>
             </tr>
-            <tr class="pending">
-              <td>Aragón</td>
-              <td><code>aragon</code></td>
-              <td>734</td>
-              <td>0</td>
-              <td>734</td>
-              <td>0,0%</td>
-              <td>pendiente</td>
-              <td>—</td>
-              <td>0</td>
-            </tr>
             <tr class="complete">
               <td>Extremadura</td>
               <td><code>extremadura</code></td>
@@ -398,49 +392,71 @@
               <td>`verified_partial` 530</td>
               <td>388</td>
             </tr>
-            <tr class="pending">
-              <td>Castilla-La Mancha</td>
-              <td><code>castilla_la_mancha</code></td>
-              <td>921</td>
-              <td>0</td>
-              <td>921</td>
-              <td>0,0%</td>
-              <td>pendiente</td>
-              <td>—</td>
-              <td>0</td>
-            </tr>
-            <tr class="pending">
-              <td>Castilla y León</td>
-              <td><code>castilla_leon</code></td>
-              <td>2.298</td>
-              <td>0</td>
-              <td>2.298</td>
-              <td>0,0%</td>
-              <td>pendiente</td>
-              <td>—</td>
-              <td>0</td>
-            </tr>
-            <tr class="partial">
+            <tr class="partial new-source">
               <td>Andalucía</td>
               <td><code>andalucia</code></td>
               <td>786</td>
-              <td>254</td>
-              <td>532</td>
-              <td>32,3%</td>
+              <td>371</td>
+              <td>415</td>
+              <td>47,2%</td>
               <td>parcial</td>
-              <td>`verified_partial` 254</td>
-              <td>254</td>
+              <td>`verified_partial` 379</td>
+              <td>371</td>
             </tr>
-            <tr class="pending">
+            <tr class="partial new-source">
+              <td>Madrid</td>
+              <td><code>madrid</code></td>
+              <td>181</td>
+              <td>62</td>
+              <td>119</td>
+              <td>34,3%</td>
+              <td>parcial</td>
+              <td>`verified_partial` 70</td>
+              <td>62</td>
+            </tr>
+            <tr class="partial new-source">
+              <td>Aragón</td>
+              <td><code>aragon</code></td>
+              <td>734</td>
+              <td>138</td>
+              <td>596</td>
+              <td>18,8%</td>
+              <td>parcial</td>
+              <td>`verified_partial` 147</td>
+              <td>138</td>
+            </tr>
+            <tr class="partial new-source">
               <td>Catalunya</td>
               <td><code>catalunya</code></td>
               <td>948</td>
-              <td>0</td>
-              <td>948</td>
-              <td>0,0%</td>
-              <td>pendiente</td>
-              <td>—</td>
-              <td>0</td>
+              <td>163</td>
+              <td>785</td>
+              <td>17,2%</td>
+              <td>parcial</td>
+              <td>`verified_partial` 175</td>
+              <td>163</td>
+            </tr>
+            <tr class="partial new-source">
+              <td>Castilla-La Mancha</td>
+              <td><code>castilla_la_mancha</code></td>
+              <td>921</td>
+              <td>154</td>
+              <td>767</td>
+              <td>16,7%</td>
+              <td>parcial</td>
+              <td>`verified_partial` 161</td>
+              <td>154</td>
+            </tr>
+            <tr class="partial new-source">
+              <td>Castilla y León</td>
+              <td><code>castilla_leon</code></td>
+              <td>2.298</td>
+              <td>251</td>
+              <td>2.047</td>
+              <td>10,9%</td>
+              <td>parcial</td>
+              <td>`verified_partial` 262</td>
+              <td>251</td>
             </tr>
           </tbody>
         </table>

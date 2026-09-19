@@ -61893,6 +61893,3494 @@
           "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
         }
       ]
+    },
+    {
+      "zone_id": "municipality:cadiz::cadiz",
+      "municipio": "Cádiz",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "SUMINISTRADORA ELECTRICA DE CADIZ, S.A",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-021",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::benacazon",
+      "municipio": "Benacazón",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "MEDINA GARVEY ELECTRICIDAD, S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-028",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::chucena",
+      "municipio": "Chucena",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "COMPAÑIA DE ELECTRICIDAD DEL CONDADO S.A.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-044",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "MEDINA GARVEY ELECTRICIDAD, S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-028",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::alcala_del_valle",
+      "municipio": "Alcalá del Valle",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "ENERGIA ELECTRICA DE OLVERA S.L.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-098",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::almonte",
+      "municipio": "Almonte",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "COMPAÑIA DE ELECTRICIDAD DEL CONDADO S.A.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-044",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::illora",
+      "municipio": "Íllora",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "DISTRIBUIDORA ELECTRICA BERMEJALES SL",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-036",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::escuzar",
+      "municipio": "Escúzar",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "DISTRIBUIDORA ELECTRICA BERMEJALES SL",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-036",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::pruna",
+      "municipio": "Pruna",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "BLAZQUEZ SL",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-084",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::puerto_real",
+      "municipio": "Puerto Real",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "ELECTRICIDAD DE PUERTO REAL, S.A. (EPRESA)",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-034",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::algete",
+      "municipio": "Algete",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::alcobendas",
+      "municipio": "Alcobendas",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::pinto",
+      "municipio": "Pinto",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "HIDROCANTÁBRICO DISTRIBUCIÓN ELÉCTRICA S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-008",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::madrid",
+      "municipio": "Madrid",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::torrejon_de_ardoz",
+      "municipio": "Torrejón de Ardoz",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::boadilla_del_monte",
+      "municipio": "Boadilla del Monte",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::fuenlabrada",
+      "municipio": "Fuenlabrada",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::daganzo_de_arriba",
+      "municipio": "Daganzo de Arriba",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::las_rozas_de_madrid",
+      "municipio": "Las Rozas de Madrid",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::leganes",
+      "municipio": "Leganés",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::galapagar",
+      "municipio": "Galapagar",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::san_fernando_de_henares",
+      "municipio": "San Fernando de Henares",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::navas_del_rey",
+      "municipio": "Navas del Rey",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::mostoles",
+      "municipio": "Móstoles",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::majadahonda",
+      "municipio": "Majadahonda",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::meco",
+      "municipio": "Meco",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::moraleja_de_enmedio",
+      "municipio": "Moraleja de Enmedio",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::morata_de_tajuna",
+      "municipio": "Morata de Tajuña",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::parla",
+      "municipio": "Parla",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::pozuelo_de_alarcon",
+      "municipio": "Pozuelo de Alarcón",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::alcorcon",
+      "municipio": "Alcorcón",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::san_martin_de_valdeiglesias",
+      "municipio": "San Martín de Valdeiglesias",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::tres_cantos",
+      "municipio": "Tres Cantos",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::villanueva_del_pardillo",
+      "municipio": "Villanueva del Pardillo",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::villaviciosa_de_odon",
+      "municipio": "Villaviciosa de Odón",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::aldea_del_fresno",
+      "municipio": "Aldea del Fresno",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::cabanillas_de_la_sierra",
+      "municipio": "Cabanillas de la Sierra",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::cercedilla",
+      "municipio": "Cercedilla",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::colmenar_viejo",
+      "municipio": "Colmenar Viejo",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::batres",
+      "municipio": "Batres",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::el_escorial",
+      "municipio": "El Escorial",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::buitrago_del_lozoya",
+      "municipio": "Buitrago del Lozoya",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::grinon",
+      "municipio": "Griñón",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::humanes_de_madrid",
+      "municipio": "Humanes de Madrid",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::torrejon_de_la_calzada",
+      "municipio": "Torrejón de la Calzada",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::miraflores_de_la_sierra",
+      "municipio": "Miraflores de la Sierra",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::moralzarzal",
+      "municipio": "Moralzarzal",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::navalagamella",
+      "municipio": "Navalagamella",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::navalcarnero",
+      "municipio": "Navalcarnero",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::san_agustin_del_guadalix",
+      "municipio": "San Agustín del Guadalix",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::valdemorillo",
+      "municipio": "Valdemorillo",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::san_sebastian_de_los_reyes",
+      "municipio": "San Sebastián de los Reyes",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::collado_villalba",
+      "municipio": "Collado Villalba",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::arroyomolinos",
+      "municipio": "Arroyomolinos",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "i-DE REDES ELÉCTRICAS INTELIGENTES, S.A.U",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-001",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::sevilla",
+      "municipio": "Sevilla",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::ecija",
+      "municipio": "Écija",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::salteras",
+      "municipio": "Salteras",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::mairena_del_aljarafe",
+      "municipio": "Mairena del Aljarafe",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::lebrija",
+      "municipio": "Lebrija",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::lora_del_rio",
+      "municipio": "Lora del Río",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::las_cabezas_de_san_juan",
+      "municipio": "Las Cabezas de San Juan",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::utrera",
+      "municipio": "Utrera",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::moron_de_la_frontera",
+      "municipio": "Morón de la Frontera",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::alcala_de_guadaira",
+      "municipio": "Alcalá de Guadaíra",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::osuna",
+      "municipio": "Osuna",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::los_palacios_y_villafranca",
+      "municipio": "Los Palacios y Villafranca",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::brenes",
+      "municipio": "Brenes",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::la_roda_de_andalucia",
+      "municipio": "La Roda de Andalucía",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::carmona",
+      "municipio": "Carmona",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::guillena",
+      "municipio": "Guillena",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::sanlucar_la_mayor",
+      "municipio": "Sanlúcar la Mayor",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::valencina_de_la_concepcion",
+      "municipio": "Valencina de la Concepción",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::dos_hermanas",
+      "municipio": "Dos Hermanas",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::el_viso_del_alcor",
+      "municipio": "El Viso del Alcor",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::cordoba",
+      "municipio": "Córdoba",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::lucena",
+      "municipio": "Lucena",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::almodovar_del_rio",
+      "municipio": "Almodóvar del Río",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::montilla",
+      "municipio": "Montilla",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::palenciana",
+      "municipio": "Palenciana",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::guadix",
+      "municipio": "Guadix",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::aldeire",
+      "municipio": "Aldeire",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::atarfe",
+      "municipio": "Atarfe",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::baza",
+      "municipio": "Baza",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::granada",
+      "municipio": "Granada",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::durcal",
+      "municipio": "Dúrcal",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::las_gabias",
+      "municipio": "Las Gabias",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::iznalloz",
+      "municipio": "Iznalloz",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::pinos_puente",
+      "municipio": "Pinos Puente",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::zujar",
+      "municipio": "Zújar",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::albolote",
+      "municipio": "Albolote",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::niguelas",
+      "municipio": "Nigüelas",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::loja",
+      "municipio": "Loja",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::orgiva",
+      "municipio": "Órgiva",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::villa_de_otura",
+      "municipio": "Villa de Otura",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::villanueva_mesia",
+      "municipio": "Villanueva Mesía",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::pedro_martinez",
+      "municipio": "Pedro Martínez",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::el_pinar",
+      "municipio": "El Pinar",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:granada::padul",
+      "municipio": "Padul",
+      "province": "Granada",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::huelva",
+      "municipio": "Huelva",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:jaen::andujar",
+      "municipio": "Andújar",
+      "province": "Jaén",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::cartaya",
+      "municipio": "Cartaya",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::villanueva_de_los_castillejos",
+      "municipio": "Villanueva de los Castillejos",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::moguer",
+      "municipio": "Moguer",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::gibraleon",
+      "municipio": "Gibraleón",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::el_granado",
+      "municipio": "El Granado",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::niebla",
+      "municipio": "Niebla",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::la_palma_del_condado",
+      "municipio": "La Palma del Condado",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::alosno",
+      "municipio": "Alosno",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:huelva::palos_de_la_frontera",
+      "municipio": "Palos de la Frontera",
+      "province": "Huelva",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:jaen::alcala_la_real",
+      "municipio": "Alcalá la Real",
+      "province": "Jaén",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:jaen::jaen",
+      "municipio": "Jaén",
+      "province": "Jaén",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:jaen::marmolejo",
+      "municipio": "Marmolejo",
+      "province": "Jaén",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::alora",
+      "municipio": "Álora",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::alhaurin_de_la_torre",
+      "municipio": "Alhaurín de la Torre",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::antequera",
+      "municipio": "Antequera",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::archidona",
+      "municipio": "Archidona",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::benahavis",
+      "municipio": "Benahavís",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::malaga",
+      "municipio": "Málaga",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::casares",
+      "municipio": "Casares",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::estepona",
+      "municipio": "Estepona",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::mollina",
+      "municipio": "Mollina",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::ronda",
+      "municipio": "Ronda",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:malaga::alhaurin_el_grande",
+      "municipio": "Alhaurín el Grande",
+      "province": "Málaga",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::alcala_del_rio",
+      "municipio": "Alcalá del Río",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::bollullos_de_la_mitacion",
+      "municipio": "Bollullos de la Mitación",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::aznalcollar",
+      "municipio": "Aznalcóllar",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::gerena",
+      "municipio": "Gerena",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::bormujos",
+      "municipio": "Bormujos",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::cantillana",
+      "municipio": "Cantillana",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::mairena_del_alcor",
+      "municipio": "Mairena del Alcor",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::camas",
+      "municipio": "Camas",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::el_coronil",
+      "municipio": "El Coronil",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::el_cuervo_de_sevilla",
+      "municipio": "El Cuervo de Sevilla",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:sevilla::estepa",
+      "municipio": "Estepa",
+      "province": "Sevilla",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::cardena",
+      "municipio": "Cardeña",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "EMPRESA ELECTRICA MARTIN SILVA POZO SL",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-167",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::enix",
+      "municipio": "Enix",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::carboneras",
+      "municipio": "Carboneras",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::lucainena_de_las_torres",
+      "municipio": "Lucainena de las Torres",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::mojacar",
+      "municipio": "Mojácar",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::benahadux",
+      "municipio": "Benahadux",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::cuevas_del_almanzora",
+      "municipio": "Cuevas del Almanzora",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "DISTRIBUCIONES ELECTRICAS PORTILLO SL",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-175",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::sorbas",
+      "municipio": "Sorbas",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::pulpi",
+      "municipio": "Pulpí",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::jerez_de_la_frontera",
+      "municipio": "Jerez de la Frontera",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::vera",
+      "municipio": "Vera",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "DISTRIBUCIONES ELECTRICAS PORTILLO SL",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-175",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        },
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::san_roque",
+      "municipio": "San Roque",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::arcos_de_la_frontera",
+      "municipio": "Arcos de la Frontera",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::tarifa",
+      "municipio": "Tarifa",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::los_barrios",
+      "municipio": "Los Barrios",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::conil_de_la_frontera",
+      "municipio": "Conil de la Frontera",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::chiclana_de_la_frontera",
+      "municipio": "Chiclana de la Frontera",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::algeciras",
+      "municipio": "Algeciras",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::el_puerto_de_santa_maria",
+      "municipio": "El Puerto de Santa María",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::san_jose_del_valle",
+      "municipio": "San José del Valle",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::medina_sidonia",
+      "municipio": "Medina Sidonia",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cadiz::vejer_de_la_frontera",
+      "municipio": "Vejer de la Frontera",
+      "province": "Cádiz",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::montoro",
+      "municipio": "Montoro",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::baena",
+      "municipio": "Baena",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::pozoblanco",
+      "municipio": "Pozoblanco",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::alcolea",
+      "municipio": "Alcolea",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:cordoba::cabra",
+      "municipio": "Cabra",
+      "province": "Córdoba",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:almeria::berja",
+      "municipio": "Berja",
+      "province": "Almería",
+      "dataset_id": "andalucia",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:barcelona::l_hospitalet_de_llobregat",
+      "municipio": "L'Hospitalet de Llobregat",
+      "province": "Barcelona",
+      "dataset_id": "catalunya",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:barcelona::les_franqueses_del_valles",
+      "municipio": "Les Franqueses del Vallès",
+      "province": "Barcelona",
+      "dataset_id": "catalunya",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:barcelona::els_hostalets_de_pierola",
+      "municipio": "Els Hostalets de Pierola",
+      "province": "Barcelona",
+      "dataset_id": "catalunya",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:lleida::es_bordes",
+      "municipio": "Es Bòrdes",
+      "province": "Lleida",
+      "dataset_id": "catalunya",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:lleida::els_plans_de_sio",
+      "municipio": "Els Plans de Sió",
+      "province": "Lleida",
+      "dataset_id": "catalunya",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:tarragona::l_ampolla",
+      "municipio": "L'Ampolla",
+      "province": "Tarragona",
+      "dataset_id": "catalunya",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "EDISTRIBUCIÓN REDES DIGITALES S.L.U.",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-299",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::ajalvir",
+      "municipio": "Ajalvir",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::arganda_del_rey",
+      "municipio": "Arganda del Rey",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::coslada",
+      "municipio": "Coslada",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::loeches",
+      "municipio": "Loeches",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::mejorada_del_campo",
+      "municipio": "Mejorada del Campo",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::nuevo_baztan",
+      "municipio": "Nuevo Baztán",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::perales_de_tajuna",
+      "municipio": "Perales de Tajuña",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::villalbilla",
+      "municipio": "Villalbilla",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
+    },
+    {
+      "zone_id": "municipality:madrid::villarejo_de_salvanes",
+      "municipio": "Villarejo de Salvanés",
+      "province": "Madrid",
+      "dataset_id": "madrid",
+      "last_reviewed": "2026-09-19",
+      "notes": "Pista parcial: gestor(es) de red con subestacion(es) de capacidad de acceso publicada por CNMC (regulador nacional) localizada en este municipio. No afirma exclusividad ni cobertura total municipal.",
+      "distributors": [
+        {
+          "name": "UFD DISTRIBUCIÓN ELECTRICIDAD, SA",
+          "confidence": "verified_partial",
+          "source_name": "CNMC - Mapa de capacidad de acceso en redes de distribución (Demanda)",
+          "source_url": "https://www.cnmc.es/prensa/mapas-capacidad-redes-electricas-20260415",
+          "last_reviewed": "2026-09-19",
+          "r1_code": "R1-002",
+          "coverage_note": "Dato de subestacion(es) con capacidad de acceso publicada por CNMC en este municipio; no confirma cobertura total ni exclusividad municipal."
+        }
+      ]
     }
   ]
 }
