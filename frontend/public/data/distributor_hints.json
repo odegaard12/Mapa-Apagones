@@ -1,5 +1,5 @@
 {
-  "version": "v0.12.1",
+  "version": "v0.13.0",
   "policy": {
     "purpose": "Public distributor hints by municipality or zone, only from verified public sources.",
     "privacy": "No CUPS, no personal data, no exact user addresses, no private coordinates.",

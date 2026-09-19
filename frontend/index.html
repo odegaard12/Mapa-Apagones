@@ -32,7 +32,35 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Mapa Apagones","url":"https://mapa-apagones.es/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"Mapa ciudadano de avisos de apagones, cortes eléctricos e incidencias de suministro, sin cuentas, sin CUPS, sin fotos y con privacidad por diseño.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main>
+        <h1>Mapa Apagones</h1>
+        <p>
+          Mapa ciudadano no oficial de avisos de apagones, cortes eléctricos e incidencias de
+          suministro eléctrico en España, agregadas por zona. Sin cuentas, sin CUPS, sin fotos y
+          sin mostrar viviendas exactas: privacidad por diseño.
+        </p>
+        <p>
+          Cualquier persona puede reportar un corte de luz desde el mapa. Cuando varias personas
+          reportan en la misma zona en poco tiempo, se marca automáticamente como
+          <strong>corte confirmado</strong>. El mapa también incluye una orientación pública, cuando
+          existe fuente verificable, sobre qué distribuidora eléctrica da servicio en cada zona.
+        </p>
+        <nav aria-label="Páginas informativas">
+          <ul>
+            <li><a href="/como-funciona/">Cómo funciona</a></li>
+            <li><a href="/cobertura-distribuidoras.html">Cobertura de distribuidoras por zona</a></li>
+            <li><a href="/fiabilidad-distribuidoras.html">Fiabilidad de las pistas de distribuidora</a></li>
+            <li><a href="/privacidad/">Privacidad</a></li>
+            <li><a href="/seguridad/">Seguridad</a></li>
+            <li><a href="/no-somos-distribuidora/">No somos una distribuidora eléctrica</a></li>
+            <li><a href="/aviso-legal/">Aviso legal</a></li>
+            <li><a href="/changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
+        <p><noscript>Esta aplicación necesita JavaScript para mostrar el mapa interactivo.</noscript></p>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
