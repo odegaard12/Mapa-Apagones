@@ -2,198 +2,115 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Cómo funciona | Mapa Apagones</title>
-  <meta name="description" content="Explicación del funcionamiento de Mapa Apagones como mapa ciudadano no oficial de incidencias eléctricas.">
-  <link rel="canonical" href="https://mapa-apagones.es/como-funciona/">
-  <meta property="og:title" content="Cómo funciona | Mapa Apagones">
-  <meta property="og:description" content="Explicación del funcionamiento de Mapa Apagones como mapa ciudadano no oficial de incidencias eléctricas.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mapa-apagones.es/como-funciona/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cómo funciona · Mapa Apagones</title>
+  <meta name="description" content="Cómo funciona Mapa Apagones: reportes ciudadanos, zonas aproximadas, estados de confianza y detección automática de cortes confirmados." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mapa-apagones.es/como-funciona/" />
+  <meta property="og:title" content="Cómo funciona · Mapa Apagones" />
+  <meta property="og:description" content="Cómo funciona Mapa Apagones: reportes ciudadanos, zonas aproximadas, estados de confianza y detección automática de cortes confirmados." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mapa-apagones.es/como-funciona/" />
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #eef4ff;
-      --card: rgba(255,255,255,.86);
-      --text: #0f172a;
-      --muted: #475569;
-      --line: rgba(15,23,42,.12);
-      --accent: #2563eb;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(59,130,246,.22), transparent 34rem),
-        radial-gradient(circle at 85% 10%, rgba(14,165,233,.16), transparent 30rem),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.58;
-    }
-    main {
-      width: min(860px, calc(100% - 32px));
-      margin: 34px auto;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--card);
-      box-shadow: 0 20px 60px rgba(15,23,42,.10);
-      backdrop-filter: blur(18px);
-    }
-    a { color: var(--accent); }
-    h1 { margin: 0 0 8px; font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -0.04em; }
-    h2 { margin-top: 28px; font-size: 1.2rem; }
-    p, li { color: var(--muted); }
-    ul { padding-left: 1.25rem; }
-    .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,.62);
-      color: var(--muted);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .notice {
-      padding: 14px 16px;
-      border: 1px solid rgba(37,99,235,.22);
-      border-radius: 18px;
-      background: rgba(37,99,235,.08);
-      color: #1e3a8a;
-    }
-    footer {
-      margin-top: 32px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .92rem;
-    }
-  
-    /* === mobile public page responsive v0.9.7.2 === */
-    @media (max-width: 720px) {
-      html {
-        min-height: 100%;
-      }
-
-      body {
-        min-height: 100dvh;
-        overflow-x: hidden;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      main {
-        width: min(100% - 20px, 860px) !important;
-        margin: max(10px, env(safe-area-inset-top, 0px)) auto max(10px, env(safe-area-inset-bottom, 0px)) !important;
-        padding: 18px !important;
-        border-radius: 20px !important;
-      }
-
-      .top {
-        align-items: flex-start !important;
-        flex-direction: column !important;
-        gap: 8px !important;
-        margin-bottom: 16px !important;
-        font-size: .82rem !important;
-      }
-
-      .pill {
-        max-width: 100%;
-        white-space: normal !important;
-        line-height: 1.15 !important;
-      }
-
-      h1 {
-        font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
-        line-height: 1.05 !important;
-        letter-spacing: -0.035em !important;
-      }
-
-      h2 {
-        margin-top: 22px !important;
-        font-size: 1.04rem !important;
-        line-height: 1.2 !important;
-      }
-
-      p,
-      li {
-        font-size: .94rem !important;
-        line-height: 1.55 !important;
-      }
-
-      ul {
-        padding-left: 1.05rem !important;
-      }
-
-      .notice {
-        padding: 12px 13px !important;
-        border-radius: 16px !important;
-      }
-
-      footer {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
-        overflow-wrap: anywhere !important;
-      }
-
-      a {
-        overflow-wrap: anywhere;
-      }
-    }
-
-    @media (max-width: 380px) {
-      main {
-        width: min(100% - 14px, 860px) !important;
-        padding: 14px !important;
-        border-radius: 18px !important;
-      }
-
-      p,
-      li {
-        font-size: .9rem !important;
-      }
-    }
-
-  </style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #d9e2ef;
+  --accent: #0f766e;
+  --accent-soft: #e6fffb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #eef9f7, var(--bg) 45%);
+  color: var(--text);
+  line-height: 1.55;
+}
+main {
+  width: min(860px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.8);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+.eyebrow { color: var(--muted); font-size: .92rem; margin: 0 0 8px; }
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+}
+h2 { margin-top: 30px; font-size: 1.15rem; letter-spacing: -0.01em; }
+.notice {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 26px rgba(16, 24, 40, .06);
+}
+.notice.accent { background: var(--accent-soft); border-color: #99f6e4; }
+p, li { color: var(--muted); }
+ul { padding-left: 1.2rem; }
+code {
+  background: #eef4fb;
+  padding: 2px 5px;
+  border-radius: 6px;
+  font-size: .92em;
+}
+footer {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .9rem;
+}
+</style>
 </head>
 <body>
-  <main>
-    <div class="top">
-      <a class="pill" href="/">← Volver al mapa</a>
-      <span>Actualizado: 2026-04-28</span>
-    </div>
-    <h1>Cómo funciona</h1>
-    <p class="notice"><strong>Mapa Apagones</strong> es una plataforma ciudadana informativa. No es una distribuidora eléctrica y no sustituye los canales oficiales.</p>
+<main>
+  <a class="back" href="/">← Volver al mapa</a>
+  <p class="eyebrow">Actualizado: 2026-09-19</p>
+  <h1>Cómo funciona</h1>
 
-    <h2>1. Reportes ciudadanos</h2>
-    <p>La web permite enviar avisos rápidos sobre incidencias eléctricas aproximadas: sin luz, microcortes, baja tensión o aviso de que el suministro ha vuelto.</p>
+  <div class="notice accent">
+    <strong>Mapa Apagones</strong> es una plataforma ciudadana informativa. No es una distribuidora eléctrica y no sustituye los canales oficiales.
+  </div>
 
-    <h2>2. Zonas aproximadas</h2>
-    <p>Los avisos no se muestran como direcciones exactas ni viviendas concretas. Se agrupan por zonas, celdas o ámbitos municipales aproximados para reducir exposición de ubicación individual.</p>
+  <h2>1. Reportes ciudadanos</h2>
+  <p>La web permite enviar avisos rápidos sobre incidencias eléctricas aproximadas: sin luz, microcortes, baja tensión o aviso de que el suministro ha vuelto.</p>
 
-    <h2>3. Estados de confianza</h2>
-    <p>La plataforma puede mostrar estados como señal débil, probable, activa, degradándose o resuelta, según número de confirmaciones y antigüedad de los avisos.</p>
+  <h2>2. Zonas aproximadas</h2>
+  <p>Los avisos no se muestran como direcciones exactas ni viviendas concretas. Se agrupan por zonas, celdas o ámbitos municipales aproximados para reducir exposición de ubicación individual.</p>
 
-    <h2>4. Uso correcto</h2>
-    <p>Para averías oficiales, situaciones peligrosas, emergencias o riesgos personales, se debe contactar con la distribuidora eléctrica, servicios técnicos o emergencias. Este mapa solo ayuda a visualizar señales ciudadanas agregadas.</p>
+  <h2>3. Estados de confianza</h2>
+  <p>La plataforma muestra estados según número de confirmaciones y antigüedad de los avisos: señal débil, probable, activa, degradándose o resuelta.</p>
+  <p>Cuando <strong>5 o más personas</strong> reportan en la misma zona en menos de 10 minutos, la zona pasa automáticamente a <code>corte confirmado</code>, con una etiqueta y color de alerta diferenciados del resto de estados.</p>
 
-    <footer>
-      <p>Contacto general: <a href="mailto:contacto@mapa-apagones.es">contacto@mapa-apagones.es</a></p>
-      <p>Privacidad: <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a></p>
-    </footer>
-  </main>
+  <h2>4. Distribuidora orientativa</h2>
+  <p>Cuando existe una fuente pública verificable, el panel de la incidencia muestra qué distribuidora eléctrica da servicio en esa zona. Es información orientativa, no una fuente oficial. Si no hay dato verificado, cualquier persona puede sugerir de forma anónima qué distribuidora conoce en su zona; solo se muestra tras varias confirmaciones independientes y siempre se marca como aporte de la comunidad, nunca como fuente oficial.</p>
+
+  <h2>5. Uso correcto</h2>
+  <p>Para averías oficiales, situaciones peligrosas, emergencias o riesgos personales, se debe contactar con la distribuidora eléctrica, servicios técnicos o emergencias. Este mapa solo ayuda a visualizar señales ciudadanas agregadas.</p>
+
+  <footer>
+    <p>Contacto general: <a href="mailto:contacto@mapa-apagones.es">contacto@mapa-apagones.es</a></p>
+    <p>Privacidad: <a href="mailto:privacidad@mapa-apagones.es">privacidad@mapa-apagones.es</a></p>
+  </footer>
+</main>
 </body>
 </html>
